@@ -3,6 +3,8 @@
 !/.gitignore
 !/README.md
 !/README.zh-Hant.md
+!/README.zh-Hans.md
+!/docs/
 !/LICENSE
 !/LICENSE-CONTENT.txt
 !/CHANGELOG.md
