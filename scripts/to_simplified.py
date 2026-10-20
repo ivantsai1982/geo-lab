@@ -50,8 +50,8 @@ def convert(t):
 files = sorted(glob.glob(SRC + "第*章_*.md")) + [SRC + "_術語表.md"]
 for f in files:
     name = t2s.convert(os.path.basename(f))
-    open(DST + name, "w", encoding="utf-8").write(convert(open(f, encoding="utf-8").read()))
-with open(DST + "_转换记录.md", "w", encoding="utf-8") as w:
+    open(DST + name, "w", encoding="utf-8", newline="\n").write(convert(open(f, encoding="utf-8").read()))
+with open(DST + "_转换记录.md", "w", encoding="utf-8", newline="\n") as w:
     w.write("# 繁→简转换记录\n\n只做字形转换（OpenCC t2s）和下表中两岸同义用词替换，未改写任何句子。\n\n| 繁体原词 | 简体用词 | 次数 |\n|---|---|---|\n")
     for (a, b), n in log.most_common(): w.write(f"| {a} | {b} | {n} |\n")
 print(len(files), "files;", sum(log.values()), "vocabulary substitutions")

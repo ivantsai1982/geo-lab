@@ -1,422 +1,248 @@
-# Chapter 16 — Conclusion: Questions That Are Still Open
+# Chapter 16: Conclusion: Questions That Are Still Open
 
-Imagine this scene.
+Imagine this scene. The owner of an online shop that sells coffee beans reads an article saying that adding statistics, quotations and sources to your content can clearly raise your chances of being cited by AI. He spends a weekend adding a "data summary" block to the very bottom of every page. A few days later he reads another article, which says the latest re-test found that adding statistics does not help, and sometimes makes things worse. Both articles say they have evidence, and he does not know which one to believe.
 
-The owner of an online coffee-bean shop reads an article that says: "Adding statistics, quotations and sources to your content can clearly raise your chances of being cited by AI." He spends a weekend adding a "data summary" block to the bottom of every page.
+This chapter is about that kind of situation. In the previous fifteen chapters, we tried to stick to principles that hold up fairly well. In this chapter we want to tell you honestly that on some questions, one study's conclusion is the opposite of another's. On some questions, what people in this industry believe goes further than what research has proven. And on some questions, people in the industry are split among themselves. As of today, none of these questions is settled.
 
-A few days later, he reads another article: "The latest re-test found that adding statistics doesn't help, and sometimes makes things worse."
-
-He doesn't know which one to believe. Both articles say they have evidence.
-
-This chapter is about exactly this situation. In the previous fifteen chapters, we tried to stick to principles that hold up fairly well. In this chapter we want to tell you honestly: on some questions, one study's conclusion is the opposite of another's; on some questions, what people in this industry believe goes further than what research has proven; and on some questions, people in the industry are split among themselves. As of today, none of these questions is settled.
-
-This chapter makes only one big point:
-
-**Conclusions that seem to contradict each other have usually measured different things, at different gates, under different conditions, at different times. First work out which stage it measured and under what conditions, and you can make a sound decision.**
-
----
+The whole chapter makes only one big point. **Conclusions that seem to contradict each other have usually measured different things, at different gates, under different conditions, at different times. First work out which stage a finding measured and under what conditions, and you can make a sound decision.**
 
 ## Five questions this chapter answers
 
-1. Which GEO practices have different studies reached opposite conclusions about?
-2. How strong is the evidence behind each of these opposite conclusions?
-3. Why don't they agree? Is it a different AI, a different time, a different test method, or a different thing being measured?
-4. Of the practices that people in this industry widely believe in, which are backed by research? Which go further than the research? And on which do they themselves have no consensus yet?
-5. When the evidence doesn't agree, what should you actually do?
+The first question we want to answer is which GEO practices different studies have reached opposite conclusions about. Next we look at how strong the evidence behind each of these opposite conclusions is, and then ask why they disagree: is it a different AI, a different time, a different test method, or a completely different thing being measured? The fourth question turns to the industry. Of the practices that people in this industry widely believe in, which are backed by research, which go further than the research, and on which do they themselves have no consensus yet? The last question is the most practical one: when the evidence does not agree, what should you actually do?
 
-For every question, we follow the same order: **the two claims → why they differ → what you should do now.**
-
----
+We take every question in the same order. First we set out the two claims, then we explain why they differ, and finally we tell you what to do now.
 
 ## First, learn to read "how strong the evidence is"
 
-Things that are all called "research" differ a lot in strength. From start to finish, this book uses the same set of phrases to describe how strong the evidence is, and this chapter does too:
+Things that are all called "research" differ a lot in strength. From start to finish, this book uses one set of phrases to describe how strong the evidence is, and this chapter does too. So before we get into the disagreements, let us make clear what those phrases mean.
 
-| What this book says | How the research was done | How far it can be generalized |
-|---|---|---|
-| Researchers tested repeatedly on real AI search and found… | On a real, commercially running AI search, they asked repeatedly and recorded repeatedly | Very useful for that one AI at that one point in time; but it can usually only show that "two things occur together", not prove "which causes which" |
-| Under test conditions with given web pages… | Researchers hand several web pages directly to the AI, skipping the step where the AI goes online to find information itself | Can only explain the step of "how the AI writes and cites once it has the information" |
-| Seen under lab conditions…; the real world may differ | Researchers build a simplified AI search system of their own, which can be rerun and where every condition can be controlled | The mechanism is credible, but it is not real AI search |
-| Possible in theory, but not yet proven | Simulated tests or theoretical calculation: a fixed set of information is handed to the AI, or the AI is made to simulate a scenario | Can only show "possible in principle"; cannot be treated as a real-world conclusion |
-| Many in the industry believe | The view held by most people in this industry | A view, not proof |
+When the book says "Researchers tested repeatedly on real AI search and found…", it means researchers asked questions again and again on a real, commercially running AI search and recorded the results each time. Results like these are very useful for that one AI at that one point in time, but they can usually only show that "two things occur together", not prove "which causes which". When the book says "Under test conditions with given web pages…", it means researchers handed several web pages directly to the AI, skipping the step where the AI goes online to find information itself. Such a result can only explain the step of "how the AI writes and cites once it has the information".
 
-Before we begin, there are two things to remember.
+"Seen under lab conditions…, but the real world may differ" means the researchers built a simplified AI search system of their own, which can be rerun and in which every condition can be controlled. How it works is credible, but it is not real AI search. One level further down is "possible in theory, but not yet proven". This comes from simulated tests or theoretical calculation, for example handing a fixed set of information to the AI, or having the AI simulate a scenario. It can only show that something is possible in principle and cannot be treated as a real-world conclusion. Finally, "many in the industry believe" describes the view held by most people in this industry. It is a view, not proof.
 
-**First, "consensus" does not mean "correct".** When most people in this industry agree on something, it only means that is the mainstream view within the industry.
+Before we begin, there are two more things to remember. First, **"consensus" does not mean "correct"**. When most people in this industry agree on something, it only means that is the mainstream view within the industry. Second, research conclusions have an expiry date. The research this book draws on ranges from late 2023 at the earliest to September 2026 at the latest, and during this period AI search has gone through several generations. A result measured in one year may no longer show up once the AI has moved on a generation.
 
-**Second, research conclusions have an expiry date.** The research this book draws on ranges from late 2023 at the earliest to September 2026 at the latest. During this period, AI search has gone through several generations. A result measured in one year may no longer be measurable after the AI moves on a generation.
-
-There is also a tool you already know well: **the seven gates**. To answer a question, AI passes through seven gates: "whether to search, whether it can get in the door, whether it can find you, whether it picks you, whether it mentions you, whether it actually uses you, and whether people come over." Many of the "contradictions" in this chapter are really one study measuring the third gate and another study measuring the fifth. Neither side is wrong; they are just standing at different doors.
-
----
+There is also a tool you already know well: the seven gates. To answer a question, AI passes through seven gates: "whether to search, whether it can get in the door, whether it can find you, whether it picks you, whether it mentions you, whether it actually uses you, and whether people come over". Many of the "contradictions" in this chapter are really one study measuring the third gate and another measuring the fifth. Neither side is wrong. They are simply standing at different doors.
 
 ## Part One: Disagreements between studies
 
 ### Disagreement 1: Does adding statistics, quotations and source citations to your content help?
 
-The three GEO practices that first spread widely were: adding statistics, adding quotations (quoting what someone said), and stating your sources. The question is: can these three things actually make AI cite you more often?
+The three GEO practices that first spread widely were adding statistics, adding quotations (quoting what someone said), and stating your sources. On whether these three things can actually make AI cite you more often, research has given two opposite answers.
 
-**Claim 1: They help.**
+On the side that says they help, the earliest evidence came from the lab. Researchers built a simplified system that took the top 5 search engine results and handed them to a 2023-generation AI model to write the answer. After quotations, statistics and source citations were added, one metric rose by about 30% to 40%. This metric measures how many words of your content appear in the answer and how near the front they are placed. Another set of metrics, based on subjective scoring, rose by about 15% to 30%. This was seen under lab conditions, and the real world may differ. The same study also found that the effect varies by field, and that combining two practices, "making the writing more fluent" and "adding statistics", scored more than 5.5% higher than using a single practice alone.
 
-- Under lab conditions, researchers tested with a simplified system: "take the top 5 search engine results, then hand them to a 2023-generation AI model to write the answer." After adding quotations, statistics and source citations, one metric rose by about 30% to 40%. This metric measures how many words of your content appear in the answer and how near the front they are placed. Another set of metrics based on subjective scoring rose by about 15% to 30%. The real world may differ.
-- The same study also found that the effect varies by field. Combining two practices, "making the writing more fluent" and "adding statistics", scored more than 5.5% higher than using a single practice alone.
-- Another simulation study used 13 explainable features to rewrite content across the whole page. On three AI models, visibility rose from 13.34%, 8.89% and 5.20% to 18.31%, 15.35% and 10.17% respectively. The researchers then removed each feature one at a time to see how much the effect dropped without it, and found that the biggest contributors were precisely statistics and source citations. This shows that it is possible in theory that "the evidence density of the whole page" is what's at work, but this is not yet proven.
+Another simulation study took a different approach. It used 13 explainable features to rewrite content across the whole page, and on three AI models, visibility rose from 13.34%, 8.89% and 5.20% to 18.31%, 15.35% and 10.17% respectively. The researchers then removed each feature one at a time to see how much the effect dropped without it, and found that the largest contributions came from exactly the statistics and the source citations. This suggests that what makes the difference may be "the density of evidence across the whole page", but this too is only possible in theory, and not yet proven.
 
-**Claim 2: They don't help, and can even hurt.**
+The side that says they do not help, or even do harm, also has plenty of evidence. One simulation study handed a fixed set of information to the AI, with no real step of going online to find information at all, and tested 4 newer AI models. In only 3 of 54 scenarios was there a statistically reliable rise in citation ranking, and none of the question-answering tasks showed any effect. Worse, "adding statistics" made the citation ranking clearly worse in 19 of 24 scenarios. This result, too, can only show what is possible in theory.
 
-- A simulation study handed a fixed set of information to the AI, with no real online search step at all, and tested 4 newer AI models. Out of 54 scenarios, only 3 showed a statistically reliable improvement in citation ranking; for question-answering tasks, none worked. Even more notably, "adding statistics" made citation ranking **clearly worse** in 19 out of 24 scenarios. This too can only show what is possible in theory.
-- Under test conditions with given web pages, another re-test handed 5 sources directly to the AI, skipping the real search step. It covered 6 AI model families plus commercial models, 605 runs in total. The result: none of the three practices (quotations, statistics, source citations) changed the share of citations. The researchers then redid it on 3 newer-generation AIs (450 runs), and the result was again zero, or only a nominal negative.
-- This re-test also checked itself using the same metric as the original 2023 study. The results: quotations -0.33, statistics -0.28, source citations -0.79 percentage points. Compare the figures reported by the original 2023 study: +42.6, +32.8, +27.7. In other words, the large gains measured back then almost completely disappeared this time.
-- One thing must be made clear: the researchers who did this re-test themselves provide a content-scoring service. This doesn't mean the results are necessarily wrong, but readers should know about this conflict of interest.
+Another re-test was done under test conditions with given web pages. Researchers handed 5 sources directly to the AI, skipping the real search step, and covered 6 AI model families plus commercial models, for 605 runs in total. None of the three practices (quotations, statistics, source citations) changed the share of citations. They then repeated the test on 3 newer-generation AIs, 450 runs in all, and again the result was zero, or only a nominal negative. This re-test also checked itself using the same metric as the original 2023 study and got -0.33 percentage points for quotations, -0.28 for statistics and -0.79 for source citations, while the original 2023 study had reported +42.6, +32.8 and +27.7. The large gains measured back then had almost completely disappeared this time. One thing has to be stated clearly: the researchers who did this re-test themselves provide a content-scoring service. That does not mean the results must be wrong, but readers should know about this interest.
 
-**Why do they differ?**
+Why do the two sides differ? Once you put a few conditions side by side, the differences are obvious. Claim 1 tested a 2023-generation model, while Claim 2 tested the new generation of models from 2025 to 2026. Claim 1 measured how many words of the content appeared in the answer and subjective impressions, while Claim 2 measured citation ranking and the share of citations. Claim 1 rewrote whole pages and raised the density of features across the page, while Claim 2 added a separate block of statistics or quotations to the page. Claim 1 used a simplified AI search system, while Claim 2 used a fixed set of information or manually supplied sources.
 
-| Angle of comparison | Claim 1 | Claim 2 |
-|---|---|---|
-| Which generation of AI was tested | 2023-generation models | New-generation models from 2025 to 2026 |
-| What was measured | How many words in the answer, subjective impression | Citation ranking, share of citations |
-| How the content was changed | Whole-page rewrite, raising the feature density of the whole page | Adding a separate block of statistics or quotations to the page |
-| What system was used | A simplified AI search system | A fixed set of information, or manually given sources |
+At present there are two fairly reasonable explanations. **First, what makes the difference is the real density of evidence across the whole page, not a block added on separately.** The same whole-page rewriting study also found that 9 "word-by-word" GEO rewriting methods (including stuffing keywords throughout the text) performed worse on all three AIs than making no changes at all. Second, the effect goes out of date as AI is updated. The clear effect measured in 2023 could no longer be measured when the test was rerun on a new generation of AI.
 
-At present, the more reasonable explanation has two points:
+Many in the industry believe that only content with genuinely quotable points, or useful information, gets cited. This points in the same direction as the explanation of "the real density of evidence across the whole page", but it is a view, not a measured result.
 
-1. **What works is the real evidence density of the whole page, not a separately added block.** The same whole-page-rewrite study also found that 9 "word-by-word" GEO rewriting methods (including stuffing keywords throughout the text) performed worse than making no changes at all, on all three AIs.
-2. **The effect expires as AI is updated.** The clear effect measured in 2023 can no longer be measured when re-tested on new-generation AI.
-
-**How people in the industry see it:** Many in the industry believe that "only content with genuinely citable points, or useful information, gets cited." This is in line with the "real evidence density of the whole page" explanation. But it is a view, not a measurement.
-
-**What you should do now:**
-
-- Put real, verifiable data and sources where your argument genuinely needs them. Don't add a separate "data summary" block at the end of the article.
-- Don't treat the size of the gains measured in 2023 as the effect you can expect today.
-- Any claim of "add this element and you'll gain X percent" should be re-tested on the AI you care about, using a fixed set of questions.
-
----
+So what you can do now is put real, checkable figures and sources where your argument genuinely needs them, rather than adding a separate "data summary" block at the end of the article. Also, do not treat the size of the gains measured in 2023 as the effect you can expect today. Any claim that "adding a certain element raises results by so many percent" should be retested on the AI you care about, using a fixed set of questions.
 
 ### Disagreement 2: Does giving content structure (headings, structured data, lists) help?
 
-The question is: if you organize your page into a structured form, for example by writing good page titles, page descriptions and section subheadings, adding structured data, and switching to lists and tables, can that make AI cite you more often?
+This question asks whether organising a page into a structured form, for example writing good page titles, page descriptions and section subheadings, adding structured data, and switching to lists and tables, can make AI cite you more often.
 
-**Claim 1: It helps at the "whether it can find you" gate.**
+The first claim holds that structure helps at the gate of "whether it can find you". Under lab conditions, researchers built a system from about 171,000 real web pages. It first used a traditional keyword-matching method to find the material, then used another model to re-rank it, and finally handed it to a small new-generation AI model to write the answer. Changing only the structural fields (page title, page description, section subheadings, structured data) raised the share of pages entering the top 20 at the "finding information" stage from 0.58 to 0.71, an increase of about 22%. But in the same experiment, at the "re-ranking" step, performance fell from 1.00 to 0.83, a drop of about 17%. So structure helps a page "get pulled out", but it does not guarantee that the page "gets ranked into the small batch of material the AI finally draws on". In terms of the seven gates, it helped the third gate (whether it can find you) but not the fourth gate (whether it picks you).
 
-- Under lab conditions, researchers built a system using about 171,000 real web pages: first retrieve information using a traditional keyword-matching method, then re-rank it with another model, and finally hand it to a small new-generation AI model to write the answer. Changing only the structural fields (page title, page description, section subheadings, structured data) raised the share of pages reaching the top 20 in the "finding information" stage from 0.58 to 0.71, an increase of about 22%.
-- But in the same experiment, at the "re-ranking" step, performance actually fell from 1.00 to 0.83, a drop of about 17%. In other words: structure helps with "being pulled out", but doesn't guarantee "being placed in the small batch of information the AI finally refers to". In terms of the seven gates, it helped the third gate (whether it can find you) but not the fourth gate (whether it picks you).
-- Another lab study used an AI system that looks up information step by step on its own, froze the search records from that time, then changed conditions and replayed them to see whether the results would differ. Structured presentation (headings, lists, tables) increased the number of times the target source was cited by about 0.50, but **the total number of citations across all sources did not increase**. The main metric the study wanted to look at was "whether it was cited"; the result was a 4.5-percentage-point increase, but statistically the possibility that "it is actually zero" could not be ruled out, so it is uncertain.
+Another lab study used an AI system that looks things up step by step on its own. The researchers froze the lookup records from that time, changed the conditions, and replayed them to see whether the results would differ. Structured presentation (headings, lists, tables) increased the number of times the target source was cited by about 0.50, but the total number of citations across all sources did not increase. The metric the study mainly cared about, "whether it was cited at all", rose by 4.5 percentage points, but statistically the possibility that the true effect was "zero" could not be ruled out, so the result counts as uncertain.
 
-**Claim 2: Formatting has no effect.**
+The second claim holds that layout has no effect. One simulation study ran about 252,000 tests with 6 AI models and 18 factors, each time giving the AI only two sources and seeing which one it cited. Compared with "one dense block of text", "structured" was sometimes better and sometimes worse, with no consistent effect. Changing only the headings, only switching to lists, or only grouping information together had no clear effect. This can only show the theoretical picture. In the same study, what actually made a difference were a few "gatekeeping factors": whether the topic is relevant, where the source sits in the list, whether a price is stated, and whether the date is more recent.
 
-- A simulation study used 6 AI models and 18 factors, and ran about 252,000 tests. Each test gave the AI only two sources and looked at which one it cited. It found that, compared with "one big block of dense text", "structured" was sometimes better and sometimes worse; there was no consistent effect. Changing only the headings, changing only to lists, or only grouping information together had no clear effect. This can only show the theoretical picture.
-- In the same study, what actually made a difference were a few "gatekeeping factors": whether the topic is relevant, where it sits in the list, whether a price is stated, and whether the date is more recent.
+> **A closer look: what does "no consistent effect" mean?**
+> The researchers used a number called the "odds ratio" to see "how many times more likely a structured source is to be chosen than dense text". If this number equals 1, there is no difference; above 1 means structure is better; below 1 means structure is worse. In this study, the numbers calculated for different models and scenarios ranged from 0.79 to 1.68. Some were above 1 and some below 1, so there is no consistent direction.
 
-> **A closer look: What does "no consistent effect" mean?**
-> Researchers used a number called the "odds ratio" to see "how many times more likely a structured source is to be chosen than dense text". If this number equals 1, there is no difference; greater than 1 means structure is better; less than 1 means structure is worse. In this study, the numbers calculated for different models and scenarios ranged from 0.79 to 1.68. Some were greater than 1, some less than 1, so it has no consistent direction.
+The two sides differ, first, because they measured different gates. The benefits seen in Claim 1 are concentrated in two stages, "finding the material" and "extracting content from the page". Claim 2 directly tested which of two documents the AI cites when both are already in front of it, skipping the stage of finding material entirely. Second, they measured different things. "Citations being redistributed among a few sources" and "your chance of being cited really going up" are two separate things. Structure may only let a few similar sources take credit from one another, without giving you one more chance of being chosen. Finally, remember that the evidence on both sides comes from lab systems or simulations, and so far no one has tested this directly on real AI search.
 
-**Why do they differ?**
-
-- **Different gates were measured.** The benefits seen in Claim 1 are concentrated in two stages: "finding the information" and "extracting content from the page". Claim 2 directly tests "with both documents already placed in front of the AI, which one does the AI cite", skipping the finding-information stage entirely.
-- **Different things were measured.** "Citations being redistributed among several sources" and "your chance of being cited actually going up" are two different things. Structure may simply let several similar sources take credit away from each other, rather than giving you one more chance of being chosen.
-- **The evidence on both sides comes from lab systems or simulations.** So far no one has tested this directly on real AI search.
-
-**What you should do now:**
-
-- Treat "being structured" as a condition for **getting onto the shortlist and making it easy for AI to extract content**, not as a switch that makes AI cite you.
-- Put your core entities (brand, product names) and key numbers in structural fields such as page titles and section subheadings. Under lab conditions, this is the change most favorable to "being found".
-- Don't expect "turning paragraphs into lists" by itself to make you cited more often.
-- Prioritize the gatekeeping factors from Claim 2: aim the topic at the question, state price and specifications, keep the date recent.
-
----
+So the safer approach is to treat **structure as a condition for getting onto the shortlist and for making your content easy for AI to extract, not as a switch that makes AI cite you**. Put your core entities (brand, product names) and key figures in structural fields such as page titles and section subheadings; under lab conditions, this is the change most favourable to "being found". Do not expect "turning paragraphs into lists" to make you cited more often by itself. What deserves priority are the gatekeeping factors from Claim 2: aim the topic at the question, state prices and specifications, and keep the date recent.
 
 ### Disagreement 3: Is your brand being mentioned on other websites (third-party sources) a strong signal?
 
-The question is: the more your brand is mentioned on third-party websites, the more likely it is to appear in AI's answers?
+The question here is whether the more your brand is mentioned on third-party websites, the more easily it appears in AI answers.
 
-**Claim 1: Appearing together across many sources is a strong signal.**
+The first claim holds that appearing together across many sources is a strong signal. Researchers tested repeatedly on real AI search and found this pattern. They tested 4 Chinese-language AI search engines, 8 interfaces in all counting web and mobile app versions, asked 614 questions three times each, and collected about 161,000 citations in total. When a brand appeared in only 1 citation, the rate at which it entered the answer was 2.1%. When a brand appeared in 11 or more citations, this rate was 59.9%. The researchers also built a predictive model to see which factors best predicted whether a brand would enter the answer, and traditional SEO's composite quality score had an importance of only 4.52% in this model. Note that this is a correlation, "two things occurring together", not an experiment in which the researchers changed conditions themselves, so it cannot prove that "being mentioned more" causes "entering the answer".
 
-- Researchers tested repeatedly on real AI search and found this pattern. They tested 4 Chinese-language AI search engines, 8 interfaces in total across web and mobile app versions, asked 614 questions, each 3 times, and collected about 161,000 citations. The result: when a brand appeared in only 1 citation, the rate of it entering the answer was 2.1%; when a brand appeared in 11 or more citations, the rate was 59.9%.
-- In the same study, the researchers built a prediction model to see which factors best predict whether a brand enters the answer. The composite quality score from traditional SEO had an importance of only 4.52% in this model.
-- Note: this is a **correlation**, "two things occurring together", not an experiment in which researchers actively changed conditions. It cannot prove that "being mentioned more" "causes" entry into the answer.
+The second claim holds that once the factor of "how easy the website is for AI to read" is taken out, third-party sources have no additional effect. This too comes from researchers testing repeatedly on real AI search, but this time the subjects were 4 real, running AI assistants, the kind of AI that goes online to look things up, compare and make recommendations on someone's behalf. The study covered 1,056 businesses and about 38,000 lookup sessions, and compared businesses in matched pairs with similar fame and similar levels of prior recognition by the AI.
 
-**Claim 2: Once the factor "how easy the website is for AI to read" is taken out, third-party sources have no additional effect.**
+The result was that, once "how easy the website is for AI to read" was taken out, two metrics measuring "third-party sources" and "how easily the business is discovered" had no clear additional effect on three things: whether the answer came from the business's own website, whether the business was recommended, and how much the AI's lookup cost. By contrast, "how easy the website is for AI to read" itself was associated with these three things at +0.62, +0.41 and -0.27 respectively. A positive number means the two rise together and a negative number means one falls as the other rises, so the last, negative number means that the easier the website is to read, the lower the AI's cost. For websites that were highly readable, 78% of the AI's answer came from the business's own pages, against 58% for the comparison group; the share explicitly recommended was 20% against 11%. It must be said clearly that this is a matched observational study, not an experiment. The scoring tool was built by the researchers themselves, and the researchers also provide related services.
 
-- Researchers tested repeatedly on real AI search. This time they tested 4 real, running AI assistants — the kind that go online to look things up, compare and make recommendations on someone's behalf. The study covered 1,056 businesses and about 38,000 lookup sessions, and compared businesses in matched pairs with similar fame and similar levels of prior recognition by the AI.
-- The result: once the factor "how easy the website is for AI to read" was taken out, two metrics measuring "third-party sources" and "how easy it is to be discovered" had no clear additional effect on any of these three things: whether the answer came from the business's own website, whether the business was recommended, and how much it cost the AI to look things up. Conversely, "how easy the website is for AI to read" itself was associated with these three things at +0.62, +0.41 and -0.27 respectively (positive means they rise together, negative means they fall together; the last is negative, meaning the easier to read, the lower the AI's cost).
-- For websites that were easy to read, 78% of the AI's answers came from the business's own pages; the comparison group was 58%. The share explicitly recommended was 20% versus 11%.
-- It must be made clear: this is a matched observational study, not an experiment. The scoring tool was built by the researchers themselves, and the researchers themselves also provide related services.
+The two studies were not actually looking at the same stage. Claim 1 looked at whether a brand can appear in the answer, while Claim 2 looked at whose content the AI uses once it has already found the brand and is looking deeper. Claim 1 tested Chinese-language AI search engines, while Claim 2 tested mainly English-language AI assistants. Claim 1 measured whether the brand entered the answer, while Claim 2 measured whether the answer came from the business's own website and whether the business was explicitly recommended. So the more reasonable explanation at present is that the two act at different stages. **Third-party sources affect "whether AI thinks of you"; how easy your website is for AI to read affects "once AI thinks of you, whose content the answer is written from".**
 
-**Why do they differ?**
+Many in the industry believe third-party sources are extremely important. You often hear claims like these: a brand being mentioned consistently on external platforms such as community discussions and review sites matters more than your own website's ranking; the same core explanation repeated across several platforms is more likely to be adopted by AI than a single good page; and consistent descriptions of a brand across platforms are the key to AI understanding and citing that brand. These views point in the same direction as Claim 1 but go further. Research shows only a correlation, and one study shows that at one stage, once other factors are taken out, third-party sources have no additional effect. As for claims like "GEO is 70% distribution and 30% content", these are only rule-of-thumb ratios with no research behind them. Many in the industry believe this, but "many people believe it" does not mean "it is right".
 
-| Angle of comparison | Claim 1 | Claim 2 |
-|---|---|---|
-| Which stage is looked at | Whether the brand can **appear** in the answer | After the AI has already found the brand, whose content it uses when it **looks deeper** |
-| Which AIs and which market were tested | Chinese-language AI search engines | Mainly English-language AI assistants |
-| The outcome measured | Whether it entered the answer | Whether the answer came from its own website, whether it was explicitly recommended |
-
-At present, the more reasonable explanation is: the two may act at different stages. **Third-party sources affect "whether AI thinks of you"; how easy your website is for AI to read affects "once AI thinks of you, whose content the answer is written from".**
-
-**How people in the industry see it:** Many in the industry believe third-party sources are extremely important. Common claims include: "a brand being consistently mentioned on external platforms such as social discussions and review sites matters more than your own website's ranking", "the same core explanation repeated across several platforms is more likely to be adopted by AI than a single good page", and "consistent descriptions of the brand across platforms are key to AI understanding and citing the brand".
-
-These views point in the same direction as Claim 1, but go further. The research has shown only a correlation; and one study shows that at one stage, once other factors are taken out, third-party sources have no additional effect. As for claims like "GEO is 70% distribution and 30% content", they are only rule-of-thumb ratios with no research behind them. Many in the industry believe this, but "many people believe it" does not mean "it is right".
-
-**What you should do now:**
-
-- Do both, but be clear about which stage each is responsible for: real, consistent mentions on external websites are responsible for making AI "think of you"; your own website being smoothly readable by AI is responsible for making sure that "once AI thinks of you, it tells your version".
-- With third-party sources, aim for authenticity and consistency; don't manipulate the numbers. The reason appearing together across many sources may help is that it reflects real evidence from many parties.
-- Don't treat "building a presence on external websites" as a shortcut that lets you ignore whether your own website is easy to read.
-
----
+In practice, do both, but be clear about which stage each is responsible for. Real, consistent mentions on external websites are responsible for making AI think of you. Your own website being smoothly readable by AI is responsible for making sure that, once AI thinks of you, it tells your version. With third-party sources, aim for authenticity and consistency and do not manipulate the numbers, because the reason appearing together across many sources may help is that it reflects real evidence from many parties. And do not treat "building a presence on external websites" as a shortcut that lets you ignore whether your own website is easy to read.
 
 ### Disagreement 4: How much does being near the top (position) matter?
 
-The question is: how much does a document's position — in the search results, or in the batch of information placed in front of the AI — affect whether it gets cited or chosen?
+How much does the position of a document, in the search results or in the batch of material in front of the AI, affect whether it is cited or chosen? The answer depends on how the AI got the material it has in hand.
 
-**Claim 1: When the AI has a fixed set of information in hand, position has a big effect.**
+When the AI has a fixed set of information, position has a big effect. One simulation study showed that moving a document to the 1st position in that set brought a benefit (+2.77 in the retail domain) far larger than any kind of GEO content rewriting. The same study also showed that as more and more people adopt the same rewriting method, each adopter gains less and less, until the benefit approaches zero, like everyone grabbing at the same pie, where one person taking more leaves less for the rest. All of this can only show what is possible in theory.
 
-- A simulation study showed that putting a document in position 1 of that set of information brought a benefit (+2.77 in the retail field) far greater than any GEO content rewrite. This can only show what is possible in theory.
-- The same study also showed: as more and more people adopt the same rewriting method, each adopter gets less and less benefit, eventually approaching zero. It's like everyone fighting over the same pie: if one person takes more, others get less.
+But when the AI looks at several options on its own, or in a strictly controlled replay, position has only a weak effect. Another simulation study built its own hotel search environment and had 8 AI models play shopping assistants booking rooms for people. These AI assistants looked at 1.63 to 5.83 options each time, while humans looked at only 1.12 on average. Position's effect on "whether it clicks in to look" was only a quarter to a tenth of that for humans. And this effect did not simply get smaller the lower the ranking; it was lowest at around positions 68 to 74 and then rose again. In the same study, when the AI was set to its most careful thinking mode, position had no clear effect on which hotel it finally chose. One hotel that was not fully outclassed by any other on every condition ended up taking 78.2% of all bookings.
 
-**Claim 2: When the AI looks at several options on its own, or in a strictly controlled replay, position has only a weak effect.**
+Under lab conditions, the researchers first looked at the raw observational data and found that the citation rate of sources ranked 1st and 5th differed by 42.3 percentage points. But after strictly controlling other conditions and replaying, the gap shrank to only 7.9 percentage points. In another batch of samples held back for checking, the gap was 0.
 
-- A simulation study built its own hotel search environment and had 8 AI models play shopping assistants booking rooms for people. These AI assistants looked at 1.63 to 5.83 options each time, while humans looked at only 1.12 on average. Position's effect on "whether it clicks in to look" was only a quarter to a tenth of that for humans. And this effect didn't simply get smaller the lower the ranking: it was lowest at around positions 68 to 74, then rose again.
-- In the same study, when the AI was set to its most careful-thinking mode, position had no clear effect on which hotel was finally chosen. One hotel, which was not fully outdone on every condition by any other hotel, took 78.2% of all bookings.
-- Under lab conditions, the researchers first looked at the raw observational data: the difference in citation rate between sources ranked 1st and 5th was 42.3 percentage points. But after strictly controlling other conditions and replaying, the gap shrank to only 7.9 percentage points. In another batch of samples held back for checking, the gap was 0.
+The difference has three layers of causes. The first layer is the test method. In the raw observational data, documents ranked near the top are often more relevant and of better quality in the first place, and once that influence is controlled for, the effect of "position itself" shrinks sharply. The second layer is the type of AI system. An AI that looks at a fixed set of information once and writes an answer behaves differently from an AI assistant that looks at several options and compares them. The third layer is the model and its settings: how large the bias caused by position is changes with the model and with how hard it is set to think. So the more reasonable explanation at present is that **raw observational data overestimates the effect of position.**
 
-**Why do they differ?**
-
-- **Different test methods.** In the raw observational data, documents ranked near the top are often more relevant and of better quality in the first place. Once that influence is controlled for, the effect of "position itself" shrinks sharply.
-- **Different types of AI system.** An AI that looks at a fixed set of information once and writes an answer behaves differently from an AI assistant that looks at several options and compares them.
-- **Different models and settings.** How large the bias caused by position is changes with the model and with the level of thinking effort.
-
-At present, the more reasonable explanation is: **raw observational data overestimates the effect of position.**
-
-**What you should do now:**
-
-- "Getting onto the shortlist" is still very important. If you can't get on, nothing else matters.
-- Once you're on the shortlist, rather than fighting over one or two ranking places, make sure you aren't fully outdone by competitors on the visible conditions (ratings, price, specifications, how well you fit the question).
-- Don't judge whether your optimization worked by the single number "what position am I in".
-
----
+This does not mean you can ignore position. Getting onto the shortlist still matters a great deal; if you cannot get on, nothing else is even possible. But once you are on the shortlist, rather than fighting over one or two places in the ranking, make sure you are not fully outclassed by competitors on the conditions that can be seen (ratings, price, specifications, and how well you fit the question). At the same time, do not judge whether your optimisation works by the single number of "what rank am I".
 
 ### Disagreement 5: Does llms.txt help?
 
-llms.txt is a text file placed in the top-level directory of a website, intended to tell AI "what important content this website has". The question is: can providing this file raise your visibility in AI answers?
+llms.txt is a text file placed in a website's top-level directory, meant to tell AI "what important content this website has". What people want to know is whether providing this file raises your visibility in AI answers.
 
-**Claim 1: It has no relationship to the outcome.**
+The first claim holds that it has no relationship to results. Researchers tested repeatedly on real AI search, covering 5 commercial AIs that search online and 5,460 answers. Of the websites cited, 16.9% had an llms.txt (177 of 1,047 websites), and the association between technical markers like llms.txt and answer accuracy was about -0.04, which is essentially no relationship at all. The limitation of this study is that it measured "whether the answer was correct", not "whether a given website would be cited", and it is also observational data, not an experiment.
 
-- Researchers tested repeatedly on real AI search, covering 5 commercial AIs that search online and 5,460 answers. Among the websites cited, 16.9% had an llms.txt (177 out of 1,047 websites). And the correlation between technical markers like llms.txt and answer accuracy was about -0.04, essentially no relationship at all.
-- Limitations: this study measured "whether the answer was correct", not "whether a given website would be cited". It is also observational data, not an experiment.
+The second claim holds that llms.txt does matter as part of the whole package of conditions for "how easy the website is for AI to read". This too comes from researchers testing repeatedly on real AI search, using real AI assistants to look up real business websites. Businesses whose websites scored higher on AI readability had more of the answer drawn from their own pages and a higher share of explicit recommendations. This readability score includes several items: content that can be read without relying on JavaScript, structured data, an llms.txt or plain-text fallback version, and website crawler rules that do not block AI assistants. The problem is that this is a score for a whole package of conditions combined, not broken down item by item, so it cannot tell us whether llms.txt works on its own.
 
-**Claim 2: As part of the whole package of conditions for "how easy the website is for AI to read", it is related.**
+Looked at closely, the two do not directly conflict. One measured the association between "llms.txt on its own" and "answer accuracy"; the other measured the association between "a whole package of conditions that includes llms.txt" and "whether the answer uses your own content". **So far there is no evidence at all that llms.txt works on its own.**
 
-- Researchers tested repeatedly on real AI search, using real AI assistants to look up real business websites. Businesses whose websites scored higher on AI readability had more of the answer drawn from their own pages, and a higher share of explicit recommendations. This readability score includes several items: content readable without relying on JavaScript, structured data, an llms.txt or plain-text fallback version, and website crawler rules that don't block AI assistants.
-- Limitations: this is a score combining a whole package of conditions, without breaking each item out separately. So it cannot say whether llms.txt on its own is effective.
+Many in the industry believe llms.txt does not help with AI visibility or citation, and also believe most AI models never even look for the file. This broadly agrees with the research. Many in the industry also believe two other things matter more. One is that AI crawlers are often blocked, by default or by accident, at the layer of protection and acceleration services in front of the website (such as a content delivery network, CDN, or a web application firewall, WAF), and in that case it makes no difference if the website's robots.txt lets crawlers in. The other is that most AI crawlers do not run JavaScript, so if your content only appears after the browser runs JavaScript, these crawlers cannot see it. These two points are also industry views, not proven by research.
 
-**Why do they differ?** In fact, the two don't directly conflict. One measured the relationship between "llms.txt on its own" and "answer accuracy"; the other measured the relationship between "a whole package of conditions including llms.txt" and "whether the answer uses your own content". **There is currently no evidence that llms.txt on its own is effective.**
+llms.txt costs very little to make, so you can make one, but do not put it on your priority list, and do not expect it to bring change on its own. What you should check first are the more basic parts of that whole package of conditions. Is your core content already in the source code when the page first loads (the initial HTML)? Are the protection and acceleration services in front of your website blocking AI crawlers?
 
-**How people in the industry see it:** Many in the industry believe llms.txt doesn't help with AI visibility or citation, and also believe that most AI models don't even look for this file. This broadly agrees with the research.
+## Part Two: Gaps between what the industry believes and what research has proven
 
-Many in the industry also believe that two other things are more concrete:
+This part covers only two situations: views on which people in this industry have clearly formed a consensus, and views on which they are clearly split. Wherever it says "many in the industry believe" below, it describes a view within the industry, not proof.
 
-- AI crawlers are often blocked by default, or unintentionally, at the layer of the website's front-end protection and acceleration services (such as a content delivery network, CDN, or a web application firewall, WAF). In that case, even if the website's robots.txt allows the crawler in, it makes no difference.
-- Most AI crawlers don't execute JavaScript. If your content only shows up after the browser runs JavaScript, these crawlers can't see it.
+### Gap 1: "Content that is clear, direct and puts the answer first is more likely to be cited"
 
-These two points are likewise industry views, not research proof.
+Many in the industry believe that content which gives clear, direct answers and has structure is more easily extracted and cited by AI. They argue that the answer should go at the top of the page, and they also believe AI prefers short passages that can be lifted out on their own as answers over long pages that try to cover everything. This is one of the views with the most supporters in the whole industry, and almost no one opposes it.
 
-**What you should do now:**
+Research supports this view only in part. Seen under lab conditions, putting the answer first and keeping the topic consistent helps at the gate of "whether it picks you" (selection and ranking). Conversely, changing only the body text while making the content much longer leaves a document behind at both the "finding information" and "re-ranking" stages. The other part, though, is not supported. Simulation studies show that layout itself (structured or dense text) has no consistent effect, and under lab conditions, structured presentation only redistributed citation credit among a few similar sources, without reliably raising the chance of being cited.
 
-- llms.txt costs very little to do, so you can do it. But don't make it a priority, and don't expect it to bring change on its own.
-- First check the more basic parts of that whole package of conditions: is your core content already there in the source code when the page first loads (the initial HTML)? Are your website's front-end protection and acceleration services blocking AI crawlers?
+This is where the gap lies. People in this industry treat "putting the answer first" (a matter of content) and "switching to lists and tables" (a matter of layout) as the same thing, while research shows that the former has support in how the system works and the latter has limited effect. In addition, specific thresholds such as "the answer must be within the first 100 to 150 words" come from industry experience; research has not produced this number. So you should give priority to putting the answer first and keeping the topic focused at the content level, and treat layout changes as a supporting measure, not your main tool.
 
----
+### Gap 2: "SEO is the foundation of GEO" and "A good Google ranking doesn't guarantee AI can see you"
 
-## Part Two: Gaps between what people in this industry believe and what research has proven
+The industry holds two views on this. The first is that GEO (and other similar terms) is an extension of SEO, not a replacement, and that a solid SEO foundation is the main route to AI visibility. Quite a few people oppose this view; it is far from one-sided. The second is that a good Google ranking does not guarantee you will be visible in AI answers, and almost no one opposes this.
 
-This part covers only two kinds of situation: views on which people in this industry have clearly formed a consensus, and views on which they are clearly split. Where we write "many in the industry believe" below, it describes views within the industry, not proof.
+Research supports both sides. Supporting "SEO is the foundation", simulation studies show that a document's position in the batch of material in front of the AI (equivalent to what traditional SEO decides: "whether you are found, and how near the top you rank") has a far larger effect than rewriting content; and it was also seen under lab conditions that documents with only their body text changed fall behind at both the "finding information" and "re-ranking" stages. Supporting "ranking does not guarantee visibility", researchers tested repeatedly on real AI search and found that traditional SEO's composite quality score had very low importance in predicting whether a brand would enter the answer. In another study using real AI assistants, two metrics measuring traditional "answer-style search performance" also had no additional effect once "how easy the website is for AI to read" was taken out.
 
-### Gap 1: "Clear, direct content that puts the answer first is more likely to be cited"
+These two views can in fact both hold at the same time. SEO is responsible for getting onto the shortlist; after that, re-ranking, content extraction, writing the answer and the AI assistant's deeper look each have their own deciding factors. As for ratio claims like "GEO is 90% SEO", there is no research behind them.
 
-**What people in this industry say:** Many in the industry believe that content that gives clear, direct answers and is well structured is more likely to be extracted and cited by AI; that the answer should be placed at the start of the page; and that AI prefers concise passages that can be taken out on their own as an answer, rather than long pages that try to cover everything. This is one of the views with the most supporters in the whole industry, with almost no one opposing it.
-
-**What research says:**
-
-- **Partly supported.** Seen under lab conditions: putting the answer first and keeping the topic consistent helps at the "whether it picks you" (selection and ranking) gate. Conversely, changing only the body text while greatly lengthening the content makes a document fall behind in both the "finding information" and "re-ranking" stages.
-- **Partly not supported.** Simulation studies show that formatting itself (structured versus dense text) has no consistent effect. Under lab conditions, structured presentation merely redistributed citation credit among several similar sources, and did not reliably raise the chance of being cited.
-
-**Where the gap is:** People in this industry treat "putting the answer first" (a content matter) and "switching to lists and tables" (a formatting matter) as the same thing. Research shows the former has support at the level of mechanism, while the latter has limited effect. In addition, specific thresholds such as "the answer should be within the first 100 to 150 words" are industry experience; research has not produced this number.
-
-**What you should do now:** Prioritize "answer first" and "topic focus" at the content level. Treat formatting changes as a support, not as your main method.
-
----
-
-### Gap 2: "SEO is the foundation of GEO" and "a good Google ranking doesn't guarantee AI can see you"
-
-**What people in this industry say:** There are two views in the industry.
-
-- The first view: GEO (and other similar names) is an extension of SEO, not a replacement; a solid SEO foundation is the main route to AI visibility. But quite a few people oppose this view; it is not one-sided.
-- The second view: a good Google ranking doesn't guarantee you'll be seen in AI answers. Almost no one opposes this.
-
-**What research says:**
-
-- **Supporting "SEO is the foundation":** Simulation studies show that a document's position in the batch of information in front of the AI (equivalent to what traditional SEO determines: "whether it's found and how near the top it ranks") has a far greater effect than content rewriting. It was also seen under lab conditions that documents where only the body text was changed fall behind in the "finding information" and "re-ranking" stages.
-- **Supporting "ranking doesn't guarantee visibility":** Researchers tested repeatedly on real AI search and found that traditional SEO's composite quality score had very low importance in predicting whether a brand would enter the answer. In another study using real AI assistants, two metrics measuring traditional "answer-style search performance" had no additional effect once "how easy the website is for AI to read" was taken out.
-
-**Where the gap is:** These two views can in fact both hold at the same time. SEO is responsible for "getting onto the shortlist"; after that, re-ranking, content extraction, writing the answer and the AI assistant's deeper look each have different deciding factors. As for ratio claims like "GEO is 90% SEO", there is no research behind them.
-
-**What you should do now:** Keep the basics of SEO, especially: your pages can be crawled and indexed, and can be found for relevant questions. But don't let Google ranking stand directly for AI visibility; measure the two separately.
-
----
+So keep the basics of SEO, especially making sure your pages can be crawled, can be indexed, and can be found for relevant questions. But do not let your Google ranking stand in directly for AI visibility; measure the two separately.
 
 ### Gap 3: Structured data (schema markup)
 
-**What people in this industry say:** Many in the industry believe structured data on its own has limited effect; especially when it is added carelessly or incompletely, it has no effect. There is also a stronger claim: "structured data does nothing at all for AI citation." This claim also has supporters, but has not formed a stable consensus.
+Many in the industry believe that structured data on its own has limited effect, and none at all when it is added carelessly or incompletely. There is also a stronger claim that structured data does nothing whatsoever for AI citation. This claim has some supporters too, but it has not formed a stable consensus.
 
-**What research says:** Seen under lab conditions: when structured data is changed together with page titles, page descriptions and section subheadings, it has a positive effect at the "finding information" stage, but doesn't help with "re-ranking". In the study using real AI assistants, structured data was part of the whole package of conditions for "how easy the website is for AI to read" and was not broken out separately. **No study so far has tested the effect of structured data on citation on its own.**
+On the research side, it was seen under lab conditions that when structured data is changed together with page titles, page descriptions and section subheadings, it has a positive effect at the "finding information" stage but does not help with "re-ranking". In the study using real AI assistants, structured data was part of the whole package of conditions for "how easy the website is for AI to read" and was not broken out separately. **No study so far has tested the effect of structured data on citation on its own.**
 
-**Where the gap is:** The industry's "limited effect" is close in direction to research's "effective only at the finding-information stage". But the claim "completely useless" goes beyond what the existing evidence can support.
+The industry's "limited effect" and research's "effect only at the finding-information stage" point in a similar direction. But the claim that it is "completely useless" goes beyond what the existing evidence can support. The safer approach is to keep your structured data complete, accurate and consistent with the page content, and treat it as supporting information that helps systems understand your page, not as a switch that makes AI cite you.
 
-**What you should do now:** Structured data should be complete, accurate and consistent with the page content. Treat it as supporting information that helps systems understand your page, not as a switch that makes AI cite you.
+### Gaps 4 and 5: Two things where research and the industry point the same way
 
----
+Strictly speaking, the next two are not disagreements. The fourth is "being cited is not the same as being recommended". Many in the industry believe that AI citing your web page does not mean it will recommend or mention your brand, and that being recommended matters more than being cited. This is one of the views with the most supporters and no opponents. Researchers tested repeatedly on real AI search and found that of the sources AI lists, 66% had content that made it into the body of the answer, 30% were substantively cited, and only 8% were cited in depth; of the brands that appeared among the cited sources, only 8.3% actually ended up in the answer. In addition, the study using real AI assistants also measured "the share explicitly recommended" separately from "whether the answer came from the business's own website".
 
-### Gap 4: Being cited is not the same as being recommended (on this one, research and industry agree in direction)
+This is an example of industry experience getting there first and research later confirming it with numbers. It is included here as a reminder: for any performance figure that reports only "number of citations", ask whether it counted "cited", "mentioned" and "recommended" separately.
 
-**What people in this industry say:** Many in the industry believe that AI citing your web page doesn't mean it will recommend or mention your brand; being recommended matters more than being cited. This is one of the views with the most supporters and no opponents.
+The fifth is "a single test is not reliable". Research and the industry point the same way, but the threshold numbers come from experience. Many in the industry believe AI output is unstable, so results from running a test once or only a few times are not reliable; you should build a fixed, representative prompt set, run it repeatedly and track it over time. Some suggest "at least 10 repetitions, kept up for several weeks".
 
-**What research says:** Researchers tested repeatedly on real AI search and found: of the sources AI lists, 66% had content that made it into the body of the answer, 30% were substantively cited, and only 8% were cited in depth. Of the brands that appeared in the cited sources, only 8.3% actually ended up in the answer. In addition, the study using real AI assistants also measured "the share explicitly recommended" separately from "whether the answer came from its own website".
+Research supports this view from three directions. Seen under lab conditions, when only one answer is generated for the same question, the yes/no judgment of "whether a given source is cited" flips 15% of the time on the next run, and 45% of the ups and downs of the effect in the experiment came from the randomness inherent in each time the AI generates text, which is what this book calls rolling the dice. Under test conditions with given web pages, published GEO practices stop working as AI is updated (see Disagreement 1). Researchers also tested repeatedly on real AI search and found that the mobile app and web versions of the same platform overlapped by only 0.19 to 0.51 in the source websites they cited. This means that if you put together all the websites either interface cited, those cited by both make up only about 20% to 50%. The direction is consistent, but "10 times" and "several weeks" are industry rules of thumb; research has not derived these numbers.
 
-**This one is not a disagreement.** It is an example of industry experience leading the way and research then confirming it with numbers. It is here to remind you: whenever a performance figure reports only "number of citations", ask one more question — does it count "being cited", "being mentioned" and "being recommended" separately?
+The practical approach is to use a fixed prompt set, ask each question many times, record results separately for each AI and each interface (app or web), and measure again after every AI update. Do not use a single screenshot to judge whether a change worked. **Look at "how many times out of ten you appear" (mention rate), not "what rank you are".**
 
----
+### Gap 6: Three things on which the industry itself is split
 
-### Gap 5: Testing only once is unreliable (research and industry agree in direction, but the threshold numbers are experience)
+On these last three things, the industry has plenty of people on both sides, and the research this book draws on has not measured them directly. Here we present only the split itself and do not reach a conclusion for either side.
 
-**What people in this industry say:** Many in the industry believe that AI output is unstable, and that results from running only once, or only a few times, are unreliable. You should build a fixed, representative prompt set, run it repeatedly, and track it over the long term. Some have proposed "repeat at least 10 times, and keep it up for several weeks".
+The first is the traffic AI brings. Some believe ChatGPT has brought websites noticeable traffic, but roughly as many disagree, and many believe that traffic from AI recommendations is still small compared with ordinary search. The research this book draws on has not measured this directly.
 
-**What research says:**
+The second is whether tracking tools are accurate. Many believe most AI visibility tracking tools are not reliable enough and lean towards numbers that look good but mean little in practice; at the same time, many others believe tracking is feasible and can be done in several ways. The stronger claim that "the tools cannot provide accurate data at all" is opposed by quite a few people. Research shows only that AI output itself is unstable (see Gap 5).
 
-- Seen under lab conditions: when only one answer is generated for the same question, the yes/no judgment of "whether a given source is cited" flips 15% of the time on the next run. 45% of the ups and downs of the effect in the experiment came from the randomness inherent in each time the AI generates text. This is what this book calls "rolling the dice".
-- Under test conditions with given web pages: GEO practices that have already been published become ineffective as AI is updated (see Disagreement 1).
-- Researchers tested repeatedly on real AI search and found: the overlap between the source websites cited by the mobile app version and the web version of the same platform was only 0.19 to 0.51. What this number means: put together all the websites cited by the two interfaces, and those cited by both make up only about 20% to 50%.
+The third is whether GEO is just old SEO. Quite a few people believe GEO is simply an old practice from fifteen years ago under a new name, and quite a few disagree. What research shows is that the different stages of an AI answer value different things (see Gap 2).
 
-**Where the gap is:** The direction agrees. But "10 times" and "several weeks" are industry rules of thumb; research has not derived these numbers.
-
-**What you should do now:** Use a fixed prompt set; ask each question many times; record separately by AI and by interface (app or web); re-measure after every AI update; don't use a single screenshot to judge whether a change worked. Remember: look at "how many times out of ten it appears" (mention rate), not "what position it ranks".
-
----
-
-### Gap 6: Three things on which people in this industry are themselves split
-
-On the following three things, there are plenty of people in the industry both for and against, and the research this book draws on has not measured them directly. Here we only present the split itself, without concluding for either side.
-
-| Issue | One side's view | The other side's view | State of the research |
-|---|---|---|---|
-| Traffic from AI | Some believe ChatGPT has brought websites noticeable traffic | About as many people disagree; many also believe traffic from AI recommendations is still small compared with ordinary search | Not directly measured by the research this book draws on |
-| Whether tracking tools are accurate | Many believe most AI visibility tracking tools are not reliable enough and lean towards numbers that look good but have no real meaning | At the same time, many believe tracking is feasible and there are several methods; the stronger claim that "tools cannot provide accurate data at all" is opposed by quite a few people | Research only shows that AI output itself is unstable (see Gap 5) |
-| Whether GEO is just old SEO | Quite a few people believe GEO is just a fifteen-year-old practice under a new name | Quite a few people also disagree | Research shows that the different stages of AI answering value different things (see Gap 2) |
-
-**What you should do now:**
-
-- Answer questions about traffic and revenue with your own data. Many in the industry believe that directly asking customers "how did you hear about us?" (in a form, or in conversation) is the most effective way to judge whether AI recommendations have brought you customers.
-- If you are choosing a tracking tool or service, many in the industry believe you should ask the provider to show a verifiable way of measuring, and to explain how those numbers relate to your business results.
-- With tracking numbers, look at trends and relative changes, not the absolute value of any single score. Don't directly compare numbers calculated by different tools.
-
----
+On these three things, questions of traffic and revenue have to be answered with your own data. Many in the industry believe that asking customers directly "how did you hear about us?", whether in a form or in conversation, is the most effective way to judge whether AI recommendations have brought you customers. If you are choosing a tracking tool or service, many in the industry believe you should ask the provider to show a way of measuring that can be verified, and to explain how its numbers relate to your business results. With tracking figures, look at trends and relative changes rather than the absolute value of any one score, and do not compare numbers calculated by different tools directly with each other.
 
 ## All the disagreements in one table
 
-| Issue | Research claim 1 | Research claim 2 | Industry view | Current safer understanding |
+The disagreements covered above can be set against each other in a single table. The brackets mark the type of evidence; for its strength, see the explanation at the start of this chapter.
+
+| Issue | Research claim 1 | Research claim 2 | Industry view | Safest current understanding |
 |---|---|---|---|---|
-| Statistics, quotations, sources | Helpful (lab systems, simulation) | Unhelpful or harmful (simulation, given web pages) | Only content worth citing gets cited | Real evidence density of the whole page may help; separately added blocks don't; the effect expires |
-| Structure / structured data | Helps at the "finding information" stage (lab system) | Formatting has no effect (simulation) | Structured data on its own has limited effect | It governs being found and being extracted, not a switch that makes AI cite you |
+| Statistics, quotations, sources | Help (lab system, simulation) | No help or harmful (simulation, given web pages) | Only content worth quoting gets cited | Real density of evidence across the whole page may help; separately added blocks do not; the effect goes out of date |
+| Structure / structured data | Helps at the "finding information" stage (lab system) | Layout has no effect (simulation) | Structured data on its own has limited effect | It governs being found and being extracted; it is not a switch that makes AI cite you |
 | Third-party sources | Appearing together across many sources is a strong signal (real AI search, correlation) | No additional effect once website readability is taken out (real AI assistants, matched observation) | Extremely important | The two may act at different stages |
 | Position | Big effect with fixed information (simulation) | Weak effect with AI assistants and strictly controlled replays (simulation, lab system) | (No clear view) | Raw observational data overestimates the effect of position |
 | llms.txt | No relationship (real AI search, correlation) | Part of a package of conditions (real AI assistants) | Unhelpful | No evidence that it works on its own |
-| Answer first | Helps re-ranking (lab system) | Formatting itself has no effect (simulation) | Extremely important | Putting the answer first in content has mechanism support; formatting is secondary |
-| SEO and GEO | Position has a big effect (simulation) | Traditional quality scores have low predictive power (real AI search, correlation) | SEO is the foundation, but ranking doesn't guarantee visibility | SEO gets you onto the shortlist; after that, other factors decide |
+| Answer first | Helps re-ranking (lab system) | Layout itself has no effect (simulation) | Extremely important | Putting the answer first in the content has support in how the system works; layout is secondary |
+| SEO and GEO | Position has a big effect (simulation) | Traditional quality scores have very low predictive power (real AI search, correlation) | SEO is the foundation, but ranking does not guarantee visibility | SEO gets you onto the shortlist; after that, other factors decide |
 
----
+## Five shared practices for times of uncertainty
 
-## Five common practices when things are uncertain
+Looking at all the disagreements in this chapter together, we can draw out five practices that are useful whenever the evidence does not agree.
 
-1. **Think gate by gate.** Most conclusions that "look contradictory" measure different gates among the seven. When you see a conclusion, first ask: does it govern "whether it can find you", "whether it picks you", "whether it mentions you", or the stage where an AI assistant takes a deeper look?
-2. **Distinguish types of research.** Conclusions from simulated tests and from "given a fixed set of information" can only show what is possible in principle. Don't treat them as laws of real AI search.
-3. **Re-test for yourself.** As soon as AI is updated, old conclusions may stop holding. Test any practice first on your own prompt set, on the AIs and interfaces you care about, before scaling it up.
-4. **Avoid tricks that "everyone is using" or that "have expired".** The benefit of content-rewriting techniques everyone is using gets shared out among everyone. Don't keep using practices that re-tests on new-generation AI have already refuted as your main method.
-5. **First do what neither side opposes.** Content that can be crawled and displayed correctly; answers placed first; a focused topic; real, verifiable data; real, consistent mentions on external websites. None of these has been refuted by any of the studies or the industry views.
+The first practice is to think gate by gate. Most conclusions that seem contradictory measured different gates among the seven. When you see a conclusion, first ask whether it concerns "whether it can find you", "whether it picks you", "whether it mentions you", or the stage where an AI assistant looks deeper. The second practice is to tell the types of research apart. Conclusions from simulated tests and from "a given fixed set of information" can only show what is possible in principle; do not treat them as laws of real AI search.
 
----
+The third practice is to retest for yourself. Once AI is updated, old conclusions may stop holding, so test any practice on your own prompt set, on the AIs and interfaces you care about, before rolling it out more widely. The fourth practice is to avoid tricks that "everyone is using" and tricks that "have already expired". The benefit of a content-rewriting technique everyone is using gets shared out among everyone, and practices that new-generation AI retests have already disproved should no longer be your main tools.
+
+The fifth practice is the most basic: **first do the things neither side disputes.** Make sure your content can be crawled and displayed correctly, put the answer first, keep the topic focused, use real, checkable figures, and have real, consistent mentions on external websites. None of these has been contradicted by any of the studies or by industry views.
 
 ## Remember in one sentence
 
-**When you see two opposite GEO conclusions, first ask which gate it measured, under what conditions, and in what year; then first do what neither side opposes, and use your own data to verify the rest.**
-
----
+**When you see two opposite GEO conclusions, first ask which gate each one measured, under what conditions, and in which year; then do the things neither side disputes first, and test everything else with your own data.**
 
 ## What you can do tomorrow
 
-- Open the most important pages on your website and make sure data and sources are placed where the argument genuinely needs them, not in a separate "data summary" block tacked onto the end of the article.
-- Check your page titles and section subheadings and make sure they contain your core entities (brand, product names) and key numbers.
-- Check your pages against the gatekeeping factors: is the topic aimed at the reader's question? Are price and specifications clearly stated? Is the date recent?
-- Make sure your core content is already in the source code when the page first loads, and can be seen without running JavaScript.
-- Ask your technical staff or website provider to confirm whether your website's front-end protection and acceleration services (CDN, WAF) are blocking AI crawlers.
-- If you want to create an llms.txt, you can, but put it after the items above.
-- Make sure your structured data is complete, accurate and consistent with the page content.
-- At the start of each page, directly write the answer to the question the page is meant to answer, and keep the whole page centered on one topic.
-- On external websites, seek real mentions with consistent descriptions, rather than chasing numbers.
-- Build a fixed prompt set, ask each question many times, and record separately by AI and by interface (app, web); re-test after every AI update.
-- Record Google ranking and AI visibility separately; don't let one stand for the other.
-- When recording results, count "being cited", "being mentioned" and "being recommended" separately.
-- In your enquiry form or customer-service chats, add a question: "How did you hear about us?"
-- If you are choosing a tracking tool or service, ask the provider to show a verifiable way of measuring and to explain how the numbers relate to your business results; when tracking, look at trends and relative changes, and don't compare numbers from different tools with each other.
-- Whenever you see a claim of "add this element and gain X percent", first re-test it on the AI you care about with a fixed prompt set, then decide whether to adopt it across the board.
-
----
+1. Open the most important pages on your website and check that figures and sources sit where your argument genuinely needs them, rather than in a separate "data summary" block tacked on at the end of the article.
+2. Check your page titles and section subheadings, and make sure they contain your core entities (brand, product names) and key figures.
+3. Check your pages against the gatekeeping factors: whether the topic is aimed at the reader's question, whether prices and specifications are clearly stated, and whether the date is recent.
+4. Make sure your core content is already in the source code when the page first loads, so it can be seen without running JavaScript.
+5. Ask your technical staff or website provider to check whether the protection and acceleration services in front of your website (CDN, WAF) are blocking AI crawlers.
+6. If you want to make an llms.txt, go ahead, but put it after the items above.
+7. Make sure your structured data is complete, accurate and consistent with the page content.
+8. At the top of each page, write the answer to the question the page is meant to answer directly, and keep the whole page centred on one topic.
+9. Seek real, consistently described mentions on external websites, rather than chasing quantity.
+10. Build a fixed prompt set, ask each question many times, record results separately for each AI and each interface (app, web), and retest after every AI update.
+11. Record Google ranking and AI visibility separately, and do not let one stand in for the other.
+12. When recording performance, count "cited", "mentioned" and "recommended" separately.
+13. Add one question to your enquiry form or customer-service chat: "How did you hear about us?"
+14. If you are choosing a tracking tool or service, ask the provider to show a way of measuring that can be verified and to explain how its numbers relate to your business results; when tracking, look at trends and relative changes, and do not compare numbers from different tools with each other.
+15. Whenever you see a claim that "adding a certain element raises results by so many percent", first retest it on the AI you care about with a fixed prompt set, then decide whether to adopt it across the board.
 
 ## Stop doing this
 
-- Stop adding a separate "data summary" or "quotation block" at the end of articles in the hope that AI will cite you more often.
-- Stop treating the size of the gains measured in 2023 as the effect you can expect today.
-- Stop rewriting articles word by word, or stuffing keywords throughout the text. In tests, this kind of rewriting performed worse than making no changes at all.
-- Stop thinking that "turning paragraphs into lists" by itself will get you cited more often.
-- Stop treating a presence on external websites as a shortcut that lets you ignore whether your own website is easy to read; and don't manipulate the number of mentions.
-- Stop judging whether optimization worked only by "what position am I in".
-- Stop making llms.txt a priority, or expecting it to bring change on its own.
-- Stop adding structured data carelessly or only halfway, and then treating it as a citation switch.
-- Stop greatly lengthening content just to change the body text.
-- Stop letting Google ranking stand directly for AI visibility.
-- Stop using a single screenshot to judge whether a change worked.
-- Stop trusting performance figures that report only "number of citations" without distinguishing citations, mentions and recommendations.
-- Stop comparing scores from different tools with each other, and stop looking only at the absolute value of a single score.
-- Stop using rewriting techniques everyone is using, or practices already refuted by re-tests on new-generation AI, as your main method.
+**Stop adding a separate "data summary" or "quotation block" at the end of articles in the hope that it will make AI cite you more often.** In the same way, stop treating the size of the gains measured in 2023 as the effect you can expect today. And stop rewriting articles word by word or stuffing keywords throughout the text; in tests, this kind of rewriting performed worse than making no changes at all. Making content much longer just to change the body text brings no benefit either.
 
----
+There are also a few common misunderstandings about layout and markup. Stop believing that "turning paragraphs into lists" will by itself make you cited more often. Stop adding structured data carelessly, or only half of it, and then treating it as a citation switch. And stop making llms.txt a priority, or expecting it to bring change on its own.
+
+Building a presence on external websites is not a shortcut that lets you ignore whether your own website is easy to read, and the number of mentions should not be manipulated. Rewriting techniques that everyone is using, and practices that new-generation AI retests have already disproved, should no longer be your main tools.
+
+Finally, there is how you measure. Stop judging whether your optimisation works only by "what rank am I", and stop letting your Google ranking stand in directly for AI visibility. A single screenshot is not enough to judge whether a change worked. Performance figures that report only "number of citations" without distinguishing citation, mention and recommendation are not worth trusting. Do not compare scores from different tools with each other, and do not look only at the absolute value of any one score.
 
 ## What is still uncertain
 
-- Adding statistics, quotations and sources: the positive results from 2023 can no longer be measured in re-tests on new-generation AI and with the "separately added block" approach. What is more likely to work is the real evidence density of the whole page, but this has not yet been proven on real AI search.
-- Structured content: it mainly helps with "being found" and "being extracted"; changing only the formatting did not consistently raise the chance of being cited in multiple tests. And the evidence on both sides comes from lab systems or simulations; no one has yet tested it directly on real AI search.
-- Structured data: no study so far has tested its effect on citation on its own.
-- Third-party sources and how easy your website is for AI to read: the evidence on the two appears to conflict; more likely, they act at two different stages — "whether AI thinks of you" and "once it thinks of you, whose content it uses". But this is the current reasonable explanation, not a proven conclusion; and both studies are observational, and the researchers of one of them themselves provide related services.
-- Position: raw observational data clearly overestimates the effect of position; after strict controls, the effect of position shrinks sharply. But how large the bias caused by position is still changes with the model and settings.
-- llms.txt: there is currently no evidence that it works on its own. Industry views broadly agree with the research.
-- The industry's strongest points of consensus (answer first, being cited isn't being recommended, testing only once is unreliable) are mostly partly supported by research; but specific thresholds such as "the first 100 to 150 words", "at least 10 times" and "for several weeks" are experience, not research conclusions. Ratios like "GEO is 70% distribution" and "GEO is 90% SEO" also have no research behind them.
-- How much traffic AI brings, whether tracking tools are accurate, and whether GEO is just old SEO: on these three things the industry is still clearly split, and there is no research measuring them directly. You should judge using your own data.
+**Does adding statistics, quotations and sources actually help?** The positive results from 2023 could no longer be measured when retested on new-generation AI with the approach of "adding a separate block". What is more likely to make a difference is the real density of evidence across the whole page, but this has not yet been confirmed on real AI search.
 
----
+Structured content mainly helps with "being found" and "being extracted"; changing only the layout did not reliably raise the chance of being cited in several tests. Moreover, the evidence on both sides comes from lab systems or simulations, and no one has yet tested this directly on real AI search. The picture for structured data is even thinner: so far no study has tested its effect on citation on its own.
+
+The evidence on third-party sources and on how easy your website is for AI to read looks contradictory, but the two more likely act at two different stages: "whether AI thinks of you" and "once it thinks of you, whose content it uses". This is the reasonable explanation for now, not a proven conclusion. Both studies are observational, and the researchers behind one of them provide related services.
+
+On position, raw observational data clearly overestimates its effect, and under strict control the effect of position shrinks sharply, but how large the bias caused by position is still changes with the model and its settings. For llms.txt, there is currently no evidence that it works on its own, and industry views broadly agree with the research.
+
+The industry's strongest points of consensus, namely putting the answer first, being cited not being the same as being recommended, and a single test not being reliable, mostly have partial support from research. But specific thresholds such as "the first 100 to 150 words", "at least 10 times" and "for several weeks" come from experience, not research conclusions, and ratios such as "GEO is 70% distribution" and "GEO is 90% SEO" have no research behind them either.
+
+There are also three things on which the industry remains clearly split, and which research has not measured directly: how much traffic AI brings, whether tracking tools are accurate, and whether GEO is just old SEO. You should judge these with your own data.
 
 ## A final word: how to keep learning while AI search keeps changing
 
-This is where this book ends. But AI search won't stop here.
+This is where the book ends, but AI search will not stop here.
 
-To be honest, some of the content in this book will go out of date after a while. This chapter has already shown you one example: the clear effect measured in 2023 could no longer be measured once AI moved on a generation. The conclusions written today will face the same fate.
+To be honest, some of what is in this book will go out of date after a while. This chapter has already shown you an example: a clear effect measured in 2023 could no longer be measured once AI had moved on a generation. The conclusions we write down today will face the same fate. So more than any single technique, what we hope you take away is a way of looking at things.
 
-So, more worth taking away than any single technique is a way of looking at things:
+The next time you read a new claim, you can first ask yourself three questions. Which of the seven gates did it measure? Was it tested on real AI search, or under lab, simulation or given-web-page conditions? In which year, and on which generation of AI, was it tested? Once you have asked these three questions, many conclusions that seemed startling will quiet down and settle back into their proper place.
 
-- **When you see a new claim, ask three questions.** Which of the seven gates did it measure? Was it tested on real AI search, or under lab, simulation or given-web-page conditions? In what year, and on which generation of AI, was it tested?
-- **Distinguish "proof" from "opinion".** "Many people believe this" is a lead worth considering, but it is not the answer.
-- **Pay attention to who is speaking.** If the person putting forward a conclusion is selling related services themselves, that doesn't mean they are necessarily wrong, but you should take a second look.
-- **Test it yourself.** Use a fixed set of questions, on the AIs you care about, ask several times, and keep records over the long term. Your own data will always be the evidence closest to your business.
-- **Get the basics right first.** Let AI get in the door, find you and understand you; tell the truth and give real data; let others mention you sincerely. None of these has been refuted by any of the research or industry views. They are also the least likely to go out of date.
+Next, please tell "proof" apart from "opinion". "Many people believe this" is a clue worth considering, but it is not an answer. And please pay attention to who is speaking. If the person offering a conclusion is selling a related service, that does not mean they must be wrong, but you should take a second look.
 
-AI is like that very busy librarian. It will get new shelves, new ways of searching, even a new librarian. But one thing probably won't change: it is always looking for content that is real, clear, and that many people are willing to vouch for.
+Then test things yourself. Use a fixed set of questions, ask them several times on the AIs you care about, and keep records over time. Your own data will always be the evidence closest to your business. Before that, get the basics right: let AI get in the door, find you and understand you; tell the truth and give real figures; let other people mention you sincerely. None of these things has been contradicted by any research or industry view, and they are also the least likely to go out of date.
 
-Turn yourself into that kind of content, then keep watching, keep testing, keep correcting. These are the last words this book wants to leave with you.
+At the start of this book, we compared AI to a very busy librarian. It will get new shelves, new ways of searching, perhaps even a new librarian. But one thing will probably not change: it is always looking for content that is true, clear, and that many people are willing to vouch for.
+
+Make yourself into that kind of content, then keep watching, keep testing and keep correcting. That is what this book would most like to leave you with.

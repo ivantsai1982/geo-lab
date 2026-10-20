@@ -1,630 +1,328 @@
-# Chapter 4 — AI Doesn't Search for the Sentence You Typed
+# Chapter 4: AI Doesn't Search for the Sentence You Typed
 
-> The seven gates, on to gate three: **can it find you** (retrieval).
->
-> The previous chapter was about "can it get through the door": whether AI crawlers can read your web pages. This chapter covers the next step: the AI has already decided to go online and look things up. In the batch of material it pulls back, are you there?
+> This chapter covers the third of the seven gates: can it find you, which is retrieval. The previous chapter was about "can it get in the door", meaning whether AI's crawlers can read your web pages. This chapter covers the next step: AI has already decided to go online and look things up. In the batch of material it pulls back, are you there?
 
----
+## Imagine
 
-## Opening: the same product, two ways of asking, two results
+Imagine the owner of a software company that makes a "team shared inbox" tool. The tool lets several colleagues handle the same customer service mailbox together, without replying twice and without missing any emails. (The following is a fictional illustrative scenario.)
 
-Imagine (this is a fictional scenario):
+One day she asks AI: "What is the best shared inbox software?" Her product is in the answer, and she feels reassured. The next day she asks again, using a customer's exact words: "How can our team handle a shared mailbox together without disrupting everyone's usual email workflow?" This time she is not in the answer. She asks several times in a row, and the result is the same.
 
-The owner of a software company makes a "team shared inbox" tool. It lets several colleagues handle the same customer service mailbox together, without replying twice and without missing emails.
+Her product hasn't changed, her website hasn't changed, and no new competitor has appeared. The only thing that changed is the way the question was asked.
 
-One day, she asks an AI: "What is the best shared inbox software?" Her product is in the answer. She feels reassured.
+This kind of thing is not imaginary. Later you will see that someone in the industry asked similar questions 10 times on each of four AIs, and really did see one tool go from "named every time" to "0 out of 10".
 
-The next day, she asks again, using a customer's exact words: "How can our team handle a shared mailbox together without messing up everyone's usual email workflow?"
-
-This time, she is not in the answer. She asks several times in a row. Still not there.
-
-Her product has not changed, her website has not changed, and no new competitor has appeared. Only one thing changed: **the way the question was asked**.
-
-This is not an imaginary phenomenon. Later you will see that someone in the industry asked a similar question 10 times on each of four AIs, and really did see one tool go from "named every time" to "0 out of 10".
-
-The big idea of this chapter is just one sentence:
+## The big idea of this chapter
 
 **AI does not take the sentence the user typed and search for it directly. It first rewrites it into its own search queries, then pulls back material. For you to be pulled in, you have to match the queries it rewrote, and you have to be in the right language and the right market.**
 
----
+This chapter unfolds along four principles. First, the sources cited by different AIs barely overlap. Second, AI rewrites questions, and rewriting makes sources even less stable. Third, wording and word choice decide whether you are on the shortlist. Fourth, the language of the question and the location act like a market gate. After the principles, we look at how reliable the evidence is, what is still disputed, and a set of real cases.
 
 ## 1. What this gate does
 
-### The librarian does not copy your question word for word
+Back to the metaphor used throughout this book: AI is like a very busy librarian. When you ask him a question, he doesn't take your exact words straight to the shelves. He first thinks about what this person is really looking for, then rewrites the question into one or several queries and goes off to pull books for each. This act of rewriting a question and splitting it into several smaller questions to search separately is called query fan-out.
 
-Back to the metaphor used throughout this book: AI is like a very busy librarian.
-
-You ask him a question, and he does not take your exact words straight to the shelves. He first thinks: "What is this person really looking for?" Then he rewrites the question into one or several queries and goes off to pull books for each.
-
-This act of "rewriting one question and splitting it into several smaller questions to search separately" is called **query fan-out**.
-
-The whole process is roughly like this:
+The whole process can be divided roughly into six steps:
 
 1. The user asks a question.
-2. The AI rewrites the question into one or more search queries (query fan-out).
+2. AI rewrites the question into one or more search queries. This is query fan-out.
 3. Each query is sent into its own search system, and a batch of web pages is pulled back.
-4. The pages pulled back are the **shortlist (candidate set)**. This step is called **retrieval**.
-5. The AI selects and ranks from the shortlist (the topic of the next chapter).
-6. The AI writes the answer and cites some of the sources.
+4. The pages pulled back form the shortlist. This step is called retrieval.
+5. AI selects and ranks from the shortlist. This is the topic of the next chapter.
+6. AI writes the answer and cites some of the sources.
 
-### Retrieval decides "who is eligible to compete"
+Retrieval decides who is eligible to compete. The later selection, citation and absorption all happen only inside the shortlist. If you are not on the list, no matter how well your content is written, you never get a chance to play. As mentioned at the start of this book, once content gets onto the shortlist, it really can change AI's answer. **But whether you get in is mainly not a question of writing quality.**
 
-The later selection, citation and absorption all happen only inside the shortlist. If you are not on the list, no matter how well your content is written, you never get a chance to play.
-
-As mentioned at the start of this book: once content gets onto the shortlist, it really can change the AI's answer. But **whether you get in is mainly not a question of writing quality**.
-
-This gate can be broken down into four principles:
-
-| Principle | In one sentence | What it means for you |
-|---|---|---|
-| First | Sources cited by different AIs barely overlap | There is no single, unified "AI leaderboard" in the world |
-| Second | AI rewrites questions, and rewriting makes sources even less stable | What you need to match is the sentence the AI searches for, not the sentence the user typed |
-| Third | Wording and word choice decide whether you are on the shortlist | What the category is called, who the buyer is, and your own coined terms all change the results |
-| Fourth | The language of the question and the location are "market gates" | Results measured in English cannot see the local market |
-
-Let's go through them one by one.
-
----
+This gate can be broken down into four principles, and each one has a direct meaning for you. The first principle is that the sources cited by different AIs barely overlap, so there is no single, unified "AI leaderboard" in the world. The second principle is that AI rewrites questions and rewriting makes sources even less stable, so what you need to match is the sentence AI searches for, not the sentence the user typed. The third principle is that wording and word choice decide whether you are on the shortlist: what the category is called, who the buyer is, and your own coined terms all change the results. The fourth principle is that the language of the question and the location form a "market gate", and results measured in English cannot see the local market. Let's go through them one by one.
 
 ## 2. Principle one: there is no such thing as an "AI leaderboard"
 
-### Why each AI pulls back different things
+The first question many business owners ask is: "Where do I rank in AI?" The question itself is the wrong question. The reason is that three layers of difference are stacked on top of each other. Each AI uses a different search system, which is like looking for books on different shelves. Each AI rewrites questions differently, which is like holding a different reading list. Each AI also has different preferences when selecting sources, which is like choosing books by different standards. Stack the three layers together, and the pages finally cited go almost entirely their own separate ways.
 
-The first question many business owners ask is: "What's my ranking in AI?"
+Researchers ran repeated tests on real AI search and measured this difference. Before looking at the numbers, here is one way of measuring it: researchers often use an "overlap score" between 0 and 1. If two sets of URLs are identical, the score is 1; if they have nothing in common, it is 0.
 
-The question itself is the wrong question.
+Start with different interfaces from the same company. Between Google's ordinary search results, Google's AI summary and Gemini, the sources had an overlap score of only 0.11 to 0.18, so most sources were different. Then look across different companies: for the same question, the URLs cited by ChatGPT, Copilot, Google and Perplexity had an average overlap score of only 0.0079, practically 0. In 84.9% of cases, any two of them did not share even a single URL. For the same four, when 10 questions were tested in full and only the top 5 URLs from each were considered, all 60 pairwise comparisons showed zero overlap.
 
-The reason is three layers of difference stacked on top of each other:
+If you look at only one AI, the sources you can see are also very limited. Taking all the URLs cited by the four together as the total, a single one accounted for only 11.4% to 42.6% of it, and 96.4% of the URLs appeared in only one of them.
 
-1. Each AI uses a different search system, which is like looking for books on different shelves.
-2. Each AI rewrites questions differently, which is like holding a different reading list.
-3. Each AI has different preferences for choosing sources, which is like picking books by different standards.
-
-Stack the three layers together, and the pages finally cited go almost completely separate ways.
-
-### How extreme are the numbers
-
-Researchers tested real AI search repeatedly and got the following results.
-
-First, a word on how this is measured. Researchers often use an "overlap score" between 0 and 1: two sets of URLs that are exactly the same score 1; two with no overlap at all score 0.
-
-- **Sources of Google's regular search results, Google's AI Overviews, and Gemini**: the overlap score is only 0.11 to 0.18. In other words, most of the sources differ among the three.
-- **URLs cited by ChatGPT, Copilot, Google and Perplexity for the same question**: the average overlap score is only 0.0079, practically 0. In 84.9% of cases, any two of them did not share even a single URL.
-- **The same four, fully tested on 10 questions, looking only at each one's top 5 URLs**: 60 pairwise comparisons in total, and the overlap was 0 in every one.
-- **How many sources you can see by looking at just one AI**: counting all URLs cited by the four together as the total, a single one accounts for only 11.4% to 42.6%. 96.4% of URLs appeared in only one of them.
-- **How much the sites cited by AI overlap with Google's top 10 sites**: 4.0% for GPT-4o, 11.1% for Gemini, 12.6% for Claude, 15.2% for Perplexity.
-- **How many of the sites cited by AI have appeared in traditional search**: 37% never appeared in traditional search results; 38% appear in both.
-- **Sites cited by Google's AI Overviews**: 29.8% are not in the Google first-page results on the same page; only 25.0% are in the top 5 on the first page.
+The distance between AI and traditional search is just as large. How much do the websites AI cites overlap with Google's top 10? For GPT-4o it is 4.0%, for Gemini 11.1%, for Claude 12.6% and for Perplexity 15.2%. Seen from another angle, 37% of the websites AI cites never appeared in traditional search results, and 38% appear in both. Even Google's own AI summary cites websites of which 29.8% are not in the first page of Google results for the same query, and only 25.0% are in the top 5 of that first page.
 
 ### A few easily overlooked details
 
-**First, AI gives out fewer spots than traditional search.** AI cites an average of 4.3 URLs per answer; a traditional search results page has an average of 10.3. Fewer spots means more concentrated competition.
+The first detail is that AI gives out fewer places than traditional search. Each AI answer cites an average of 4.3 URLs, while a traditional search results page has an average of 10.3. With fewer places, competition is more concentrated.
 
-**Second, ranking first in traditional search still has an advantage.** When pages cited by AI also appear in traditional search results, the one cited most is the result ranked first in traditional search: 23.27% for Bing, 14.53% for Google. So the claim that "Search Engine Optimization (SEO) is useless now" is wrong. SEO is still useful, it just isn't enough.
+The second detail is that ranking first in traditional search still gives an advantage. When pages cited by AI also appear in traditional search results, the one cited most often is the result ranked first in traditional search, accounting for 23.27% on Bing and 14.53% on Google. So the claim that "Search Engine Optimization (SEO) is no longer useful" is wrong. SEO is still useful; it just isn't enough.
 
-**Third, the same AI changes every day, but the differences between AIs are even bigger.** Ask the same AI again a day later, and 67.0% of the cited URLs get swapped out. Even so, the similarity of the same AI on two consecutive days is still about 42 times the similarity of "different AIs on the same day". In other words: each AI changes every day on its own, and the gap between AIs is even bigger.
+The third detail is that the same AI changes every day too, but the gap between AIs is even larger. Ask the same AI again a day later, and 67.0% of the cited URLs will have been swapped out. Even so, the similarity of the same AI on two neighbouring days is still about 42 times the similarity of "different AIs on the same day". Each AI changes from day to day, and the gap between one AI and another is larger still.
 
-**Fourth, industries vary a lot.** Compared with Google's top 5 sites, the overlap of AI citations is: 15% for smartphones, 32% for laptops, 33% for electric vehicles, and only 0.1% to 20.6% for local services. For car-related questions, the overlap score of sites cited by different AIs is between 0.096 and 0.251.
+The fourth detail is that industries differ a great deal. Compared with Google's top 5 websites, the overlap of AI citations is 15% for smartphones, 32% for laptops, 33% for electric vehicles, and only 0.1% to 20.6% for local services. On car-related questions, the overlap score of the websites cited by different AIs falls between 0.096 and 0.251.
 
-### Tests by people in the industry point the same way
+Tests by people in the industry point in the same direction, though no one has independently verified them. Someone tested 1,000 questions, a mix of "information-seeking" and "intending to buy" questions, and found that the sources of ChatGPT, Google and Bing overlapped by only 19%. Another person reported that across a large number of identical questions, ChatGPT and Perplexity agreed on only 11% of sources, though this report left only its conclusion and the test method cannot be seen. Someone else compared 48 local markets across 8 cities and 6 industries, and found that of the businesses Google Maps listed for buyer questions, only 11.9% had been mentioned by any AI at all; in most markets, more than half of the businesses mentioned by AI were mentioned by only one AI.
 
-Someone in the industry tested this themselves and got numbers pointing the same way (but no one has independently verified it):
+Why does this happen? Someone in the industry observed that each AI is connected to a different search system. As for which search database ChatGPT actually uses when it goes online, there is no consensus in the industry, and the "Disputes" section later returns to this. What is certain is that when the search systems behind them differ, the shortlists they pull back naturally differ too.
 
-- On 1,000 questions (a mix of "looking for information" and "wanting to buy" questions), the sources of ChatGPT, Google and Bing overlapped by only 19%.
-- Someone reported that on a large number of identical questions, ChatGPT and Perplexity agreed on only 11% of sources. Only the conclusion of this report remains; the testing method cannot be seen.
-- Across 8 cities and 6 industries, 48 local markets in total, only 11.9% of the businesses Google Maps listed for buyer questions were mentioned by any AI at all. In most markets, more than half of the businesses mentioned by AI were mentioned by only one of the AIs.
-
-### Why this happens
-
-Someone in the industry has observed that each AI is connected to a different search system. As for which search database ChatGPT actually uses when it goes online, there is no consensus in the industry (the "Debates" section later covers this).
-
-What is certain: with different search systems behind them, the shortlists they pull back are naturally different.
-
-### Conclusion of this section
-
-"Ranking first in AI" is not something that can be measured.
-
-All you can say is: "On a particular AI, in a particular language, in a particular market, with a particular way of asking, the probability that I get pulled onto the shortlist is roughly this much."
-
-This is also what the book's "rolling dice" metaphor means: ask the same question ten times and the answers may differ. Look at "how many times out of ten you appear" (**mention rate**), not "what rank you are".
+So "ranking first in AI" is not something that can be measured. All you can say is: "On a particular AI, in a particular language, in a particular market, with a particular phrasing, my probability of being pulled onto the shortlist is roughly this much." This is also what the book's "rolling the dice" metaphor means. Ask the same question ten times, and the answers may differ. **Look at how many times out of ten you appear (the mention rate), not at what position you rank.**
 
 > **A closer look: what do these scores mean?**
 >
-> The "overlap score" mentioned in this section is commonly measured in research with something called the Jaccard index: the intersection of two sets of URLs divided by their union. 0 means completely different, 1 means completely the same. 0.0079 means: the URL lists of the two AIs have almost nothing in common.
+> The "overlap score" mentioned in this section is commonly measured in research with something called the Jaccard index, calculated as the intersection of two sets of URLs divided by their union. 0 means completely different, and 1 means completely the same. A score of 0.0079 means the URL lists of the two AIs have almost nothing in common.
 >
-> The next section brings in another score (called RBO in research). It looks not only at whether there is overlap, but also at whether the ordering is similar, and the higher positions matter more. It also runs from 0 to 1; the closer to 1, the more stable.
-
----
+> The next section brings in another score, called RBO in research. It looks not only at whether there is overlap but also at whether the ordering is similar, and the higher positions count for more. It also runs from 0 to 1, and the closer to 1, the more stable.
 
 ## 3. Principle two: AI rewrites your question, and rewrites it differently each time
 
-### How rewriting happens
+The user types an ordinary sentence, and AI doesn't take it unchanged and search for it. It first rewrites it into one or more search queries, which is query fan-out. The rewriting is "generated" by AI and may be different every time, and the search results change along with the rewriting. For this reason, the sources of AI search are less stable than those of traditional search.
 
-The user types an ordinary sentence. The AI does not search it as is. It first rewrites it into one or more search queries. This is query fan-out.
+Researchers ran repeated tests on real AI search and measured this instability. With just a slight rewording of the question, the ranking stability of the sources in Google's AI summary (the RBO score mentioned above) is only 0.49; with the same rewording, traditional search results score 0.74. Even with no rewording at all, simply asking again on the same device, the AI summary's stability is only 0.69, against 0.86 for traditional search.
 
-The rewriting is "generated" by the AI, and may be different each time. The search results then change along with the rewriting. So the sources of AI search are less stable than those of traditional search.
+The same kind of research ran another experiment: the queries rewritten by AI were sent back into Google search. In 98.16% of cases, the "black-hat SEO" websites (websites that use cheating techniques to push up their rankings) that had originally ranked near the top could no longer be found; with only a small rewording, the success rate of this kind of attack fell below 10%. This has two layers of meaning for you. The bad news is that AI's rewriting layer keeps out most pages that were "optimized only for the user's original keyword". The good news is that the rewriting itself follows patterns, and whoever can predict how AI will rewrite holds the entrance to the shortlist.
 
-### What the research says
+In the same study, researchers covered in a page the query wording AI was likely to produce when rewriting. In all 5 AI systems tested, such pages were adopted at more than 2 times the rate of the control group. Note that what was measured here is "share of all adopted content", not a "success rate". The same study also found that **simply stuffing keywords had no effect on any of the systems tested.**
 
-Researchers tested real AI search repeatedly and found:
+### What rewritten queries look like
 
-- **With just a slight rewording of the question**, the ranking stability of Google AI Overviews' sources (the RBO score mentioned above) is only 0.49; with the same rewording, traditional search results score 0.74.
-- **Even with no rewording at all**, just asking again on the same device, the stability of AI Overviews is 0.69, and traditional search is 0.86.
-- **Sending the AI's rewritten queries back into Google Search**: in 98.16% of cases, the "black-hat SEO" sites (sites that use cheating tactics to push up their rankings) that originally ranked near the top could not be found. With only a small rewording, the success rate of this kind of attack drops below 10%.
+Research has not systematically disclosed each AI's rewriting rules. The observations below come from people in the industry who intercepted network data and examined logs themselves, and no one has independently verified them.
 
-That last point means two things for you.
+Start with how many searches are run per conversation. In a small test of 30 questions, ChatGPT searched 1.1 times on average, Google's AI Mode 3.3 times, and the AI summary 3.4 times; Google's two figures were reconstructed by inference, not seen directly. The mode also makes a big difference. Researchers captured how the web version of ChatGPT actually operates (versions 5.2 to 5.5) and found that the fast mode (Instant) searched only 1 to 2 queries each time, mostly in a single round, while the thinking mode (5.4 Thinking) searched about 12 queries each time over an average of more than 3 rounds, with more than half of the later rounds using `site:` to target a specific website. The figure of 1.1 searches above is closer to the fast mode.
 
-**The bad news:** the AI's rewriting layer keeps most pages that are "optimized only for the user's original keyword" outside the door.
+The query ChatGPT searches is usually one fairly long query packed with brand or product names, averaging 8.2 words, and about a third copy the user's original sentence directly. For pages cited per answer, ChatGPT averages 4.1, AI Mode 16.9 and the AI summary 13.3. Are the cited pages in the top 10 search results? Only 10% of the pages cited by AI Mode and the AI summary are in the top 10 for the main query; even counting all the smaller split-off queries, it is only 23% (AI Mode) and 28% (AI summary).
 
-**The good news:** rewriting itself follows patterns. Whoever can predict how the AI will rewrite holds the entrance to the shortlist.
+AI also automatically adds a year to queries. When the user asks "Best shoes for running", what ChatGPT actually searches is "best running shoes 2026", and most of the cited pages have "2026" in their title or content. In addition, someone in the industry intercepted Gemini's search activity and found that it often sends 3 to 5 short, fairly technical verification queries in the background, such as "[category] safety certification list 2026" or "pricing plans table". It also often adds the name of a community discussion site, or words such as "forum", to the end of a query, to find the consensus among community users. The most intriguing observation is this: the user mentioned no brand at all, yet the smaller queries ChatGPT split off already included the names of several well-known brands in that category.
 
-In the same study, researchers covered in their pages the query wording the AI might rewrite to. As a result, across the 5 AI systems tested, the share of such pages being used reached more than 2 times that of the control group. Note: this is "how much of all the content used it accounts for", not a "success rate".
+All of these figures have a shelf life. In a test we ran ourselves while writing this book (October 2026, see below), GPT-5.6 Sol used through the API generated an average of 9.5 to 11.9 sets of search terms per conversation, far more than the 1.1 searches above. Because the model version is different, and the API differs from the web interface, this result cannot directly replace the earlier observation; it only shows that observations of this kind quickly go out of date as versions change.
 
-The same study also found: **simple keyword stuffing had no effect on any of the systems tested.**
+Another large-scale study covered two markets, 90 days and 158,000 answers. It found that the pages ChatGPT cited all came from results it had searched itself; 97% of the pages it found were not in Google's top 50; and among pages on the same website, "whether it was found by ChatGPT's search" explained about 32% of the difference in citation, while the features of the page itself explained only about 2.8%. This is a correlational study using a small model, and the authors themselves run an AI monitoring platform.
 
-### What the rewritten queries look like
+### Before AI goes online, it already has a list in mind
 
-Research has not systematically disclosed each AI's rewriting rules. The following was obtained by people in the industry who intercepted network data and looked at logs themselves; no one has independently verified it:
+Go back to the observation that "the user mentioned no brand, yet AI's search queries already contained brands". It means that before AI goes online, it already has a list in mind, and searching online is only a way to verify and add to that list. This is what this book calls the brand prior: the brand impressions AI already remembers before it looks anything up.
 
-| Observation | Details |
-|---|---|
-| How many searches per conversation | In a small test of 30 questions, ChatGPT searched 1.1 times on average; Google's AI Mode 3.3 times on average, and AI Overviews 3.4 times on average. Google's two numbers were reconstructed by inference, not seen directly |
-| Big differences between modes | Researchers captured how ChatGPT's web version actually works (versions 5.2 to 5.5): the fast mode (Instant) searches only 1 to 2 queries each time, mostly in a single round; the thinking mode (5.4 Thinking) searches about 12 queries each time over an average of more than 3 rounds, and in later rounds more than half use `site:` to target a website. The 1.1 times in the row above is closer to the fast mode |
-| The sentences ChatGPT searches | Usually one fairly long query packed with brand or product names, averaging 8.2 words; about one third copy the user's original sentence directly |
-| How many pages cited each time | ChatGPT 4.1 pages on average, AI Mode 16.9 pages on average, AI Overviews 13.3 pages on average |
-| Whether cited pages are in the search top 10 | Of the pages cited by AI Mode and AI Overviews, only 10% are in the top 10 for the main query; even counting all the smaller split-off queries, it is only 23% (AI Mode) and 28% (AI Overviews) |
-| Automatically adding the year | The user asks "Best shoes for running", and what ChatGPT actually searches is "best running shoes 2026". Most of the cited pages have "2026" in the title or content |
-| Verification searches behind the scenes | Someone in the industry intercepted Gemini's search actions and found it often sends 3 to 5 short, fairly technical queries, such as "[category] safety certification list 2026" or "pricing plans table". It also often adds the name of a community discussion site, or words like "forum", at the end of the query, to look for consensus among internet users |
-| Brands already written into the query | The user did not mention any brand at all, yet the smaller queries ChatGPT split off already had the names of several well-known brands in this category written in |
-
-These numbers have a shelf life. In the test we ran ourselves while writing this book (October 2026, see below), GPT-5.6 Sol used through the API generated 9.5 to 11.9 sets of search terms per conversation on average, far more than the 1.1 times in the table above. The model version is different, and the API differs from the web interface, so this cannot directly replace the table; it only shows that observations like these go out of date quickly as versions change.
-
-Another large-scale study (two markets, 90 days, 158,000 answers) found that every page ChatGPT cited came from its own search results; 97% of the pages it retrieved were not in Google's top 50; and among pages on the same website, "whether its search retrieved the page" explained about 32% of the differences in citation, while the page's own features explained only about 2.8%. (This is a correlational study, it used small models, and the authors run an AI monitoring platform.)
-
-### The last item is worth stopping to think about
-
-"The user did not mention a brand, but the AI's search query already contains brands." What does that mean?
-
-It means **the AI already has a list in mind before it goes online**. Searching online is just to verify and add to this list. This is what this book calls the **brand prior**: the impression of a brand that the AI already remembers before it looks anything up.
-
-Someone in the industry observed: brands written into the query had a citation rate of 68.9%; brands not written into the query had only 2.1%. However, only the title of this report remains and its content cannot be seen, so it can only be treated as a clue.
-
-This is consistent with what Chapter 1 said: famous brands, AI knows from memory; brands without a name, AI has to find by going online. Researchers also found in a controllable experimental system: among the brands or products listed in an AI's ranking, on average 16% were not in any of the passages it had pulled back at all. In other words, part of the list the AI gives does not come from the material it searched.
+Someone in the industry observed that brands written into the query had a citation rate of 68.9%, while brands not written into the query had only 2.1%. However, only the title of this report remains and its content cannot be seen, so it can only be treated as a clue. This is consistent with the point made in Chapter 1: AI knows famous brands from memory, while it has to find unknown brands by going online. Researchers also found, in a controllable experimental system, that on average 16% of the brands or products listed in AI's rankings did not appear in any of the passages it had pulled back. Part of the list AI gives does not come from the material it found.
 
 ### What we measured ourselves
 
-When writing this book, we tested ChatGPT ourselves through the API (October 2026). The method: use GPT-5.6 Sol through OpenAI's API with web search turned on, and record the search terms AI generated, the web addresses in the search results, and whom it finally cited. 40 conversations in total: one swimming-recruitment question, asked in 5 English phrasings, 2 times each; plus 3 types (shopping, local services, health knowledge), 5 questions each, each question asked once in each of 2 phrasings.
+While writing this book, we ran our own tests on ChatGPT through the API (October 2026). We used GPT-5.6 Sol through OpenAI's API with web search turned on, and recorded the search terms AI generated, the URLs in the search results, and who was finally cited. There were 40 conversations in all: one swimming recruitment question, asked 2 times each in 5 English phrasings; and 3 categories, shopping, local services and health knowledge, with 5 questions each, every question asked once in each of 2 phrasings. The limitations need to be stated up front: English only, a single model, the API rather than the web interface, only one city for the local questions, a very small sample, and no independent verification by anyone else yet.
 
-The limits first: English only, only one model, through the API rather than the web interface, only one city for the local questions, a very small sample, and no independent verification by anyone else yet. What we saw:
+The first thing we saw was that almost every search term added words the user had not said: 94% for the swimming question, and 95% for the three categories (270 of 284). The added words fell roughly into five kinds. AI switched to insider terminology, for example replacing "how fast should a 12-year-old swim" with the official name of the sport's time standards. It anticipated what evidence was needed, for example "official" or "results". It anticipated the constraints behind the question, for example caps on admission places. It filled in concrete examples from memory, for example the names of well-known swimmers. And it anticipated a deeper question, for example long-term follow-up studies. As a result, a research article answering "what happened later to swimmers who were slow at age 12" was cited, even though the user had never asked about that.
 
-- **Almost every search term added words the user never said.** 94% for the swimming question, 95% for the three types (270 of 284). The added words fall roughly into five kinds:
-  - switching to insider wording: for example, turning "how fast does a 12-year-old need to swim" into the formal name of the sport's official time standards;
-  - anticipating what evidence is needed: official, results sheets;
-  - anticipating the constraints behind the question: for example, caps on recruiting places;
-  - filling in concrete examples from memory: names of well-known swimmers;
-  - anticipating a deeper question: for example, long-term follow-up research.
+Different types of question were also rewritten in different ways. Shopping questions had specific brand models written in, plus specification words such as price, weight and battery hours. Health questions had evidence-level words added, such as clinical guidelines, systematic reviews and randomized trials. Local service questions had verification words added, such as official, reviews, licence and address.
 
-  As a result, a research article answering "what happens later to swimmers who were slow at 12" was cited, even though the user never asked about that.
-- **Different types of question are rewritten in different ways.** Shopping questions get specific brand models written in, plus specification words such as price, weight and battery hours; health questions get words for levels of evidence (clinical guideline, systematic review, randomized trial); local-service questions get verification words (official, reviews, license, address).
-- **The first search term already names a website.** In 7 of the 30 conversations for the three types, and 6 of the 10 for the swimming question, the very first search term used `site:` to specify a website; for shopping questions it often went straight to a specific product page on the brand's official site. This is direct evidence that "AI has a list in mind before it goes online".
-- **The search terms AI generates explain who gets cited better than the user's original sentence does.** We scored the pages AI saw by similarity of meaning: scoring with AI's generated search terms separated cited from uncited pages better than scoring with the user's original sentence. By question type, only shopping showed a clear gap; local services and health went the same way, but the gap was not clear. We also ruled out the possibility that "AI first decided whom to cite and then wrote the product name into the search term": using only the search terms without `site:`, or only the first search term, gave the same result.
-- **Meaning matters more than wording.** Scoring by similarity of meaning separated who got cited to a moderate degree; matching keywords by wording alone was about as good as guessing for the swimming question once the most-cited website was removed. The exception was shopping: for exact words such as model numbers, matching the wording also helped.
+More directly, quite a few conversations already named a website in their first search term. In 7 of the 30 conversations for the three categories, and 6 of the 10 for the swimming question, the first search term used `site:` to target a specific website; shopping questions often targeted a product page on the brand's official website directly. This is direct evidence that "AI already has a list in mind before it goes online".
 
-> **A closer look:** "Separating" here is measured with an indicator called AUC: 0.5 means guessing, 1 means perfectly separated. Scoring by meaning gave 0.74 for the swimming question and 0.67 for the three types; shopping with keywords gave 0.71. AI's generated search terms scored 0.075 higher than the user's original sentence, with a 95% range of 0.022 to 0.127 calculated by resampling conversations.
+We also scored the pages AI had looked at using similarity in meaning. Scoring with the search terms AI generated separated the cited from the uncited better than scoring with the user's original sentence. Broken down by question type, the gap was clear only for shopping questions; local services and health questions pointed the same way, but the gap was not clear. We also ruled out the possibility that "AI first decided whom to cite and then wrote the product name into the search term": using only search terms without `site:`, or only the first search term, the result was the same. Meaning also mattered more than literal wording. Scoring by similarity in meaning separated the cited from the uncited moderately well; matching literal keywords alone, once the most-cited website was removed from the swimming question, was about as good as guessing. The exception was shopping questions, where exact terms such as model numbers made literal matching useful too.
 
-These results support this section's point: **what you need to match is the query AI rewrites.** But they come from one model and a small sample through the API, and cannot represent the web version of ChatGPT, or other platforms.
+> **A closer look:** "Separating" here is measured with an indicator called AUC, where 0.5 equals guessing and 1 means perfectly separated. Scoring by meaning gave 0.74 for the swimming question and 0.67 for the three categories; scoring shopping questions by keywords gave 0.71. AI's generated search terms scored 0.075 higher than the user's original sentence, with a 95% confidence range of 0.022 to 0.127, calculated by resampling conversations.
+
+These results support the point of this section: what you need to match is the query AI rewrote. But they come from a small sample, one model, through the API, and they cannot represent the web version of ChatGPT, nor other platforms.
 
 ### Searching more does not mean searching wider
 
-Intuitively, the more times AI searches, the more spread out the sources should be. The evidence does not support this intuition.
+Intuitively, the more times AI searches, the more spread out its sources should be. The evidence does not support this intuition.
 
-**What research found (in a controllable experimental system):** so-called "deep research" AIs (AIs that search many rounds in a row on their own and write long reports), after multiple rounds of searching, tend to concentrate on a small number of "user content that anyone can edit" pages, such as community discussions and Q&A pages.
+Researchers found in a controllable experimental system that so-called "deep research" AIs, meaning AIs that search many rounds in a row on their own and write long reports, tend after several rounds of searching to concentrate on a small number of pages of "user content that anyone can edit", such as community discussions and Q&A pages. In open-source deep research AIs, this kind of user content made up 16.7% to 23.4% of the URLs pulled back, and a single large community discussion site alone accounted for 53.7% to 70.7% of that user content. Looking at commercial deep research products, 12.1% of Gemini's citations were this kind of user content, against only 0.4% for the product from OpenAI (the developer of ChatGPT). One possible reason for the concentration is "whatever it reads first, it keeps searching in that direction", because what to search in the next round is decided by the content already read. One experiment with a fixed set of candidate documents (weaker evidence) found that when two searches differed only in the order of the documents, by round 4, 63.9% of the search terms were already different and 75.0% of the documents read were in a different order.
 
-- In open-source deep research AIs, this kind of user content accounts for 16.7% to 23.4% of the URLs pulled back.
-- Of this, one large community discussion site alone accounts for 53.7% to 70.7% of this kind of user content.
-- Looking at commercial deep research products: 12.1% of Gemini's citations are this kind of user content; for the product from OpenAI (the developer of ChatGPT), it is only 0.4%.
-- One possible reason for this concentration is "whatever is read first, the search keeps going in that direction": what to search for in the next round is decided by the content already read. An experiment with a fixed set of candidate documents (weak evidence) found that when two searches differed only in the order of the documents, by round 4, 63.9% of the search terms were already different, and 75.0% of the sequences of documents read were different.
+Tests by people in the industry (repeated tests with a control group) saw a similar phenomenon. From 8 August 2026, ChatGPT's search behaviour suddenly changed: the sources pulled back per answer rose from about 11.7 to 18.9, an increase of 61%, and distinct URLs rose by 69%, but distinct websites rose by only 9%; the number of pages taken from the same website in a single answer rose from 1.38 to 2.20. ChatGPT was reading deeper into the websites it already used, not discovering new ones. Websites that were not on the shortlist before 8 August were not pulled in just because AI searched more.
 
-**Tests by people in the industry (repeated tests, with a control group):** starting from August 8, 2026, ChatGPT's search behavior suddenly changed:
+**What you need to match is the few sentences AI rewrote, and AI searching more will not automatically bring you onto the shortlist.**
 
-- The sources pulled back per answer increased from about 11.7 to 18.9, 61% more.
-- Distinct URLs went up by 69%.
-- **But distinct websites went up by only 9%.**
-- The number of pages grabbed from the same website within the same answer rose from 1.38 to 2.20.
+## 4. Principle three: change the phrasing, and you may vanish from the list
 
-In other words, ChatGPT is "reading deeper" within websites it already uses, not discovering new websites. **Websites that were not on the shortlist before August 8 did not get pulled in because the AI searched more.**
+Once AI has rewritten the query, it finds pages by similarity of meaning. This is called semantic matching. It doesn't count how many times a keyword appears; it compares whether what this page talks about resembles what this query is looking for. So the words on your page, what you call your own category, the task you describe and the kind of buyer you write for decide which queries can pull you in. Call the category something else, or ask the question as a different kind of buyer, and a different batch of pages gets pulled back.
 
-### Conclusion of this section
+The strength of the evidence for this principle needs to be made clear first. Research evidence is relatively thin, and it comes mainly from repeated tests by people in the industry. On the research side there are only two points of indirect support: first, rewriting queries changes sources substantially (the previous section); second, covering the rewritten query wording in a page helps it get adopted.
 
-What you need to match is not the sentence the user typed, but the few sentences the AI rewrote.
+### Three sets of tests by people in the industry
 
-And AI searching more will not automatically bring you onto the shortlist.
+The three sets of tests below were all done by people in the industry, with repeated tests and a control group.
 
----
+The first set of tests asked about exactly this: "shared inbox software". The tester asked in two ways. One was the category-name phrasing, "best shared inbox software", and the other was what a real user would say, "How do we handle a shared mailbox together without disrupting our usual email flow?" Each phrasing was asked 10 times on each of four AIs. When asked by category name, the two main tools were named almost every time. With the descriptive phrasing, one of the tools went from "appearing every time" on ChatGPT to "0 out of 10". The tester also tracked two other tools as a control, and they were stable under every phrasing. What these two tools had in common was that their pages described the actual workflow in the buyer's own language, rather than just saying "we are a shared inbox software".
 
-## 4. Principle three: say it a different way, and you may vanish from the list
+The second set of tests changed the buyer. A certain newsletter platform appeared only in phrasings where "the buyer is a creator". When the buyer was set as "a business" and the task was described only in plain language, it dropped to 0 out of 40. If all the phrasings are mixed together to calculate an average "visibility score", this difference is completely hidden. You would think you were doing quite well, when in fact, in front of a whole group of buyers, you don't exist at all.
 
-### Why wording matters so much
+The protagonist of the third set of tests was a brand-new author, meaning an entity that had not previously existed on the web. For 99 consecutive days, the tester tested three AIs each day with 16 fixed questions. In the 10 questions that "do not mention the author's name and only ask AI for recommendations", AI answered 6,729 times in total, and this author was named only 40 times, 25 of them from the same question. That question used the name of a niche genre the author had coined, a term that did not previously exist on the web. As for phrasings like "are there people similar to [famous author]", each question was asked about 700 times, and the author was named 0 times. When AI was asked directly by name "who is this author", from about day 49 onward the author was mentioned in a stable 72% of answers. This shows that AI could find this author, and the problem was not that "search engines hadn't indexed them". A self-coined term could be pulled in; "similar to whom" could not.
 
-After the AI has rewritten the query, it finds pages by "similar meaning". This is called semantic matching. It does not count how many times a keyword appears; it compares "whether what this page talks about looks like what this query is looking for".
+The tester has an interpretation of these results, but it is an opinion, not yet proof: other people's word of mouth (third-party comparison lists, reviews, discussion threads) decides whether you can get onto the recommendation list, while the language on your page describing concrete workflows decides whether you can stay on the list when the phrasing changes.
 
-So the words you use on your page, what you call your category, what task you describe, and which kind of buyer you are writing for, decide which queries can pull you in.
+### Other clues
 
-Call the category by a different name, or ask the question as a different buyer, and a different batch of pages gets pulled in.
+There are also some individual observations that can only be treated as clues. Someone in the industry observed that when the same marketing services firm was asked about using the niche term it was known for, it was named 19 times out of 25; when asked using the two broad category labels on its home page, it was named 0 times out of 25 both times. Calling the same category by a different name once made a brand's mention rate drop from about three quarters to zero. In the local business data of one city, about 42% of businesses changed whether they were recommended simply because the wording of the question was different.
 
-### First, let's be clear about how strong the evidence is
+The type of intent behind the question also matters. Phrasings like "what can replace [product]" cite comparison pages about 10 times as often as phrasings like "best [product]"; what makes the difference is the type of intent, and it has nothing to do with whether the question contains a brand name. Someone else reported that when no other explanatory source could be found, Google's AI Mode and AI summary cited social platform content whose wording almost exactly matched the question word for word.
 
-The research evidence for this one is relatively thin; it comes mainly from repeated tests by people in the industry.
+Taking all this together, semantic matching and "keyword density" are two different things. **What decides whether you are on the shortlist is whether your page uses the set of phrases buyers say and AI rewrites, to describe the problem you really solve.**
 
-There are two points of indirect support from research: first, rewriting queries changes sources substantially (previous section); second, covering the rewritten query wording in a page helps it get used.
+## 5. Principle four: language and location are a "market gate"
 
-### Tests by people in the industry (repeated tests, with a control group)
+Ask the same question in a different language, and the queries AI rewrites also turn into that language; once sent into the search system, what comes back is the web of that language. Changing the language is like changing to a different library: the shortlist is replaced wholesale, which is far from a minor adjustment. In addition, the user's network location when going online, meaning the country the internet service shows them to be in (technically called the "exit IP"), affects which country's user the search system treats you as.
 
-**Example 1: the same tool, asked a different way, disappears.**
+### Five phenomena research has seen
 
-The tester asked about "shared inbox software" in two ways:
+Researchers ran repeated tests on real AI search and saw five phenomena.
 
-- One used the category name: "the best shared inbox software".
-- The other used what a real user would say: "How can we handle a shared mailbox together without messing up our usual email workflow?"
+First, changing the language replaces almost the entire set of websites. When GPT is asked in a different language, the overlap of the cited websites is close to 0; Claude is the most stable in this respect. Moreover, changing the wording within the same language has less effect on the cited websites than changing the language.
 
-Each way of asking was asked 10 times on each of four AIs.
+Second, local brands gain the most. Researchers collected 35,640 answers in 12 European languages from 3 AIs that go online. When the question was asked in the language of the brand's home country, the recommendation share of the local leading brands rose by 0.80, while global brands rose by only 0.15. The average content similarity between answers in different languages was 0.825 (1 means identical), slightly higher within the same language family than across families (0.844 against 0.820). The tone of the answers also changed with the language, and English answers were the most negative.
 
-When asked with the category name, the two main tools were named almost every time. After switching to the descriptive way of asking, one of the tools went from "appearing every time" to "0 out of 10" on ChatGPT.
+Third, the share of local sources changes by multiples. In Google's AI summaries on health topics, when the question was asked in English, the share of citations from each country's local sources varied widely: 48.2% for Australia, 33.7% for the United States, 2.3% for India and 0.2% for Nigeria. When the question was asked in the local native language instead, the share of citations from local sources rose 3.5 to 13.5 times, for example from 16.6% to 57.5% in Japan, and from 2.7% to 36.4% in South Korea.
 
-The tester also tracked two other tools as a control. These two tools were very stable under all ways of asking. What they had in common: their pages used the buyer's own language to describe the actual workflow, rather than just saying "we are a shared inbox software".
+Fourth, language decides "choose the local one", and location decides "which country's local one". This is a small-sample study, with 234 tests in total and each group repeated 6 times. When asked in English in Istanbul and Tallinn, local providers did not appear once in 12 tests; when asked in the local language, global providers appeared only once in 24. More telling still, a person in Berlin asking in Turkish got local German accounting software providers (5 of 6 times); a person in Tallinn asking in Russian got local Estonian providers (4 of 6 times). **The language of the question swaps the shortlist wholesale for "local-type" providers, while the location decides which country's local ones.** The study also had a control category, project management software, and this category showed no language effect. The researchers speculate that this may be because categories like accounting are affected by each country's regulations while project management is not, but this speculation has not been verified.
 
-**Example 2: change the buyer, and the results change.**
+Fifth, different AIs read location in different ways. Researchers tested 31,200 answers on real AI search. ChatGPT looks at the location the app tells it, precise down to the city; it writes the place name into the search terms itself, and even when the search terms contain no place name, the search system still changes sources according to the location; it ignores which network you are actually connecting from. Gemini is the exact opposite: it ignores the location it is told and looks only at the country the network is in; even for questions unrelated to location, quite a few of its sources change, but it cannot distinguish down to the city level. The recommended businesses were very unstable: asking again in the same city gave only 32% the same; in a different city, only 8% remained.
 
-A certain newsletter platform appeared only in questions where "the buyer is a creator". When the buyer was set as "a business", and the task was simply described in plain language, it dropped to 0 out of 40.
+Two additional points need to be remembered together with the above. Whether answers are stable depends mainly on which AI it is, and has little to do with which language is used: in the study's statistics, "which AI" explained about 0.319 of the differences, while "which language" explained only about 0.011. In addition, the language gate replaces the local layer, not all sources. In 11 of the 12 languages, the most-cited website was the same online encyclopedia.
 
-If you mix all the ways of asking together and calculate one average "visibility score", this kind of difference is completely hidden. You would think you are "doing fine", but in front of a whole group of buyers, you simply do not exist.
+### Observations from people in the industry in different markets
 
-**Example 3: a word you coined yourself can get you pulled in; "who is similar to whom" cannot.**
+The following are tests by people in the industry, and no one has independently verified them.
 
-A brand-new author (an **entity** that had not existed on the internet before) tested three AIs every day for 99 days in a row, using 16 fixed questions.
+In less widely spoken languages, new terms are easily misunderstood. Someone asked five AI search tools in Finnish: "Which is the best GEO agency in my area?" Only two of the tools understood it as a marketing service. The other three recommended, respectively, land surveying firms, agricultural earthworks contractors, and an outdoor game called geocaching. The reason is that in a language with relatively little web content, a short question doesn't give AI enough context to work out the meaning of a new term.
 
-- In the 10 questions that "do not mention the author's name, only ask AI for recommendations", the AI answered 6,729 times in total, and this author was named only 40 times.
-- Of those 40 times, 25 came from the same question. That question used a niche genre name that the author had coined, a term that did not originally exist on the internet.
-- With questions like "is there anyone similar to [famous author]", each question was asked about 700 times, and the author was named 0 times.
-- Asking AI directly by name "who is this author", from about day 49 onwards, the author was mentioned steadily in 72% of answers. This shows the AI can find this author; the problem is not that "the search engine hasn't indexed it".
+The city has to be written into the sentence; writing it into the settings is not enough. A logistics company serving about 8 cities in India tested 41 questions that buyers would ask and was named 0 times. With AI's location set to a particular city and general questions asked, it was still 0 out of 3. Once the city name was written directly into the question, Gemini named it all 3 times; Google's AI summary named it in two cities, and only in the cities for which it had a matching city page. Note that this observation holds only for Gemini and Google's AI summary. The research behind the fifth phenomenon above shows that ChatGPT does follow the city that is set.
 
-### The tester's interpretation (this is an opinion, not proof)
+Each market's local ecosystem is also different. Someone asked ChatGPT "GEO agency + city name" in 19 cities, and of 94 agencies, 97% had their official website cited. The share of citations going to "business profiles" (the business information pages on search engines) was 86% in India's large cities, only 18% elsewhere, and about 15% in other emerging markets. This is a feature of a single market, not a common pattern across all emerging markets.
 
-> What others say about you (third-party comparison lists, reviews, discussion threads) decides whether you can get onto the recommendation list; the language on your page describing concrete workflows decides whether you can stay on the list when the way of asking changes.
+Someone else in the industry observed that directly translating an English question list into other languages is not enough, because people who speak different languages ask buying questions in different ways to begin with. In addition, if you find that AI answers in the local language but cites English web pages, this shows that the local-language web has very little content on this topic. In that case, a decent local-language page may quickly be cited.
 
-### Other clues (only individual observations, can only be treated as clues)
-
-Someone in the industry observed the following:
-
-- For the same marketing services company, asking with the niche term it is known for, it was named 19 times out of 25; asking with the two broad category labels on its homepage, it was 0 out of 25.
-- Calling the same category by a different name dropped one brand's mention rate from about three quarters to zero.
-- In the data on local businesses in a certain city, about 42% of businesses changed whether they were recommended purely because of differences in the wording of the question.
-- Questions like "what can replace [product]" cited comparison-type pages about 10 times as often as questions like "the best [product]". The deciding factor is the type of intent behind the question, not whether the question contains a brand name.
-- Someone reported: when no other explanatory sources could be found, Google's AI Mode and AI Overviews cited social platform content whose wording and question were almost word for word the same.
-
-### Conclusion of this section
-
-Semantic matching is not "keyword density".
-
-What decides whether you are on the shortlist is whether your page uses the phrasing **buyers would say and AI would rewrite to** in order to describe the problem you actually solve.
-
----
-
-## 5. Principle four: language and location are "market gates"
-
-### Switching language is like switching to a different library
-
-Ask the same question in a different language, and the queries the AI rewrites will also be in that language. Once sent into the search system, what gets pulled back is the web world of that language.
-
-The shortlist is not fine-tuned; it is **swapped out wholesale**.
-
-In addition, the user's network location when online (that is, the country the internet service shows, technically called the "exit IP") affects which country's user the search system takes you to be.
-
-### What the research says
-
-Researchers tested real AI search repeatedly and found:
-
-**1. Switching language swaps out almost the entire set of websites.** When GPT is asked in a different language, the overlap of cited websites is close to 0. Claude is the most stable in this respect. Also, rewording within the same language affects the cited websites less than switching language does.
-
-**2. Local brands benefit the most.** Researchers collected 35,640 answers across 12 European languages and 3 AIs that go online. When the question was asked in the language of the brand's home country:
-
-- The recommendation share of leading local brands rose by 0.80.
-- Global brands rose by only 0.15.
-- The content similarity of answers in different languages averaged 0.825 (1 means completely the same). It was slightly higher within the same language family than between different language families (0.844 vs 0.820).
-- The tone of the answers also changed with the language, with English answers being the most negative.
-
-**3. The share of local sources changes by multiples.** In Google AI Overviews on health topics:
-
-- When asked in English, the share of citations going to each country's local sources varied a lot: Australia 48.2%, the United States 33.7%, India 2.3%, Nigeria 0.2%.
-- After switching to the local native language, the share of citations going to local sources rose by 3.5 to 13.5 times. For example, Japan rose from 16.6% to 57.5%, and South Korea from 2.7% to 36.4%.
-
-**4. Language decides "choose local", location decides "which country's local".** This is a small-sample study: 234 tests in total, each group repeated 6 times.
-
-- Asking in English in Istanbul and Tallinn, local vendors did not appear even once in 12 tests.
-- Asking in the local language, global vendors appeared only 1 time out of 24.
-- Even more telling: a person in Berlin asking in Turkish got **German** local accounting software vendors (5 out of 6 times); a person in Tallinn asking in Russian got **Estonian** local vendors (4 out of 6 times).
-
-In other words: **the language of the question swaps the whole shortlist over to "local-type" vendors, and the location decides which country's local.**
-
-**5. Different AIs read location in different ways.** Researchers tested 31,200 answers on real AI search:
-
-- **ChatGPT** goes by the location the application tells it, down to the city. It writes the place name into its own search terms; even when the search terms contain no place name, the search system still changes sources by location. It **ignores** which network you are actually connecting from.
-- **Gemini** is the opposite: it ignores the location it is told and goes only by the country of the network. Even for questions that have nothing to do with location, quite a few sources change; but it cannot tell cities apart.
-- The businesses recommended are very unstable: asking again in the same city, only 32% were the same; in a different city, only 8%.
-
-The study also had a comparison category: project management software. This category showed no language effect. The researchers speculate this may be because categories like accounting are affected by each country's regulations, while project management is not, but this speculation has not been verified.
-
-### Two additions to remember together
-
-- **Whether answers are stable depends mainly on which AI it is, not on which language is used.** In the study's statistics, "which AI" could explain about 0.319 of the variation, while "which language" explained only about 0.011.
-- **The language gate swaps out the local layer, not all sources.** In 11 of the 12 languages, the most-cited website was the same online encyclopedia.
-
-### Tests by people in the industry (no one has independently verified them)
-
-**1. In smaller languages, new terms are easily misunderstood.** Someone asked five AI search tools in Finnish: "Which is the best GEO agency in my area?" Only two tools understood it as a marketing service. The other three recommended, respectively, a land surveying company, an agricultural earthworks contractor, and an outdoor game called "geocaching".
-
-The reason: in a language with relatively little web content, a short question does not give enough context for the AI to tell what a new term means.
-
-**2. Cities must be written into the sentence, not into the settings.** A logistics company providing services in about 8 cities in India:
-
-- Tested with 41 questions buyers would ask, it was named 0 times.
-- With the AI's location set to a certain city, and then asking generic questions, it was still 0 out of 3.
-- With the city name written directly into the question, Gemini named it all 3 times; Google's AI Overviews named it in two cities, and only in the cities where it **had a dedicated city page**.
-
-Note: this observation holds only for Gemini and Google AI Overviews. The study in point 5 above shows that ChatGPT follows the city that is set.
-
-**3. Every market's local ecosystem is different.** Someone asked ChatGPT "GEO agency + city name" in 19 cities:
-
-- Of 94 agencies, 97% had their official website cited.
-- The share of citations going to "business profiles" (the business information pages on search engines) was 86% in India's big cities, only 18% elsewhere, and about 15% in other emerging markets.
-- This is not a common pattern across all emerging markets, but a characteristic of a single market.
-
-**4. Translating your list of questions is not enough.** Someone in the industry observed: translating an English list of questions directly into other languages is not enough, because people in different languages already ask buying questions in different ways.
-
-Also, if you find that the AI, when answering in the local language, cites English web pages, this shows that the local-language web has very little content on this topic. In that case, one decent local-language page may quickly get cited.
-
-### Conclusion of this section
-
-Results measured in English cannot represent the local market.
-
-Language is a gate, and on the other side of the gate is a whole other shortlist.
-
----
+So results measured in English cannot represent the local market. **Language is a gate, and on the other side of the gate is a whole different shortlist.**
 
 ## 6. How reliable is this evidence
 
-| Principle | Where the evidence comes from | Strengths | Weaknesses |
-|---|---|---|---|
-| 1: Sources don't overlap | Multiple repeated tests on real AI search, including peer-reviewed research; large-sample tests by people in the industry point the same way | Multiple independent teams, different AIs, different times, all conclusions point the same way | Some studies had very few questions (for example only 15 questions); some researchers themselves sell visibility measurement services, a conflict of interest |
-| 2: Rewriting makes sources unstable | Repeated tests on real AI search (including peer-reviewed research); "deep research AIs concentrate on a few pages" was seen in a controllable experimental system | Ranking stability and "re-search" experiments directly measured the effect of rewriting | What the rewritten queries look like in detail comes mainly from data intercepted by people in the industry; Google's split-off smaller queries were inferred, not seen directly |
-| 3: Wording decides the shortlist | Mainly tests by people in the industry (repeated, with a control group); research offers only indirect support | Control groups, repeated tests, long-term daily records | Most tested only one category or one subject; the mechanism behind it is the testers' speculation |
-| 4: Language and market gates | Three or more repeated tests on real AI search, covering 12 European languages, plus health topics in Asia and Africa | Large effects, consistent direction, reproducible across different studies | "Location decides which country" was tested on only one AI, 6 times per group, a very small sample; the authors of the two core studies also sell visibility measurement services |
+The sources and strength of the evidence for the four principles are not the same, and it is clearer to look at them separately.
 
-### Keep in mind when using this evidence
+The evidence for Principle one, "sources don't overlap", is the most solid. It comes from several repeated tests on real AI search, including peer-reviewed research, and large-sample tests by people in the industry point the same way. Its strength is that several independent teams, different AIs and different times all lead to the same conclusion. Its weakness is that some studies used very few questions, for example only 15, and some researchers themselves sell visibility measurement services, a conflict of interest.
 
-- **All of the above are "observed phenomena", not "proven causation".** They show how the shortlist changes, but no randomized experiment has proven: "change the page wording → higher probability of being pulled in → more traffic or sales".
-- **AI is updated very frequently.** The sudden change in ChatGPT's search behavior on August 8 shows this: any specific number (how many queries per search, how many pages cited) has a shelf life.
-- **The research finding that "covering rewritten query wording works" comes from websites the researchers set up themselves.** It measured "share of content used", not the success rate of real commercial websites.
+Principle two, "rewriting makes sources unstable", likewise comes from repeated tests on real AI search, including peer-reviewed research; the finding that "deep research AIs concentrate on a few pages" was seen in a controllable experimental system. The ranking stability and "re-search" experiments directly measured the effect of rewriting, which is its strength. Its weakness is that what the rewritten queries look like in detail comes mainly from data intercepted by people in the industry, and Google's split-off smaller queries were inferred, not seen directly.
 
----
+The evidence for Principle three, "wording decides the shortlist", is mainly tests by people in the industry, repeated and with a control group, with only indirect support on the research side. These tests had control groups, repetitions and long-term day-by-day records; but most tested only one category or one subject, and the mechanism behind them is only the testers' speculation.
 
-## 7. Things still being debated
+Principle four, "language and the market gate", comes from three or more repeated tests on real AI search, covering 12 European languages as well as health topics in Asia and Africa. The effects are large, the direction is consistent, and different studies can reproduce them. The weakness is that "location decides which country" was tested on only one AI, 6 times per group, a very small sample; and the authors of two of the core studies also sell visibility measurement services.
 
-### Debate 1: Can you see the queries the AI splits off?
+When using this evidence, there are three more things to remember. **All of the above are observed phenomena; none of them proves causation.** They show how the shortlist changes, but no randomized experiment has proven that "changing a page's wording raises the probability of being pulled in, and traffic or sales rise along with it". Second, AI is updated very often. The sudden change in ChatGPT's search behaviour on 8 August shows that any specific figure (how many queries per search, how many pages cited) has a shelf life. Finally, the research finding that "covering rewritten query wording works" comes from websites the researchers set up themselves, and what it measured was "share of adopted content", not the success rate of real commercial websites.
 
-Claims from people in the industry contradict each other:
+## 7. What is still being debated
 
-- Someone says: ChatGPT lets you see its rewritten queries, and Google's two interfaces (AI Mode and AI Overviews) do not. Someone else saw ChatGPT's rewritten queries through the browser's developer tools.
-- Another person's test, however, says: Claude and Perplexity disclose the split-off queries, while ChatGPT and Gemini do not.
-- Someone tried to get these queries through a third-party API and got only 1 to 3, mostly small variations of the original keyword, and sometimes not even one. Another person tried 6 times and got at most 3.
-- The same person compared and found: the "fan-out queries" given by simulation tools were more useful, but those were "simulated" with prompts, not queries the AI actually sent.
+### Dispute one: can you see the queries AI splits off?
 
-**How to see it:** whether you can see them changes with the interface, version and time. Contradictory reports may each have been true at the time each was tested. Simulated "fan-out queries" are only guesses and cannot be treated as observed data.
+Accounts from people in the industry contradict each other. Some say ChatGPT lets you see its rewritten queries while Google's two interfaces (AI Mode and the AI summary) do not; others have seen ChatGPT's rewritten queries through the browser's developer tools. Yet another person's test says that Claude and Perplexity disclose the split-off queries, while ChatGPT and Gemini do not.
 
-### Debate 2: Whose search data does ChatGPT use?
+Someone else tried to get these queries through a third-party programming interface and got only 1 to 3, mostly small variations on the original keyword, and sometimes none at all; another person tried 6 times and got at most 3. The same person compared them and found that the "fan-out queries" produced by simulation tools were more useful, but those were "simulated" with prompts, not the queries AI actually sent.
 
-The general view in the industry is that when ChatGPT searches online, it uses search data from both Bing and Google. But this is a disputed view: supporters outnumber opponents by a little over three to one. This is not proof.
+Our view is that whether you can see them changes with the interface, the version and the time, and contradictory reports may each have been true at the moment they were tested. Simulated "fan-out queries" are only guesses and cannot be treated as observed data.
 
-OpenAI's official documentation confirms that besides its own index, ChatGPT search also uses "third-party search providers", but it does not say which ones. So "is it Bing or Google" still has no answer.
+### Dispute two: whose search data does ChatGPT use?
 
-One industry study reported: 83% of the products in ChatGPT's shopping recommendation panel came from Google's shopping data, via shopping-type fan-out queries. This can serve as supporting evidence, but it covers only the shopping scenario.
+The industry widely believes that when ChatGPT searches online, it uses search data from both Bing and Google. But this view is disputed; supporters outnumber opponents by a little over three to one, and that is not proof. OpenAI's official documentation confirms that ChatGPT search uses "third-party search providers" in addition to its own index, but does not say which ones. So whether it is Bing or Google has no answer yet. One industry study reported that 83% of the products in ChatGPT's shopping recommendation panel came from Google's shopping data through shopping-related fan-out queries. This can serve as supporting evidence, but it covers only the shopping scenario.
 
-### Debate 3: Does setting a location help?
+### Dispute three: does setting a location help?
 
-- Research (small sample) says: the online location (exit IP) decides which country's vendors the AI recommends.
-- Tests by people in the industry say: set the location and ask generic questions, and local businesses were still named 0 times; it only helps if the city name is written into the sentence.
+One small-sample study says the location you connect from (the exit IP) decides which country's providers AI recommends. Tests by people in the industry say that with a location set and a general question asked, local businesses were still named 0 times, and it only helped to write the city name into the sentence. The two do not necessarily contradict each other. One possible explanation is that location works at the "country" level, while localisation at the "city" level needs the question itself to carry the place. But so far no study has tested these two things in the same experiment.
 
-These two do not necessarily contradict each other. A possible explanation: location works at the "country" level, while localization at the "city" level needs the question itself to carry the place. But so far no study has tested these two things in the same experiment.
+### Dispute four: are users' questions long or short?
 
-### Debate 4: Are users' questions actually long or short?
+There are only a few single-point observations from people in the industry on this. Someone cited two user surveys indicating that most questions are short, about two thirds within 15 words, close to traditional keyword search, but that more and more people add personal context such as budget and location. Someone saw in clients' website data that about 60% of questions were just search terms. Someone else believes that in the categories they know, questions run to about 20 words, and that questions have actually become shorter because AI remembers earlier context. Yet another person found that conversational queries as long as a whole paragraph have started appearing in Google Search Console.
 
-Several one-off observations by people in the industry:
+These are all individual observations. For the "can it find you" gate, what matters more is the query after AI rewrites it; the length of the user's original sentence is secondary. Whether the original sentence is long or short, what is finally sent into the search system is the rewritten version. In addition, real conversation logs show that a sentence is often short because conditions such as budget and location were already stated in earlier rounds (see Chapter 9). Testing with an isolated short question may miss these conditions.
 
-- Someone cited two user surveys: most questions are short, about two thirds within 15 words, close to traditional keyword searches; but more and more people add personal context such as budget and location.
-- Someone saw in a client's website data: about 60% of questions were just search terms.
-- Someone else believes that in the categories he knows, questions are about 20 words; and because AI remembers earlier context, questions have actually become shorter.
-- Yet another person found that conversational queries as long as a whole paragraph have started appearing in Google Search Console.
+### Dispute five: is it other people's word of mouth that keeps you stable, or the wording on your page?
 
-**How to see it:** these are all individual observations. For the "can it find you" gate, what matters more is the query after the AI rewrites it, not the length of the user's original sentence. Whether the original is long or short, what finally goes into the search system is the rewritten version.
+In the "shared inbox" wording test earlier, even the tester could not cleanly separate the two factors. What kept those tools appearing steadily may have been that their pages described workflows in the buyer's language, or it may have been the large number of third-party comparison lists on the web at work. The tester's provisional view is that "other people's word of mouth gets you in, and the wording on your page keeps you there", a hypothesis that has not yet been tested.
 
-Also, real conversation records show that a sentence is often short because conditions such as budget and location were already stated in earlier rounds (see Chapter 9). Testing with an isolated short question may miss those conditions.
+### Dispute six: is AI searching more a good thing or a bad thing?
 
-### Debate 5: Is it what others say about you that keeps you stable, or the language on your page?
+For content owners, AI searching more means more entrances through which you might be pulled in. But in a controllable experimental system, repeated searching concentrated instead on a small number of user content pages "that anyone can edit", creating a weakness that is easy to attack. Adding about 13 words to one URL got it pulled into AI's reference material in 57% to 76% of tests; 34% to 61% cited it, and 22% to 37% mentioned the brand or product named by the attacker in the report. The researchers tried two common detection methods, one checking whether the text is "unnatural" and one checking whether outputs are similar, and neither could detect it.
 
-In the earlier "shared inbox" wording test, even the tester could not cleanly separate the two factors:
-
-- Was it that those tools' pages described workflows in buyer language that kept them appearing steadily?
-- Or was it the large number of third-party comparison lists online at work?
-
-The tester's tentative view is: "What others say about you gets you in; the language on your page keeps you there." This is a hypothesis that has not yet been tested.
-
-### Debate 6: Is AI searching a few more times a good thing or a bad thing?
-
-- **For content owners**: AI searching more times means more entrances through which you might be pulled in.
-- **But in a controllable experimental system**: multiple searches instead concentrated on a small number of "anyone can edit" user content pages, creating a weak point that is easy to attack. Adding about 13 words to one URL was enough for 57% to 76% of tests to pull it into the AI's reference material, 34% to 61% to cite it, and 22% to 37% to mention the brand or product specified by the attacker in the report. The researchers tried two common detection methods (one checking whether the text is "unnatural", one checking whether outputs are similar), and neither detected it.
-- **At the same time**, people in the industry observed: after August, ChatGPT sharply reduced its searches of large community discussion sites; these sites fell from about 4% of its sources to 0.02%.
-
-In other words, the statement "social platforms are sources AI will definitely grab" may be completely untrue for different AIs and at different points in time.
-
-Someone in the industry points out: for the same question, only about 11% of the websites cited by one AI appear in another AI's citations. So changes in one AI cannot be applied to the other AIs.
-
----
+At the same time, people in the industry observed that after August, ChatGPT sharply reduced its searching of large community discussion sites, and the share of such sites among its sources fell from about 4% to 0.02%. So the statement that "social platforms are sources AI will always pick up" may not hold at all for different AIs at different times. Someone in the industry cautioned that for the same question, only about 11% of the websites cited by one AI appear among another AI's citations, so a change in one AI cannot be applied to other AIs.
 
 ## 8. Real cases
 
-The following cases all come from tests or second-hand accounts by people in the industry, not research papers. After each case, it is stated what it can and cannot prove.
+The following cases all come from tests or second-hand accounts by people in the industry, not research papers. Each case states what it can prove and what it cannot.
 
-### Case 1: the same tool, asked a different way, goes from 10 times to 0
+### A different phrasing, a different buyer: from 10 times to 0
 
-**What was done:** On ChatGPT, Claude, Perplexity and Gemini, a shared inbox tool was asked about in two ways, 10 times each. One used the category name, the other a real user's descriptive way of asking. Two other tools were tracked as a control.
+The tester in the first case asked about shared inbox tools on ChatGPT, Claude, Perplexity and Gemini in two phrasings, 10 times each: one was the category name, and one was a real user's descriptive phrasing; two tools were also tracked as a control. When asked by category name, the two main tools appeared almost every time. With the descriptive phrasing, the AIs' responses diverged: ChatGPT named one of them 9 times and the other 0 times; Claude was the reverse, 8 times against 5; Gemini named both, 10 times and 8 times respectively; Perplexity named one of them 5 times and the other 0 times, and simply switched to teaching the user how to set things up in their own email software. The two control tools were stable under every phrasing, at most slightly unstable on Perplexity. This case shows that whether you get pulled in depends on whether the phrasing matches the wording on your page (Principle three), and that each AI responds in a different direction (Principle one).
 
-**What was seen:**
+The second case is the new author's 99 days. This author only went live on 11 May. The tester registered the measurement method in advance, asked three AIs that go online 16 fixed questions every day, and scored more than 11,000 answers in total. For questions naming the author directly, the mention rate settled at 72% from about day 49 onward; in questions that did not name the author and asked AI for recommendations, 25 of the 40 mentions came from the one question that used the author's coined term; phrasings like "similar to [author]" got 0 out of about 700. This shows that a new brand or newcomer can be pulled in in the short term through their own coined terms (Principle three). But to be pulled in under "similar to [someone]" phrasings, other people need to mention you together with that famous person in the same piece of content, and this kind of third-party co-mention can't be produced within a few weeks.
 
-- Asked with the category name: the two main tools appeared almost every time.
-- Asked the descriptive way:
-  - ChatGPT named one of them 9 times and the other 0 times.
-  - Claude was the reverse, 8 times vs 5 times.
-  - Gemini named both, 10 times and 8 times respectively.
-  - Perplexity named one of them 5 times and the other 0 times, and simply switched to teaching the user how to set things up in their own email software.
-- The two control tools were very stable under all ways of asking, at most slightly unstable on Perplexity.
+### Location and language: one city name, one abbreviation
 
-**What this shows:** whether you get pulled in depends on whether the way of asking matches the language on your page (principle three). And each AI reacts in a different direction (principle one).
+A logistics company serving about 8 cities first tested 41 buyer questions, then compared two approaches: "set the location + ask a general question", and "write the city name into the question". At first it was 0 out of 41; with the location set, it was still 0 out of 3; once the city name was written into the sentence, Gemini named it all 3 times, and Google's AI summary named it in two cities, and only where it had a city page. The location has to become part of the content of the question, and your website also has to have pages for the matching locations that can be matched (Principles four and three).
 
-### Case 2: a new author's 99 days
+The other case happened in Finnish. Someone asked five AI search tools in Finnish, "Which is the best GEO agency in this area?", and three of them understood GEO as land surveying, earthworks, or the geocaching game. In a language with relatively little web content, a new term lacks enough context, and when AI rewrites a short question, it may pull in the wrong category altogether (Principle four). The tester's preliminary experience is that writing out the full name in the service description helps, but this has not been rigorously tested.
 
-**What was done:** A brand-new author who only went live on May 11, having registered the measurement method in advance, asked three AIs that go online 16 fixed questions every day, scoring more than 11,000 answers in total.
+### ChatGPT reads deeper, but not wider
 
-**What was seen:**
+Someone in the industry used the same set of 961 questions to compare the sources pulled back in a total of 5,029 ChatGPT answers before and after 8 August. The sources pulled back per answer rose by 61%, but distinct websites rose by only 9%. Websites of government and official bodies increased sharply, while large community discussion sites and several media sites decreased sharply. The tester himself pointed out two caveats: his question mix leans toward health and finance and should not be treated as a general pattern; and he can only see that "it changed", not "why it changed". This case shows that searching more does not mean more diverse sources, and websites that were not originally on the shortlist will not be discovered just because AI searches more (Principle two).
 
-- Questions naming the author directly: after about day 49, steady at 72%.
-- In questions that did not name the author and asked AI for recommendations, of the 40 times the author was named, 25 came from the one question that used the author's coined term.
-- Questions of the "similar to [author]" type: 0 out of about 700.
+### Aiming at the queries AI actually sends
 
-**What this shows:** a new brand or newcomer can get pulled in within a short time through "specialized terms you coined yourself" (principle three). But to get pulled in under "similar to [someone]" questions, you need others to mention you together with that famous person in the same piece of content. This kind of third-party joint mention cannot be produced within a few weeks.
+A new website in a highly competitive category did not build pages for the sentences users would originally type, but for the fan-out queries ChatGPT split off; those fan-out queries already included the names of several well-known brands in that category. Within about a week, these pages were cited by ChatGPT for a very broad "best [type of tool]" question. The tester stressed that being cited is not the same as being recommended. Retrieval matches the rewritten queries (Principle two), but getting onto the shortlist is only the first step; whether AI picks you and recommends you is the subject of the next chapter.
 
-### Case 3: add a city name, and go from 0 to 3
+So how do you capture the real fan-out queries? Someone in the industry who serves online shop clients asked the target question 5 times each on ChatGPT and Gemini, recorded every smaller query split off, and kept only those that appeared 3 or more times. One question for a kitchenware client yielded 14 smaller queries that appeared consistently. After that, he built one page for each query, using the wording of that query itself. In the month before this, his approach had been to write all kinds of synonymous sentences for users' phrasings and build pages for them; he made 9 pages, and all of them were wasted effort. What you need to match is the smaller queries AI really sends again and again, not synonymous sentences you imagined yourself (Principle two).
 
-**What was done:** A logistics company providing services in about 8 cities first tested with 41 buyer questions, then compared two approaches: "set the location + ask generic questions" and "write the city name into the question".
+The evidence for the last case is weaker. Someone in the industry passed on a client case: this client gave up broad category terms and instead picked 5 to 6 phrasings from the buying stage, such as "best [product] for [use]" and "cheapest [product] that works well". They then first looked at which sources AI was already citing under these phrasings, picked out the ones they had a chance of competing with, and concentrated all their own content and their exposure on third-party websites on these few angles. The report says that within 90 days, this client went from almost invisible to appearing in 15% to 20% of relevant AI answers; the report also says the conversion rate of this traffic was about 4 times that of traditional search traffic. This is a second-hand account, not independently verified and without a control group, and the sales figures in particular should be treated with caution. This book's consistent judgment is that no research has yet proven that GEO reliably brings traffic or sales. The value of this case lies in showing an approach: **choose your battlefield by question type, and don't try to cover everything.**
 
-**What was seen:** At first, 0 out of 41. After setting the location, still 0 out of 3. After writing the city name into the sentence, Gemini named it all 3 times; Google's AI Overviews named it in two cities, and only where it had a city page.
+## 9. Ideas that are already out of date
 
-**What this shows:** the location must become part of the "content" of the question sentence, and your website must also have a page for that location that can be matched (principles four and three).
+"I want to be number one in AI" is the first idea to let go of. The sources of different AIs barely overlap, and the same AI changes every day too, so there is no first place to fight over at all.
 
-### Case 4: ChatGPT reads deeper, but not wider
+"If I rank first on Google, AI will cite me" is also out of date. Of the pages cited by Google's AI summary, only about one in ten are in the top 10 for the main query, and nearly 30% of the cited websites are not on the first page at all. Ranking first still gives an advantage, but it is only one of the conditions.
 
-**What was done:** Using the same set of 961 questions, the sources pulled back by a total of 5,029 ChatGPT answers before and after August 8 were compared.
+"It's enough to optimize the keyword users will type" doesn't hold up either, because AI searches the rewritten query, and when rewriting it adds words, adds a year, and even adds brand names. "If AI searches more, sources will become more diverse" is not true either; research and industry data both show that searching more mainly means reading deeper into the websites already in use.
 
-**What was seen:** Sources pulled back per answer went up by 61%, but distinct websites went up by only 9%. Government and official agency websites increased sharply; large community discussion sites and several media websites decreased sharply.
-
-The tester himself gave two warnings: first, his question set leaned towards health and finance and should not be treated as a general rule; second, he can only see "that it changed", not "why it changed".
-
-**What this shows:** searching more does not mean more diverse sources. Websites that were not on the shortlist to begin with will not be discovered just because AI searches more (principle two).
-
-### Case 5: building pages for the queries AI splits off, a new site gets cited within a week
-
-**What was done:** A new website, in a very competitive category, built pages not for the sentences users would originally type, but for the fan-out queries ChatGPT split off. Those fan-out queries already had the names of several well-known brands in this category written in.
-
-**What was seen:** Within about a week, these pages were cited by ChatGPT under a very broad "best [type of tool]" question.
-
-The tester stressed in particular: **being cited is not the same as being recommended.**
-
-**What this shows:** retrieval matches the rewritten queries (principle two). But getting onto the shortlist is only the first step; whether the AI picks you and recommends you is the subject of the next chapter.
-
-### Case 6: how to capture the real fan-out queries
-
-**What was done:** Someone in the industry who serves online store clients asked the target question 5 times each on ChatGPT and Gemini, noted every smaller query split off, and kept only those that appeared 3 or more times.
-
-**What was seen:** One question for a kitchenware client produced 14 smaller queries that appeared consistently. After that, he made one page for each query, directly using the wording of that query itself.
-
-In the first month before this, his approach had been to build pages by "writing all kinds of synonymous sentences for the user's way of asking". He made 9 pages, all wasted.
-
-**What this shows:** what you need to match is the smaller queries the AI actually sends repeatedly, not synonymous sentences you imagined yourself (principle two).
-
-### Case 7: "GEO" in Finnish
-
-**What was done:** Five AI search tools were asked in Finnish: "Which is the best GEO agency in this area?"
-
-**What was seen:** Of the five tools, three understood GEO as land surveying, earthworks, or the geocaching game.
-
-**What this shows:** in a language with relatively little web content, a new term lacks enough context, and when the AI rewrites a short question it may pull in the wrong category entirely (principle four). The tester's preliminary experience is: writing out the full name in the service description helps, but this has not been rigorously tested.
-
-### Case 8 (weaker evidence): targeting only a few "best/most" questions
-
-**What was done:** Someone in the industry relayed a client case. This client gave up broad category terms and instead picked 5 to 6 buying-stage questions, such as "the best [product] for [use]" or "the cheapest [product] that works well". Then they first looked at which sources AI was already citing under these questions, picked the ones where they had a chance to compete, and concentrated all their own content and their exposure on third-party websites on these few angles.
-
-**What was seen:** The report says that within 90 days, this client went from almost invisible to appearing in 15% to 20% of the relevant AI answers. The report also says the conversion rate of this traffic was about 4 times that of traditional search traffic.
-
-**How to see it:** this is second-hand, not independently verified, and has no control group. The conversion figures in particular should be treated with caution. This book's consistent judgment is: so far no research has proven that GEO can reliably bring traffic or sales. The value of this case lies in showing an approach: **pick your battlefield by question type, rather than trying to cover everything.**
-
----
-
-## 9. Ideas that are out of date
-
-| Out-of-date idea | Why it is out of date |
-|---|---|
-| "I want to rank first in AI" | The sources of different AIs barely overlap, and the same AI changes every day too |
-| "Rank first on Google, and you'll be cited by AI" | Only about 10% of the pages cited by Google AI Overviews are in the top 10 for the main query; nearly 30% of cited websites are not on the first page at all. Ranking first still has an advantage, but it is only one of the conditions |
-| "Just optimize the keyword users would type" | AI searches rewritten queries, and when rewriting it adds words, adds the year, and even adds brand names |
-| "If AI searches a few more times, sources will be more diverse" | Both research and industry data show that searching more mainly means reading deeper within websites already in use |
-| "Get the English version right, then just translate it" | Switching language means switching to a whole different shortlist; and people in different languages also ask questions differently |
-
----
+Last is "Do a good English version and just translate it." Changing the language means changing the whole shortlist, and people who speak different languages also ask questions in different ways.
 
 ## Key points of this chapter
 
-1. **Retrieval decides who is eligible to compete.** Pages not on the shortlist have no chance of being selected, cited or absorbed.
-2. **There is no such thing as "ranking first in AI".** URLs cited by different AIs barely overlap, and the same AI swaps out a large part the next day. You can only look at the "probability of being pulled in" separately by AI, language, market and way of asking.
-3. **AI does not search for the sentence the user typed.** AI rewrites the question, may split it into several, add the year, and even write in brand names in advance. What you need to match is the rewritten queries.
-4. **Searching more does not mean searching wider.** Multiple searches may concentrate on a few websites, or a few user content pages that anyone can edit. Websites not on the shortlist will not be discovered just because AI searches more.
-5. **Say it a different way, and a brand may go from "there every time" to "completely gone".** What the category is called, the task described, and who the buyer is all change the shortlist. Brands that describe actual workflows in buyer language are more stable (this is from tests by people in the industry; the mechanism behind it has not been confirmed).
-6. **The language of the question is a market gate.** Ask in the native language, and the share of local brands and local sources rises sharply. Measure in English, and you cannot see the local market.
-7. **The location must be written into the question itself.** The online location may decide "which country"; but at the city level, current evidence from people in the industry points to this: the question needs to contain the place, and your website also needs a page for that place.
-8. **Being pulled in does not mean getting traffic.** The evidence in this chapter is all observed phenomena. After getting onto the shortlist, you still have to pass the two gates of selection and citation; and so far no research has proven that these can reliably bring traffic or sales.
+Retrieval decides who is eligible to compete; pages that are not on the shortlist have no chance of being selected, cited or absorbed. There is also no such thing as "ranking first in AI": the URLs cited by different AIs barely overlap, the same AI swaps out a large majority of them the next day, and you can only look at "the probability of being pulled in" separately by AI, language, market and phrasing.
 
----
+AI doesn't search for the sentence the user typed. It rewrites the question, possibly splitting it into several queries, adding a year, and even writing brand names in ahead of time; what you need to match is the rewritten query. Searching more also does not mean searching wider: repeated searching may concentrate on a few websites, or on a few user content pages that anyone can edit, and websites that are not on the shortlist will not be discovered just because AI searches more.
+
+Change the phrasing, and a brand can go from "there every time" to "completely gone". The name of the category, the task described and the identity of the buyer all change the shortlist; brands that describe actual workflows in the buyer's language are more stable, which comes from tests by people in the industry, and the mechanism behind it has not been confirmed. The language of the question is a market gate: when the question is asked in the native language, the share of local brands and local sources rises sharply, and measuring in English cannot see the local market. The location needs to be written into the question itself: the place you connect from may decide "which country", but at the city level, the current evidence from people in the industry points to the question needing to contain the place, and your website also needing matching location pages.
+
+Finally, being pulled in is not the same as getting traffic. The evidence in this chapter is all observed phenomena. After getting onto the shortlist, you still have to pass the two gates of selection and citation, and no research has yet proven that these reliably bring traffic or sales.
 
 ## Remember in one sentence
 
-**AI does not search for the sentence the user typed, but for the few sentences it rewrote itself, and it searches in one particular language, in one particular market. What you need to match is those few sentences.**
-
----
+**AI doesn't search for the sentence the user typed, but for the few sentences it rewrote itself, searched in a particular language and in a particular market. Those few sentences are what you need to match.**
 
 ## What you can do tomorrow
 
-1. **Test and manage each AI separately.** Do not use one "AI visibility total score" to represent all AIs. (Multiple repeated tests on real AI search reached consistent conclusions.)
-2. **Test each language and each market separately.** Local brands must be tested in the local native language. For every measurement, record which language was used and which country or region you went online from. (Repeated tests on real AI search; the "location" part has only a small sample.)
-3. **Ask the same question many times and look at the mention rate, not a single screenshot.** Researchers found on real AI search: in 4 out of 6 questions, the top recommendation changed when the question was asked again; even asking again on the same device, the sources of Google AI Overviews changed.
-4. **Cover in your pages the ways of asking AI might rewrite to**, including qualifiers AI often adds automatically, such as the year. (Researchers ran experiments on real AI search using websites they built themselves, measuring "share of content used"; there are also test reports from people in the industry.)
-5. **Capture the real fan-out queries.** Ask the same question several times on the same AI, keep only the smaller queries that appear repeatedly, then use the original wording of that query to make a new page, or add a section of content. (Test reports from people in the industry; no one has independently verified them.)
-6. **Use the buyer's own language to describe the problem and workflow you actually solve.** Do not just say "we are a [category] product". (Tests by people in the industry, repeated, with a control group.)
-7. **Plan and test separately by question type**: category-name, descriptive, comparison, "what can replace", "best/cheapest", and questions from different buyer identities. (Tests by people in the industry, repeated, with a control group; some are only single observations.)
-8. **Build your own specialized terms.** A new brand can first get pulled in under a niche category name it defines itself. (Tests by people in the industry, repeated, with a control group, but only one subject.)
-9. **For location-based businesses, make a dedicated page for each service location**, and test with "service + location" questions. (Tests by people in the industry, repeated, with a control group, but only one business.)
-10. **In language markets with fewer users, write out the full name of specialized terms and add enough context**, so a new term is not mistaken for an old one. (Test reports from people in the industry, not yet rigorously tested.)
-11. **If a topic has very little content on the local-language web, prioritize making local-language pages.** (Observed by someone in the industry; can only be treated as a clue.)
-
----
+1. Test and manage each AI separately, and don't use one "overall AI visibility score" to represent all AIs. Several repeated tests on real AI search all reach the same conclusion.
+2. Test each language and each market separately, always test local brands in the local native language, and record for every measurement which language was used and which country or region you connected from. This comes from repeated tests on real AI search; the "location" part has only a small sample.
+3. Ask the same question many times and look at the mention rate, not at a single screenshot. Researchers found on real AI search that for 4 out of 6 questions, the top recommendation changed when the question was asked again; even when asking again on the same device, the sources of Google's AI summary changed.
+4. Cover in your pages the phrasings AI is likely to produce when rewriting, including qualifiers AI often adds automatically, such as the year. Researchers ran an experiment on real AI search using websites they built themselves, measuring "share of adopted content"; there are also test reports from people in the industry.
+5. Capture the real fan-out queries: ask the same question several times on the same AI, keep only the smaller queries that recur, then use the original wording of that query to build a new page or add a section of content. This is a test report from people in the industry, and no one has independently verified it.
+6. Describe the problems you actually solve and your workflows in the buyer's own language, rather than just saying "we are a [category] product". This comes from tests by people in the industry, repeated and with a control group.
+7. Plan and test separately by phrasing type, including category-name, descriptive, comparison, "what can replace it", and "best / cheapest" phrasings, as well as phrasings from different buyer identities. This comes from tests by people in the industry, repeated and with a control group, though some parts are only single observations.
+8. Build your own coined terms; a new brand can first be pulled in on the name of a niche genre it defines itself. This comes from tests by people in the industry, repeated and with a control group, but with only one subject.
+9. If your business is tied to locations, build a dedicated page for each service location and test with "service + location" phrasings. This comes from tests by people in the industry, repeated and with a control group, but with only one company.
+10. In language markets with fewer speakers, write out the full name of proper terms and add enough context, so that a new term isn't mistaken for an old one. This is a test report from people in the industry and has not yet been rigorously tested.
+11. If a topic has very little content on the local-language web, give priority to building local-language pages. This is a phenomenon someone in the industry observed, and it can only be treated as a clue.
 
 ## Stop doing this
 
-- **Stop using English measurement results to represent the local market.** Asking in English, you may completely fail to see your local competitors.
-- **Stop treating a single screenshot as evidence that "AI recommends me".**
-- **Stop keyword stuffing.** In the AI search systems tested, it had no effect at all on being pulled in.
-- **Stop mass-producing pages for all kinds of synonyms of the user's way of asking.** What you need to match is the smaller queries AI actually sends.
-- **Stop treating "fan-out queries" generated by simulation tools as observed data.**
-- **Stop relying only on a VPN or the AI's location setting to test local visibility.** At the very least, also test the version with "the location written directly into the question".
-- **Stop applying changes in one AI to the other AIs.**
+**Stop using measurement results in English to represent the local market.** Asking in English, you may not see your local competitors at all. In the same way, stop treating a single screenshot as evidence that "AI recommends me".
 
----
+Stop stuffing keywords; in the AI search systems that have been tested, it had no effect at all on being pulled in. And stop building large numbers of pages for every synonymous sentence of users' phrasings; what you need to match is the smaller queries AI actually sends. Also stop treating the "fan-out queries" generated by simulation tools as observed data.
+
+When testing local visibility, stop relying only on a VPN or AI's location setting; at the very least, also test the version that "writes the location directly into the question". Finally, stop applying a change in one AI to other AIs.
 
 ## What is still uncertain
 
-- **Can the queries AI splits off actually be seen?** Industry reports contradict each other, and it may change with interface, version and time. Simulated fan-out queries are only guesses.
-- **Whose search data does ChatGPT use when it goes online?** Most people in the industry believe it uses both Bing and Google, but this is disputed and unproven. OpenAI officially confirms only that it uses "third-party search providers", without saying which ones. There is one piece of supporting evidence for shopping, but it is limited to shopping.
-- **Does the location setting actually help?** A small-sample study says "the online location decides the country"; industry tests say "the city must be written into the sentence". The two may each govern one layer, but no study has yet tested them together. Another cross-country study on real search engines found that language decides the results more than location does: searching in English across countries, the overlap of result websites was 0.58 to 0.80; switching to the local language, it dropped to just 0.11 to 0.17. A study has now tested both together: the answer depends on which AI it is (see Section 5).
-- **Are users' questions actually long or short?** All the claims are individual observations. But for this gate, the rewritten query matters more than the length of the original sentence.
-- **Is what keeps you appearing steadily what others say about you, or the language on your page?** Currently they cannot be separated. "What others say about you gets you in; the language on your page keeps you there" is only a hypothesis waiting to be tested.
-- **Is AI searching a few more times a good thing or a bad thing?** It brings more entrances, but may also concentrate on a few editable pages, forming a weak point that is easy to attack; and different AIs at different times may behave in completely opposite ways.
-- **Why can wording make a brand disappear?** The phenomenon is supported by controlled tests, but the mechanism behind it is only the testers' speculation.
-- **Can changing page wording bring traffic or sales?** So far no randomized experiment has proven "change wording → pulled in more often → more traffic or sales". The evidence in this chapter is only observed phenomena.
-- **Any specific number in this chapter** (how many queries per search, how many pages cited) may go out of date because of AI updates.
+**Can the queries AI splits off actually be seen?** Industry reports contradict each other, and the result may change with the interface, the version and the time. Simulated fan-out queries are only guesses.
+
+**Whose search data does ChatGPT use when it goes online?** Most people in the industry believe it uses both Bing and Google, but this is disputed and unproven. OpenAI's official documentation only confirms that it uses "third-party search providers", without saying which ones. There is one piece of supporting evidence for the shopping scenario, but it is limited to shopping.
+
+**Does a location setting actually help?** A small-sample study says "the location you connect from decides the country", and industry tests say "the city has to be written into the sentence". The two may each govern one level, but no study has tested them together yet. Another cross-country study on real search engines found that language decides results more than location does: for the same English queries across countries, the overlap of result websites was 0.58 to 0.80; switching to the local language, it was only 0.11 to 0.17. There is now research that has tested the two together, and the answer is that it depends on which AI (see Section 5).
+
+**Are users' questions long or short?** All the claims are only individual observations. For this gate, though, the rewritten query matters more than the length of the original sentence.
+
+**Is it other people's word of mouth or the wording on your page that keeps you appearing steadily?** At present the two can't be separated. "Other people's word of mouth gets you in, and the wording on your page keeps you there" is only a hypothesis waiting to be tested.
+
+**Is AI searching more a good thing or a bad thing?** It brings more entrances, but it may also concentrate on a few editable pages, creating a weakness that is easy to attack; and different AIs at different times may behave in completely opposite ways.
+
+**Why can wording make a brand disappear?** The phenomenon is supported by controlled tests, but the mechanism behind it is only the testers' speculation.
+
+**Can changing a page's wording bring traffic or sales?** At present no randomized experiment has proven that "changing the wording leads to being pulled in more often, and traffic or sales rise along with it". The evidence in this chapter is all observed phenomena.
+
+**Any specific figure in this chapter**, such as how many queries per search or how many pages are cited, may go out of date as AI is updated.

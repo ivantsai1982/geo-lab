@@ -9,6 +9,16 @@ Versioning: **MAJOR.MINOR.PATCH**
 
 Versions before 1.0.0 are the pre-release phase.
 
+## [0.7.0] - 2026-10-20
+### Changed
+- Plain-language editions (all 17 chapters) rewritten prose-first so the book reads like a book rather than a list of bullet points: paragraphs instead of lists, far less bold, no label templates, fewer subheadings, tables kept only where they compare real data, no horizontal rules. No principle, number, case, caveat or evidence-strength wording was added or removed; every chapter was checked number by number against the previous version.
+- English edition retranslated from the rewritten Traditional Chinese chapters. Chapter titles now use the form "Chapter N: Title", and the text uses no em dashes.
+- Simplified Chinese edition reconverted from the rewritten Traditional Chinese chapters.
+- Research edition: light formatting pass only (horizontal rules removed, label templates unbolded, at most two bold phrases per section). Evidence tables and wording unchanged.
+- Contents pages, word counts and full-book files regenerated for all editions.
+### Fixed
+- Simplified Chinese conversion script now writes LF line endings on Windows.
+
 ## [0.6.0] - 2026-10-20
 ### Added
 - Ch. 3: "AI did not read the latest version" split into two cases: reading a cached copy, and not opening the page at all

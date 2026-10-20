@@ -5,7 +5,7 @@
   <p><strong>一本持续更新的生成式引擎优化（GEO）教材：不断纳入新研究与原创实验。</strong></p>
   <p>AI 搜索怎么找到、读取、引用、推荐网站 · 证据分级 · 永远是新的</p>
   <p>
-    <img src="https://img.shields.io/badge/version-0.6.0-0f172a?style=flat-square" alt="版本 0.6.0" />
+    <img src="https://img.shields.io/badge/version-0.7.0-0f172a?style=flat-square" alt="版本 0.7.0" />
     <a href="LICENSE-CONTENT.txt"><img src="https://img.shields.io/badge/content-CC%20BY--NC--ND%204.0-e8a181?style=flat-square" alt="内容授权 CC BY-NC-ND 4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-e8a181?style=flat-square" alt="代码授权 MIT" /></a>
     <img src="https://img.shields.io/badge/languages-EN%20%7C%20%E7%B9%81%E4%B8%AD%20%7C%20%E7%AE%80%E4%B8%AD-1e3a5f?style=flat-square" alt="语言：英文、繁中、简中" />
@@ -104,6 +104,6 @@ python -m http.server 8765 --directory website
 
 ## 引用方式
 
-> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.7.0. https://github.com/ivantsai1982/geo-lab
 
 引用时请注明版本号，因为内容会持续更新。

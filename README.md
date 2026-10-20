@@ -5,7 +5,7 @@
   <p><strong>A living textbook on Generative Engine Optimization (GEO), updated with new research and original experiments.</strong></p>
   <p>How AI search finds, reads, cites and recommends websites · Evidence-graded · Always updated</p>
   <p>
-    <img src="https://img.shields.io/badge/version-0.6.0-0f172a?style=flat-square" alt="version 0.6.0" />
+    <img src="https://img.shields.io/badge/version-0.7.0-0f172a?style=flat-square" alt="version 0.7.0" />
     <a href="LICENSE-CONTENT.txt"><img src="https://img.shields.io/badge/content-CC%20BY--NC--ND%204.0-e8a181?style=flat-square" alt="content license CC BY-NC-ND 4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-e8a181?style=flat-square" alt="code license MIT" /></a>
     <img src="https://img.shields.io/badge/languages-EN%20%7C%20%E7%B9%81%E4%B8%AD%20%7C%20%E7%AE%80%E4%B8%AD-1e3a5f?style=flat-square" alt="languages: English, Traditional Chinese, Simplified Chinese" />
@@ -104,6 +104,6 @@ Practitioner reports are labeled separately and never presented as proof.
 
 ## How to cite
 
-> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.7.0. https://github.com/ivantsai1982/geo-lab
 
 Please include the version number, because the content changes over time.

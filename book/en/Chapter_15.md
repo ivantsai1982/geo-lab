@@ -1,516 +1,272 @@
-# Chapter 15 — Word of Mouth on Social Platforms: Can AI Really Hear It?
+# Chapter 15: Word of Mouth on Social Platforms: Can AI Really Hear It?
 
-## Opening: one "I heard that…"
+## Opening: one "I heard that"
 
-Imagine this scene (what follows is a hypothetical illustration, not a real case).
+Imagine this scenario (what follows is a hypothetical illustration, not a real case). The owner of an online shop that sells scheduling software hears a line at a sharing session: "AI loves citing Reddit most. If you want AI to recommend you, go and post on Reddit." He goes back and assigns a colleague to answer questions on Reddit full time. Three months later he opens ChatGPT and asks, "What scheduling software suits a small studio?" He is still not in the answer. He is puzzled. Doesn't everyone say AI loves Reddit most?
 
-The owner of an online store that sells scheduling software hears someone say at a sharing session: "AI loves citing Reddit most of all. If you want AI to recommend you, go and post on Reddit."
+This chapter has only one big idea to teach. **How much social platforms matter in AI's eyes has no single answer. It depends on three things: which AI, which kind of question, and which period of time.** The owner's problem is not necessarily that Reddit is useless. The step he really missed was first checking whether the AI he cares about actually looks at Reddit for the kind of question he cares about.
 
-As soon as he gets back, he assigns a colleague to answer questions on Reddit full time. Three months later, he opens ChatGPT and asks: "What scheduling software is good for small studios?" He is still not in the answer.
-
-He is confused: didn't they say AI loves Reddit most?
-
-There is only one big lesson in this chapter:
-
-**How important social platforms are in the eyes of AI has no single answer. It depends on three things: which AI, which kind of question, and which period of time.**
-
-This owner's problem is not necessarily that Reddit is useless. His problem is this: he never checked first whether the AI he cares about actually looks at Reddit for the kind of questions he cares about.
-
-This chapter answers five questions in order:
-
-1. Why do social platforms (especially Reddit) appear among the citations in AI answers? On which AIs, and for which types of question, are they cited?
-2. Does the claim "Reddit is the source AI cites most often" hold up? In 2026, what happened to the share of citations going to Reddit?
-3. Once community content is cited, how much of it does AI actually use? What kind of comment gets picked?
-4. Can taking part in community discussions by the rules make a brand appear more often in AI answers? How strong is the evidence?
-5. What are the risks of tampering with community content (fake comments, farmed accounts, stuffing brands into threads)?
-
-This chapter treats Reddit as "the platform being studied", and uses LinkedIn as a point of comparison.
-
----
+This chapter answers five questions in turn. First, why do social platforms (Reddit above all) show up in the citations of AI answers, and on which AIs and which types of question are they cited? Second, does the claim "Reddit is the source AI cites most often" hold up, and what happened to the share of Reddit citations in 2026? Third, once community content is cited, how much of it does AI actually use, and what kind of comment gets picked? Fourth, can taking part in community discussions by the rules make a brand appear more often in AI answers, and how strong is the evidence? Finally, what risks come from tampering with community content, for example by faking comments, farming accounts, or stuffing a brand into discussion threads? This chapter treats Reddit as "the platform being studied", and uses LinkedIn as a point of comparison.
 
 ## 1. Communities are an especially lively part of "other people's word of mouth"
 
-First, back to the book's metaphor: AI is like a very busy librarian. It has limited time, only flips through a few books, and especially trusts claims that "lots of people say".
+Let's go back to the book's metaphor. AI is like a very busy librarian with limited time, who flips through only a few books and particularly trusts claims that "lots of people say". The book keeps returning to one point of agreement: whether you can get onto AI's shortlist depends on four things. They are whether AI can read you (accessibility), whether the language and market match, whether there is enough of other people's word of mouth (third-party sources), and whether the content is relevant to the question.
 
-The book keeps returning to one consensus: whether you get onto AI's **shortlist** depends on four things — whether AI can read you (accessibility), whether the language and market match, whether there is enough **word of mouth from others** (third-party sources), and whether the content is relevant to the question.
+Social platforms belong to other people's word of mouth, but they have three special features. Their content is real users' experiences, comparisons and recommendations, and for questions like "Which one is good?" or "Has anyone used this?" communities happen to hold a great many answers. They are also places where anyone can speak and anyone can edit. That is the reason AI is willing to use them, and it is also exactly the entry point where they are easiest to tamper with. In addition, whether AI can access community content depends on the crawling and licensing relationships between the platform and each AI company, and these relationships change. Because of these three points, "how much do social platforms matter in AI search" has no single answer. It is decided jointly by three things: which AI, which kind of question, and what time.
 
-Social platforms belong to "other people's word of mouth". They have three special features:
-
-- **The content is real users' experiences, comparisons and recommendations.** For questions like "Which one is good?" or "Has anyone used this?", communities happen to hold a huge number of answers.
-- **Anyone can post, and anyone can edit.** This is why AI is willing to use them, and it is also exactly the entry point most easily tampered with.
-- **Whether AI can access them depends on the crawling and licensing relationships between the platform and each AI company.** These relationships change.
-
-So "how important are social platforms in AI search" has no single answer. It is decided by three things together: "**which AI × which kind of question × what time**".
-
-Seen through the book's seven gates, community content affects several gates along the way:
-
-```
-Community content
-  │
-  ├─ Can it get in the door (accessibility): does the platform allow this AI to crawl and access it? (changes with policy)
-  │
-  ├─ Can you be found (retrieval): does this AI pull community pages into its shortlist? (differs hugely between AIs)
-  │
-  ├─ Are you picked (selection and ranking): which comment in the thread gets picked? (leans towards high-scoring, top-level, formal tone)
-  │
-  ├─ Are you mentioned (citation): is it listed as a source?
-  │
-  └─ Are you really used (absorption): once listed as a source, how much of the content is actually used? (forums are often "listed a lot, used little")
-```
-
-Finally there is the seventh gate, "will people come over" (user behavior): whether AI answers in turn change how lively the communities themselves are. Section 5 of this chapter covers this.
-
----
+Seen through the book's seven gates, community content affects several gates along the way. At the gate "can it get in the door", what matters is whether the platform allows a given AI to crawl and use its content, and this changes with policy. At "can it find you", AIs differ enormously in whether they pull community pages onto the shortlist. At the gate "will it pick you", the question becomes which comment in a thread gets picked, and the tendency seen so far is a preference for high-scoring, top-level, formal-toned comments. Next comes "will it mention you", meaning whether you are listed as a source. Further on is "does it really use you": once listed as a source, how much of the content is actually used? Forum-type sources are often listed a lot and used little. Finally there is the seventh gate, "will people come over", meaning whether AI's answers in turn change how lively the community itself is. This point comes up in the section on how AI summaries feed back into communities.
 
 ## 2. Each AI flips through what is almost a different bookshelf
 
-Researchers ran repeated tests on real AI search and found: give the same set of questions to different systems, and the sources they pull back differ enormously.
+Researchers ran repeated tests on real AI search and found that when the same set of questions is given to different systems, the sources they pull back differ greatly. One study used 11,000 questions from a standard question-answering dataset (general knowledge questions), tested several systems at the same time, and looked at the share of all citations that went to social platforms:
 
-One study took 11,000 questions from a standard question-answering dataset (general-knowledge questions) and tested several systems at once, looking at what share of all citations went to social platforms:
-
-| System | Share of citations going to social platforms |
+| System | Social platforms' share of citations |
 |---|---|
 | ChatGPT with web search | 0.1% |
-| Google's AI summary (AI Overviews) | 8.5% |
+| Google's AI summaries (AI Overviews) | 8.5% |
 | Google's ordinary search results | 13.4% |
 
-The same study also compared the top 100 websites each system cited most often:
+The same study also compared the top 100 websites each system cited most often. ChatGPT with web search overlapped with Google AI Overviews by only 24%, and with Google's ordinary search results by only 25%. Between Google AI Overviews and Google's ordinary search results, the overlap was 68%. In terms of the librarian metaphor, **Google's AI Overviews largely look for books on Google's own shelves, while other AIs have a separate set of shelves.**
 
-- ChatGPT with web search overlapped only 24% with Google AI Overviews, and only 25% with Google's ordinary search results.
-- Google AI Overviews and Google's ordinary search results overlapped 68%.
+A second study used real conversation logs donated voluntarily by 613 users, 171,264 conversations in all, and the researchers then put these questions to each AI again as a comparison test. The result: reddit.com and youtube.com appeared in the search results of ChatGPT and Grok, but did not appear at all in Claude's search results. A third study checked the citations given by ordinary chat models (GPT-4o-mini and GPT-5): of 4,932 citations, only 18 pointed to Reddit, which is 0.4%.
 
-In terms of the librarian metaphor: **Google's AI Overviews mostly look for books on Google's own bookshelf; other AIs have a bookshelf of their own.**
-
-A second study used real conversation logs voluntarily donated by 613 users, 171,264 conversations in total, and the researchers then put the questions to each AI again for comparison testing. They found: reddit.com and youtube.com appeared in ChatGPT's and Grok's search results, but did not appear at all in Claude's search results.
-
-A third study examined the citations given by ordinary chat models (GPT-4o-mini and GPT-5): of 4,932 citations, only 18 pointed to Reddit, which is 0.4%.
-
-The large body of records accumulated by people working in this field also points in the same direction: **Reddit citations are highly concentrated in Google's own AI products** (section 8 looks at these numbers closely).
-
-Remember, these are all "snapshots" taken during the study periods. Once platform policy changes, the picture may look different.
-
----
+The large records built up by people working in this field point in the same direction: Reddit citations are heavily concentrated in Google's own AI products. Later in this chapter, when we discuss the controversies, we will look at these numbers closely. Keep in mind, though, that these are all "snapshots" taken during the study period. Once platform policies change, the picture may look different.
 
 ## 3. Being listed is not the same as being used
 
-The "sources" listed under an AI answer only show that it was **mentioned** (citation). How much of that content the answer actually used is another matter (absorption).
-
-Researchers examined Google's AI Overviews on real AI search and found: for community and forum sources, the degree to which the content "was actually used" was 22.1 percentage points lower than the degree to which it "was listed as a source". The other way round, Wikipedia and longer documents were used more than they were listed.
-
-In plain words: **Google's AI Overviews often hang forums in the source list, but the content of the answer mainly comes from elsewhere.**
+The "sources" listed under an AI answer only show that it was mentioned, that is, cited. How much of that content the answer actually used is a separate matter, which is absorption. Researchers checked Google's AI Overviews on real AI search and found that for community and forum-type sources, the degree to which the content "was actually used" was 22.1 percentage points lower than the degree to which it "was listed as a source". Conversely, Wikipedia and longer documents were used more than they were listed. Put plainly, **Google's AI Overviews often hang forums in the sources column, but the content of the answer mainly comes from elsewhere.**
 
 > **A closer look: why can't this number be copied as is?**
-> When researchers measured "how much a source was used", they cut the source into many segments and took the similarity of "the segment most like the answer". This method partly amplifies the effect of length: long documents have many segments, so they are more likely to happen to have one segment that closely resembles the answer. If you instead take the average across all segments, the degree to which short sources (such as forum comments) are underestimated shrinks a lot.
-> So the **direction**, "forums are used less than they are listed", is credible, but the **precise size** of 22.1 should not be copied as is.
+> When researchers measure "how much a source was used", they cut the source into many segments and calculate the similarity of "the segment most like the answer". This method partly amplifies the effect of length, because a long document has many segments and is more likely to happen to have one that closely resembles the answer. If you take the average across all segments instead, the extent to which short sources (such as forum comments) are underestimated shrinks greatly. So the direction "forums are used less than they are listed" is credible, but the precise size of 22.1 should not be copied as is.
 
-The opposite situation also exists. The real-conversation-log study mentioned earlier found: 14% to 53% of the statements in AI answers were in fact supported by search results, yet the source was not listed.
-
-So the conclusion is: **some sources are used but not listed, and some are listed but not used.** If you judge the influence of community content only by whether Reddit is in the source list, you can be wrong in both directions.
-
----
+The opposite case also exists. The real conversation log study mentioned earlier found that 14% to 53% of the statements in AI answers were in fact supported by search results without that source being listed. So some sources were used but not listed, and some were listed but not used. If you judge the influence of community content only by whether Reddit appears in the sources column, you can be wrong in either direction.
 
 ## 4. AI "follows the community's upvotes", and it also removes the "I"
 
-Reddit has its own AI search feature too (Reddit Answers). Researchers observed 30,000 answers it generated from the outside, looking at which comments it picked from threads. This kind of study cannot see inside the system; it can only compare from the outside how "the picked" differ from "the not picked". It found five things.
+Reddit has its own AI search feature too, called Reddit Answers. Researchers observed 30,000 answers it generated from the outside, to see which comments it picked from discussion threads. This kind of study can't see inside the system; it can only compare from the outside how "the picked" differ from "the not picked". They found five things.
 
-**First, it favours comments that were already prominent.**
+The first is that it favours comments that are already prominent. The higher a comment's score ranks within its thread, the more likely it is to be picked. Each time the ranking moves up one step (statistically called "one standard deviation"), the chance of being picked becomes about 2.88 times what it was; the "chance" here is statistical odds, not a direct percentage. Top-level comments, meaning those replying directly to the original post rather than to someone else, had 1.97 times the odds of being picked compared with other comments. If you line up the comments in a thread by score from low to high on a scale of 0 to 1, the median of the picked comments falls at 0.91, close to the highest score; the median of the comments not picked is 0.45, roughly in the middle.
 
-- The higher a comment's score ranks within its thread, the more likely it is to be picked. Each time the ranking moves up one step (statistically called "one standard deviation"), the chance of being picked becomes about 2.88 times what it was (the "chance" here is statistical odds, not a direct percentage).
-- Top-level comments (replying directly to the original post, not to someone else's comment) had 1.97 times the odds of being picked compared with other comments.
-- Arrange the comments in a thread by score from lowest to highest, on a scale from 0 to 1: picked comments had a median of 0.91, close to the top score; comments not picked had a median of 0.45, roughly in the middle.
+The second is that it favours a formal tone and is less fond of an experience-sharing tone. The more formal the tone, the higher the odds of being picked, with an odds ratio of 1.488; above 1 means more likely to be picked. The more the tone sounds like personal experience, the lower the odds of being picked, with an odds ratio of 0.789; below 1 means less likely to be picked.
 
-**Second, it favours a formal tone, and is less keen on a tone of sharing experience.**
+The third is that it rewrites personal testimony into general advice. In the original comments, first-person singular words such as "I" made up about 3.3%, but in the AI-synthesised answers only 0.06% remained. The fourth is unexpected: comments pinned or flagged by moderators are almost never picked. The odds ratio for pinned comments was 0.010, and for moderator-flagged comments 0.052. Both numbers are far below 1, meaning the chance of being picked is very low.
 
-- The more formal the tone, the higher the odds of being picked (odds ratio 1.488; above 1 means more likely to be picked).
-- The more the tone sounds like personal experience, the lower the odds of being picked (odds ratio 0.789; below 1 means less likely to be picked).
+The fifth is that when answers change, it is almost entirely because of "which comments were pulled back this time". When the same question was asked again, in 41.8% of cases the sources pulled back were exactly the same; and when the sources were the same, 89.6% of the answers were almost identical. This echoes the dice-rolling idea that runs through the book: the differences mainly happen at the shortlist step, while the answer-writing step is fairly stable.
 
-**Third, it rewrites personal testimony as general advice.** In the original comments, first-person singular words such as "I" made up about 3.3%; in the answers AI synthesised, only 0.06% remained.
-
-**Fourth, comments pinned or flagged by moderators are almost never picked.** The odds ratio for pinned comments was 0.010, and for moderator-flagged comments 0.052. Both numbers are far below 1, meaning the chance of being picked is very low.
-
-**Fifth, answers change almost entirely because of "which comments were pulled back this time".** When the same question was asked again, in 41.8% of cases exactly the same sources were pulled back; and when the sources were the same, 89.6% of the answers were almost identical. This echoes the **dice-rolling** idea from throughout the book: the differences mainly happen at the shortlist step, not at the answer-writing step.
-
-To be honest: these are all observed **correlations**, not proven **causation**, and they apply only to Reddit's own AI search.
-
-But they reveal a mechanism: **AI's selection step does not separately judge which comment is of the best quality; instead it reuses the community's own signal of "who is loudest".** Comments pushed to the top by everyone are more likely to be picked by AI; a sincere personal experience, even if picked, gets rewritten into a piece of advice with no "I".
-
----
+To be honest, these are all observed correlations, not proof of cause and effect, and they apply only to Reddit's own AI search. But they reveal a mechanism. **At the picking step, AI does not separately assess which comment is of the best quality. It borrows the community's own signal of "who is loudest".** Comments that everyone has pushed to the top are more likely to be picked by AI; a sincere personal experience, even if it is picked, gets rewritten into advice without the "I".
 
 ## 5. AI summaries also change communities in return
 
-This section has the strongest evidence in the chapter: **a large-scale experiment with real users.**
+This section holds the strongest evidence in the chapter, a large-scale experiment with real users. Researchers observed 105,012 Reddit discussion boards (Reddit calls them subreddits). What they did was a kind of "quasi-experiment": they had no way to assign groups randomly, but they found a natural comparison group. Discussion boards with general content could be cited by Google's AI Overviews, while boards with adult content could not. The researchers compared how the two groups changed before and after Google AI Overviews launched.
 
-Researchers observed 105,012 Reddit discussion boards (Reddit calls them subreddits). What they did was a kind of "quasi-experiment": they had no way to assign groups randomly, but they found a natural comparison group —
+The result: daily comment counts on general discussion boards rose by 12.0%, and the number of people posting comments rose by 12.4%. Experience-sharing boards saw a bigger effect: compared with factual question-and-answer boards, the effect on comment counts was 2.3 times as large, and the effect on the number of commenters was 2.8 times as large. Small-to-medium boards showed the most obvious relative increase, with comment counts up 55.6% and commenters up 77.2%. "Small-to-medium" here means the second of four equal groups when all discussion boards are sorted by size from small to large, that is, the second-smallest group. So **after Google's AI Overviews launched, community activity on Reddit actually increased, and experience-sharing and small-to-medium communities benefited most.**
 
-- Discussion boards with general content: could be cited by Google's AI Overviews.
-- Discussion boards with adult-only content: are not cited by Google's AI Overviews.
+But the story has a second half. Google later launched its conversational "AI Mode", and after it launched, the extra advantage experience-sharing boards had gained shrank noticeably. The extra advantage in comment counts fell from 9.54 to -0.17, almost completely gone; the extra advantage in number of commenters fell from 6.29 to 2.57, a drop of 59%.
 
-Comparing how the two groups changed before and after Google AI Overviews launched, the results were:
-
-| Measure | Change |
-|---|---|
-| Daily comments on general discussion boards | Up 12.0% |
-| Number of people commenting on general discussion boards | Up 12.4% |
-| Effect on experience-sharing boards compared with factual Q&A boards | 2.3 times the effect on comments, 2.8 times the effect on commenters |
-| Relative increase for small-to-medium discussion boards | Comments up 55.6%, commenters up 77.2% |
-
-"Small-to-medium discussion boards" in the table means: divide all discussion boards evenly into four groups by size from smallest to largest, and take the second group (the second smallest).
-
-In other words, **after Google's AI Overviews launched, community activity on Reddit actually increased, and experience-sharing and small-to-medium communities benefited most.**
-
-But the story has a second half. Google later launched its conversational "AI Mode". After it launched, the extra advantage experience-sharing boards had gained shrank noticeably:
-
-- The extra advantage in comments fell from 9.54 to -0.17, almost completely gone.
-- The extra advantage in commenters fell from 6.29 to 2.57, shrinking by 59%.
-
-One reading that makes sense is:
-
-- **Static AI summaries** "bring" people over to look at discussions.
-- **Conversational AI** "absorbs" the discussion into the conversation, so people no longer need to click through.
-
-For approaches that rely on communities to bring visitors, this is a structural warning sign: **on the same platform, a change in the form of the AI interface alone is enough to cancel most of the traffic-driving effect.**
-
-It also needs to be clear what this study measured: it only looked at two Google interfaces, and only measured activity at the level of Reddit discussion boards; **it did not measure brand exposure, nor how traffic turns into business**.
-
----
+One plausible reading is that static AI summaries "send" people to look at discussions, while conversational AI "absorbs" the discussion into the conversation, so people no longer need to click through. For approaches that rely on communities to bring in visitors, this is a structural warning: on the same platform, a change in the form of the AI interface alone is enough to cancel out most of the traffic-sending effect. It also needs to be clear what this study measured. It looked only at two Google interfaces and measured only activity at the level of Reddit discussion boards; it did not measure brand exposure, and it did not measure traffic turning into business.
 
 ## 6. Pages anyone can write on are the easiest place to strike
 
-Researchers ran tests in a controllable experimental system. This system is an open-source "deep research" AI — it issues many searches on its own, reads many web pages, and then writes a research report. They found:
+Researchers ran tests in a controllable experimental system. This system is an open-source "deep research" AI that issues many searches on its own, reads many web pages, and then writes a research report. Their first finding was that however much it searches, it still ends up concentrated on a few pages. Even when AI splits a question into many smaller questions and searches them separately (query expansion), the results pulled back still converge on a handful of pages. Among them, community pages where anyone can post and edit made up 16.7% to 23.4% of the URLs pulled back; and among these community pages, Reddit made up 53.7% to 70.7%.
 
-**1. However much it searches, it still ends up concentrated on a few pages.** Even when AI splits a question into many smaller questions and searches them separately (query fan-out), the results pulled back still converge on a small number of pages. Among them, community pages where anyone can post and edit made up 16.7% to 23.4% of the URLs pulled back; and among those community pages, Reddit made up 53.7% to 70.7%.
+The next experiment is more unsettling. The researchers added only about 13 words to one community page that would be pulled back. As a result, the chance of this page being read by AI was 57% to 76%, the chance of it being cited was 34% to 61%, and the chance of the final report mentioning the brand the researchers had specified was 22% to 37%. If this page was not read by AI, the chance of the specified brand being mentioned was 0.
 
-**2. Changing just one page by adding about 13 words may be enough to sway the report.** On **one** community page that would be pulled back, the researchers added about 13 words, and the results were:
+Once it was read, the effect was strong. In one of the AI systems, as long as this page was read, the citation rate was 100%. Another system picks passages using "semantic similarity" (technically, embedding vectors), and it resisted this attack best, but as long as it read this page, the chance of mentioning the specified brand was still 37.8%. Adding very few words also worked: even when the added text made up only 0.5% to 3.9% of the whole page, as long as the page was read, the chance of mentioning the specified brand was still 29.7% to 52.5%.
 
-- Probability this page was read by AI: 57% to 76%.
-- Probability this page was cited: 34% to 61%.
-- Probability the final report mentioned the brand the researchers specified: 22% to 37%.
-- If this page was not read by AI, the probability of mentioning the specified brand was 0.
+Existing defences did not work well. One method checks "how unnatural the text reads" (technically called perplexity) to try to pick out the added text, but its ability to tell them apart was weak. On a score where 0.5 means random guessing and 1 means perfect, it came in below 0.68, and its judgement pointed in the opposite direction from what was expected. Another method filters by comparing the similarity of output content, and it was ineffective. Not reading community pages at all can block this attack, at the cost of losing the genuinely valuable knowledge in communities.
 
-**3. Once it is read, the effect is strong.** In one of the AI systems, as long as this page was read, the citation rate was 100%. Another system picks segments by "semantic similarity" (technically called embedding vectors); it resisted this attack best, but as long as it read this page, the probability of mentioning the specified brand was still 37.8%.
+The researchers also looked at commercial AI, but only observed citations and did no attack testing. In Gemini's deep research feature, 623 of 5,157 citations (12.1%) came from community pages anyone can write on; in ChatGPT's deep research feature it was only 0.4%.
 
-**4. Even very few added words work.** Even when the added text made up only 0.5% to 3.9% of the whole page, as long as the page was read, the probability of mentioning the specified brand was still 29.7% to 52.5%.
+This is evidence that only proves a mechanism. It proves that in a reproducible system, this kind of attack can be done and is hard to catch, but you can't directly infer the same success rate on commercial AI. Its real significance is this: **the very thing that makes community content attractive to people who want AI to see them is the reason it is so easy to abuse.**
 
-**5. Existing defences do not work well.**
+## 7. How strong is the evidence?
 
-- One method checks "how unnatural the text reads" (technically called perplexity) to try to pick out the added text. Its ability to detect it was weak: on a score where 0.5 means random guessing and 1 means perfect, it came in below 0.68, and its judgement pointed in the opposite direction from what was expected.
-- Another method filters by comparing the similarity of output content; it did not work.
-- Not reading community pages at all can block this attack, but it also loses the genuinely valuable knowledge in communities.
+Put the conclusions above side by side, and the strength of the evidence and the scope it applies to vary a great deal. The strongest is that Google AI Overviews increased activity on general Reddit discussion boards by about 12%, while the conversational AI Mode weakened the advantage of experience-sharing boards. This comes from a large-scale quasi-experiment with real users, and its strength is strong, but it covers only two Google interfaces and measures only activity at the level of Reddit discussion boards. It does not measure brand, and it does not measure traffic turning into business.
 
-The researchers also looked at commercial AI, but only observed citations and did no attack testing: in Gemini's deep research feature, 623 of 5,157 citations (12.1%) came from community pages anyone can write on; in ChatGPT's deep research feature it was only 0.4%.
+Several findings are of medium strength. Systems differ greatly in the share of citations going to communities (0.1%, 8.5%, 13.4%); this is a one-off snapshot taken on real AI search, using general knowledge questions rather than commercial ones. That forums are listed a lot but used little in Google AI Overviews comes from checks on real AI search; the direction is credible, but the size is affected by the calculation method. That Reddit's own AI search favours high-scoring, top-level, formal comments and removes the first person comes from observing a real platform from the outside; it applies only to Reddit's own AI search, and it is correlation, not causation. That Claude's search results contain no Reddit and that ordinary chat models cite Reddit only 0.4% of the time come from real conversation logs and checks on real AI; these are snapshots from the study period, and platform policies change.
 
-This is **evidence that only proves a mechanism**: it proves that in a reproducible system, "this attack can be done, and it is hard to catch". But it **cannot be used to directly infer** the same success rate on commercial AI.
+One more finding is also of medium strength: posting ordinary articles on low-barrier platforms that AI already favours can get into the citations and answers of most commercial AI search. Researchers posted under controlled conditions on 10 real AI search platforms and tracked them over several days to get this result, but it is limited to fictional or obscure topics. On topics that already have a lot of discussion, only 3.5% got written into answers, and citations were not stable.
 
-Its real meaning is: **the reason community content is attractive to people who want to be seen by AI is exactly the reason it is so easily abused.**
+Two other findings need to be looked at separately. That adding about 13 words to a community page can sway a deep research report comes from a controllable experimental system; it only proves a mechanism, and the actual success rate on commercial AI is unknown. That brand participation on Reddit makes a brand appear more often in AI answers is currently supported only by before-and-after comparisons done by people in the industry themselves; the strength is weak, there are no randomised comparisons, and most authors themselves admit they cannot prove causation.
 
----
-
-## 7. How strong is the evidence? One summary table
-
-| Conclusion | Type of evidence | Strength and scope |
-|---|---|---|
-| Google AI Overviews increased activity on general Reddit discussion boards by about 12%; the conversational AI Mode weakened the advantage of experience-sharing boards | Large-scale quasi-experiment with real users | Strong. Only covers two Google interfaces and only measures activity at Reddit discussion-board level; does not measure brand or traffic turning into business |
-| The share of citations going to communities differs a lot between systems (0.1%, 8.5%, 13.4%) | One-off snapshot on real AI search | Moderate. General-knowledge questions, not commercial questions; only one snapshot taken |
-| Forums in Google AI Overviews are "listed a lot, used little" | Examination on real AI search | Moderate. The direction is credible; the size is affected by the calculation method |
-| Reddit's own AI search favours high-scoring, top-level, formal comments and removes the first person | External observation of a real platform | Moderate. Only covers Reddit's own AI search; correlation, not causation |
-| Claude's search results contain no Reddit; ordinary chat models cite Reddit only 0.4% of the time | Real conversation logs and examination of real AI | Moderate. Snapshots from the study period; platform policies change |
-| Adding about 13 words to a community page can sway a deep research report | Controllable experimental system | Only proves a mechanism. Actual success rate on commercial AI unknown |
-| Ordinary posts on low-barrier platforms that AI already favours can get into the citations and answers of most commercial AI search | Researchers posted under control on 10 real AI search platforms and tracked for several days | Moderate. Limited to fictional or niche topics; for topics already discussed a lot, only 3.5% made it into the answer; citations are unstable |
-| Brands taking part on Reddit can make the brand appear more often in AI answers | Before-and-after comparisons done by people working in the field | Weak. No randomised control; most authors themselves admit they cannot prove causation |
-
-**The biggest gap right now:** to date, no study has used random assignment or a quasi-experiment to prove that "brands taking part on social platforms" raises AI **visibility**, traffic or business. Academic research cares about "how AI handles community content", not "how brands make use of communities". That said, the layer "can posts get into AI citations" now has evidence from controlled tests (see the table above); what is still missing is whether real brands in competitive categories get recommended, and gain traffic and business, as a result.
-
----
+This brings out the biggest gap at present. **To date, no study has used random assignment or a quasi-experiment to prove that "brands taking part on social platforms" raises AI visibility, traffic or business.** Academic research cares about how AI handles community content; how brands make use of communities lies outside the questions it asks. That said, the layer "can posts get into AI citations" already has evidence from the controlled test mentioned above. What is still missing is whether real brands in highly competitive categories get recommended as a result, and gain traffic and business.
 
 ## 8. Controversies: what people say often contradicts itself
 
 ### Controversy 1: Is Reddit really the source AI cites most often?
 
-Many people in the industry believe Reddit is still the source AI cites most. But "many people believe" does not mean "it is right". This view is itself disputed, and some people working in the field explicitly disagree. The numbers from each side are as follows:
+Many people in the industry believe Reddit is still the source AI cites most. But "many people believe" does not mean "it is right". This view is itself disputed, and some people in the field openly disagree. The numbers the various sides put forward fall roughly into four positions.
 
-**Position 1: Reddit's share of citations is very low.** Someone in the industry tested this themselves (no one has independently verified it): from March to June 2026, using about 16,400 commercial questions, they tested 5 AIs and collected 127,198 citations in total. Reddit made up only 1.8%, and Wikipedia less than 0.6%. About 90% of citations went to vendors' documentation, product pages, and all kinds of niche directory sites. The questions here had purchase intent, and the unit counted was the website (not the individual URL).
+The first position holds that Reddit's share of citations is very low. Someone in the industry tested this themselves (no one has independently verified it): from March to June 2026, they tested 5 AIs with about 16,400 commercial questions and collected 127,198 citations in total. Reddit made up only 1.8%, Wikipedia less than 0.6%, and roughly 90% of citations went to vendors' documentation, product pages, and all kinds of niche directory sites. The questions here carried purchase intent, and the unit counted was the website, not individual URLs.
 
-**Position 2: Reddit citations appear almost only on Google's products.** Another person in the industry tested this themselves: out of about 74,000 citations, those pointing to Reddit came from Google's AI Mode 528, Gemini 258, ChatGPT 23, Claude 1, and Perplexity 0 (and Perplexity cited 17,476 sources in total during this period). Google's two products together made up about 97%. However, the brands this author tracked lean towards niche markets and business-to-business (B2B) markets, and he himself says the results should not be treated as a law.
+The second position holds that Reddit citations appear almost only on Google's products. Another person in the industry tested this themselves: out of about 74,000 citations, those pointing to Reddit came from Google's AI Mode 528, Gemini 258, ChatGPT 23, Claude 1, and Perplexity 0, while Perplexity cited 17,476 sources in total during this period. Google's two products together made up about 97%. However, the brands this author tracked lean towards niche markets and business-to-business (B2B) markets, and he himself says the results should not be treated as a law.
 
-**Position 3: Reddit is one of the main sources for all the major AIs, and Perplexity is the most active.** Someone in the industry tracked a client of a website plugin for 8 weeks and found that, among the top 8 cited sources, 2 were Reddit threads from 2022 and 2023. This is just a single client in a single niche market.
+The third position holds that Reddit is one of the main sources for all the major AIs, and that Perplexity is the most active. Someone in the industry tracked a client of a website plugin for 8 weeks and found that among the top 8 cited sources, 2 were Reddit threads from 2022 and 2023. This is only a single client in a single niche market. The fourth is the academic result mentioned earlier: only 0.4% of ordinary chat models' citations point to Reddit, and Claude's search results contain no Reddit at all. This too is a snapshot from the study period.
 
-**Position 4: Results from academic research.** As mentioned earlier: only 0.4% of ordinary chat models' citations pointed to Reddit; Claude's search results contained no Reddit at all. These are snapshots from the study period.
+These contradictions don't necessarily cancel each other out, because they measure different things. The question types differ: some are commercial questions, some general knowledge questions, some review-and-opinion questions. The combinations of AIs tested differ, the points in time differ, and the counting methods differ too: some count websites, some count URLs, some count "how many answers mention it". Among them, "Perplexity cites Reddit most actively" and "Perplexity cites Reddit 0 times" directly conflict, and the two are only about two months apart. **This in itself shows that AI behaviour changes very fast, and no single snapshot can be used to infer what happens at other times.**
 
-**How to make sense of these contradictions?** They do not necessarily cancel each other out; they measure different things:
-
-- Different question types: commercial questions, general-knowledge questions, review-and-opinion questions.
-- Different combinations of AIs tested.
-- Different points in time.
-- Different ways of counting: some count websites, some count URLs, some count "how many answers mention it".
-
-Among these, "Perplexity cites Reddit most actively" and "Perplexity cited Reddit 0 times" directly conflict, and the two are only about two months apart. This fact alone shows: **AI behaviour changes very fast, and no single snapshot can be used to infer another time.**
-
-There are also two single observations: someone in the industry saw that in the answers to his 100 "questions asked just before placing an order", Reddit's citation rate was below 5%; someone else in the industry saw Reddit frequently entering the top three cited sources in the reports he produced. Both are only single observations.
+There are also two single observations. One person in the industry saw that in the answers to his 100 "questions asked just before placing an order", Reddit's citation rate was below 5%. Another person in the industry saw Reddit regularly make it into the top three cited sources in the reports he produced. Both are only single observations.
 
 ### Controversy 2: Is ChatGPT's "collapse" in Reddit citations real?
 
-In August 2026, a widely repeated claim appeared: the share of ChatGPT search citations going to Reddit plunged by about 86% within a few days, from about 3.8% to about 0.5%. The industry generally accepts this claim, but its scope and causes are disputed.
+In August 2026 a widely repeated claim appeared: the share of ChatGPT search citations going to Reddit plunged by about 86% within a few days, from about 3.8% to about 0.5%. The industry generally accepts this claim, but both its scope and its cause are disputed.
 
-- **Supporting "it really is low":** Someone in the industry tested this themselves, using the developer interface behind ChatGPT (the API, with web search turned on), running 1,564 questions written in real conversational language. He had planned to test 10 categories of question but only completed 7. Reddit was cited 38 times in total, 2.4%; 92% of these came from "review and opinion" questions, and all other categories were very low. The author also admits that the developer interface is not exactly the same as the App ordinary people use.
-- **It may only affect ChatGPT:** Someone in the industry observed that during the same period, the share of Perplexity's citations going to Reddit on the sites he monitored did not change noticeably; Google's AI Overviews also still cited Reddit heavily.
-- **Same direction, but smaller size:** Someone in the industry tracks 46 business-to-business (B2B) questions every week. Reddit's appearances fell from 9 in July to 3 at the last check in August; mid-sized vendors' blogs and comparison pages took its place. The author also warns: a 4-day observation window is too short, and fluctuations of a similar size have reversed within two weeks before.
-- **Possible causes:** During the same period, tracking data indicated that the share of ChatGPT's use of the "site:" command (searching only within a particular website) rose sharply, which looks like a change in how it finds information. There were also reports that Reddit tightened its blocking of AI crawlers in mid-August. **Neither claim has been proven to be the cause.**
-- **Citations disappearing does not mean influence disappearing:** Someone in the industry points out that a change in "which sources are listed" does not mean AI's behaviour has changed. If ChatGPT still follows the consensus on Reddit when recommending brands, what changed may only be "whether the source is listed". This is consistent with "used but not listed" from section 3. But **there is currently no direct evidence** that ChatGPT is still using Reddit's content.
+The evidence that it "really is low" comes from a test done by one person in the industry. He used the developer interface behind ChatGPT (the API, with web search turned on) and ran 1,564 questions written in real conversational language. He had planned to test 10 categories of questions and completed only 7. Reddit was cited 38 times in all, 2.4%, and 92% of those came from "reviews and opinions" questions; every other category was very low. The author also admits that the developer interface is not exactly the same as the app ordinary people use.
+
+Some observations also suggest this drop may have affected only ChatGPT. One person in the industry saw that over the same period, the share of Perplexity's citations going to Reddit on the websites he monitors showed no obvious change, and Google's AI Overviews were still citing Reddit heavily. Another person in the industry saw the same direction, but on a smaller scale. He tracks 46 business-to-business (B2B) questions every week, and Reddit's appearances fell from 9 in July to 3 at the last check in August, with mid-sized vendors' blogs and comparison pages taking its place. He also warns that a 4-day observation window is too short, and that fluctuations of a similar size have reversed within two weeks before.
+
+As for the cause, two explanations are circulating. Over the same period, tracking data indicated that the share of ChatGPT searches using the "site:" command (which limits a search to one website) rose sharply, which looks like a change in how it looks for information. There were also reports that Reddit tightened its blocking of AI crawlers in mid-August. Neither explanation has been confirmed as the cause.
+
+One more point is easy to overlook: citations disappearing does not mean influence disappearing. Someone in the industry pointed out that a change in "which sources get listed" does not mean AI's behaviour has changed. If ChatGPT still follows the consensus on Reddit when recommending brands, what changed may only be whether the source is listed. This matches the "used but not listed" case mentioned earlier in the section on being listed not being the same as being used. But there is currently no direct evidence that ChatGPT is still using Reddit content.
 
 ### Controversy 3: Did Perplexity "withdraw" from Reddit, or does it "pick sources by question"?
 
-Someone in the industry tested this repeatedly themselves, with a control group:
+Someone in the industry tested this themselves repeatedly, with a control group. On a set of 4 fixed questions, from 20 August onwards, Perplexity did not cite Reddit in 96 consecutive checks. But on 26 August he added some questions containing brand names and some specific task-type questions, and within a single day Reddit citations reappeared: 9 times in 6 days, all from these new questions. Over the same period, the average number of sources Perplexity listed per answer fell from about 9 to about 6; however, the mix of questions changed during this period, so this number can only be taken as a hint.
 
-- On a set of 4 fixed questions, from 20 August, Perplexity did not cite Reddit in 96 consecutive checks.
-- But on 26 August he added some questions containing brand names and some specific, task-type questions. Within one day, Reddit citations reappeared: 9 times in 6 days, all from these new questions.
-- In the same period, the average number of sources Perplexity listed per answer fell from about 9 to about 6. However, the question mix changed during this period, so this number can only be taken as a hint.
+On this basis the author judged that this was a contraction by question type, not a full withdrawal: broad popular category terms no longer cite Reddit, while questions with brand names and specific tasks accept Reddit again. This is only a small sample, with just a few more than 4 questions, in a single niche market. But it reminds us that when we hear "a certain AI no longer cites Reddit", we should first ask: on which questions?
 
-From this the author concluded: **this is contraction by question type, not a full withdrawal.** Popular broad category terms no longer cite Reddit, while questions with brand names and specific tasks accept Reddit again.
+In addition, one company claimed that Perplexity went from almost never citing Reddit to citing Reddit in most answers within two weeks. But this claim comes from a party with a commercial interest, and no one has independently verified it.
 
-This is only a small sample (a little more than 4 questions, a single niche market). But it reminds us: when you hear "a certain AI no longer cites Reddit", first ask: **on which questions?**
+### Controversies 4 and 5: new versus old, and how much "consensus" really matters
 
-In addition, one company claims that within two weeks Perplexity went from barely citing Reddit to citing Reddit in most answers. But this claim comes from a party with a commercial interest, and no one has independently verified it.
+The fourth controversy is whether new threads have the edge or old ones are cited just as much, and observations from different sides contradict each other. One person in the industry observed that a thread from 3 weeks earlier with 40 upvotes was cited first by Perplexity, while a 2-year-old blog post with more external links and almost identical content was ranked behind it. Another person in the industry claimed that 60% of citations come from threads less than six months old, but his claim was exaggerated in tone and the source of the data is unclear. Yet another person in the industry observed that when the same question was run many times, Reddit threads were stable as cited sources up to 96% of the time, and cited threads could be traced back as far as 7 years; the 8-week tracking mentioned earlier also found that threads from 2022 and 2023 were still cited. One more company claimed that 60% to 70% of the Reddit threads cited by AI were already archived and could no longer be commented on, but this claim comes from a party with a commercial interest, and no one has independently verified it. These are all single observations, and they don't agree with each other. All we can say at present is that both freshness and accumulated history may play a part, depending on which AI and which kind of question.
 
-### Controversy 4: Do new threads have the edge, or are old ones cited just as much?
+The fifth controversy is whether a community's "consensus view" really matters more than a single web page. Many people in the industry believe AI relies more on views that have been discussed over and over by many people in a community until they become consistent than on a single optimised web page. The industry also generally believes that keeping core messages consistent across the whole web is where Generative Engine Optimization (GEO) gets its results. But these are opinions, not proof.
 
-Observations from different sides contradict each other:
-
-- Someone in the industry observed: a thread from 3 weeks earlier with 40 upvotes was cited first by Perplexity, while a blog post from 2 years earlier with more external links and almost the same content ranked behind it.
-- Someone else in the industry claimed: 60% of citations come from threads less than half a year old. But his claim was exaggerated in tone, and the source of the data is unclear.
-- Another person in the industry observed: when the same question was run many times, Reddit threads were as stable as 96% as cited sources, and the cited threads could be traced back 7 years. The 8-week tracking mentioned earlier also found that threads from 2022 and 2023 were still being cited.
-- One more company claimed: of the Reddit threads cited by AI, 60% to 70% are already archived and can no longer be commented on. But this claim comes from a party with a commercial interest, and no one has independently verified it.
-
-These are all single observations, and they do not agree with one another. For now, all that can be said is: **both freshness and accumulated history may play a role, depending on which AI and which kind of question.**
-
-### Controversy 5: Does a community's "consensus view" really matter more than a single web page?
-
-Many people in the industry believe: AI relies more on views that many people in a community have discussed repeatedly until they agree than on a single, separately optimised web page. The industry also generally believes: keeping your core message consistent across the whole web is where **Generative Engine Optimization (GEO)** gets its results. But these are opinions, not proof.
-
-Set against this view are two pieces of research evidence:
-
-- In Reddit's own AI search, AI picks a **single** high-scoring, top-level, formal comment, and rewrites personal experience out (section 4).
-- In Google's AI Overviews, forums are often listed as sources but rarely actually used (section 3).
-
-Neither point supports the simple picture that "the whole community discussion is fully absorbed by AI".
-
----
+Set against this view are two pieces of research evidence. In Reddit's own AI search, AI picks single high-scoring, top-level, formal comments, and rewrites personal experience away; we already saw this in the section on AI "following the community's upvotes". In Google's AI Overviews, forums are often listed as sources but rarely actually used. Neither point supports the simple picture that "a whole community's discussion is fully absorbed by AI".
 
 ## 9. What people who actually did it saw
 
-The following cases all come from tests and observations by people working in the field. Unless stated otherwise, none had a control group, and **none can prove that community participation caused the results**.
+The cases below all come from tests and observations by people working in this field. Unless otherwise stated, none of them has a control group, and none can prove that the results were caused by community participation.
 
-### Case 1: 8 weeks of careful replies, a before-and-after comparison on 100 purchase questions
+### Two before-and-after comparisons: 8 weeks and 90 days
 
-**What was done:** First, on ChatGPT, Perplexity, Gemini and Google's AI products, 100 questions buyers would ask were recorded as a baseline. Then, for 8 weeks in a row, useful content and replies were posted on Reddit.
+The first case is a direct approach. This person in the industry first recorded 100 questions that buyers ask on ChatGPT, Perplexity, Gemini and Google's AI products as a starting point, and then spent 8 consecutive weeks posting useful content and replies on Reddit. The numbers before and after the 8 weeks were as follows:
 
-**What was observed:**
-
-| Measure | At the start | After 8 weeks |
+| Metric | At the start | After 8 weeks |
 |---|---|---|
 | Number of questions where the brand appeared | 4 | 17 |
 | Number of times cited | 1 | 7 |
 | Visits from Reddit | 6 | 94 |
 | Sign-ups | 0 | 8 |
 
-**Key detail:** Most of the growth came from specific questions, not broad terms like "what is the best tool".
+The key detail is that most of the growth came from specific questions, and broad terms like "what is the best tool" contributed very little. This person in the industry tested it themselves, no one has independently verified it, and the author himself states that this does not prove Reddit caused the growth. It is consistent with the earlier observation that Perplexity contracts "by question type": community content is more likely to be cited on specific, obscure, task-type questions.
 
-**Strength of evidence:** Someone in the industry tested this themselves; no one has independently verified it. The author himself states: this does not prove Reddit caused the growth.
+The second case took the route of lurking first and taking part later, stretched out over 90 days. The author split the approach into four steps:
 
-**The corresponding principle:** This is consistent with the "by question type" observation in Controversy 3 — community content is more easily cited on specific, niche, task-type questions.
+1. Lurk for 4 weeks first. Understand each discussion board's rules, and study which comments get upvoted and which get deleted. In the first month, do not mention the brand at all; just build up an account reputation score of about 200 to 500.
+2. See which threads AI actually cites. Ask ChatGPT and Perplexity the target questions, note which Reddit threads they cite, and give priority to recommendation, comparison and experience threads.
+3. Adjust the writing. Answer the question directly in the first two sentences, replace vague wording with specific numbers, and write about both the pros and the cons.
+4. Track every week. Every Monday, use the same questions to check on ChatGPT, Perplexity and Google's AI Overviews whether the brand was mentioned, whether the tone was positive or negative, and which sources were cited.
 
-### Case 2: Lurk first, then take part — change in brand mention rate over 90 days
+Within 90 days, the brand's appearance rate in category-type AI answers rose from 8% to 39%. Visits from Reddit rose from about 22 a month to about 480 a month, with 37 new sign-ups a month attributable to Reddit. Content published in the first quarter was still being cited 5 months later. The author also observed that small communities with only 10 to 20 threads a day often worked better than large discussion boards.
 
-**What was done:**
+This case was tested repeatedly by someone in the industry themselves, with a comparison, but all the numbers are self-reported. The author's premise is that "on many commercial questions, Reddit appears more often than brands' official websites and Wikipedia", which conflicts with the large-sample data in Controversy 1, so it should be treated with caution. Its writing approach (answering directly in the first two sentences, a formal tone, specific content) is consistent with the finding that Reddit's own AI search favours formal, explanation-like comments. "Small communities work better" also points in the same direction as the finding that small-to-medium discussion boards were most affected by Google AI Overviews, but the two measure different things and can't be used as proof of each other.
 
-1. **Lurk for 4 weeks first.** Understand each discussion board's rules, and study which comments get upvoted and which get deleted. In the first month, do not mention the brand at all; just build up an account reputation score of about 200 to 500.
-2. **See which threads AI actually cites.** Ask the target questions in ChatGPT and Perplexity, note which Reddit threads they cite, and give priority to recommendation, comparison and experience threads.
-3. **How to write:** Answer the question directly in the first two sentences; replace vague statements with specific numbers; write both the pros and the cons.
-4. **Track weekly.** Every Monday, use the same questions to check on ChatGPT, Perplexity and Google's AI Overviews: whether the brand was mentioned, whether the tone was positive or negative, and which sources were cited.
+The third case is one that did not succeed. Someone in the industry wrote 20 pieces of content on Reddit for a start-up, and ChatGPT still did not cite the company. Set against Controversy 2, this is not surprising, because in the period the research covers, the share of ChatGPT's citations going to Reddit was already very low. The lesson: first confirm whether your target AI cites social platforms for your type of question, then decide whether to invest.
 
-**What was observed:**
+### LinkedIn: another social platform, with almost the opposite rules
 
-- Within 90 days, the brand's **mention rate** in category-type AI answers rose from 8% to 39%.
-- Visits from Reddit rose from about 22 a month to about 480 a month.
-- 37 new sign-ups a month that could be credited to Reddit.
-- Content published in the first quarter was still being cited 5 months later.
-- The author also observed: small communities with only 10 to 20 threads a day often worked better than large discussion boards.
+LinkedIn is often put alongside Reddit as a "community source". But data from people in the industry show that the rules by which AI cites LinkedIn content are almost the opposite of the rules by which its feed recommends posts.
 
-**Strength of evidence:** Someone in the industry tested this repeatedly themselves, with a control. But all the numbers are self-reported. And the author's premise is that "on many commercial questions, Reddit appears more often than brands' official websites and Wikipedia", which conflicts with the large-sample data in Controversy 1, so it should be viewed with caution.
+The first data set was tested by someone in the industry themselves, and no one has independently verified it. He analysed 1,310,455 LinkedIn URLs cited by ChatGPT, Perplexity, Google's AI Overviews, Google's AI Mode, Copilot and Gemini from January to June 2026. Likes and comments were almost unrelated to whether a post got cited: their correlations with citation counts were -0.06 and -0.04 respectively. This number lies between -1 and 1, and close to 0 means almost no relationship. Long articles were cited more often than short feed posts: LinkedIn's long articles made up 63% of cited URLs but received 72% of citations, with an average of 8.5 citations per long-article URL against 5.9 for short feed posts. On Copilot, 90% of LinkedIn citations were long articles.
 
-**The corresponding principle:**
+In the same data set, content posted under a personal name was cited more often than content posted under a company name. Content posted by individuals made up 88% of cited URLs and 92% of citations, while company pages averaged 5.5 citations per URL. Plain text came out slightly ahead, averaging 6.48 citations per URL, against 5.91 for posts with images and 5.69 for posts with video. Citations were also very unevenly distributed: half of the cited URLs were cited exactly 2 times, the top URL was cited 4,685 times, and follower count made little difference. AIs differed a lot from one another: Perplexity alone accounted for 43% of LinkedIn citations, while Gemini cited LinkedIn only 38 times in five months.
 
-- The writing approach "answer directly in the first two sentences, formal tone, specific content" is consistent with the finding in section 4 that "AI favours formal, explanatory comments".
-- "Small communities work better" points in the same direction as the finding in section 5 that "small-to-medium discussion boards were most affected by Google AI Overviews". But the two measure different things and cannot be used as proof of each other.
+The second data set was tested repeatedly by someone in the industry themselves, with a comparison. He used 350 questions without brand names and ran each 3 times over 4 days on ChatGPT, Perplexity and Google's AI Overviews, getting 4,581 answers and 39,236 retrieved items in all. Of the 22 LinkedIn URLs that were cited, 20 were long articles and none was a short feed post; of the 64 records in which LinkedIn was retrieved, 58 pointed to long articles. Of these 22 URLs, 19 were LinkedIn's localised Italian-language URLs.
 
-### Case 3: Wrote 20 posts, still not cited
+However, LinkedIn made up only 0.16% of all the retrieved items in this set, and YouTube 1.13%. Ranked ahead of LinkedIn were the official websites of several large technology companies, and the official websites of EU and US standards bodies. In this data set, Google's AI Overviews cited LinkedIn more often than Perplexity did (6.1% against 3.4%), the exact opposite of the first data set's result. YouTube appeared 331 times in this data set, 314 of them from Google's AI Overviews. Many people in the industry also believe that posting on a LinkedIn company brand page does little for AI visibility.
 
-Someone in the industry observed: he wrote 20 pieces of content on Reddit for a start-up, and ChatGPT still did not cite that company.
+LinkedIn shows that "popularity" signals on social platforms are not necessarily inherited by AI. Reddit's own AI search follows scores, but when outside AIs cite LinkedIn, the number of likes is almost irrelevant; what matters is the form of the content: long articles, plain text, and a personal name. **The rules of each platform and each AI have to be looked at separately.**
 
-Compared with Controversy 2, this is not surprising: in the period the research shows, the share of ChatGPT's citations going to Reddit was already very low.
-
-The lesson is: **first confirm whether your target AI cites social platforms for your type of question, then decide whether to invest.**
-
-### Case 4: LinkedIn — another social platform, with almost the opposite rules
-
-LinkedIn is often lumped together with Reddit as a "community source". But data from people in the industry show that the rules for AI citing LinkedIn content are almost the opposite of the rules its news feed uses for recommendations.
-
-**First data set (someone in the industry tested this themselves; no one has independently verified it):** An analysis of 1,310,455 LinkedIn URLs cited by ChatGPT, Perplexity, Google's AI Overviews, Google's AI Mode, Copilot and Gemini from January to June 2026.
-
-- **Likes and comments have almost nothing to do with whether something is cited.** Their correlation with the number of citations was -0.06 and -0.04 respectively (this number runs between -1 and 1; close to 0 means almost no relationship).
-- **Long articles are cited more often than short posts.** LinkedIn long-form articles made up 63% of cited URLs but received 72% of citations. Long articles were cited 8.5 times per URL on average; short feed posts 5.9 times. On Copilot, 90% of LinkedIn citations were long articles.
-- **Content under a personal name is cited more often than content under a company name.** Content posted under a personal name made up 88% of cited URLs and 92% of citations. Company pages were cited 5.5 times per URL on average.
-- **Plain text does slightly better.** Plain-text content was cited 6.48 times per URL on average, content with images 5.91 times, and content with video 5.69 times.
-- **The distribution is very uneven.** Half of the cited URLs were cited exactly 2 times; the top URL was cited 4,685 times. Follower count made little difference.
-- **AIs differ a lot.** Perplexity alone accounted for 43% of LinkedIn citations; Gemini cited LinkedIn only 38 times in five months.
-
-**Second data set (someone in the industry tested this repeatedly themselves, with a control):** Using 350 questions without brand names, run 3 times each on ChatGPT, Perplexity and Google's AI Overviews over 4 days, giving 4,581 answers and 39,236 retrieved items in total.
-
-- Of the 22 LinkedIn URLs cited, 20 were long-form articles, and none was a short feed post.
-- Of the 64 records in which LinkedIn was retrieved, 58 pointed to long-form articles.
-- Of these 22 URLs, 19 were LinkedIn's localised Italian-language URLs.
-- However, LinkedIn made up only 0.16% of all retrieved items (YouTube made up 1.13%). Ranked ahead of LinkedIn were the official websites of several large technology companies and the official websites of EU and US standards bodies.
-- In this data set, Google's AI Overviews cited LinkedIn more often than Perplexity did (6.1% vs 3.4%), exactly the opposite of the first data set's result.
-- YouTube appeared 331 times in this data set, 314 of them from Google's AI Overviews.
-
-**Industry view:** Many people believe that posting on a LinkedIn company brand page does little for AI visibility.
-
-**The corresponding principle:** "Popularity" signals on a social platform are not necessarily inherited by AI. Reddit's own AI search follows the scores (section 4); but when outside AIs cite LinkedIn, like counts hardly matter — **content format** (long-form, plain text, personal name) is what matters. **The rules for each platform and each AI have to be looked at separately.**
-
-### Case 5: The relative weight of different social platforms
-
-Someone in the industry, in a small sample, saw 86 citations from social platforms: YouTube 38, Reddit 30, LinkedIn 9, software review sites 6, and Wikipedia, Quora and Facebook 1 each.
-
-Another person in the industry observed: with the same 40 questions and 7 AIs, Gemini cited Reddit in 22 of the questions, while ChatGPT did so in at most 1.
-
-These are all single observations, and can only suggest: **do not treat "social platforms" as one whole, and do not average the numbers across different AIs.**
-
----
+The last case concerns the relative weight of the various social platforms. In a small sample, one person in the industry saw 86 citations from social platforms: YouTube 38, Reddit 30, LinkedIn 9, software review sites 6, and Wikipedia, Quora and Facebook 1 each. Another person in the industry observed that with the same 40 questions and 7 AIs, Gemini cited Reddit on 22 of the questions, while ChatGPT did so on at most 1. These are all single observations. They can only remind us not to treat "social platforms" as a single whole, and not to average the numbers of the various AIs together.
 
 ## 10. Taking part properly versus tampering: what's the difference?
 
-### What taking part by the rules looks like
+Taking part by the rules has roughly four features. They fit community rules, and they are compatible with the mechanisms described in this chapter. You answer real questions under your real identity, and you disclose your relationship with the brand. You share specific, verifiable experiences and numbers, and write about both the pros and the cons. You follow each discussion board's rules and accept moderation. You add new information to threads that AI already cites and that are still open for comments, without repeating promotion. Someone in the industry observed that in business-to-business (B2B) fields, only "personal accounts that disclose their identity" can be sustained over the long term. Accounts carrying a brand logo, even with helpful content, are easily rejected by niche communities, because once a community decides you are "here to grab something for yourself", it will downvote and report you.
 
-The following approaches comply with community rules and are also compatible with the mechanisms described in this chapter:
+Manipulation is a different matter, and this book does not recommend it. The most common form is using large numbers of farmed old accounts and high-reputation accounts to post brand recommendations in bulk. Someone in the industry observed that there really are people on the market offering this service: holding thousands of old accounts, charging monthly, posting threads and comments on clients' behalf, and even offering a service to "get rid of negative threads". Someone else in the industry admitted themselves that this is not allowed on the platform and is a rule-breaking practice. Other tactics include manufacturing brand mentions that "look natural"; stuffing short phrases into threads so that a specific brand comes along when AI pulls them back, which is exactly the method the researchers used earlier to prove the attack was feasible; and asking and answering your own questions and upvoting each other to push comment scores up.
 
-- Answer real questions under your real identity, and state your relationship to the brand.
-- Share specific, verifiable experiences and numbers, and write both the pros and the cons.
-- Follow each discussion board's rules and accept moderation.
-- In threads that AI already cites and that are still open for comments, add new information rather than repeating promotion.
+Manipulation has several layers of cost. The most direct is banned accounts and deleted content. Someone in the industry observed that even without selling anything, just offering professional opinions, joining discussions often gets blocked, appeals go unanswered, and community rules are becoming more and more conservative. Next, the citation source may be cut off. The crawling and licensing relationships between platforms and AI companies change. Around mid-August, the shares of ChatGPT's and Perplexity's citations going to Reddit both fell sharply (see Controversies 2 and 3), and a strategy built on a single platform can stop working within a few days.
 
-Someone in the industry observed: in business-to-business (B2B) fields, only "personal accounts that disclose their identity" can be sustained over the long term. Accounts carrying a brand logo, even with helpful content, are easily rejected by niche communities. Because once a community decides you are "here to grab something for yourself", it will downvote and report you.
+Then there is the problem of being picked and being understood. In Reddit's own AI search, comments pinned or flagged by moderators are almost never picked. Even when picked, first-person experience is rewritten into general advice and loses its original meaning; forum content is cited in Google AI Overviews but rarely actually used.
 
-### What manipulation looks like (this book does not recommend it)
-
-- **Using large numbers of farmed old accounts and high-reputation accounts to post brand recommendations in bulk.** Someone in the industry observed that there really are people on the market offering this service: holding thousands of old accounts, charging monthly, posting threads and comments on clients' behalf, and even offering a service to "get rid of negative threads". Someone else in the industry admitted themselves that this is not allowed on the platform and is a rule-breaking practice.
-- **Manufacturing brand mentions that "look natural".**
-- **Stuffing short phrases into threads so that a particular brand comes up when AI retrieves them.** This is exactly the technique the researchers in section 6 used to prove the attack was feasible.
-- **Asking and answering your own questions, and upvoting each other**, to push comment scores up.
-
-### The cost of manipulation
-
-| Risk | Basis |
-|---|---|
-| **Accounts banned, content deleted** | Someone in the industry observed: even without selling, just offering expert opinions, taking part in discussions often gets you blocked, and appeals get no response. Community rules are becoming more and more conservative. |
-| **Citation sources cut off** | The crawling and licensing relationships between platforms and AI companies change. Around mid-August, the share of ChatGPT's and Perplexity's citations going to Reddit both fell sharply (Controversies 2 and 3). A strategy built on a single platform may stop working within days. |
-| **Flagged by moderators, and so not picked** | In Reddit's own AI search, comments pinned or flagged by moderators are almost never picked (section 4). |
-| **Rewritten by AI, losing the original meaning** | Even if picked, first-person experience gets rewritten into general advice (section 4); forum content is cited in Google AI Overviews but rarely actually used (section 3). |
-| **Defenders are targeting the pollution of community pages** | Researchers have already pointed out that "not reading community pages" is an effective line of defence. If AI companies adjust in this direction, approaches that rely on manipulating community content will be the first to be affected. This is an inference; there is currently no evidence it has happened. |
-| **Damage to brand reputation** | Once a community sees through it, the negative discussion itself may also become a source AI cites. This is a concern in the industry; there is currently no systematic evidence. |
-| **Deleting a post doesn't stop it being cited** | Researchers found on real AI search that after a post was deleted, one platform kept citing it for about 4 more days. If you post something wrong, don't count on deleting it to take it back right away. |
-
----
+Some risks are inferences or concerns. Researchers have already pointed out that "not reading community pages" is an effective line of defence. If AI companies adjust in this direction, approaches that rely on manipulating community content will be hit first; this is an inference, and there is currently no evidence that it has happened. Once a community sees through manipulation, the negative discussion itself may also become a source AI cites and damage the brand's reputation; this is a concern in the industry, and there is currently no systematic evidence. Finally, deleting a post does not mean it stops being cited. Researchers found on real AI search that after an article was deleted, some platforms kept citing it for about 4 days. **If you post the wrong content, you can't count on deleting it to take it back right away.**
 
 ## 11. What to do, what not to do, and outdated approaches
 
 ### What you can do, and how strong the evidence is
 
-| Approach | Strength of evidence |
-|---|---|
-| **Measure first, then invest.** For your core questions, record on each AI one by one which websites it cites, and confirm whether social platforms are among them. Do not rely on vague claims like "AI loves citing Reddit most". | Researchers ran repeated tests on real AI search and found that sources differ hugely between AIs. |
-| **Plan separately for each AI.** Unless your data show other AIs responding too, treat community work as an approach that "mainly affects Google's AI products". | Examination of real AI search, plus tests by people in the industry themselves. |
-| **Plan separately for each question type.** Community content is more likely to be cited on review-and-opinion, specific task-type and brand-name questions, and less on broad category terms. | Someone in the industry tested this repeatedly themselves with a control, plus tests by people in the industry themselves. |
-| **Take part in threads that are already cited and still open for comments.** Start from the list of threads AI actually cites, and judge whether you have specific content to add. | Tests by people in the industry themselves. Someone in the industry also observed that some cited threads have already been removed or archived. |
-| **Write formally, specifically, and in a form that can be used directly.** Answer the question in the first two sentences, give specific numbers, write both pros and cons. (Note: this is for being picked by AI. Simulation research shows that AI's idea of a "popular answer", one with more arguments, evidence and steps, has almost nothing to do with real people's votes; winning real people's votes in a Q&A community is a different goal.) | External observation of a real platform (only Reddit's own AI search; correlation, not causation), plus tests by people in the industry themselves. |
-| **Take part under your real identity, and state your relationship to the brand.** | Observations by people in the industry; from the point of view of following the rules, this is essential. |
-| **On LinkedIn, prefer writing long-form articles under a personal name rather than posting short updates from a brand page.** | Tests by people in the industry themselves, plus someone in the industry testing repeatedly with a control. |
-| **Measure "being cited" and "bringing visitors and potential customers" separately.** | People in the industry observed that the two often do not move together; research also found that "being cited" and "being used" do not match. |
-| **Track for several weeks in a row, look at each AI separately, and do not look at just one result.** | In tests by people in the industry, large short-term swings that later reversed happened many times. |
+The first thing is to measure first, then invest. For your core questions, record on each AI, one by one, which websites it cites, and confirm whether social platforms are among them. Don't rely on sweeping claims like "AI loves citing Reddit most". The basis for this is that researchers ran repeated tests on real AI search and found that the sources of different AIs differ enormously.
 
-### Don't do this
+Next, plan separately for each AI. Unless your data show that other AIs respond too, treat community work as an approach that "mainly affects Google's AI products". The basis is checks on real AI search, plus tests by people in the industry themselves. In the same way, plan separately by question type. Community content is more likely to be cited on review-and-opinion, specific task-type, and brand-name questions, and less on broad category terms. This comes from observations that people in the industry tested repeatedly themselves with a comparison, plus tests by people in the industry themselves.
 
-- Don't farm accounts, buy comments, or post brand recommendations in bulk.
-- Don't stuff brand phrases meant for AI into threads.
-- Don't promote in communities only with a brand account.
-- Don't judge a community's influence only by "whether Reddit is in the source list". Being cited is not the same as being used, and being used does not always mean being cited.
-- Don't average all AIs' numbers into a single "AI visibility".
-- Don't bet your whole budget on a single social platform. A platform's crawling policy may change within days.
+As for concrete action, you can take part in threads that are already cited and still open for comments, starting from the list of threads AI actually cites and judging whether you have anything specific to add. This comes from tests by people in the industry themselves; some people in the industry have also observed that some of the cited threads have already been removed or archived. When you write, write formally, specifically, and in a form that can be used directly: answer the question in the first two sentences, give specific numbers, and write about both the pros and the cons. The basis for this is outside observation of a real platform (only for Reddit's own AI search, and it is correlation, not causation), plus tests by people in the industry themselves. Note that writing this way is aimed at being picked by AI. A simulation study showed that what AI regards as a "popular answer", meaning one with more arguments, evidence and steps, is almost unrelated to the votes of real people; winning real people's votes in a Q&A community is a different goal.
 
-### Outdated approaches
+Taking part under your real identity and disclosing your relationship with the brand is based on observations by people in the industry, and from the standpoint of playing by the rules, it is essential. On LinkedIn, give priority to long articles under a personal name and post fewer short updates from the brand page. The basis is tests by people in the industry themselves, plus data that people in the industry tested repeatedly with a comparison.
 
-- **"Reddit is the source AI cites most often, so go all in on Reddit."** At least for commercial questions in 2026, on ChatGPT and Claude, and on Perplexity during certain periods, this premise does not hold.
-- **"Posting on Reddit lets you influence every AI."** Each AI's sources are almost a different world.
-- **"Chasing community popularity equals chasing AI visibility."** On LinkedIn, like counts have almost nothing to do with whether something is cited by AI.
+The way you measure also needs to change. Measure "being cited" separately from "bringing in visitors and potential customers", because people in the industry have observed that the two often don't move together, and research has also found that "being cited" and "being used" don't match. Finally, track continuously for several weeks and look at each AI separately rather than looking at a single result, because in tests by people in the industry, large short-term swings that later reversed happened again and again.
 
----
+### What not to do, and ideas that are out of date
+
+There are several things not to do. Don't farm accounts, buy comments, or post brand recommendations in bulk, and don't stuff threads with short brand phrases meant for AI to see. Don't promote in communities using only a brand account. When judging a community's influence, don't look only at "whether Reddit is in the sources column", because being cited is not the same as being used, and being used does not necessarily mean being cited; and don't average all the AIs' numbers into a single "AI visibility". On budget, don't bet everything on a single social platform, because a platform's crawling policy can change within a few days.
+
+Three ideas are already out of date. The first is "Reddit is the source AI cites most often, so go all in on Reddit". At least for commercial questions in 2026, on ChatGPT and Claude, and on Perplexity during certain periods, this premise does not hold. The second is "posting on Reddit can influence every AI"; in reality, the sources of the various AIs are almost different worlds. The third is "chasing community popularity is the same as chasing AI visibility", but on LinkedIn, the number of likes is almost unrelated to whether AI cites a post.
 
 ## Key points of this chapter
 
-1. The weight of social platforms in AI search depends on "**which AI × which kind of question × what time**". Google's AI Overviews and AI Mode use community sources heavily; other AIs rarely cited Reddit during the study periods, and Claude's search results contained no Reddit at all.
-2. "Reddit is the source AI cites most often" is a disputed claim. On commercial questions, large-sample data show Reddit makes up only a very small share, with most citations going to vendors' documentation and product pages.
-3. Around August 2026, the share of ChatGPT's and Perplexity's citations going to Reddit both fell sharply. But the scope, the causes, and whether it will last are all disputed. Perplexity's change looks like "contraction by question type".
-4. Being cited is not the same as being used: forum sources in Google AI Overviews are cited a lot and used little; the other way round, a great deal of content is used but not listed.
-5. AI's selection step inherits the community's prominence signals: it favours high-scoring, top-level, formal comments, and rewrites first-person experience into general advice.
-6. A large-scale experiment with real users showed that Google's AI Overviews boosted community activity on Reddit, with experience-sharing and small-to-medium communities benefiting most; but the conversational AI Mode weakened this effect.
-7. "Brands taking part in communities can raise AI visibility" is currently supported only by before-and-after comparisons from people in the industry, with no causal evidence; the cases that worked are all concentrated on specific, niche questions.
-8. Community pages anyone can write on are a single-point attack surface: manipulation is mechanically possible and hard to detect. But manipulation carries the risks of banned accounts, deleted posts, sources being cut off and damaged reputation. Taking part by the rules (real identity, disclosed relationship, specific contributions) is the only approach that can last.
+The weight of social platforms in AI search depends on which AI, which kind of question, and what time. Google's AI Overviews and AI Mode use community sources heavily; other AIs rarely cited Reddit during the study periods, and Claude's search results contained no Reddit at all. "Reddit is the source AI cites most often" is a disputed claim; on commercial questions, large-sample data show that Reddit makes up only a very small share, and most citations go to vendors' documentation and product pages. Around August 2026, the shares of ChatGPT's and Perplexity's citations going to Reddit both fell sharply, but the scope, the cause, and whether it will last are all disputed, and Perplexity's change looks like a contraction by question type.
 
----
+Being cited is not the same as being used. Forum-type sources are cited a lot but used little in Google AI Overviews; conversely, a great deal of content is used without being listed. At the picking step, AI inherits the community's signal of prominence, favouring high-scoring, top-level, formal comments, and rewriting first-person experience into general advice. A large-scale experiment with real users showed that Google's AI Overviews boosted community activity on Reddit, with experience-sharing and small-to-medium communities benefiting most, but the conversational AI Mode weakened this effect.
+
+"Brand participation in communities raises AI visibility" is currently supported only by before-and-after comparisons from people in the industry, with no causal evidence, and the cases that worked are all concentrated on specific, obscure questions. Community pages anyone can write on are a single-point attack surface. Manipulation is mechanically possible and hard to detect, but it carries the risks of banned accounts, deleted posts, sources being cut off, and damaged reputation. Taking part by the rules, meaning real identity, a disclosed relationship and specific contributions, is the only approach that can last.
 
 ## Closing: back to that owner
 
-Where the owner from the opening went wrong was not going to Reddit, but treating one "I heard that…" as a map.
+Where the owner in the opening went wrong was not in going to Reddit, but in treating one "I heard that" as a map. Communities are a very important part of other people's word of mouth, but each librarian flips through different shelves, each kind of question calls for different books, and the shelves can be moved at any time. So measure first, then invest; look at each separately rather than averaging; and speak well under your real identity rather than tampering.
 
-Communities are a very important part of **other people's word of mouth**. But each librarian flips through a different bookshelf, each kind of question calls for different books, and the bookshelves may be moved at any time.
+## Remember in one sentence
 
-Measure first, then invest; look at things separately, don't average; speak honestly under your real identity, and don't tamper.
+**How much community word of mouth matters in AI's eyes depends on which AI, which kind of question, and what time; measure clearly first, then take part properly under your real identity.**
 
----
+## What you can do tomorrow
 
-### Remember in one sentence
+1. Measure first. List the core questions you care about most, ask each AI you care about one by one, note which websites they cite, and confirm whether social platforms are actually among them. Don't rely on claims like "AI loves Reddit most".
+2. Plan separately for each AI. Unless your own data show that other AIs respond too, start by treating community work as an approach that "mainly affects Google's AI products".
+3. Plan separately by question type. Give priority to review-and-opinion, specific task-type, and brand-name questions, and spend less effort on broad category terms.
+4. Start from threads that AI already cites and that are still open for comments, think about whether you have specific new content to add, and keep in mind that some cited threads have already been removed or archived.
+5. Write formally, specifically, and in a form that can be used directly: answer the question directly in the first two sentences, give specific numbers, and write about both the pros and the cons.
+6. Take part under your real identity and disclose your relationship with the brand; in business-to-business fields, use a personal account that discloses your identity rather than relying only on a brand account.
+7. On LinkedIn, give priority to long articles under a personal name and post fewer short updates from the brand page.
+8. Record "being cited" separately from "bringing in visitors and potential customers".
+9. Track continuously for several weeks and look at each AI separately. Don't be scared by a single result, and don't draw conclusions from one good result either.
 
-How much community word of mouth matters in AI's eyes depends on which AI, which kind of question, and what time; measure clearly first, then take part properly under your real identity.
+## Stop doing this
 
-### What you can do tomorrow
+**Stop believing "Reddit is the source AI cites most often, so go all in on Reddit".** At least for commercial questions in 2026, on ChatGPT and Claude, and on Perplexity during certain periods, this premise does not hold. Likewise, stop assuming that posting on Reddit can influence every AI, since the sources of the various AIs are almost different worlds; and stop treating community popularity as AI visibility, since on LinkedIn the number of likes is almost unrelated to whether AI cites a post.
 
-1. **Measure first.** List the core questions you care about most, ask each AI you care about one by one, note which websites they cite, and confirm whether social platforms are actually among them. Do not rely on claims like "AI loves Reddit most".
-2. **Plan separately for each AI.** Unless your own data show other AIs responding too, start by treating community work as an approach that "mainly affects Google's AI products".
-3. **Plan separately for each question type.** Aim first at review-and-opinion, specific task-type and brand-name questions, rather than broad category terms.
-4. **Start from threads AI already cites and that are still open for comments.** Think about whether you have specific new content to add. Note that some cited threads have already been removed or archived.
-5. **Write formally, specifically, and in a form that can be used directly.** Answer the question directly in the first two sentences, give specific numbers, write both pros and cons.
-6. **Take part under your real identity, and state your relationship to the brand.** In business-to-business fields, use personal accounts that disclose your identity; don't rely only on brand accounts.
-7. **On LinkedIn, prefer writing long-form articles under a personal name**, rather than posting short updates from a brand page.
-8. **Record "being cited" and "bringing visitors and potential customers" separately.**
-9. **Track for several weeks in a row, looking at each AI separately.** Don't be scared by a single result, and don't jump to conclusions because of one good result.
+Stop farming accounts, buying comments and posting brand recommendations in bulk, and stop stuffing threads with short brand phrases meant for AI to see. Promoting in communities using only a brand account is something to stop as well.
 
-### Stop doing this
+When measuring and allocating resources, stop looking only at whether Reddit is in the sources column, and stop averaging all the AIs' numbers into a single score. Finally, stop betting your whole budget on a single social platform.
 
-1. **Stop believing "Reddit is the source AI cites most often, so go all in on Reddit".** At least for commercial questions in 2026, on ChatGPT and Claude, and on Perplexity during certain periods, this premise does not hold.
-2. **Stop thinking "posting on Reddit lets you influence every AI".** Each AI's sources are almost a different world.
-3. **Stop treating community popularity as AI visibility.** On LinkedIn, like counts have almost nothing to do with whether something is cited by AI.
-4. **Stop farming accounts, buying comments and posting brand recommendations in bulk, and stop stuffing brand phrases meant for AI into threads.**
-5. **Stop promoting in communities only with a brand account.**
-6. **Stop looking only at whether Reddit is in the source list, and stop averaging all AIs' numbers into one score.**
-7. **Stop betting your whole budget on a single social platform.**
+## What is still uncertain
 
-### What is still uncertain
+**Does brand participation in communities actually raise AI visibility, traffic or business?** No study using random assignment or a quasi-experiment has proven it so far. There are only before-and-after comparisons by people in the industry, and most authors themselves admit they cannot prove causation.
 
-1. **Does brand participation in communities actually raise AI visibility, traffic or business?** No study using random assignment or a quasi-experiment has proven it so far; there are only before-and-after comparisons by people in the industry, and most authors themselves admit they cannot prove causation.
-2. **Is Reddit really the source AI cites most often?** The numbers from different sides conflict; question types, AI combinations, timing and counting methods all differ, and no single snapshot can be used to infer another time.
-3. **The plunge in ChatGPT's Reddit citations in August 2026**: its scope (only ChatGPT, or other AIs too), its cause (a change in how it finds information, or Reddit tightening its blocking), and whether it will last are all still unsettled. There is also no direct evidence on whether ChatGPT is still "using but not listing" Reddit's content.
-4. **Has Perplexity fully withdrawn from Reddit, or only contracted on certain questions?** There are currently only small-sample observations; the claim that it "went from barely citing to citing in most answers within two weeks" comes from a party with a commercial interest and has not been independently verified.
-5. **Do new threads have the edge, or are old ones just as good?** Observations contradict each other; claims like "60% come from the last half year" and "60% to 70% are already archived" have unclear sources or have not been verified.
-6. **Does a community's "consensus view" matter more than a single web page?** This is an industry view; existing research does not support the simple picture that "the whole community discussion is fully absorbed".
-7. **The precise size of how "little forums are used" in Google AI Overviews** is affected by the calculation method; only the direction is credible.
-8. **The actual success rate of tampering with community pages on commercial AI** is still unknown; whether AI companies will start blocking community pages is also only an inference.
-9. **Whether negative discussions will become sources AI cites and in turn hurt brands** is currently only a concern in the industry, with no systematic evidence.
-10. **On LinkedIn, which AI cites it most often**: the two data sets give exactly opposite results.
+**Is Reddit really the source AI cites most often?** The numbers from different sides conflict, and the question types, AI combinations, timing and counting methods all differ. No single snapshot can be used to infer what happens at other times.
+
+**How should ChatGPT's plunge in Reddit citations in August 2026 be read?** Whether the scope was ChatGPT alone or other AIs too, whether the cause was a change in how it looks for information or Reddit tightening its blocking, and whether it will last are all still unsettled. There is also no direct evidence on whether ChatGPT is still "using without listing" Reddit content.
+
+**Has Perplexity withdrawn from Reddit entirely, or contracted only on certain questions?** For now there are only small-sample observations. The claim that it "went from almost never citing to citing in most answers within two weeks" comes from a party with a commercial interest and has not been independently verified.
+
+**Do new threads have the edge, or do old ones do just as well?** The observations contradict each other, and claims like "60% are less than six months old" and "60% to 70% are archived" have unclear sources or have not been verified.
+
+**Does a community's "consensus view" matter more than a single web page?** This is an industry opinion, and existing research does not support the simple picture that "a whole community's discussion is fully absorbed".
+
+**When forums are "used little" in Google AI Overviews, how little is that exactly?** The precise size is affected by the calculation method; only the direction is credible.
+
+**What is the actual success rate of tampering with community pages on commercial AI?** This is not yet known. Whether AI companies will start blocking community pages is also only an inference.
+
+**Could negative discussions become a source AI cites and end up hurting the brand?** For now this is only a concern in the industry, with no systematic evidence.
+
+**Which AI cites LinkedIn most often?** The two data sets give exactly opposite results.
