@@ -90,7 +90,7 @@ python -m http.server 8765 --directory website
   <tr>
     <td width="180" valign="top"><img src="docs/author.jpg" width="160" alt="作者肖像" /></td>
     <td valign="top">
-      <strong>ivantsai1982</strong><br /><br />
+      <strong>Ivan Tsai</strong><br /><br />
       1999 年開始接觸網路，2003 年進入網路產業。2005 年開始研究搜尋引擎優化（SEO），出版過多部 SEO 專著，也發表過研究論文。自 2007 年起一直在 SEO 一線工作，把實務與研究結合在一起。<br /><br />
       2022 年，AI 開始直接回答問題，我轉向研究生成式引擎優化（GEO），一直到今天。二十多年的 SEO 經驗，讓我最確定的一件事是：搜尋一直在變，而大部分的建議跟不上它的變化。GEO Lab 想做的，就是一本跟得上的教材：每個結論都有證據，每次修改都有版本，每次更新都公開。
     </td>
@@ -104,6 +104,6 @@ python -m http.server 8765 --directory website
 
 ## 引用方式
 
-> ivantsai1982. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
 
 引用時請註明版本號，因為內容會持續更新。

@@ -90,7 +90,7 @@ Practitioner reports are labeled separately and never presented as proof.
   <tr>
     <td width="180" valign="top"><img src="docs/author.jpg" width="160" alt="Portrait of the author" /></td>
     <td valign="top">
-      <strong>ivantsai1982</strong><br /><br />
+      <strong>Ivan Tsai</strong><br /><br />
       I first went online in 1999 and have worked in the internet industry since 2003. I began studying search engine optimization in 2005 and have since written several books on SEO and published research papers. Since 2007 I have worked on the front line of SEO, combining hands-on practice with research.<br /><br />
       In 2022, as AI began answering questions directly, I turned to generative engine optimization, and I have been studying it ever since. More than twenty years of SEO have taught me one thing above all: search keeps changing, and most advice cannot keep up. GEO Lab is my attempt to build a textbook that does: every claim tied to evidence, every change versioned, every update open.
     </td>
@@ -104,6 +104,6 @@ Practitioner reports are labeled separately and never presented as proof.
 
 ## How to cite
 
-> ivantsai1982. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.6.0. https://github.com/ivantsai1982/geo-lab
 
 Please include the version number, because the content changes over time.
