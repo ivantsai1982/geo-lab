@@ -1,0 +1,712 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 3 章　AI 进得了你家的门吗？ · AI 为什么不推荐你？</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<header><button class="menu-btn" aria-label="menu"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><a class="brand" href="index.html"><b>GEO</b> <span>AI 为什么不推荐你？</span></a>
+<div class="search"><span class="sic"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><input placeholder="搜索…" aria-label="搜索"><div id="results"></div></div><div class="spacer"></div>
+<div class="lang"><button class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="language"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg><span class="lf">简体中文</span><span class="ls">简</span><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="lang-menu" role="menu"><a class="" data-lang="zh-Hant" href="../zh-Hant/ch03.html"><span>繁體中文</span><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></a><a class="on" data-lang="zh-Hans" href="../zh-Hans/ch03.html"><span>简体中文</span><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></a><a class="" data-lang="en" href="../en/ch03.html"><span>English</span><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></a></div></div><button class="theme" title="theme" aria-label="theme"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button></header>
+<div class="wrap"><nav class="side"><a class="" href="index.html">目录</a><div class="part">开场：先学会不被骗</div><a class="" href="ch00.html">第 0 章　先学会不被骗：怎样读 GEO 的证据</a><div class="part">第一部：AI 回答你之前的七道关</div><a class="" href="ch01.html">第 1 章　AI 回答前的七道关</a><a class="" href="ch02.html">第 2 章　AI 根本没去查，你写再好也没用</a><a class="on" href="ch03.html">第 3 章　AI 进得了你家的门吗？</a><a class="" href="ch04.html">第 4 章　AI 搜的不是你打的那句话</a><a class="" href="ch05.html">第 5 章　AI 比较相信别人怎么说你</a><a class="" href="ch06.html">第 6 章　入围了，AI 为什么还是不挑你？</a><a class="" href="ch07.html">第 7 章　被列出来，不等于被用上</a><div class="part">第二部：做什么有用、怎么知道有没有用</div><a class="" href="ch08.html">第 8 章　写作技巧也有保存期限</a><a class="" href="ch09.html">第 9 章　AI 在掷骰子：怎么量，才不会骗自己</a><a class="" href="ch10.html">第 10 章　被 AI 点名了，然后呢？</a><a class="" href="ch11.html">第 11 章　AI 会被骗吗？</a><a class="" href="ch12.html">第 12 章　每个 AI 都有自己的口味</a><div class="part">第三部：真实案例</div><a class="" href="ch13.html">第 13 章　AI 认识你，为什么不推荐你</a><a class="" href="ch14.html">第 14 章　被引用一万次，却没人点进来</a><a class="" href="ch15.html">第 15 章　社群上的口碑，AI 真的听得到吗？</a><div class="part">结语</div><a class="" href="ch16.html">第 16 章　结语　还没有定论的问题</a><div class="part"></div><a class="" href="glossary.html">术语表</a></nav><main><div class="crumbs"><nav class="trail" aria-label="breadcrumb"><a href="#">第 3 章　AI 进得了你家的门吗？</a></nav><button class="copy-md" data-copy="复制本页 Markdown" data-copied="已复制" title="复制本页 Markdown"><span class="i-copy"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span><span class="i-done"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="lbl">复制本页 Markdown</span></button></div><h1 id="第-3-章-ai-进得了你家的门吗">第 3 章　AI 进得了你家的门吗？</h1>
+<blockquote>
+<p>七道关的第二关：<strong>进不进得了门</strong>（可达性）。
+后面所有的努力，都有一个前提：AI 的爬虫真的拿到了你的内容。</p>
+</blockquote>
+<hr />
+<h2 id="想像一下">想像一下</h2>
+<p>想像一下，一位经营手工家具网店的老板，网站是几年前请人做的，看起来很漂亮。</p>
+<p>她听说现在很多人会直接问 AI“哪里可以买到结实的实木书桌”，就自己试了一次。答案列了四家店，没有她。她换了几种问法，还是没有。</p>
+<p>她打开网站的设置档，上面写着“欢迎所有爬虫”。她很困惑：门明明开着，AI 为什么不进来？</p>
+<p>这一章要讲的就是这扇门。它比大多数人想像的多好几层。而且它坏掉的时候，完全不会发出声音。</p>
+<p>（以上是虚构的示范情境。）</p>
+<hr />
+<h2 id="这一章的大道理">这一章的大道理</h2>
+<p><strong>AI 读不到你，你就不存在。而且它读不到的时候，不会通知你，只会默默改用别人。</strong></p>
+<p>所以“进不进得了门”要一层一层检查：
+- 你挡的是哪一种爬虫？
+- 挡在哪一层？
+- 爬虫进门之后，拿到的页面里到底有没有东西？</p>
+<p>这一章会回答五个问题：</p>
+<ol>
+<li>封锁或放行 AI 的爬虫，会不会改变你出现在 AI 答案里的机会？</li>
+<li>为什么“robots.txt 没问题”不等于“AI 读得到”？封锁可能发生在哪几层？</li>
+<li>AI 到底抓到了什么？用 JavaScript 程序组装出来的内容、网页“头部”的说明信息、结构化数据，哪些真的会被读到？</li>
+<li>AI 背后靠哪些“目录”（索引）？当场去读，和事先整理好的目录，有什么不同？</li>
+<li>llms.txt 和给 AI 看的 Markdown 版本有没有用？当 AI 深入你的网站替人办事时，什么决定它能不能用上你的内容？</li>
+</ol>
+<hr />
+<h2 id="一读不到就不存在">一、读不到，就不存在</h2>
+<p>AI 搜索回答问题时，只能用它拿得到的内容。</p>
+<p>拿不到，你就进不了<strong>入围名单</strong>。后面的挑选、排序、引用，全都无从谈起。</p>
+<p>把 AI 想成那个很忙的图书馆员。他要帮读者找资料，走到你的书架前，发现门锁着，或书页是空白的。他不会在门口等，也不会替你编一段介绍。他会转身去拿隔壁架上的书。</p>
+<h3 id="google-产品上的直接观察">Google 产品上的直接观察</h3>
+<p>研究人员在真实的 AI 搜索上反复测试，看到一个很直接的现象。</p>
+<p>Google 有一个专门的身份标记，叫 <strong>Google-Extended</strong>，用来区分“AI 用途”的抓取。封锁了 Google-Extended 的网站：
+- 被 Gemini 引用的次数是<strong>零</strong>；
+- 被 Google 搜索页顶端的 <strong>AI 摘要</strong>引用的次数，也明显比较少。</p>
+<p>要注意：这是观察到的关联，不是随机分组的实验。但方向很清楚。</p>
+<h3 id="失败是沉默的">失败是沉默的</h3>
+<p>最需要记住的是“失败的样子”。</p>
+<p>当会自己上网办事的 AI（本书称为 AI 智能体，英文 agent）读不到你的网站时，它<strong>不会替你编造内容</strong>。它会<strong>把你省略掉</strong>，改用第三方网站或竞争对手的内容来回答。</p>
+<p>你不会看到任何错误信息。你只会发现，自己不在答案里。</p>
+<hr />
+<h2 id="二ai-爬虫不是一只而是好几只">二、“AI 爬虫”不是一只，而是好几只</h2>
+<p><strong>爬虫</strong>是自动读取网页的程序。最常见的误解，是把所有 AI 爬虫当成同一种东西，以为一个开关就能管住。</p>
+<p>其实同一家 AI 公司，通常会派出好几个不同身份的爬虫，各管一件事。每个身份有自己的名字（技术上叫 user-agent，就是爬虫来访时报上的名字）。</p>
+<h3 id="以-chatgpt-背后的公司为例">以 ChatGPT 背后的公司为例</h3>
+<p>这家公司公开了自己的分工。业内人士整理如下：</p>
+<table>
+<thead>
+<tr>
+<th>身份名称</th>
+<th>做什么</th>
+<th>挡掉它会怎样</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPTBot</td>
+<td>收集训练模型用的资料</td>
+<td>你的内容不会被拿去训练；<strong>不影响即时回答</strong>。官方说明：用户用 OpenAI 的浏览器 ChatGPT Atlas 看网页时取得的内容，也遵守这个封锁</td>
+</tr>
+<tr>
+<td>OAI-SearchBot</td>
+<td>建立 ChatGPT 搜索用的索引（目录）</td>
+<td>官方说明：封锁它，你的内容就不会出现在 ChatGPT 搜索的摘要和片段里；如果 OpenAI 从第三方搜索服务或别的网页得知你的网址，在 ChatGPT Atlas 里可能只显示链接和标题</td>
+</tr>
+<tr>
+<td>ChatGPT-User</td>
+<td>用户在对话中触发的“当场读取”</td>
+<td>用户把你的网址贴给 AI，AI 读不到</td>
+</tr>
+<tr>
+<td>OAI-AdsBot</td>
+<td>检查广告的落地页（2026 年新增）</td>
+<td>与广告有关</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他-ai-公司也差不多">其他 AI 公司也差不多</h3>
+<p>有一个好记的规律：<strong>名字里带“User”的身份</strong>（例如 Claude-User、Perplexity-User），通常是回答问题时的<strong>当场读取</strong>。</p>
+<p>ClaudeBot、PerplexityBot 这类名字，则通常是建立索引或收集训练数据的爬虫。</p>
+<p>还有一个特例。有业内人士指出，名叫 <strong>meta-externalagent</strong> 的爬虫，依照它官方的说明，<strong>同时</strong>负责收集训练数据和建立 Meta AI 答案用的索引。封锁它，等于同时退出这两条路。</p>
+<h3 id="三类爬虫走三条路">三类爬虫，走三条路</h3>
+<p>可以把它们分成三类：</p>
+<ol>
+<li><strong>收集训练数据的</strong>（例如 GPTBot、ClaudeBot，以及一个叫 CCBot 的公共爬虫）：内容进入模型原本的“记忆”。</li>
+<li><strong>建立索引的</strong>（例如 OAI-SearchBot、PerplexityBot）：内容进入 AI 自己的目录，等有人提问时快速查找。</li>
+<li><strong>当场读取的</strong>（例如 ChatGPT-User、Claude-User）：有人正在提问，AI 在那几秒内跑来读你的网页，只用于这一次回答。</li>
+</ol>
+<p>三条路最后都汇进同一个答案，但各走各的门。</p>
+<h3 id="这个分工带来两个直接结论">这个分工带来两个直接结论</h3>
+<p><strong>第一，封锁收集训练数据的爬虫，不会让你从即时答案里消失。</strong></p>
+<p>有大规模的真实用户数据（在一项研究的附录里）显示：
+- <strong>79%</strong> 的网域至少封锁了一个 AI 爬虫；
+- 这些封锁者从 ChatGPT 得到的平均导流是 <strong>6.48</strong>，没封锁的是 <strong>4.48</strong>。封锁者并没有比较少。</p>
+<p>注意：这只是关联，不能读成“封锁反而带来流量”。它只说明一件事：<strong>封锁训练爬虫，并不妨碍 ChatGPT 在回答时把人带到你这里。</strong></p>
+<p><strong>第二，只放行训练爬虫、却挡住当场读取，才是真正的损失。</strong></p>
+<p>在 AI 上网作答的模式下，答案内容只有大约 <strong>7–10%</strong> 来自模型原本的训练记忆，其余都是当场查来的。</p>
+<p>换句话说，AI 有没有“学过”你，远不如它此刻“读不读得到”你重要。</p>
+<hr />
+<h2 id="三门有三层robotstxt-只是最外面那一层">三、门有三层，robots.txt 只是最外面那一层</h2>
+<p>网站根目录通常有一个小文件叫 <strong>robots.txt</strong>，用来告诉爬虫“哪里可以来、哪里请勿进入”。很多人检查可达性，只看这一个文件。</p>
+<p>问题是，一个请求从外面走到你的内容，要经过三层：</p>
+<pre><code>爬虫的请求
+  → 【大楼警卫】网站加速与防护服务（CDN）、网站防火墙（WAF）、主机的机器人防护
+  → 【门口告示牌】robots.txt
+  → 【书里有没有字】服务器实际送回的内容
+</code></pre>
+<p><strong>告示牌（robots.txt，宣告层）。</strong>
+上面写着“欢迎”或“谢绝”。但它只是一块礼貌性的告示，对方守不守规矩，要看对方自己。</p>
+<p><strong>大楼警卫（CDN、WAF、主机安全设置，执行层）。</strong>
+请求还没走到你的网站，就可能依照爬虫的名字或来源位址的信用被拦下。对方会收到“禁止进入”（技术上是 403 状态码）或一个“证明你是人”的挑战页。
+这一层<strong>不会写在 robots.txt 里</strong>。你用浏览器逛自己的网站，也完全看不出来。</p>
+<p><strong>书里有没有字（服务器回应内容，内容层）。</strong>
+警卫放行了，请求也成功了，但对方拿到的页面里，可能根本没有你以为有的内容。下一节细讲。</p>
+<h3 id="警卫常常在你不知道的时候关门">警卫常常在你不知道的时候关门</h3>
+<p>业内很多人认为，AI 爬虫常常在 CDN 或 WAF 这一层被挡掉，而且往往是默认设置，或是不小心打开的设置。就算 robots.txt 写了欢迎，也没用。</p>
+<p>支持这个说法的人明显多于反对的人。但“很多人认为”不等于“是对的”，这不是证明。</p>
+<p>具体的例子：有一种 CDN 服务提供“封锁 AI 爬虫”的开关。打开后，它会在你自己的 robots.txt <strong>最上面插入一段它自己管理的规则</strong>，封锁 GPTBot、ClaudeBot、Google-Extended 等，盖过你原本的设置。</p>
+<p>另有业内人士指出：这个 CDN 服务从 2026 年 9 月 15 日起改了默认值，会在<strong>有广告的页面</strong>上封锁“混合用途”的爬虫（也就是同时用于多种目的的爬虫）。没有广告位的网站不受这次变更影响。</p>
+<hr />
+<h2 id="四ai-读的是服务器原始回应不是你在浏览器看到的页面">四、AI 读的是“服务器原始回应”，不是你在浏览器看到的页面</h2>
+<p>你用浏览器打开网页时，浏览器会执行一堆程序（JavaScript），把价格、菜单、折叠的问答一块块“组装”起来，你才看到完整的页面。</p>
+<p><strong>多数 AI 爬虫不做这个组装。</strong> 它只拿走服务器最原始送出来的那份 HTML 文件，转成纯文字，再交给模型。</p>
+<p>打个比方：你寄给图书馆员一套需要自己组装的家具。你以为他收到的是一张书桌，他收到的其实是一箱木板和一包螺丝。网页上“组装后才出现”的东西，对他来说都不存在。</p>
+<h3 id="这是业内最强的共识之一">这是业内最强的共识之一</h3>
+<p>“多数 AI 爬虫不执行 JavaScript，靠浏览器端程序产生的内容对它们不可见”，是这个主题上业内共识最强的说法之一。支持和反对的比例大约是 <strong>23 比 1</strong>。</p>
+<p>有业内人士自己测过，细节如下（但没有人独立验证过）：</p>
+<ul>
+<li><strong>测试一：</strong> 做一个埋了 60 多个识别码的测试页，让六个 AI 平台去读。<strong>三个完全不执行 JavaScript</strong>；另外三个只给 0.5 到 3 秒就离开了。</li>
+<li><strong>测试二：</strong> 同一个测试里，网页头部（<code>&lt;head&gt;</code>）的 11 类说明信息中，有 <strong>9 类读取结果是零</strong>。网页摘要说明（meta description）、JSON-LD 格式的结构化数据、社群分享标签（OG 标签）、schema 标记，都没被读到。唯一被读到的是<strong>网页标题（<code>&lt;title&gt;</code>）</strong>。测试者的解释是：把网页转成纯文字的那一步，会把整个头部区块丢掉。</li>
+<li><strong>测试三：</strong> 在 50 个网站里，有 <strong>34 个（68%）</strong> 是用“标签管理器”这类在浏览器端执行的程序，把 JSON-LD 结构化数据事后塞进页面。结果：由服务器直接输出 JSON-LD 的网站，<strong>92%</strong> 的结构化数据至少被两个 AI 爬虫拿到；只靠浏览器端塞进去的，<strong>0%</strong>。</li>
+</ul>
+<h3 id="你看到的不一定是它拿到的">你看到的，不一定是它拿到的</h3>
+<p><strong>你在浏览器“开发者工具”里看到的东西，不一定存在于服务器的原始回应中。</strong></p>
+<p>开发者工具显示的，通常是程序执行<strong>之后</strong>的结果。有业内人士发现，自家网站的语言版本标签（hreflang，用来告诉机器“这一页还有哪些语言版本”），在原始回应里是 <strong>0 个</strong>，在组装后的页面里是 <strong>3 个</strong>。因为检查工具显示的是组装后的样子，这个问题好几个月都没被发现。</p>
+<h3 id="最常只在组装后才出现的内容">最常“只在组装后才出现”的内容</h3>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>为什么 AI 看不到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>价格、方案数字</td>
+<td>由程序从数据库在浏览器端填进页面，原始 HTML 只有方案名称</td>
+</tr>
+<tr>
+<td>轮播区块的文字</td>
+<td>由程序轮流切换显示</td>
+</tr>
+<tr>
+<td>常见问题（FAQ）折叠区的答案</td>
+<td>点一下之后才用程序加载</td>
+</tr>
+<tr>
+<td>以动画轮流变换的标题字</td>
+<td>原始文件里标题只剩半句，其余在动画元件里</td>
+</tr>
+<tr>
+<td>结构化数据</td>
+<td>由标签管理器事后注入</td>
+</tr>
+<tr>
+<td>语言版本标签</td>
+<td>由前端程序框架生成</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="五ai-背后有好几本目录彼此很少重叠">五、AI 背后有好几本“目录”，彼此很少重叠</h2>
+<p>AI 答案的来源，大致有两条路：</p>
+<ol>
+<li><strong>事先整理好的索引</strong>：AI 自家建的，或借用搜索引擎的。</li>
+<li><strong>回答时当场读取</strong>。</li>
+</ol>
+<h3 id="同一家公司三个界面看到的网页也很不一样">同一家公司，三个界面，看到的网页也很不一样</h3>
+<p>研究人员在真实的 AI 搜索上反复测试，比较同一家公司的三种界面：传统搜索结果、AI 摘要、Gemini。</p>
+<p>它们引用的来源重叠程度，用一种标准的“重叠比例”来算（0 代表完全不同，1 代表完全相同），只有 <strong>0.11 到 0.18</strong>。</p>
+<p>也就是说，即使背后是同一家公司，不同 AI 界面拿到的网页集合也差很多。</p>
+<h3 id="传统搜索的收录本身就是-ai-可达性的一部分">传统搜索的收录，本身就是 AI 可达性的一部分</h3>
+<p>有业内人士提到，网站内容要靠 JavaScript 才能显示时，ChatGPT 在很大程度上依赖 Google 的索引，但他没有提出证据。ChatGPT 到底用哪家的索引，各方说法不一（见第 4 章）。另外，OpenAI 官方说明确认：ChatGPT 搜索除了用 OAI-SearchBot 自己建立的索引，也会用“第三方搜索服务”，但没有说是哪一家。</p>
+<p>这意味着：<strong>你的网页有没有被传统搜索引擎收录，本身就是 AI 能不能读到你的一部分。</strong></p>
+<h3 id="ai-说它读了不一定读的是最新版">“AI 说它读了”，不一定读的是最新版</h3>
+<p>有业内人士做了一个纯 HTML 的测试页，让四个 AI 去读：
+- ChatGPT 试了大约 10 次，都读不到；
+- Claude 只在新对话的第一次读到，之后看不到页面的更新；
+- Perplexity 引用了 14 个无关的页面；
+- 只有 Gemini 读到了完整页面，包括其中的 schema 标记。</p>
+<p>测试者判断，多数情况下 AI 读的是<strong>快取版本</strong>（之前存下来的旧副本）。这是单一测试者的观察，只能当作线索。</p>
+<p>另一种情况是：<strong>AI 根本没打开你的网页。</strong> 研究人员在真实的 AI 搜索上发现，一个轻量模型有 53.6% 的对话一页网页都没打开，只看搜索结果里的摘录就回答了。在实验室条件下，只看摘录的回答，更容易过时，引用也更容易对不上原文（见第 7 章）。</p>
+<h3 id="一个新名字第-6-天就被引用">一个新名字，第 6 天就被引用</h3>
+<p>“新出现的实体”特别能说明不同索引之间的差别。（<strong>实体</strong>就是 AI 心目中的“一个东西”，例如一个品牌、一个人、一个产品。）</p>
+<p>有业内人士做了一个多次、有对照的实验：
+- 建立一个在网络上完全没有足迹的新实体；
+- 连续 23 天，每天让五个会上网的 AI 系统去查它；
+- 期间，CDN 默认的 AI 封锁在 23 天中有 <strong>22 天</strong>对训练爬虫回传“禁止进入”（403）。</p>
+<p>尽管如此，这个实体在<strong>第 6 天</strong>就被引用了。靠的是<strong>知识图谱</strong>（AI 和搜索引擎用来记录“谁是谁、谁和谁有关”的数据库）加上<strong>别人的口碑</strong>（第三方网站的提及）。</p>
+<p>服务器日志也显示，就在同一天，AI 回答时才会用到的两类爬虫（建立索引的 OAI-SearchBot、当场读取的 ChatGPT-User）是被正常放行的。</p>
+<p>不同 AI 公司的差距也很大：其中一家以这个实体自己的网域作为依据，大约 <strong>119 次</strong>；另一家是 <strong>0 次</strong>，只从第三方社群平台取用资料。</p>
+<hr />
+<h2 id="六ai-替人办事时进得来还要用得上">六、AI 替人办事时：进得来，还要用得上</h2>
+<p>越来越多时候，AI 不只是读一页就走。它会像一个助理一样<strong>深入你的网站</strong>：查价格、比规格、甚至替人完成任务。这种会自己动手的 AI，业内称为 AI 智能体。</p>
+<p>这时候，可达性的标准就从“读得到文字”提高到“<strong>读得懂、能操作</strong>”。业内把这叫做 <strong>智能体可读性</strong>（英文是 agent experience，简称 AX）。</p>
+<h3 id="大型观察可读的网站更常用自家内容作答">大型观察：可读的网站，更常用自家内容作答</h3>
+<p>研究人员在真实的 AI 搜索上反复测试：涵盖 <strong>1,056 家</strong>企业、<strong>37,927 次</strong> AI 智能体 查询过程。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>AI 智能体 可读的网站</th>
+<th>不可读的网站</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>答案内容来自自家页面的比例</td>
+<td><strong>78%</strong></td>
+<td>58%</td>
+</tr>
+<tr>
+<td>被明确推荐的比例</td>
+<td><strong>20%</strong></td>
+<td>11%</td>
+</tr>
+</tbody>
+</table>
+<p>看这组数字时，要知道几个限制：
+- 这项研究是<strong>提供相关服务的机构</strong>做的，用的是他们自己的评分工具；
+- 它是<strong>配对观察研究</strong>：把名气、AI 原本对品牌的记忆等条件相近的网站配成对比较，但不是随机实验；
+- “可读性”是一个<strong>整包分数</strong>，包含：内容不依赖 JavaScript、有结构化数据、有 llms.txt 或 Markdown 备用版本、机器人防护有放行 AI 智能体。研究<strong>没有拆开看每一项各自的效果</strong>。</p>
+<p>同一项研究还发现：把 智能体可读性这个因素扣除之后，“站外被提及的广度”（别人的口碑有多广）对 AI 智能体 会不会采用你的内容、会不会推荐你，<strong>没有额外的独立影响</strong>。</p>
+<p>但这个结论<strong>只适用于 AI 智能体 已经进到你的网站深入查看的情况</strong>。它不代表站外提及在“被发现”这一步不重要。</p>
+<h3 id="实验室里的电商网站">实验室里的电商网站</h3>
+<p>在实验室条件下（一个可以完全控制的实验系统），研究人员拿一个原型电商网站做改造，加入：
+- JSON-LD 结构化数据；
+- 让机器看懂按钮和栏位用途的标记（aria 属性）；
+- 告诉机器“这里可以做什么动作”的提示；
+- 标明资料时间的栏位。</p>
+<p>结果，三个浏览器 AI 智能体 在严格标准下的任务成功率，从 <strong>49.3% 升到 89.3%</strong>；平均需要的步数，从 <strong>9.31 降到 6.49</strong>。</p>
+<p>但这只是<strong>单一个合成网站</strong>，而且是整包一起改。作者自己说这是“概念验证”，无法判断是哪一项起了作用。真实世界还不一定。</p>
+<h3 id="被找到不等于能被用上">被找到，不等于能被用上</h3>
+<p>在给定网页的测试条件下，研究人员看了一个“找资料集”的场景。</p>
+<p>资料提供者发布了<strong>机器可读的资料描述</strong>之后，AI 智能体 取回“可以直接使用的资料页”的精确度是 <strong>46.4%</strong>，对照组是 <strong>28.0%</strong>。</p>
+<p>但同时，走这条路的 AI 智能体 只回答了 <strong>40 题</strong>，对照组回答了 <strong>56 题</strong>。</p>
+<p><strong>被找到，不等于能被使用。</strong> 这就是 AI 智能体 情境里的“最后一公里”问题。</p>
+<h3 id="官方的提示用无障碍标签告诉-ai-这是什么按钮">官方的提示：用无障碍标签告诉 AI 这是什么按钮</h3>
+<p>OpenAI 官方说明：它的浏览器 ChatGPT Atlas 里的 AI 智能体，会用 ARIA 标签来理解网页上的按钮、菜单和表单。ARIA 标签本来是给屏幕阅读器用的无障碍标记，告诉看不见画面的用户“这是什么元素、它是做什么的”。官方建议为这些互动元素加上清楚的角色、标签和状态。</p>
+<hr />
+<h2 id="七深入一点这些证据有多强">七、深入一点：这些证据有多强？</h2>
+<table>
+<thead>
+<tr>
+<th>结论</th>
+<th>证据来自哪里</th>
+<th>强度与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>封锁 Google-Extended，和 Gemini 零引用、AI 摘要引用减少有关</td>
+<td>在真实 AI 搜索上反复测试</td>
+<td>中等偏强；是关联，不是因果</td>
+</tr>
+<tr>
+<td>封锁训练爬虫，不妨碍 ChatGPT 导流</td>
+<td>大规模真实用户数据（研究附录）</td>
+<td>中等；是关联，主研究的因果设计不涵盖这一点</td>
+</tr>
+<tr>
+<td>AI 智能体 可读的网站更常用自家内容作答、更常被推荐</td>
+<td>真实 AI 智能体 反复测试</td>
+<td>中等；服务商做的研究、配对观察、整包分数</td>
+</tr>
+<tr>
+<td>让网站机器可读，能提高 AI 智能体 完成任务的比例</td>
+<td>实验室可控系统</td>
+<td>弱到中等；只有一个合成网站，没有拆开看</td>
+</tr>
+<tr>
+<td>多数 AI 爬虫不执行 JavaScript</td>
+<td>业内人士自测＋很强的业内共识</td>
+<td>中等；但多数说法最后都指向 2024 年底的同一份分析（见下一节）</td>
+</tr>
+<tr>
+<td>封锁常常发生在 CDN／WAF 这一层</td>
+<td>业内共识＋多位业内人士的抽样</td>
+<td>中等；各样本的比例差很大</td>
+</tr>
+<tr>
+<td>训练爬虫和当场读取要分开处理</td>
+<td>业内人士的多组服务器日志＋一项多次、有对照的实测</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>llms.txt 单独有效</td>
+<td>没有</td>
+<td><strong>目前没有证据</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>特别要记住两件事：</strong></p>
+<ol>
+<li>可达性的研究，大多只证明“读不到会吃亏”，<strong>没有证明“读得到就会被引用”</strong>。可达性是<strong>必要条件</strong>（没有它一定不行），不是<strong>充分条件</strong>（有了它也不一定行）。</li>
+<li><strong>爬虫来抓的次数，不等于被引用。</strong> 业内普遍认为，单看抓取量，不足以衡量你在 AI 里的可见度。</li>
+</ol>
+<hr />
+<h2 id="八还在争论的六件事">八、还在争论的六件事</h2>
+<h3 id="争议-1llmstxt-到底有没有用">争议 1：llms.txt 到底有没有用？</h3>
+<p><strong>llms.txt</strong> 是一个放在网站根目录的文字档，有人提议用它来告诉 AI“我网站的重点在哪里”。</p>
+<p><strong>认为没用的一方：</strong></p>
+<ul>
+<li>研究人员在真实的 AI 搜索上反复测试：在检查的 <strong>1,047 个</strong>来源网站中，有 llms.txt 的占 <strong>16.9%</strong>。但这类技术标记和答案准确率<strong>没有关系</strong>（关联系数约 -0.04，几乎等于零）。</li>
+<li>好几份独立的服务器日志指向同一个方向。有业内人士自己测过：</li>
+<li>一个网站在 8 月 31 日上线一份 38 KB 的 llms.txt。</li>
+<li>9 月 2 日到 16 日，这个文件共被请求 <strong>299 次</strong>：其中 <strong>240 次</strong>是网站自己的监控程序，<strong>59 次</strong>是真实请求，而 <strong>AI 爬虫只有 2 次</strong>（都是一个叫 Amazonbot 的爬虫）。</li>
+<li>同一期间，GPTBot 在全站抓了 <strong>920 次</strong>、ClaudeBot <strong>1,494 次</strong>、OAI-SearchBot <strong>631 次</strong>，但它们请求 llms.txt 的次数都是 <strong>0</strong>。</li>
+<li>另有业内人士查了客户<strong>数十亿行</strong>的日志、追踪了 <strong>100 多个</strong>网站，都没看到 AI 工具请求 llms.txt。</li>
+<li>业内多数人认为 llms.txt 对 AI 可见度和引用没有帮助（支持 <strong>33</strong> 人、反对 <strong>4</strong> 人）；大多数大型语言模型根本不会去找这个文件。</li>
+<li>有业内人士观察到：在一份 <strong>200 个</strong>查询的引用资料中，拥有 llms.txt 的网站<strong>不到 3%</strong>，而 llms.txt 页面本身<strong>从来没被引用过</strong>。</li>
+<li>另有业内人士加上 llms.txt 一个月，再把它移除，前后<strong>看不到任何变化</strong>。</li>
+</ul>
+<p><strong>认为有用、或暂时不下结论的一方：</strong></p>
+<ul>
+<li>Google 的搜索官方文件说，<strong>不需要</strong> llms.txt 这类特殊文件。但 Google 的网页检测工具<strong>已经加入了 llms.txt 的检查项</strong>。有业内人士把后者解读成“它有作用”；也有业内人士指出，检测工具只能确认文件存在，不能说明有任何 AI 真的用了它。</li>
+<li>有业内人士观察到：在 <strong>50 家</strong>企业中，有 llms.txt 的 <strong>5 家</strong>被 AI 点名的比例是 <strong>77%</strong>，没有的是 <strong>49%</strong>。但有 llms.txt 的样本只有 5 家，而且这些网站同时做了其他让机器好读的改造。</li>
+<li>有业内人士认为，llms.txt 的价值主要在于“写它的过程，会逼你整理出哪些页面重要”；或者对程序开发类的技术文件网站有用，因为帮人写程序的 AI 可能会去读。</li>
+<li>有业者宣称，他们的日志里 AI 爬虫请求 llms.txt 的频率远高于其他页面。但这没有经过独立验证，而且和上面几份独立日志的结果相反。</li>
+</ul>
+<p><strong>本书的立场：</strong>
+一项研究发现它和准确率无关；另一项研究把它放在整包里，没有拆开看。<strong>目前没有证据证明 llms.txt 单独有效。</strong>
+它的成本很低，想放可以放，但不要把它当成可达性工作的重点。</p>
+<h3 id="争议-2另外给-ai-准备一份-markdown-版本有没有用">争议 2：另外给 AI 准备一份 Markdown 版本，有没有用？</h3>
+<p>Markdown 是一种很精简的纯文字格式。有人主张：给每一页另做一份 Markdown 版本，AI 会读得更轻松。</p>
+<ul>
+<li>有业内人士自己测过：部署全站的 <code>.md</code> 版本和 llms.txt 后，训练类和索引类爬虫在 <strong>56 个</strong>文件上抓了 <strong>177 次</strong>。但<strong>当场读取的爬虫几乎只读 HTML</strong>：</li>
+<li>ChatGPT-User：读了 <strong>1,936 个</strong> HTML、<strong>0 个</strong> <code>.md</code>；</li>
+<li>PerplexityBot：<strong>306 个</strong> HTML、<strong>0 个</strong> <code>.md</code>；</li>
+<li>Claude-User：<strong>38 个</strong> HTML、<strong>1 个</strong> <code>.md</code>。</li>
+<li>另一位业内人士在两个小型博客大约三个月的日志里，看到同样的现象。</li>
+<li>有业内人士测过：Markdown 镜像页在几天内就被 Google 抓取了，但 ChatGPT 和 Perplexity 引用的<strong>仍然是 HTML 版本</strong>，<strong>60 天</strong>内引用率没有变化。</li>
+<li>有业内人士测过：对 <strong>16 个</strong>博客网址向 AI 爬虫提供 Markdown，<strong>30 天</strong>内造访次数成长 <strong>52%</strong>；但<strong>没有</strong>提供 Markdown 的博客网址也成长了 <strong>43%</strong>。所以无法确定是 Markdown 本身起了作用。</li>
+<li>有业内人士观察到：在 <strong>6 个</strong>网站、<strong>381 个</strong>页面的分组对照测试中，提供 Markdown 的页面，三周内只多了大约 <strong>1 次</strong>机器人造访（中位数）。</li>
+<li><strong>反方的报告：</strong> 有业内人士自己测过，为 <strong>20 篇</strong>热门文章提供 <code>.md</code> 版本后，Perplexity 和 ChatGPT 搜索更快发现并引用了 Markdown 版本，AI 的抓取率<strong>翻倍</strong>。但这份报告<strong>没有对照组</strong>。</li>
+</ul>
+<p><strong>成本面的观察：</strong></p>
+<ul>
+<li>有业内人士量了 <strong>300 个</strong>网站：一个页面的中位数需要 <strong>2,592 个 token</strong>（token 是 AI 计算文字量的单位）。其中大约<strong>一半不是正文</strong>，大约<strong>五分之一是导览列和页首页尾</strong>。</li>
+<li><strong>7 个</strong>提供 Markdown 版本的网站，中位数是 <strong>962 个 token</strong>，确实省很多。</li>
+<li>但这 7 个网站中：</li>
+<li><strong>6 个</strong>缺少一个叫 <code>Vary: Accept</code> 的技术标头，快取系统可能把错的版本送给错的访客；</li>
+<li><strong>3 个</strong>的 Markdown 版本<strong>把正文弄丢了</strong>。</li>
+<li>另有业内人士指出：主流 AI 爬虫不会送出“我想要 Markdown”的请求标头（<code>Accept: text/markdown</code>）。所以靠这个标头来切换版本的做法，可能永远不会被触发。</li>
+</ul>
+<p><strong>整理：</strong>
+目前比较一致的观察是：<strong>回答用户问题时的当场读取，读的是 HTML。</strong>
+想影响答案的事实，必须放在<strong>人类看到的那一份 HTML</strong> 里。Markdown 版本可能省频宽、可能被索引类爬虫读到，但没有可靠证据显示它能提高引用。</p>
+<h3 id="争议-3ai-读不读-json-ld-结构化数据">争议 3：AI 读不读 JSON-LD 结构化数据？</h3>
+<p><strong>结构化数据</strong>是写给机器读的标准格式信息（例如 schema 标记），常见写法叫 JSON-LD。</p>
+<ul>
+<li><strong>一方说不读：</strong> 有业内人士自己测过，AI 把页面转成纯文字时会丢掉整个头部，JSON-LD 的读取结果是零。另有业内人士报告，ChatGPT 和 Gemini 的抓取都不使用 schema 资料。</li>
+<li><strong>另一方说读：</strong> 有业内人士自己测过，由服务器直接输出的 JSON-LD，有 <strong>92%</strong> 至少被两个 AI 爬虫取到。有业内人士观察到，Gemini 能读出并复述页面里的 schema。还有分析日志的业内人士建议：把 JSON-LD 放进人类看到的同一份 HTML 里，让当场读取的爬虫也能拿到机器可读的事实。</li>
+</ul>
+<p><strong>两边其实不完全矛盾。</strong>“爬虫取回了含有 JSON-LD 的 HTML”和“模型在回答时真的用到了 JSON-LD”是两件事。AI 智能体 情境的研究把结构化数据放在整包里，也没有单独拆开看。</p>
+<p><strong>能确定的只有一点：只靠浏览器端程序事后塞进去的结构化数据，对不执行 JavaScript 的爬虫来说，根本不存在。</strong></p>
+<h3 id="争议-4ai-爬虫不执行-javascript现在还成立吗">争议 4：“AI 爬虫不执行 JavaScript”现在还成立吗？</h3>
+<p>这是业内共识。但有业内人士指出几个问题：
+- 几乎每一条引用，最后都指向<strong>同一份 2024 年 12 月的分析</strong>，距今大约 20 个月；
+- 发布那份分析的一方，本身在<strong>销售“由服务器组装网页”的服务</strong>；
+- 服务器的访问日志只能记录“对方请求了什么”，<strong>不能记录“对方有没有执行 JavaScript”</strong>。</p>
+<p>另有业内人士在日志里看到，OpenAI 的训练爬虫发出过少量和 JavaScript 有关的请求；而用户触发的当场读取没有。</p>
+<p><strong>怎么处理：</strong> 不要等这个问题吵出结论。直接比对你的<strong>服务器原始回应</strong>和<strong>组装后的页面</strong>。只要重要内容只出现在后者，就当作 AI 读不到。</p>
+<h3 id="争议-5robotstxt-会被遵守吗">争议 5：robots.txt 会被遵守吗？</h3>
+<ul>
+<li>有业内人士自己测过：在 <strong>48 天</strong>的日志里，GPTBot 和 Meta-WebIndexer <strong>从来不检查</strong> robots.txt。</li>
+<li>另一位业内人士测过：在 robots.txt 里封锁一个测试页，再请八个 AI 助手去读：</li>
+<li>ChatGPT、Claude、Meta 的助手<strong>拒绝读取</strong>（Claude 还明确回报“网站不允许自动存取”）；</li>
+<li>Gemini、Grok、Manus <strong>照样读取</strong>；</li>
+<li>Copilot 和 Perplexity <strong>没有尝试</strong>。</li>
+<li>测试者查到，Google 的文件说明：由用户触发的抓取，一般<strong>不受 robots.txt 约束</strong>。</li>
+<li>这只是一个网域、三轮测试，而且只涉及用户触发的抓取。</li>
+</ul>
+<p>所以，<strong>robots.txt 既不能保证挡得住，也不能保证放得进。</strong></p>
+<h3 id="争议-6可达性到底是不是常见的瓶颈">争议 6：可达性到底是不是常见的瓶颈？</h3>
+<p>不同样本得出的比例差很多。以下都是业内人士观察到的数字：</p>
+<table>
+<thead>
+<tr>
+<th>观察什么</th>
+<th>样本</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在 robots.txt 里宣告封锁</td>
+<td>约 51 万个网站</td>
+<td>16.8% 封锁了大型语言模型的爬虫</td>
+</tr>
+<tr>
+<td>在 robots.txt 里宣告封锁</td>
+<td>三个行业各抽 300 家中小企业</td>
+<td>律师事务所 1.8%、居家服务 5.4%、旅游 3.0%</td>
+</tr>
+<tr>
+<td>在“警卫层”被挡（用具名的 AI 身份请求被拒，普通请求却通过）</td>
+<td>131 个网站，以新闻、在线软件服务（SaaS）、电商为主</td>
+<td>约 21%</td>
+</tr>
+<tr>
+<td>至少封锁一个主要大型语言模型爬虫，多数在 CDN 或主机层</td>
+<td>约 3,000 个网站，以企业对企业（B2B）的在线软件服务为主</td>
+<td>27%</td>
+</tr>
+<tr>
+<td>以 AI 身份去抓中小企业网站</td>
+<td>约 1.7 万个法国中小企业网站</td>
+<td>可达性几乎从来不是瓶颈</td>
+</tr>
+</tbody>
+</table>
+<p>这些数字测的是不同层、用的是不同样本，<strong>不能互相比高低</strong>。</p>
+<p>能看出的是：
+- <strong>在 robots.txt 里宣告封锁，普遍少见；</strong>
+- <strong>在“警卫层”被挡，在用了 CDN 的网站、B2B 在线软件服务、媒体类网站上明显比较多。</strong></p>
+<p>还有业内人士提醒：自己从资料中心的网络位址、用“自称是 AI”的身份去测试，拿到 200（成功）不代表真正的爬虫也拿得到，因为 CDN 会核对真正爬虫的网络位址范围。反过来也一样。</p>
+<p><strong>另一种反例：读得到，却没被引用。</strong></p>
+<ul>
+<li>有业内人士观察到：一个约 <strong>10 万页</strong>的网站，<strong>30 天</strong>内被 AI 爬虫抓了约 <strong>43 万次</strong>，但抓取量和有没有被引用<strong>没有关系</strong>。真正被引用的，是“一页只讲一个事实、网址稳定、最容易核对”的页面。</li>
+<li>也有审查过约 <strong>1.7 万个</strong>网站的业内人士认为：多数网站没被引用，是因为页面上<strong>没有可以直接拿来用的答案</strong>，而不是技术问题。</li>
+</ul>
+<hr />
+<h2 id="九真实案例">九、真实案例</h2>
+<h3 id="案例-1在默认封锁-ai之下新实体第-6-天就被引用">案例 1：在“默认封锁 AI”之下，新实体第 6 天就被引用</h3>
+<ul>
+<li><strong>做了什么：</strong> 建立一个在网络上完全没有足迹的新实体。事先把测试方案登记下来，每天向五个会上网的 AI 系统询问。每个答案评为“正确”“找不到”或“幻觉”（AI 编造），总共大约 <strong>1.6 万个</strong>评分点。</li>
+<li><strong>观察到什么：</strong></li>
+<li>CDN 默认的 AI 封锁，在 23 天中有 22 天对列出的训练爬虫回传 403（禁止进入）；但同一天，当场读取的爬虫是被正常放行的。</li>
+<li>实体在<strong>第 6 天</strong>被引用，靠的是知识图谱和第三方提及。</li>
+<li>在社群平台上的讨论声量增加了 <strong>23 倍</strong>，引用<strong>没有提升</strong>。</li>
+<li>真正有作用的是“结构化的身份”：公开的实体数据库条目、稳定的识别码、一个真实的网站。</li>
+<li><strong>多久：</strong> 23 天。</li>
+<li><strong>说明了什么：</strong> 训练爬虫和当场读取的职责不同（第二节）；AI 找到你的路不只一条（第五节）。</li>
+<li><strong>限制：</strong> 这是单一实体的实验，只能说明机制，不代表普遍规律。</li>
+</ul>
+<h3 id="案例-2cdn-的开关悄悄盖掉了网站的-robotstxt">案例 2：CDN 的开关，悄悄盖掉了网站的 robots.txt</h3>
+<ul>
+<li><strong>发生了什么：</strong> 一位站长发现，自己的网站在 ChatGPT、Perplexity、AI 摘要里都不出现。但网站程序输出的 robots.txt 明确放行所有 AI 爬虫。</li>
+<li><strong>怎么发现的：</strong> 他用 <code>curl</code>（一个免费的命令列工具，可以像爬虫一样直接抓取网址）取回<strong>在线实际的</strong> robots.txt，发现最上面多了一段<strong>不是自己写的</strong>托管区块，封锁了 GPTBot、ClaudeBot、Google-Extended 等。</li>
+<li><strong>原因：</strong> CDN 的“封锁 AI 爬虫”开关，会在 robots.txt 前面插入自己的规则。</li>
+<li><strong>说明了什么：</strong> 门有三层（第三节）。</li>
+<li><strong>限制：</strong> 这是单一业内人士的报告，没有经过独立验证。但它揭示的检查方法是通用的：<strong>看在线实际送出的文件，不要只看自己的源代码。</strong></li>
+</ul>
+<h3 id="案例-3旧外挂留下的全部封锁规则">案例 3：旧外挂留下的“全部封锁”规则</h3>
+<ul>
+<li><strong>观察：</strong> 一位审查了 <strong>50 个</strong>本地服务网站（水电、空调、牙医、律师）的业内人士报告：常见问题之一，是 GPTBot 和 ClaudeBot 被 robots.txt 封锁了。这不是业主有意为之，而是<strong>旧的 SEO 外挂</strong>遗留下来的“全部封锁”规则（<code>Disallow</code>）。</li>
+<li><strong>另一组小企业样本：</strong> 被标记为“封锁 AI 爬虫”的 <strong>10 个</strong>网站中：</li>
+<li><strong>4 个</strong>用一条规则封锁了<strong>所有</strong>爬虫，包括当场读取的爬虫，甚至包括 Google 的搜索爬虫（Googlebot）。看起来像是“测试环境”的设置被一起带上了正式网站；</li>
+<li><strong>9 个</strong>封锁了 meta-externalagent；</li>
+<li>好几家彼此毫无关系的网站，出现了<strong>顺序完全相同的同一份封锁清单</strong>。那不是 10 个人各自做的决定，而是<strong>同一个默认值</strong>。</li>
+<li><strong>结果：</strong> 这位审查者报告，只修正封锁这一项，通常在 <strong>2 到 4 周</strong>内，最快能看到在 AI 搜索中出现的情况改善。这是业内人士自测的结果，没有经过独立验证。</li>
+<li><strong>说明了什么：</strong> 门有三层（第三节）。</li>
+</ul>
+<h3 id="案例-4价格只存在于组装后的页面">案例 4：价格只存在于“组装后”的页面</h3>
+<ul>
+<li><strong>观察：</strong> 有业内人士扫描了一个在线软件服务（SaaS）网站：</li>
+<li>网站的原始 HTML 约 <strong>300 词</strong>，组装后约 <strong>1,033 词</strong>；</li>
+<li>定价页原始 HTML <strong>194 词</strong>，组装后 <strong>511 词</strong>；</li>
+<li>而且原始 HTML 里<strong>一个价格数字都没有</strong>，只有方案名称。</li>
+<li><strong>后果：</strong> AI 助手被问到价格时，知道他们有哪些方案，却说不出多少钱。</li>
+<li><strong>修正：</strong> 网站方查出原因：一个“预先组装”的程序只用文字描述了方案，价格则由数据库在浏览器端填进去。修正后，用 <code>curl</code> 抓定价页，已经能拿到价格。</li>
+<li><strong>意外发现：</strong> 同一次检查还发现，“预先组装”的页面清单<strong>漏掉了 7 个页面</strong>。这是某个搜索爬虫找到那些页面之后，才被发现的。</li>
+<li><strong>说明了什么：</strong> AI 读的是原始回应（第四节）。</li>
+<li><strong>限制：</strong> 这是单一网站的第一手观察，只能当作例子。</li>
+</ul>
+<h3 id="案例-5为-ai-另建一套平行网站">案例 5：为 AI 另建一套平行网站</h3>
+<ul>
+<li><strong>做了什么：</strong> 一个知名度不高的应用程序品牌，发现 ChatGPT、Claude、Perplexity 都在引用它，但<strong>描述是错的</strong>。于是它为全站建了一套 <code>/ai/</code> 平行版本：</li>
+<li>内容相同，但去掉导览列、动画、“立即购买”这类行动按钮等干扰；</li>
+<li>每一页改写成直接的问答，答案放在最前面的 <strong>75 到 120 个词</strong>之内；</li>
+<li>每一页都用一个标记（canonical）指回给人看的原始版本；</li>
+<li>放在独立的网站地图里；</li>
+<li>通过 llms.txt、一种“另有版本”的链接标记（<code>rel="alternate"</code>），以及 AI 引用时会直接抓取的方式，让 AI 发现它。</li>
+<li><strong>观察到什么：</strong> 业内人士自测（多次、有对照）：<strong>5 周</strong>内，AI 引用的覆盖范围扩大了 <strong>12%</strong>，从 AI 转来的流量提升了 <strong>60%</strong>。期间没有新增任何外部链接。</li>
+<li><strong>要注意：</strong></li>
+<li>这是整包改动，无法判断是内容改写、好读程度，还是让 AI 发现的方法起了作用；</li>
+<li>而且这和争议 2 里“当场读取的爬虫只读 HTML”的观察并不一致，需要更多重复验证。</li>
+</ul>
+<h3 id="案例-6智能体可读性与被省略">案例 6：智能体可读性，与“被省略”</h3>
+<ul>
+<li><strong>做了什么：</strong> 研究人员在 <strong>1,056 家</strong>企业网站上，跑了 <strong>37,927 次</strong>真实的 AI 智能体 查询过程，按照名气、AI 原本对品牌的记忆（<strong>品牌先验</strong>）等条件配对比较。</li>
+<li><strong>观察到什么：</strong> 可读的网站，答案 <strong>78%</strong> 来自自家页面、<strong>20%</strong> 被明确推荐；不可读的网站是 <strong>58%</strong> 和 <strong>11%</strong>。网站不可读时，AI 智能体 会用第三方或竞争对手的内容替代，<strong>而不是编造</strong>。</li>
+<li><strong>说明了什么：</strong> 读不到就不存在（第一节）；进得来还要用得上（第六节）。</li>
+<li><strong>限制：</strong> 服务商做的研究、整包分数，详见第七节。</li>
+</ul>
+<h3 id="案例-7挡掉所有-ai-爬虫的知名平台ai-点名要查却引用-0-次">案例 7：挡掉所有 AI 爬虫的知名平台，AI 点名要查，却引用 0 次</h3>
+<ul>
+<li><strong>做了什么：</strong> 我们写这本书时，自己用 API 对 ChatGPT 实际测过（方法见第 4 章；样本很小，还没有其他人独立验证）。同一个游泳招募问题，用 5 种英文问法各问 2 次，共 10 次。</li>
+<li><strong>看到什么：</strong> 一个知名的游泳数据平台，在 robots.txt 里挡掉了 GPTBot、OAI-SearchBot 等 AI 爬虫。AI 在 10 次里有 6 次用 <code>site:</code> 指名要搜这个平台，但引用了 <strong>0 次</strong>；这个平台在搜索结果里也只出现过 1 次。不上网的时候，AI 对这个平台很熟悉（见第 5 章案例 9）。也就是说，AI 想去查它，却读不到。</li>
+<li><strong>限制：</strong> 只有一个主题、一个模型，没有人独立验证；也没有对照（没有测过同一个平台放行时会怎样）。</li>
+<li><strong>说明了什么：</strong> 读不到就不存在（第一节）；挡哪一只爬虫，结果不一样（第二节）。</li>
+</ul>
+<h3 id="案例-8成立不到四个月的新网站只靠搜索就成为最常被引用的来源">案例 8：成立不到四个月的新网站，只靠搜索就成为最常被引用的来源</h3>
+<ul>
+<li><strong>做了什么：</strong> 同案例 7 的 10 次测试。</li>
+<li><strong>看到什么：</strong> 一个 2026 年 6 月才注册、专门整理游泳招募成绩的网站，在 10 次里有 <strong>9 次</strong>被引用，占全部引用链接的 <strong>44%</strong>，而且通常是第一个被引用的来源。不上网的时候，AI 5 次都说不认识它，和对一个虚构网址的回答一样（见第 5 章案例 9）。所以它被引用，完全是靠搜索找到，不是靠 AI 的记忆。</li>
+<li><strong>这个网站有什么特点：</strong> robots.txt 对所有爬虫放行；数据直接写在 HTML 里；每个“比赛级别 × 项目”各有一页；页面标题和 AI 生成的搜索词几乎一样；写明数据来源和更新日期；页面之间互相链接。AI 读过一页之后，会照着网址的规律，用 <code>site:</code> 去搜同一个网站的其他分页。</li>
+<li><strong>限制：</strong> 只有一个网站、一个主题；这些特点是同时存在的，分不出哪一项在起作用。</li>
+<li><strong>说明了什么：</strong> 读不到就不存在（第一节）；重要内容要写在原始 HTML 里（第四节）；也呼应第 4 章“要对上 AI 改写出来的查询”。</li>
+</ul>
+<h3 id="反面案例把索引出了问题误判成ai-被挡了">反面案例：把“索引出了问题”误判成“AI 被挡了”</h3>
+<p>有业内人士封锁 AI 爬虫几周之后，发现自己在 Google 的索引收录一直往下掉。他怀疑是网站防火墙规则误伤，就把所有规则全部关掉来排查。</p>
+<p>后来才发现，真正的原因是一次<strong>误送出的“暂时移除网址”请求</strong>，造成长达<strong>六个月</strong>的索引冻结。</p>
+<p>教训是：<strong>可达性问题要一层一层验证，不要从症状直接猜原因。</strong></p>
+<hr />
+<h2 id="十怎么做">十、怎么做</h2>
+<h3 id="1-先确认三类爬虫的状态分开决定">1. 先确认三类爬虫的状态，分开决定</h3>
+<table>
+<thead>
+<tr>
+<th>做法</th>
+<th>证据强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对“收集训练数据”“建立索引”“当场读取”三类身份，分别决定要不要放行。如果你想出现在 AI 答案里，<strong>至少放行建立索引和当场读取的身份</strong>（例如 OAI-SearchBot、ChatGPT-User、Claude-User、Perplexity-User）</td>
+<td>业内人士自测（多次、有对照）＋多组日志</td>
+</tr>
+<tr>
+<td>如果你在意 Gemini 和 AI 摘要，<strong>不要封锁 Google-Extended</strong></td>
+<td>在真实 AI 搜索上反复测试（关联）</td>
+</tr>
+<tr>
+<td>在 robots.txt 里搜索 GPTBot 之后，<strong>再搜索一次 OAI-SearchBot</strong>。只写了前者，等于只做了一半的决定</td>
+<td>业内人士自测：72 家公司中，有写 GPTBot 的 18 家，有写 OAI-SearchBot 的只有 11 家，有写 OAI-AdsBot 的 0 家</td>
+</tr>
+<tr>
+<td>不想让某一页出现在 ChatGPT 里，要用 noindex 标记，而不是只靠 robots.txt 挡住；而且爬虫必须读得到那一页，才看得到这个标记</td>
+<td>OpenAI 官方说明</td>
+</tr>
+<tr>
+<td>让其他网页连到你的重要页面：OpenAI 也会从别的网页发现网址</td>
+<td>OpenAI 官方说明</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-一层一层检查不要只看-robotstxt">2. 一层一层检查，不要只看 robots.txt</h3>
+<ol>
+<li><strong>告示牌（宣告层）：</strong> 用 <code>curl</code> 取回<strong>在线实际的</strong> robots.txt。确认里面没有 CDN 或外挂插入的区块，也没有“全部封锁”的万用规则（<code>Disallow: /</code>）。</li>
+<li><strong>警卫（执行层）：</strong> 用各个 AI 身份，和一个普通浏览器身份，同时请求同一页，比较回传的状态码和内容大小。如果连普通浏览器身份的请求也被拒，那是一般的防护问题，不是针对 AI 的政策。记住：这只是测试“回应的路径”，不等于真正的爬虫会受到同样待遇。</li>
+<li><strong>当场测试：</strong> 直接把你的网址贴给 ChatGPT 这类 AI 助手，问它“这个网站提供什么服务”。被封锁的网站会直接失败，大约十秒就能确认（业内人士自己测过）。</li>
+<li><strong>书里有没有字（内容层）：</strong> 用 <code>curl</code> 或“检视源代码”取得服务器的原始回应，和组装后的页面比对。价格、规格、FAQ 答案、标题、结构化数据，只出现在组装后页面的，都要改。
+   - 有业内人士观察到：11 个网站用 AI 身份请求，全部回传 200（成功）；但在 10 组有效比较中，有 <strong>2 组</strong>组装后的字数比原始回应<strong>多出一倍以上</strong>。问题出在“组装”，不在“封锁”。</li>
+</ol>
+<h3 id="3-让关键内容存在于原始-html">3. 让关键内容存在于原始 HTML</h3>
+<table>
+<thead>
+<tr>
+<th>做法</th>
+<th>证据强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键内容和结构化数据，用“由服务器组装好再送出”（服务器端渲染）或静态 HTML 输出</td>
+<td>业内多数人认为（很强的共识）＋业内人士自测</td>
+</tr>
+<tr>
+<td>标签管理器只用来做分析追踪，不要用来输出 AI 需要看到的内容</td>
+<td>业内人士自测</td>
+</tr>
+<tr>
+<td>轮播、折叠区、动画里的文字，确认在原始 HTML 中完整存在</td>
+<td>有业内人士观察到</td>
+</tr>
+<tr>
+<td>“预先组装”的页面清单，要用固定流程确保新页面一定被加进去，避免越漏越多</td>
+<td>有业内人士观察到</td>
+</tr>
+<tr>
+<td>想影响答案的事实（价格、规格、资格证明），放在<strong>人类看到的同一份 HTML</strong> 里</td>
+<td>业内人士自测（当场读取的爬虫只读 HTML）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-看自己的服务器日志但先确认对方身份">4. 看自己的服务器日志，但先确认对方身份</h3>
+<ul>
+<li><strong>用服务器日志，不要只用分析工具。</strong> 网站分析工具通常会把机器人过滤掉；在浏览器端执行的分析程序，也看不到不执行 JavaScript 的爬虫。有些主机平台只保留大约<strong>一小时</strong>的请求日志，你需要自己长期保存。</li>
+<li><strong>核对网络位址（IP）。</strong> 爬虫报上的名字只是一个可以随便填的文字栏位。</li>
+<li>有业内人士自测：两个月内，<strong>394 个</strong>自称 ChatGPT 的来源位址，<strong>全部不在</strong> OpenAI 公布的位址范围内；其中 <strong>79 个</strong>在探查 <code>/.env</code>、<code>/.aws/credentials</code> 这类存放密码和设置的敏感路径。</li>
+<li>有业内人士观察到：在可以验证的 <strong>14,771 次</strong>造访中，有 <strong>5,577 次</strong>是冒名的；冒名者中有 <strong>38.3%</strong> 在找密码或设置档。</li>
+<li>核对方法：对照各 AI 公司公布的位址范围文件。“反向查询网域名称”（反向 DNS）这个方法适用于 Google 的搜索爬虫，但有业内人士查验发现，对 GPTBot <strong>无效</strong>。</li>
+<li><strong>看“当场读取”的爬虫，不要看总抓取量。</strong> 名字带“User”的身份来访，代表某个真实用户在几秒前提出了问题，AI 为此读了这一页。有业内人士观察到，抓取次数和随后真正有人造访的比例，多半在<strong>十比一以上</strong>。</li>
+<li><strong>把爬虫日志当成“除错工具”：</strong> 用它确认页面有没有被抓到、有没有 AI 幻想出来的不存在网址、有没有太慢的页面。至于<strong>可见度</strong>的成绩，要用追踪 AI 答案的方式来衡量，不要用日志。</li>
+</ul>
+<h3 id="5-为-ai-智能体-准备机器读得懂的事实">5. 为 AI 智能体 准备机器读得懂的事实</h3>
+<table>
+<thead>
+<tr>
+<th>做法</th>
+<th>证据强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>让 AI 智能体 不靠 JavaScript 也能拿到内容；提供结构化数据；机器人防护放行 AI 智能体</td>
+<td>在真实 AI 搜索上反复测试（整包，没有拆开看）</td>
+</tr>
+<tr>
+<td>在需要 AI 智能体 动手操作的网站上，加入机器可读资料、“可以做什么动作”的提示标记、资料时间栏位</td>
+<td>在实验室条件下（单一网站，没有拆开看）</td>
+</tr>
+<tr>
+<td>资料集类的内容，发布标准的机器可读描述</td>
+<td>在给定网页的测试条件下（只限资料集情境）</td>
+</tr>
+<tr>
+<td>提供一个简单的“机器可读事实”网址，让 AI 引用最新的数字</td>
+<td>有业内人士观察到</td>
+</tr>
+<tr>
+<td>电商商品能不能出现在 AI 购物里，可能取决于商品资料清单是否完整（商品识别码、尺寸颜色等款式属性、退换货等政策资料），而不只是页面内容</td>
+<td>有业内人士观察到，只能当作线索</td>
+</tr>
+<tr>
+<td>按照 WAI-ARIA 的做法，为按钮、菜单、表单加上清楚的角色、标签和状态</td>
+<td>OpenAI 官方说明（针对 ChatGPT Atlas 的 AI 智能体）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-爬虫来得太猛时限速而不是封锁">6. 爬虫来得太猛时，限速，而不是封锁</h3>
+<p>AI 爬虫有时会突然大量抓取。有业内人士报告，GPTBot 曾在 <strong>3 分钟</strong>内达到<strong>每分钟 114 次</strong>请求。</p>
+<p>有业内人士观察到：设置“每 60 秒最多 60 次”的限速，超过时回传“请求太多”（429 状态码），大约<strong>一周后</strong>爬虫就放慢了速度。</p>
+<p><strong>限速比全面封锁更不容易误伤当场读取的爬虫。</strong></p>
+<hr />
+<h2 id="本章要点">本章要点</h2>
+<ol>
+<li><strong>读不到就不存在，而且失败是沉默的。</strong> AI 读不到你时，不会报错，而是用别人的内容代替你。</li>
+<li><strong>AI 爬虫分成收集训练数据、建立索引、当场读取三类，要分开决定。</strong> 封锁训练爬虫，不会让你从即时答案里消失；挡住索引和当场读取，才是真正的损失。</li>
+<li><strong>门有三层：</strong> robots.txt 告示牌、CDN／WAF 警卫、原始回应的内容。robots.txt 没问题，不代表 AI 拿得到内容。</li>
+<li><strong>AI 读的是服务器的原始回应。</strong> 只存在于 JavaScript 组装后的价格、FAQ、结构化数据，对多数 AI 爬虫来说不存在。</li>
+<li><strong>AI 背后有好几本目录，彼此很少重叠。</strong> 传统搜索引擎的收录，本身也是 AI 可达性的一部分。</li>
+<li><strong>AI 智能体 情境要求“用得上”，不只是“找得到”。</strong> 可读的网站更常用自家内容作答、更常被推荐，但现有证据都是整包、没有拆开看。</li>
+<li><strong>llms.txt 和 Markdown 镜像，目前没有被证明能提高引用。</strong> 回答问题时的当场读取，读的是 HTML。</li>
+<li><strong>可达性是必要条件，不是充分条件。</strong> 抓取量和引用没有关系；读得到之后，能不能被挑中，取决于后面几章讲的因素。</li>
+</ol>
+<hr />
+<h2 id="一句话记住">一句话记住</h2>
+<p><strong>AI 读不到你，就会安静地改用别人；所以要一层一层确认：放行对的爬虫、拆掉看不见的警卫、把重要事实写进原始 HTML。</strong></p>
+<hr />
+<h2 id="你明天就能做的事">你明天就能做的事</h2>
+<ol>
+<li><strong>打开 robots.txt，把三类爬虫分开看。</strong> 搜索 GPTBot，再搜索 OAI-SearchBot、ChatGPT-User、Claude-User、Perplexity-User、Google-Extended、meta-externalagent。想出现在 AI 答案里，至少放行建立索引和当场读取的身份；在意 Gemini 和 AI 摘要，就不要封锁 Google-Extended。</li>
+<li><strong>用 <code>curl</code> 抓“在线实际的”robots.txt。</strong> 看看最上面有没有 CDN 或外挂偷偷插入的区块，有没有 <code>Disallow: /</code> 这种全部封锁的规则。</li>
+<li><strong>检查你的 CDN、网站防火墙、主机的“封锁 AI 爬虫”或“机器人防护”设置。</strong> 用 AI 身份和普通浏览器身份分别请求同一页，比较结果。记住这只是回应路径测试。</li>
+<li><strong>把你的网址贴给 AI 助手</strong>，问“这个网站提供什么服务”。十秒就知道它读不读得到。</li>
+<li><strong>比对原始回应和组装后的页面。</strong> 特别看价格、规格、FAQ 答案、标题、结构化数据、语言版本标签。只在组装后才出现的，改成由服务器直接输出或静态 HTML。</li>
+<li><strong>标签管理器只拿来做分析追踪</strong>，不要用它输出结构化数据或 AI 需要看到的内容。</li>
+<li><strong>轮播、折叠区、动画里的文字，确认在原始 HTML 中完整存在。</strong></li>
+<li><strong>如果用了“预先组装”的做法，把“新页面一定要加进清单”写进固定流程。</strong></li>
+<li><strong>想影响答案的事实</strong>（价格、规格、资格证明），一定放在人类看到的那一份 HTML 里。</li>
+<li><strong>开始长期保存服务器日志</strong>，特别是主机只保留一小时的情况。</li>
+<li><strong>核对爬虫的 IP</strong>，对照各 AI 公司公布的位址范围。GPTBot 不要用反向 DNS 验证。</li>
+<li><strong>重点看名字带“User”的当场读取次数</strong>，不要看总抓取量；把日志当成除错工具，用来找没被抓到的页面、AI 幻想出来的网址、太慢的页面。可见度用追踪 AI 答案来衡量。</li>
+<li><strong>为 AI 智能体 准备机器可读的事实：</strong> 内容不依赖 JavaScript、提供结构化数据、防护设置放行 AI 智能体；需要 AI 智能体 操作的网站，加上动作提示和资料时间栏位；资料集类内容发布标准描述；可以考虑提供一个简单的机器可读事实网址。</li>
+<li><strong>如果你在做电商</strong>，检查商品资料清单是否完整：商品识别码、款式属性、政策资料。</li>
+<li><strong>爬虫来得太猛时，先限速</strong>（例如每 60 秒 60 次，超过回传 429），不要直接全面封锁。</li>
+<li><strong>发现“AI 里看不到我”时，一层一层查</strong>：告示牌、警卫、内容、传统搜索的收录，不要从症状直接跳到结论。</li>
+<li><strong>不想出现在 ChatGPT 的页面，用 noindex</strong>，并确认爬虫读得到那一页；想被找到的重要页面，让其他网页连过来。</li>
+<li><strong>为按钮、菜单、表单加上无障碍标签</strong>（ARIA 的角色、标签和状态），让 AI 智能体知道每个元素是做什么的。</li>
+</ol>
+<hr />
+<h2 id="别再做了">别再做了</h2>
+<ul>
+<li><strong>别再</strong>用 <code>Disallow: /</code> 这种全部封锁的规则，或直接套用外挂、CDN 的默认封锁清单而不检查内容。</li>
+<li><strong>别再</strong>以为封锁 GPTBot 就等于退出 AI 答案；也<strong>别再</strong>以为 robots.txt 写了放行，AI 就读得到。</li>
+<li><strong>别再</strong>只靠浏览器端的 JavaScript 塞入内容或结构化数据。</li>
+<li><strong>别再</strong>按照爬虫报上的名字直接统计 AI 流量、或拿这个数字向客户报告。没核对 IP 的数字，会被冒名的扫描程序灌水。</li>
+<li><strong>别再</strong>依照爬虫的名字，给 AI 和人类看不同内容，却不处理快取标头；做了 Markdown 版本，也要确认正文没有弄丢。</li>
+<li><strong>别再</strong>把爬虫抓取量当成可见度的指标。</li>
+<li><strong>别再</strong>从“AI 里看不到我”直接推断“是 AI 被挡了”。一层一层验证。</li>
+</ul>
+<h3 id="已经过时的想法">已经过时的想法</h3>
+<ul>
+<li><strong>“一条 robots.txt 规则，就能管住一家 AI 公司。”</strong> ChatGPT 背后的公司已经运行四个职责不同的身份，其他公司也分成训练、索引、当场读取。</li>
+<li><strong>“llms.txt 是 AI 排名因素，或是提高可见度的解方。”</strong> 没有证据支持，多份日志显示主要 AI 爬虫几乎不去请求它。</li>
+<li><strong>“只看 robots.txt 就能判断可达性。”</strong> 警卫层的封锁不会出现在 robots.txt 里。</li>
+<li><strong>“在浏览器开发者工具里看得到，爬虫就看得到。”</strong> 开发者工具显示的是 JavaScript 执行之后的结果。</li>
+</ul>
+<hr />
+<h2 id="还不确定的事">还不确定的事</h2>
+<ul>
+<li><strong>llms.txt 到底有没有用？</strong> 一项研究发现它和答案准确率无关；多份独立日志显示主要 AI 爬虫几乎不请求它；支持的证据样本很小、或和其他改造混在一起、或没经过独立验证。目前没有证据证明它单独有效。成本低，可以放，但不是重点。</li>
+<li><strong>Markdown 版本有没有用？</strong> 多数观察显示当场读取只读 HTML，也没看到引用提升；只有没有对照组的报告说它有效。Markdown 版本可能省频宽、可能被索引类爬虫读到，但没有可靠证据显示它能提高引用。</li>
+<li><strong>AI 读不读 JSON-LD？</strong> “爬虫拿到了”和“模型用到了”是两件事，目前说法两边都有。唯一确定的是：只靠浏览器端塞入的结构化数据，对不执行 JavaScript 的爬虫不存在。</li>
+<li><strong>“AI 爬虫不执行 JavaScript”现在还对吗？</strong> 共识很强，但多半追溯到 2024 年 12 月的同一份分析，而发布者本身卖相关服务；日志也无法记录对方有没有执行 JavaScript。处理方式是直接比对原始回应和组装后页面。</li>
+<li><strong>robots.txt 会被遵守吗？</strong> 有的 AI 会遵守，有的不会，有的爬虫甚至不去读它；用户触发的抓取一般不受它约束。证据来自少量测试。</li>
+<li><strong>可达性到底是不是常见瓶颈？</strong> 不同样本的比例从“几乎从不是瓶颈”到约 27% 不等，测的层次也不同，不能直接比较。宣告层封锁少见；警卫层封锁在用 CDN 的网站、B2B 在线软件服务、媒体类网站上比较多。自己用“假扮 AI”的请求去测，结果也不一定等于真正爬虫的待遇。</li>
+<li><strong>智能体可读性里，到底哪一项最有用？</strong> 现有研究都是整包改动，没有拆开看每一项的效果；电商实验只有一个合成网站；大型观察由服务商完成。</li>
+<li><strong>为 AI 另建平行网站（案例 5）有效吗？</strong> 有一个案例看到引用和流量提升，但它是整包改动，而且和“当场读取只读 HTML”的观察不一致，需要更多重复验证。</li>
+<li><strong>为什么 AI 读到的常常是旧版本？</strong> 目前只有单一测试者的观察显示多数 AI 读的是快取版本，只能当作线索。</li>
+</ul><div class="pager"><a href="ch02.html"><small><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> 上一章</small>第 2 章　AI 根本没去查，你写再好也没用</a><a class="nx" href="ch04.html"><small>下一章 <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></small>第 4 章　AI 搜的不是你打的那句话</a></div></main><aside class="toc"><div class="t">本页目录</div><a class="l2" href="#想像一下">想像一下</a><a class="l2" href="#这一章的大道理">这一章的大道理</a><a class="l2" href="#一读不到就不存在">一、读不到，就不存在</a><a class="l3" href="#google-产品上的直接观察">Google 产品上的直接观察</a><a class="l3" href="#失败是沉默的">失败是沉默的</a><a class="l2" href="#二ai-爬虫不是一只而是好几只">二、“AI 爬虫”不是一只，而是好几只</a><a class="l3" href="#以-chatgpt-背后的公司为例">以 ChatGPT 背后的公司为例</a><a class="l3" href="#其他-ai-公司也差不多">其他 AI 公司也差不多</a><a class="l3" href="#三类爬虫走三条路">三类爬虫，走三条路</a><a class="l3" href="#这个分工带来两个直接结论">这个分工带来两个直接结论</a><a class="l2" href="#三门有三层robotstxt-只是最外面那一层">三、门有三层，robots.txt 只是最外面那一层</a><a class="l3" href="#警卫常常在你不知道的时候关门">警卫常常在你不知道的时候关门</a><a class="l2" href="#四ai-读的是服务器原始回应不是你在浏览器看到的页面">四、AI 读的是“服务器原始回应”，不是你在浏览器看到的页面</a><a class="l3" href="#这是业内最强的共识之一">这是业内最强的共识之一</a><a class="l3" href="#你看到的不一定是它拿到的">你看到的，不一定是它拿到的</a><a class="l3" href="#最常只在组装后才出现的内容">最常“只在组装后才出现”的内容</a><a class="l2" href="#五ai-背后有好几本目录彼此很少重叠">五、AI 背后有好几本“目录”，彼此很少重叠</a><a class="l3" href="#同一家公司三个界面看到的网页也很不一样">同一家公司，三个界面，看到的网页也很不一样</a><a class="l3" href="#传统搜索的收录本身就是-ai-可达性的一部分">传统搜索的收录，本身就是 AI 可达性的一部分</a><a class="l3" href="#ai-说它读了不一定读的是最新版">“AI 说它读了”，不一定读的是最新版</a><a class="l3" href="#一个新名字第-6-天就被引用">一个新名字，第 6 天就被引用</a><a class="l2" href="#六ai-替人办事时进得来还要用得上">六、AI 替人办事时：进得来，还要用得上</a><a class="l3" href="#大型观察可读的网站更常用自家内容作答">大型观察：可读的网站，更常用自家内容作答</a><a class="l3" href="#实验室里的电商网站">实验室里的电商网站</a><a class="l3" href="#被找到不等于能被用上">被找到，不等于能被用上</a><a class="l3" href="#官方的提示用无障碍标签告诉-ai-这是什么按钮">官方的提示：用无障碍标签告诉 AI 这是什么按钮</a><a class="l2" href="#七深入一点这些证据有多强">七、深入一点：这些证据有多强？</a><a class="l2" href="#八还在争论的六件事">八、还在争论的六件事</a><a class="l3" href="#争议-1llmstxt-到底有没有用">争议 1：llms.txt 到底有没有用？</a><a class="l3" href="#争议-2另外给-ai-准备一份-markdown-版本有没有用">争议 2：另外给 AI 准备一份 Markdown 版本，有没有用？</a><a class="l3" href="#争议-3ai-读不读-json-ld-结构化数据">争议 3：AI 读不读 JSON-LD 结构化数据？</a><a class="l3" href="#争议-4ai-爬虫不执行-javascript现在还成立吗">争议 4：“AI 爬虫不执行 JavaScript”现在还成立吗？</a><a class="l3" href="#争议-5robotstxt-会被遵守吗">争议 5：robots.txt 会被遵守吗？</a><a class="l3" href="#争议-6可达性到底是不是常见的瓶颈">争议 6：可达性到底是不是常见的瓶颈？</a><a class="l2" href="#九真实案例">九、真实案例</a><a class="l3" href="#案例-1在默认封锁-ai之下新实体第-6-天就被引用">案例 1：在“默认封锁 AI”之下，新实体第 6 天就被引用</a><a class="l3" href="#案例-2cdn-的开关悄悄盖掉了网站的-robotstxt">案例 2：CDN 的开关，悄悄盖掉了网站的 robots.txt</a><a class="l3" href="#案例-3旧外挂留下的全部封锁规则">案例 3：旧外挂留下的“全部封锁”规则</a><a class="l3" href="#案例-4价格只存在于组装后的页面">案例 4：价格只存在于“组装后”的页面</a><a class="l3" href="#案例-5为-ai-另建一套平行网站">案例 5：为 AI 另建一套平行网站</a><a class="l3" href="#案例-6智能体可读性与被省略">案例 6：智能体可读性，与“被省略”</a><a class="l3" href="#案例-7挡掉所有-ai-爬虫的知名平台ai-点名要查却引用-0-次">案例 7：挡掉所有 AI 爬虫的知名平台，AI 点名要查，却引用 0 次</a><a class="l3" href="#案例-8成立不到四个月的新网站只靠搜索就成为最常被引用的来源">案例 8：成立不到四个月的新网站，只靠搜索就成为最常被引用的来源</a><a class="l3" href="#反面案例把索引出了问题误判成ai-被挡了">反面案例：把“索引出了问题”误判成“AI 被挡了”</a><a class="l2" href="#十怎么做">十、怎么做</a><a class="l3" href="#1-先确认三类爬虫的状态分开决定">1. 先确认三类爬虫的状态，分开决定</a><a class="l3" href="#2-一层一层检查不要只看-robotstxt">2. 一层一层检查，不要只看 robots.txt</a><a class="l3" href="#3-让关键内容存在于原始-html">3. 让关键内容存在于原始 HTML</a><a class="l3" href="#4-看自己的服务器日志但先确认对方身份">4. 看自己的服务器日志，但先确认对方身份</a><a class="l3" href="#5-为-ai-智能体-准备机器读得懂的事实">5. 为 AI 智能体 准备机器读得懂的事实</a><a class="l3" href="#6-爬虫来得太猛时限速而不是封锁">6. 爬虫来得太猛时，限速，而不是封锁</a><a class="l2" href="#本章要点">本章要点</a><a class="l2" href="#一句话记住">一句话记住</a><a class="l2" href="#你明天就能做的事">你明天就能做的事</a><a class="l2" href="#别再做了">别再做了</a><a class="l3" href="#已经过时的想法">已经过时的想法</a><a class="l2" href="#还不确定的事">还不确定的事</a></aside></div><script type="application/json" id="md-src">"# 第 3 章　AI 进得了你家的门吗？\n\n> 七道关的第二关：**进不进得了门**（可达性）。\n> 后面所有的努力，都有一个前提：AI 的爬虫真的拿到了你的内容。\n\n---\n\n## 想像一下\n\n想像一下，一位经营手工家具网店的老板，网站是几年前请人做的，看起来很漂亮。\n\n她听说现在很多人会直接问 AI“哪里可以买到结实的实木书桌”，就自己试了一次。答案列了四家店，没有她。她换了几种问法，还是没有。\n\n她打开网站的设置档，上面写着“欢迎所有爬虫”。她很困惑：门明明开着，AI 为什么不进来？\n\n这一章要讲的就是这扇门。它比大多数人想像的多好几层。而且它坏掉的时候，完全不会发出声音。\n\n（以上是虚构的示范情境。）\n\n---\n\n## 这一章的大道理\n\n**AI 读不到你，你就不存在。而且它读不到的时候，不会通知你，只会默默改用别人。**\n\n所以“进不进得了门”要一层一层检查：\n- 你挡的是哪一种爬虫？\n- 挡在哪一层？\n- 爬虫进门之后，拿到的页面里到底有没有东西？\n\n这一章会回答五个问题：\n\n1. 封锁或放行 AI 的爬虫，会不会改变你出现在 AI 答案里的机会？\n2. 为什么“robots.txt 没问题”不等于“AI 读得到”？封锁可能发生在哪几层？\n3. AI 到底抓到了什么？用 JavaScript 程序组装出来的内容、网页“头部”的说明信息、结构化数据，哪些真的会被读到？\n4. AI 背后靠哪些“目录”（索引）？当场去读，和事先整理好的目录，有什么不同？\n5. llms.txt 和给 AI 看的 Markdown 版本有没有用？当 AI 深入你的网站替人办事时，什么决定它能不能用上你的内容？\n\n---\n\n## 一、读不到，就不存在\n\nAI 搜索回答问题时，只能用它拿得到的内容。\n\n拿不到，你就进不了**入围名单**。后面的挑选、排序、引用，全都无从谈起。\n\n把 AI 想成那个很忙的图书馆员。他要帮读者找资料，走到你的书架前，发现门锁着，或书页是空白的。他不会在门口等，也不会替你编一段介绍。他会转身去拿隔壁架上的书。\n\n### Google 产品上的直接观察\n\n研究人员在真实的 AI 搜索上反复测试，看到一个很直接的现象。\n\nGoogle 有一个专门的身份标记，叫 **Google-Extended**，用来区分“AI 用途”的抓取。封锁了 Google-Extended 的网站：\n- 被 Gemini 引用的次数是**零**；\n- 被 Google 搜索页顶端的 **AI 摘要**引用的次数，也明显比较少。\n\n要注意：这是观察到的关联，不是随机分组的实验。但方向很清楚。\n\n### 失败是沉默的\n\n最需要记住的是“失败的样子”。\n\n当会自己上网办事的 AI（本书称为 AI 智能体，英文 agent）读不到你的网站时，它**不会替你编造内容**。它会**把你省略掉**，改用第三方网站或竞争对手的内容来回答。\n\n你不会看到任何错误信息。你只会发现，自己不在答案里。\n\n---\n\n## 二、“AI 爬虫”不是一只，而是好几只\n\n**爬虫**是自动读取网页的程序。最常见的误解，是把所有 AI 爬虫当成同一种东西，以为一个开关就能管住。\n\n其实同一家 AI 公司，通常会派出好几个不同身份的爬虫，各管一件事。每个身份有自己的名字（技术上叫 user-agent，就是爬虫来访时报上的名字）。\n\n### 以 ChatGPT 背后的公司为例\n\n这家公司公开了自己的分工。业内人士整理如下：\n\n| 身份名称 | 做什么 | 挡掉它会怎样 |\n|---|---|---|\n| GPTBot | 收集训练模型用的资料 | 你的内容不会被拿去训练；**不影响即时回答**。官方说明：用户用 OpenAI 的浏览器 ChatGPT Atlas 看网页时取得的内容，也遵守这个封锁 |\n| OAI-SearchBot | 建立 ChatGPT 搜索用的索引（目录） | 官方说明：封锁它，你的内容就不会出现在 ChatGPT 搜索的摘要和片段里；如果 OpenAI 从第三方搜索服务或别的网页得知你的网址，在 ChatGPT Atlas 里可能只显示链接和标题 |\n| ChatGPT-User | 用户在对话中触发的“当场读取” | 用户把你的网址贴给 AI，AI 读不到 |\n| OAI-AdsBot | 检查广告的落地页（2026 年新增） | 与广告有关 |\n\n### 其他 AI 公司也差不多\n\n有一个好记的规律：**名字里带“User”的身份**（例如 Claude-User、Perplexity-User），通常是回答问题时的**当场读取**。\n\nClaudeBot、PerplexityBot 这类名字，则通常是建立索引或收集训练数据的爬虫。\n\n还有一个特例。有业内人士指出，名叫 **meta-externalagent** 的爬虫，依照它官方的说明，**同时**负责收集训练数据和建立 Meta AI 答案用的索引。封锁它，等于同时退出这两条路。\n\n### 三类爬虫，走三条路\n\n可以把它们分成三类：\n\n1. **收集训练数据的**（例如 GPTBot、ClaudeBot，以及一个叫 CCBot 的公共爬虫）：内容进入模型原本的“记忆”。\n2. **建立索引的**（例如 OAI-SearchBot、PerplexityBot）：内容进入 AI 自己的目录，等有人提问时快速查找。\n3. **当场读取的**（例如 ChatGPT-User、Claude-User）：有人正在提问，AI 在那几秒内跑来读你的网页，只用于这一次回答。\n\n三条路最后都汇进同一个答案，但各走各的门。\n\n### 这个分工带来两个直接结论\n\n**第一，封锁收集训练数据的爬虫，不会让你从即时答案里消失。**\n\n有大规模的真实用户数据（在一项研究的附录里）显示：\n- **79%** 的网域至少封锁了一个 AI 爬虫；\n- 这些封锁者从 ChatGPT 得到的平均导流是 **6.48**，没封锁的是 **4.48**。封锁者并没有比较少。\n\n注意：这只是关联，不能读成“封锁反而带来流量”。它只说明一件事：**封锁训练爬虫，并不妨碍 ChatGPT 在回答时把人带到你这里。**\n\n**第二，只放行训练爬虫、却挡住当场读取，才是真正的损失。**\n\n在 AI 上网作答的模式下，答案内容只有大约 **7–10%** 来自模型原本的训练记忆，其余都是当场查来的。\n\n换句话说，AI 有没有“学过”你，远不如它此刻“读不读得到”你重要。\n\n---\n\n## 三、门有三层，robots.txt 只是最外面那一层\n\n网站根目录通常有一个小文件叫 **robots.txt**，用来告诉爬虫“哪里可以来、哪里请勿进入”。很多人检查可达性，只看这一个文件。\n\n问题是，一个请求从外面走到你的内容，要经过三层：\n\n```\n爬虫的请求\n  → 【大楼警卫】网站加速与防护服务（CDN）、网站防火墙（WAF）、主机的机器人防护\n  → 【门口告示牌】robots.txt\n  → 【书里有没有字】服务器实际送回的内容\n```\n\n**告示牌（robots.txt，宣告层）。**\n上面写着“欢迎”或“谢绝”。但它只是一块礼貌性的告示，对方守不守规矩，要看对方自己。\n\n**大楼警卫（CDN、WAF、主机安全设置，执行层）。**\n请求还没走到你的网站，就可能依照爬虫的名字或来源位址的信用被拦下。对方会收到“禁止进入”（技术上是 403 状态码）或一个“证明你是人”的挑战页。\n这一层**不会写在 robots.txt 里**。你用浏览器逛自己的网站，也完全看不出来。\n\n**书里有没有字（服务器回应内容，内容层）。**\n警卫放行了，请求也成功了，但对方拿到的页面里，可能根本没有你以为有的内容。下一节细讲。\n\n### 警卫常常在你不知道的时候关门\n\n业内很多人认为，AI 爬虫常常在 CDN 或 WAF 这一层被挡掉，而且往往是默认设置，或是不小心打开的设置。就算 robots.txt 写了欢迎，也没用。\n\n支持这个说法的人明显多于反对的人。但“很多人认为”不等于“是对的”，这不是证明。\n\n具体的例子：有一种 CDN 服务提供“封锁 AI 爬虫”的开关。打开后，它会在你自己的 robots.txt **最上面插入一段它自己管理的规则**，封锁 GPTBot、ClaudeBot、Google-Extended 等，盖过你原本的设置。\n\n另有业内人士指出：这个 CDN 服务从 2026 年 9 月 15 日起改了默认值，会在**有广告的页面**上封锁“混合用途”的爬虫（也就是同时用于多种目的的爬虫）。没有广告位的网站不受这次变更影响。\n\n---\n\n## 四、AI 读的是“服务器原始回应”，不是你在浏览器看到的页面\n\n你用浏览器打开网页时，浏览器会执行一堆程序（JavaScript），把价格、菜单、折叠的问答一块块“组装”起来，你才看到完整的页面。\n\n**多数 AI 爬虫不做这个组装。** 它只拿走服务器最原始送出来的那份 HTML 文件，转成纯文字，再交给模型。\n\n打个比方：你寄给图书馆员一套需要自己组装的家具。你以为他收到的是一张书桌，他收到的其实是一箱木板和一包螺丝。网页上“组装后才出现”的东西，对他来说都不存在。\n\n### 这是业内最强的共识之一\n\n“多数 AI 爬虫不执行 JavaScript，靠浏览器端程序产生的内容对它们不可见”，是这个主题上业内共识最强的说法之一。支持和反对的比例大约是 **23 比 1**。\n\n有业内人士自己测过，细节如下（但没有人独立验证过）：\n\n- **测试一：** 做一个埋了 60 多个识别码的测试页，让六个 AI 平台去读。**三个完全不执行 JavaScript**；另外三个只给 0.5 到 3 秒就离开了。\n- **测试二：** 同一个测试里，网页头部（`<head>`）的 11 类说明信息中，有 **9 类读取结果是零**。网页摘要说明（meta description）、JSON-LD 格式的结构化数据、社群分享标签（OG 标签）、schema 标记，都没被读到。唯一被读到的是**网页标题（`<title>`）**。测试者的解释是：把网页转成纯文字的那一步，会把整个头部区块丢掉。\n- **测试三：** 在 50 个网站里，有 **34 个（68%）** 是用“标签管理器”这类在浏览器端执行的程序，把 JSON-LD 结构化数据事后塞进页面。结果：由服务器直接输出 JSON-LD 的网站，**92%** 的结构化数据至少被两个 AI 爬虫拿到；只靠浏览器端塞进去的，**0%**。\n\n### 你看到的，不一定是它拿到的\n\n**你在浏览器“开发者工具”里看到的东西，不一定存在于服务器的原始回应中。**\n\n开发者工具显示的，通常是程序执行**之后**的结果。有业内人士发现，自家网站的语言版本标签（hreflang，用来告诉机器“这一页还有哪些语言版本”），在原始回应里是 **0 个**，在组装后的页面里是 **3 个**。因为检查工具显示的是组装后的样子，这个问题好几个月都没被发现。\n\n### 最常“只在组装后才出现”的内容\n\n| 内容 | 为什么 AI 看不到 |\n|---|---|\n| 价格、方案数字 | 由程序从数据库在浏览器端填进页面，原始 HTML 只有方案名称 |\n| 轮播区块的文字 | 由程序轮流切换显示 |\n| 常见问题（FAQ）折叠区的答案 | 点一下之后才用程序加载 |\n| 以动画轮流变换的标题字 | 原始文件里标题只剩半句，其余在动画元件里 |\n| 结构化数据 | 由标签管理器事后注入 |\n| 语言版本标签 | 由前端程序框架生成 |\n\n---\n\n## 五、AI 背后有好几本“目录”，彼此很少重叠\n\nAI 答案的来源，大致有两条路：\n\n1. **事先整理好的索引**：AI 自家建的，或借用搜索引擎的。\n2. **回答时当场读取**。\n\n### 同一家公司，三个界面，看到的网页也很不一样\n\n研究人员在真实的 AI 搜索上反复测试，比较同一家公司的三种界面：传统搜索结果、AI 摘要、Gemini。\n\n它们引用的来源重叠程度，用一种标准的“重叠比例”来算（0 代表完全不同，1 代表完全相同），只有 **0.11 到 0.18**。\n\n也就是说，即使背后是同一家公司，不同 AI 界面拿到的网页集合也差很多。\n\n### 传统搜索的收录，本身就是 AI 可达性的一部分\n\n有业内人士提到，网站内容要靠 JavaScript 才能显示时，ChatGPT 在很大程度上依赖 Google 的索引，但他没有提出证据。ChatGPT 到底用哪家的索引，各方说法不一（见第 4 章）。另外，OpenAI 官方说明确认：ChatGPT 搜索除了用 OAI-SearchBot 自己建立的索引，也会用“第三方搜索服务”，但没有说是哪一家。\n\n这意味着：**你的网页有没有被传统搜索引擎收录，本身就是 AI 能不能读到你的一部分。**\n\n### “AI 说它读了”，不一定读的是最新版\n\n有业内人士做了一个纯 HTML 的测试页，让四个 AI 去读：\n- ChatGPT 试了大约 10 次，都读不到；\n- Claude 只在新对话的第一次读到，之后看不到页面的更新；\n- Perplexity 引用了 14 个无关的页面；\n- 只有 Gemini 读到了完整页面，包括其中的 schema 标记。\n\n测试者判断，多数情况下 AI 读的是**快取版本**（之前存下来的旧副本）。这是单一测试者的观察，只能当作线索。\n\n另一种情况是：**AI 根本没打开你的网页。** 研究人员在真实的 AI 搜索上发现，一个轻量模型有 53.6% 的对话一页网页都没打开，只看搜索结果里的摘录就回答了。在实验室条件下，只看摘录的回答，更容易过时，引用也更容易对不上原文（见第 7 章）。\n\n### 一个新名字，第 6 天就被引用\n\n“新出现的实体”特别能说明不同索引之间的差别。（**实体**就是 AI 心目中的“一个东西”，例如一个品牌、一个人、一个产品。）\n\n有业内人士做了一个多次、有对照的实验：\n- 建立一个在网络上完全没有足迹的新实体；\n- 连续 23 天，每天让五个会上网的 AI 系统去查它；\n- 期间，CDN 默认的 AI 封锁在 23 天中有 **22 天**对训练爬虫回传“禁止进入”（403）。\n\n尽管如此，这个实体在**第 6 天**就被引用了。靠的是**知识图谱**（AI 和搜索引擎用来记录“谁是谁、谁和谁有关”的数据库）加上**别人的口碑**（第三方网站的提及）。\n\n服务器日志也显示，就在同一天，AI 回答时才会用到的两类爬虫（建立索引的 OAI-SearchBot、当场读取的 ChatGPT-User）是被正常放行的。\n\n不同 AI 公司的差距也很大：其中一家以这个实体自己的网域作为依据，大约 **119 次**；另一家是 **0 次**，只从第三方社群平台取用资料。\n\n---\n\n## 六、AI 替人办事时：进得来，还要用得上\n\n越来越多时候，AI 不只是读一页就走。它会像一个助理一样**深入你的网站**：查价格、比规格、甚至替人完成任务。这种会自己动手的 AI，业内称为 AI 智能体。\n\n这时候，可达性的标准就从“读得到文字”提高到“**读得懂、能操作**”。业内把这叫做 **智能体可读性**（英文是 agent experience，简称 AX）。\n\n### 大型观察：可读的网站，更常用自家内容作答\n\n研究人员在真实的 AI 搜索上反复测试：涵盖 **1,056 家**企业、**37,927 次** AI 智能体 查询过程。\n\n| | AI 智能体 可读的网站 | 不可读的网站 |\n|---|---|---|\n| 答案内容来自自家页面的比例 | **78%** | 58% |\n| 被明确推荐的比例 | **20%** | 11% |\n\n看这组数字时，要知道几个限制：\n- 这项研究是**提供相关服务的机构**做的，用的是他们自己的评分工具；\n- 它是**配对观察研究**：把名气、AI 原本对品牌的记忆等条件相近的网站配成对比较，但不是随机实验；\n- “可读性”是一个**整包分数**，包含：内容不依赖 JavaScript、有结构化数据、有 llms.txt 或 Markdown 备用版本、机器人防护有放行 AI 智能体。研究**没有拆开看每一项各自的效果**。\n\n同一项研究还发现：把 智能体可读性这个因素扣除之后，“站外被提及的广度”（别人的口碑有多广）对 AI 智能体 会不会采用你的内容、会不会推荐你，**没有额外的独立影响**。\n\n但这个结论**只适用于 AI 智能体 已经进到你的网站深入查看的情况**。它不代表站外提及在“被发现”这一步不重要。\n\n### 实验室里的电商网站\n\n在实验室条件下（一个可以完全控制的实验系统），研究人员拿一个原型电商网站做改造，加入：\n- JSON-LD 结构化数据；\n- 让机器看懂按钮和栏位用途的标记（aria 属性）；\n- 告诉机器“这里可以做什么动作”的提示；\n- 标明资料时间的栏位。\n\n结果，三个浏览器 AI 智能体 在严格标准下的任务成功率，从 **49.3% 升到 89.3%**；平均需要的步数，从 **9.31 降到 6.49**。\n\n但这只是**单一个合成网站**，而且是整包一起改。作者自己说这是“概念验证”，无法判断是哪一项起了作用。真实世界还不一定。\n\n### 被找到，不等于能被用上\n\n在给定网页的测试条件下，研究人员看了一个“找资料集”的场景。\n\n资料提供者发布了**机器可读的资料描述**之后，AI 智能体 取回“可以直接使用的资料页”的精确度是 **46.4%**，对照组是 **28.0%**。\n\n但同时，走这条路的 AI 智能体 只回答了 **40 题**，对照组回答了 **56 题**。\n\n**被找到，不等于能被使用。** 这就是 AI 智能体 情境里的“最后一公里”问题。\n\n### 官方的提示：用无障碍标签告诉 AI 这是什么按钮\n\nOpenAI 官方说明：它的浏览器 ChatGPT Atlas 里的 AI 智能体，会用 ARIA 标签来理解网页上的按钮、菜单和表单。ARIA 标签本来是给屏幕阅读器用的无障碍标记，告诉看不见画面的用户“这是什么元素、它是做什么的”。官方建议为这些互动元素加上清楚的角色、标签和状态。\n\n---\n\n## 七、深入一点：这些证据有多强？\n\n| 结论 | 证据来自哪里 | 强度与限制 |\n|---|---|---|\n| 封锁 Google-Extended，和 Gemini 零引用、AI 摘要引用减少有关 | 在真实 AI 搜索上反复测试 | 中等偏强；是关联，不是因果 |\n| 封锁训练爬虫，不妨碍 ChatGPT 导流 | 大规模真实用户数据（研究附录） | 中等；是关联，主研究的因果设计不涵盖这一点 |\n| AI 智能体 可读的网站更常用自家内容作答、更常被推荐 | 真实 AI 智能体 反复测试 | 中等；服务商做的研究、配对观察、整包分数 |\n| 让网站机器可读，能提高 AI 智能体 完成任务的比例 | 实验室可控系统 | 弱到中等；只有一个合成网站，没有拆开看 |\n| 多数 AI 爬虫不执行 JavaScript | 业内人士自测＋很强的业内共识 | 中等；但多数说法最后都指向 2024 年底的同一份分析（见下一节） |\n| 封锁常常发生在 CDN／WAF 这一层 | 业内共识＋多位业内人士的抽样 | 中等；各样本的比例差很大 |\n| 训练爬虫和当场读取要分开处理 | 业内人士的多组服务器日志＋一项多次、有对照的实测 | 中等 |\n| llms.txt 单独有效 | 没有 | **目前没有证据** |\n\n**特别要记住两件事：**\n\n1. 可达性的研究，大多只证明“读不到会吃亏”，**没有证明“读得到就会被引用”**。可达性是**必要条件**（没有它一定不行），不是**充分条件**（有了它也不一定行）。\n2. **爬虫来抓的次数，不等于被引用。** 业内普遍认为，单看抓取量，不足以衡量你在 AI 里的可见度。\n\n---\n\n## 八、还在争论的六件事\n\n### 争议 1：llms.txt 到底有没有用？\n\n**llms.txt** 是一个放在网站根目录的文字档，有人提议用它来告诉 AI“我网站的重点在哪里”。\n\n**认为没用的一方：**\n\n- 研究人员在真实的 AI 搜索上反复测试：在检查的 **1,047 个**来源网站中，有 llms.txt 的占 **16.9%**。但这类技术标记和答案准确率**没有关系**（关联系数约 -0.04，几乎等于零）。\n- 好几份独立的服务器日志指向同一个方向。有业内人士自己测过：\n  - 一个网站在 8 月 31 日上线一份 38 KB 的 llms.txt。\n  - 9 月 2 日到 16 日，这个文件共被请求 **299 次**：其中 **240 次**是网站自己的监控程序，**59 次**是真实请求，而 **AI 爬虫只有 2 次**（都是一个叫 Amazonbot 的爬虫）。\n  - 同一期间，GPTBot 在全站抓了 **920 次**、ClaudeBot **1,494 次**、OAI-SearchBot **631 次**，但它们请求 llms.txt 的次数都是 **0**。\n- 另有业内人士查了客户**数十亿行**的日志、追踪了 **100 多个**网站，都没看到 AI 工具请求 llms.txt。\n- 业内多数人认为 llms.txt 对 AI 可见度和引用没有帮助（支持 **33** 人、反对 **4** 人）；大多数大型语言模型根本不会去找这个文件。\n- 有业内人士观察到：在一份 **200 个**查询的引用资料中，拥有 llms.txt 的网站**不到 3%**，而 llms.txt 页面本身**从来没被引用过**。\n- 另有业内人士加上 llms.txt 一个月，再把它移除，前后**看不到任何变化**。\n\n**认为有用、或暂时不下结论的一方：**\n\n- Google 的搜索官方文件说，**不需要** llms.txt 这类特殊文件。但 Google 的网页检测工具**已经加入了 llms.txt 的检查项**。有业内人士把后者解读成“它有作用”；也有业内人士指出，检测工具只能确认文件存在，不能说明有任何 AI 真的用了它。\n- 有业内人士观察到：在 **50 家**企业中，有 llms.txt 的 **5 家**被 AI 点名的比例是 **77%**，没有的是 **49%**。但有 llms.txt 的样本只有 5 家，而且这些网站同时做了其他让机器好读的改造。\n- 有业内人士认为，llms.txt 的价值主要在于“写它的过程，会逼你整理出哪些页面重要”；或者对程序开发类的技术文件网站有用，因为帮人写程序的 AI 可能会去读。\n- 有业者宣称，他们的日志里 AI 爬虫请求 llms.txt 的频率远高于其他页面。但这没有经过独立验证，而且和上面几份独立日志的结果相反。\n\n**本书的立场：**\n一项研究发现它和准确率无关；另一项研究把它放在整包里，没有拆开看。**目前没有证据证明 llms.txt 单独有效。**\n它的成本很低，想放可以放，但不要把它当成可达性工作的重点。\n\n### 争议 2：另外给 AI 准备一份 Markdown 版本，有没有用？\n\nMarkdown 是一种很精简的纯文字格式。有人主张：给每一页另做一份 Markdown 版本，AI 会读得更轻松。\n\n- 有业内人士自己测过：部署全站的 `.md` 版本和 llms.txt 后，训练类和索引类爬虫在 **56 个**文件上抓了 **177 次**。但**当场读取的爬虫几乎只读 HTML**：\n  - ChatGPT-User：读了 **1,936 个** HTML、**0 个** `.md`；\n  - PerplexityBot：**306 个** HTML、**0 个** `.md`；\n  - Claude-User：**38 个** HTML、**1 个** `.md`。\n- 另一位业内人士在两个小型博客大约三个月的日志里，看到同样的现象。\n- 有业内人士测过：Markdown 镜像页在几天内就被 Google 抓取了，但 ChatGPT 和 Perplexity 引用的**仍然是 HTML 版本**，**60 天**内引用率没有变化。\n- 有业内人士测过：对 **16 个**博客网址向 AI 爬虫提供 Markdown，**30 天**内造访次数成长 **52%**；但**没有**提供 Markdown 的博客网址也成长了 **43%**。所以无法确定是 Markdown 本身起了作用。\n- 有业内人士观察到：在 **6 个**网站、**381 个**页面的分组对照测试中，提供 Markdown 的页面，三周内只多了大约 **1 次**机器人造访（中位数）。\n- **反方的报告：** 有业内人士自己测过，为 **20 篇**热门文章提供 `.md` 版本后，Perplexity 和 ChatGPT 搜索更快发现并引用了 Markdown 版本，AI 的抓取率**翻倍**。但这份报告**没有对照组**。\n\n**成本面的观察：**\n\n- 有业内人士量了 **300 个**网站：一个页面的中位数需要 **2,592 个 token**（token 是 AI 计算文字量的单位）。其中大约**一半不是正文**，大约**五分之一是导览列和页首页尾**。\n- **7 个**提供 Markdown 版本的网站，中位数是 **962 个 token**，确实省很多。\n- 但这 7 个网站中：\n  - **6 个**缺少一个叫 `Vary: Accept` 的技术标头，快取系统可能把错的版本送给错的访客；\n  - **3 个**的 Markdown 版本**把正文弄丢了**。\n- 另有业内人士指出：主流 AI 爬虫不会送出“我想要 Markdown”的请求标头（`Accept: text/markdown`）。所以靠这个标头来切换版本的做法，可能永远不会被触发。\n\n**整理：**\n目前比较一致的观察是：**回答用户问题时的当场读取，读的是 HTML。**\n想影响答案的事实，必须放在**人类看到的那一份 HTML** 里。Markdown 版本可能省频宽、可能被索引类爬虫读到，但没有可靠证据显示它能提高引用。\n\n### 争议 3：AI 读不读 JSON-LD 结构化数据？\n\n**结构化数据**是写给机器读的标准格式信息（例如 schema 标记），常见写法叫 JSON-LD。\n\n- **一方说不读：** 有业内人士自己测过，AI 把页面转成纯文字时会丢掉整个头部，JSON-LD 的读取结果是零。另有业内人士报告，ChatGPT 和 Gemini 的抓取都不使用 schema 资料。\n- **另一方说读：** 有业内人士自己测过，由服务器直接输出的 JSON-LD，有 **92%** 至少被两个 AI 爬虫取到。有业内人士观察到，Gemini 能读出并复述页面里的 schema。还有分析日志的业内人士建议：把 JSON-LD 放进人类看到的同一份 HTML 里，让当场读取的爬虫也能拿到机器可读的事实。\n\n**两边其实不完全矛盾。**“爬虫取回了含有 JSON-LD 的 HTML”和“模型在回答时真的用到了 JSON-LD”是两件事。AI 智能体 情境的研究把结构化数据放在整包里，也没有单独拆开看。\n\n**能确定的只有一点：只靠浏览器端程序事后塞进去的结构化数据，对不执行 JavaScript 的爬虫来说，根本不存在。**\n\n### 争议 4：“AI 爬虫不执行 JavaScript”现在还成立吗？\n\n这是业内共识。但有业内人士指出几个问题：\n- 几乎每一条引用，最后都指向**同一份 2024 年 12 月的分析**，距今大约 20 个月；\n- 发布那份分析的一方，本身在**销售“由服务器组装网页”的服务**；\n- 服务器的访问日志只能记录“对方请求了什么”，**不能记录“对方有没有执行 JavaScript”**。\n\n另有业内人士在日志里看到，OpenAI 的训练爬虫发出过少量和 JavaScript 有关的请求；而用户触发的当场读取没有。\n\n**怎么处理：** 不要等这个问题吵出结论。直接比对你的**服务器原始回应**和**组装后的页面**。只要重要内容只出现在后者，就当作 AI 读不到。\n\n### 争议 5：robots.txt 会被遵守吗？\n\n- 有业内人士自己测过：在 **48 天**的日志里，GPTBot 和 Meta-WebIndexer **从来不检查** robots.txt。\n- 另一位业内人士测过：在 robots.txt 里封锁一个测试页，再请八个 AI 助手去读：\n  - ChatGPT、Claude、Meta 的助手**拒绝读取**（Claude 还明确回报“网站不允许自动存取”）；\n  - Gemini、Grok、Manus **照样读取**；\n  - Copilot 和 Perplexity **没有尝试**。\n  - 测试者查到，Google 的文件说明：由用户触发的抓取，一般**不受 robots.txt 约束**。\n  - 这只是一个网域、三轮测试，而且只涉及用户触发的抓取。\n\n所以，**robots.txt 既不能保证挡得住，也不能保证放得进。**\n\n### 争议 6：可达性到底是不是常见的瓶颈？\n\n不同样本得出的比例差很多。以下都是业内人士观察到的数字：\n\n| 观察什么 | 样本 | 结果 |\n|---|---|---|\n| 在 robots.txt 里宣告封锁 | 约 51 万个网站 | 16.8% 封锁了大型语言模型的爬虫 |\n| 在 robots.txt 里宣告封锁 | 三个行业各抽 300 家中小企业 | 律师事务所 1.8%、居家服务 5.4%、旅游 3.0% |\n| 在“警卫层”被挡（用具名的 AI 身份请求被拒，普通请求却通过） | 131 个网站，以新闻、在线软件服务（SaaS）、电商为主 | 约 21% |\n| 至少封锁一个主要大型语言模型爬虫，多数在 CDN 或主机层 | 约 3,000 个网站，以企业对企业（B2B）的在线软件服务为主 | 27% |\n| 以 AI 身份去抓中小企业网站 | 约 1.7 万个法国中小企业网站 | 可达性几乎从来不是瓶颈 |\n\n这些数字测的是不同层、用的是不同样本，**不能互相比高低**。\n\n能看出的是：\n- **在 robots.txt 里宣告封锁，普遍少见；**\n- **在“警卫层”被挡，在用了 CDN 的网站、B2B 在线软件服务、媒体类网站上明显比较多。**\n\n还有业内人士提醒：自己从资料中心的网络位址、用“自称是 AI”的身份去测试，拿到 200（成功）不代表真正的爬虫也拿得到，因为 CDN 会核对真正爬虫的网络位址范围。反过来也一样。\n\n**另一种反例：读得到，却没被引用。**\n\n- 有业内人士观察到：一个约 **10 万页**的网站，**30 天**内被 AI 爬虫抓了约 **43 万次**，但抓取量和有没有被引用**没有关系**。真正被引用的，是“一页只讲一个事实、网址稳定、最容易核对”的页面。\n- 也有审查过约 **1.7 万个**网站的业内人士认为：多数网站没被引用，是因为页面上**没有可以直接拿来用的答案**，而不是技术问题。\n\n---\n\n## 九、真实案例\n\n### 案例 1：在“默认封锁 AI”之下，新实体第 6 天就被引用\n\n- **做了什么：** 建立一个在网络上完全没有足迹的新实体。事先把测试方案登记下来，每天向五个会上网的 AI 系统询问。每个答案评为“正确”“找不到”或“幻觉”（AI 编造），总共大约 **1.6 万个**评分点。\n- **观察到什么：**\n  - CDN 默认的 AI 封锁，在 23 天中有 22 天对列出的训练爬虫回传 403（禁止进入）；但同一天，当场读取的爬虫是被正常放行的。\n  - 实体在**第 6 天**被引用，靠的是知识图谱和第三方提及。\n  - 在社群平台上的讨论声量增加了 **23 倍**，引用**没有提升**。\n  - 真正有作用的是“结构化的身份”：公开的实体数据库条目、稳定的识别码、一个真实的网站。\n- **多久：** 23 天。\n- **说明了什么：** 训练爬虫和当场读取的职责不同（第二节）；AI 找到你的路不只一条（第五节）。\n- **限制：** 这是单一实体的实验，只能说明机制，不代表普遍规律。\n\n### 案例 2：CDN 的开关，悄悄盖掉了网站的 robots.txt\n\n- **发生了什么：** 一位站长发现，自己的网站在 ChatGPT、Perplexity、AI 摘要里都不出现。但网站程序输出的 robots.txt 明确放行所有 AI 爬虫。\n- **怎么发现的：** 他用 `curl`（一个免费的命令列工具，可以像爬虫一样直接抓取网址）取回**在线实际的** robots.txt，发现最上面多了一段**不是自己写的**托管区块，封锁了 GPTBot、ClaudeBot、Google-Extended 等。\n- **原因：** CDN 的“封锁 AI 爬虫”开关，会在 robots.txt 前面插入自己的规则。\n- **说明了什么：** 门有三层（第三节）。\n- **限制：** 这是单一业内人士的报告，没有经过独立验证。但它揭示的检查方法是通用的：**看在线实际送出的文件，不要只看自己的源代码。**\n\n### 案例 3：旧外挂留下的“全部封锁”规则\n\n- **观察：** 一位审查了 **50 个**本地服务网站（水电、空调、牙医、律师）的业内人士报告：常见问题之一，是 GPTBot 和 ClaudeBot 被 robots.txt 封锁了。这不是业主有意为之，而是**旧的 SEO 外挂**遗留下来的“全部封锁”规则（`Disallow`）。\n- **另一组小企业样本：** 被标记为“封锁 AI 爬虫”的 **10 个**网站中：\n  - **4 个**用一条规则封锁了**所有**爬虫，包括当场读取的爬虫，甚至包括 Google 的搜索爬虫（Googlebot）。看起来像是“测试环境”的设置被一起带上了正式网站；\n  - **9 个**封锁了 meta-externalagent；\n  - 好几家彼此毫无关系的网站，出现了**顺序完全相同的同一份封锁清单**。那不是 10 个人各自做的决定，而是**同一个默认值**。\n- **结果：** 这位审查者报告，只修正封锁这一项，通常在 **2 到 4 周**内，最快能看到在 AI 搜索中出现的情况改善。这是业内人士自测的结果，没有经过独立验证。\n- **说明了什么：** 门有三层（第三节）。\n\n### 案例 4：价格只存在于“组装后”的页面\n\n- **观察：** 有业内人士扫描了一个在线软件服务（SaaS）网站：\n  - 网站的原始 HTML 约 **300 词**，组装后约 **1,033 词**；\n  - 定价页原始 HTML **194 词**，组装后 **511 词**；\n  - 而且原始 HTML 里**一个价格数字都没有**，只有方案名称。\n- **后果：** AI 助手被问到价格时，知道他们有哪些方案，却说不出多少钱。\n- **修正：** 网站方查出原因：一个“预先组装”的程序只用文字描述了方案，价格则由数据库在浏览器端填进去。修正后，用 `curl` 抓定价页，已经能拿到价格。\n- **意外发现：** 同一次检查还发现，“预先组装”的页面清单**漏掉了 7 个页面**。这是某个搜索爬虫找到那些页面之后，才被发现的。\n- **说明了什么：** AI 读的是原始回应（第四节）。\n- **限制：** 这是单一网站的第一手观察，只能当作例子。\n\n### 案例 5：为 AI 另建一套平行网站\n\n- **做了什么：** 一个知名度不高的应用程序品牌，发现 ChatGPT、Claude、Perplexity 都在引用它，但**描述是错的**。于是它为全站建了一套 `/ai/` 平行版本：\n  - 内容相同，但去掉导览列、动画、“立即购买”这类行动按钮等干扰；\n  - 每一页改写成直接的问答，答案放在最前面的 **75 到 120 个词**之内；\n  - 每一页都用一个标记（canonical）指回给人看的原始版本；\n  - 放在独立的网站地图里；\n  - 通过 llms.txt、一种“另有版本”的链接标记（`rel=\"alternate\"`），以及 AI 引用时会直接抓取的方式，让 AI 发现它。\n- **观察到什么：** 业内人士自测（多次、有对照）：**5 周**内，AI 引用的覆盖范围扩大了 **12%**，从 AI 转来的流量提升了 **60%**。期间没有新增任何外部链接。\n- **要注意：**\n  - 这是整包改动，无法判断是内容改写、好读程度，还是让 AI 发现的方法起了作用；\n  - 而且这和争议 2 里“当场读取的爬虫只读 HTML”的观察并不一致，需要更多重复验证。\n\n### 案例 6：智能体可读性，与“被省略”\n\n- **做了什么：** 研究人员在 **1,056 家**企业网站上，跑了 **37,927 次**真实的 AI 智能体 查询过程，按照名气、AI 原本对品牌的记忆（**品牌先验**）等条件配对比较。\n- **观察到什么：** 可读的网站，答案 **78%** 来自自家页面、**20%** 被明确推荐；不可读的网站是 **58%** 和 **11%**。网站不可读时，AI 智能体 会用第三方或竞争对手的内容替代，**而不是编造**。\n- **说明了什么：** 读不到就不存在（第一节）；进得来还要用得上（第六节）。\n- **限制：** 服务商做的研究、整包分数，详见第七节。\n\n### 案例 7：挡掉所有 AI 爬虫的知名平台，AI 点名要查，却引用 0 次\n\n- **做了什么：** 我们写这本书时，自己用 API 对 ChatGPT 实际测过（方法见第 4 章；样本很小，还没有其他人独立验证）。同一个游泳招募问题，用 5 种英文问法各问 2 次，共 10 次。\n- **看到什么：** 一个知名的游泳数据平台，在 robots.txt 里挡掉了 GPTBot、OAI-SearchBot 等 AI 爬虫。AI 在 10 次里有 6 次用 `site:` 指名要搜这个平台，但引用了 **0 次**；这个平台在搜索结果里也只出现过 1 次。不上网的时候，AI 对这个平台很熟悉（见第 5 章案例 9）。也就是说，AI 想去查它，却读不到。\n- **限制：** 只有一个主题、一个模型，没有人独立验证；也没有对照（没有测过同一个平台放行时会怎样）。\n- **说明了什么：** 读不到就不存在（第一节）；挡哪一只爬虫，结果不一样（第二节）。\n\n### 案例 8：成立不到四个月的新网站，只靠搜索就成为最常被引用的来源\n\n- **做了什么：** 同案例 7 的 10 次测试。\n- **看到什么：** 一个 2026 年 6 月才注册、专门整理游泳招募成绩的网站，在 10 次里有 **9 次**被引用，占全部引用链接的 **44%**，而且通常是第一个被引用的来源。不上网的时候，AI 5 次都说不认识它，和对一个虚构网址的回答一样（见第 5 章案例 9）。所以它被引用，完全是靠搜索找到，不是靠 AI 的记忆。\n- **这个网站有什么特点：** robots.txt 对所有爬虫放行；数据直接写在 HTML 里；每个“比赛级别 × 项目”各有一页；页面标题和 AI 生成的搜索词几乎一样；写明数据来源和更新日期；页面之间互相链接。AI 读过一页之后，会照着网址的规律，用 `site:` 去搜同一个网站的其他分页。\n- **限制：** 只有一个网站、一个主题；这些特点是同时存在的，分不出哪一项在起作用。\n- **说明了什么：** 读不到就不存在（第一节）；重要内容要写在原始 HTML 里（第四节）；也呼应第 4 章“要对上 AI 改写出来的查询”。\n\n### 反面案例：把“索引出了问题”误判成“AI 被挡了”\n\n有业内人士封锁 AI 爬虫几周之后，发现自己在 Google 的索引收录一直往下掉。他怀疑是网站防火墙规则误伤，就把所有规则全部关掉来排查。\n\n后来才发现，真正的原因是一次**误送出的“暂时移除网址”请求**，造成长达**六个月**的索引冻结。\n\n教训是：**可达性问题要一层一层验证，不要从症状直接猜原因。**\n\n---\n\n## 十、怎么做\n\n### 1. 先确认三类爬虫的状态，分开决定\n\n| 做法 | 证据强度 |\n|---|---|\n| 对“收集训练数据”“建立索引”“当场读取”三类身份，分别决定要不要放行。如果你想出现在 AI 答案里，**至少放行建立索引和当场读取的身份**（例如 OAI-SearchBot、ChatGPT-User、Claude-User、Perplexity-User） | 业内人士自测（多次、有对照）＋多组日志 |\n| 如果你在意 Gemini 和 AI 摘要，**不要封锁 Google-Extended** | 在真实 AI 搜索上反复测试（关联） |\n| 在 robots.txt 里搜索 GPTBot 之后，**再搜索一次 OAI-SearchBot**。只写了前者，等于只做了一半的决定 | 业内人士自测：72 家公司中，有写 GPTBot 的 18 家，有写 OAI-SearchBot 的只有 11 家，有写 OAI-AdsBot 的 0 家 |\n| 不想让某一页出现在 ChatGPT 里，要用 noindex 标记，而不是只靠 robots.txt 挡住；而且爬虫必须读得到那一页，才看得到这个标记 | OpenAI 官方说明 |\n| 让其他网页连到你的重要页面：OpenAI 也会从别的网页发现网址 | OpenAI 官方说明 |\n\n### 2. 一层一层检查，不要只看 robots.txt\n\n1. **告示牌（宣告层）：** 用 `curl` 取回**在线实际的** robots.txt。确认里面没有 CDN 或外挂插入的区块，也没有“全部封锁”的万用规则（`Disallow: /`）。\n2. **警卫（执行层）：** 用各个 AI 身份，和一个普通浏览器身份，同时请求同一页，比较回传的状态码和内容大小。如果连普通浏览器身份的请求也被拒，那是一般的防护问题，不是针对 AI 的政策。记住：这只是测试“回应的路径”，不等于真正的爬虫会受到同样待遇。\n3. **当场测试：** 直接把你的网址贴给 ChatGPT 这类 AI 助手，问它“这个网站提供什么服务”。被封锁的网站会直接失败，大约十秒就能确认（业内人士自己测过）。\n4. **书里有没有字（内容层）：** 用 `curl` 或“检视源代码”取得服务器的原始回应，和组装后的页面比对。价格、规格、FAQ 答案、标题、结构化数据，只出现在组装后页面的，都要改。\n   - 有业内人士观察到：11 个网站用 AI 身份请求，全部回传 200（成功）；但在 10 组有效比较中，有 **2 组**组装后的字数比原始回应**多出一倍以上**。问题出在“组装”，不在“封锁”。\n\n### 3. 让关键内容存在于原始 HTML\n\n| 做法 | 证据强度 |\n|---|---|\n| 关键内容和结构化数据，用“由服务器组装好再送出”（服务器端渲染）或静态 HTML 输出 | 业内多数人认为（很强的共识）＋业内人士自测 |\n| 标签管理器只用来做分析追踪，不要用来输出 AI 需要看到的内容 | 业内人士自测 |\n| 轮播、折叠区、动画里的文字，确认在原始 HTML 中完整存在 | 有业内人士观察到 |\n| “预先组装”的页面清单，要用固定流程确保新页面一定被加进去，避免越漏越多 | 有业内人士观察到 |\n| 想影响答案的事实（价格、规格、资格证明），放在**人类看到的同一份 HTML** 里 | 业内人士自测（当场读取的爬虫只读 HTML） |\n\n### 4. 看自己的服务器日志，但先确认对方身份\n\n- **用服务器日志，不要只用分析工具。** 网站分析工具通常会把机器人过滤掉；在浏览器端执行的分析程序，也看不到不执行 JavaScript 的爬虫。有些主机平台只保留大约**一小时**的请求日志，你需要自己长期保存。\n- **核对网络位址（IP）。** 爬虫报上的名字只是一个可以随便填的文字栏位。\n  - 有业内人士自测：两个月内，**394 个**自称 ChatGPT 的来源位址，**全部不在** OpenAI 公布的位址范围内；其中 **79 个**在探查 `/.env`、`/.aws/credentials` 这类存放密码和设置的敏感路径。\n  - 有业内人士观察到：在可以验证的 **14,771 次**造访中，有 **5,577 次**是冒名的；冒名者中有 **38.3%** 在找密码或设置档。\n  - 核对方法：对照各 AI 公司公布的位址范围文件。“反向查询网域名称”（反向 DNS）这个方法适用于 Google 的搜索爬虫，但有业内人士查验发现，对 GPTBot **无效**。\n- **看“当场读取”的爬虫，不要看总抓取量。** 名字带“User”的身份来访，代表某个真实用户在几秒前提出了问题，AI 为此读了这一页。有业内人士观察到，抓取次数和随后真正有人造访的比例，多半在**十比一以上**。\n- **把爬虫日志当成“除错工具”：** 用它确认页面有没有被抓到、有没有 AI 幻想出来的不存在网址、有没有太慢的页面。至于**可见度**的成绩，要用追踪 AI 答案的方式来衡量，不要用日志。\n\n### 5. 为 AI 智能体 准备机器读得懂的事实\n\n| 做法 | 证据强度 |\n|---|---|\n| 让 AI 智能体 不靠 JavaScript 也能拿到内容；提供结构化数据；机器人防护放行 AI 智能体 | 在真实 AI 搜索上反复测试（整包，没有拆开看） |\n| 在需要 AI 智能体 动手操作的网站上，加入机器可读资料、“可以做什么动作”的提示标记、资料时间栏位 | 在实验室条件下（单一网站，没有拆开看） |\n| 资料集类的内容，发布标准的机器可读描述 | 在给定网页的测试条件下（只限资料集情境） |\n| 提供一个简单的“机器可读事实”网址，让 AI 引用最新的数字 | 有业内人士观察到 |\n| 电商商品能不能出现在 AI 购物里，可能取决于商品资料清单是否完整（商品识别码、尺寸颜色等款式属性、退换货等政策资料），而不只是页面内容 | 有业内人士观察到，只能当作线索 |\n| 按照 WAI-ARIA 的做法，为按钮、菜单、表单加上清楚的角色、标签和状态 | OpenAI 官方说明（针对 ChatGPT Atlas 的 AI 智能体） |\n\n### 6. 爬虫来得太猛时，限速，而不是封锁\n\nAI 爬虫有时会突然大量抓取。有业内人士报告，GPTBot 曾在 **3 分钟**内达到**每分钟 114 次**请求。\n\n有业内人士观察到：设置“每 60 秒最多 60 次”的限速，超过时回传“请求太多”（429 状态码），大约**一周后**爬虫就放慢了速度。\n\n**限速比全面封锁更不容易误伤当场读取的爬虫。**\n\n---\n\n## 本章要点\n\n1. **读不到就不存在，而且失败是沉默的。** AI 读不到你时，不会报错，而是用别人的内容代替你。\n2. **AI 爬虫分成收集训练数据、建立索引、当场读取三类，要分开决定。** 封锁训练爬虫，不会让你从即时答案里消失；挡住索引和当场读取，才是真正的损失。\n3. **门有三层：** robots.txt 告示牌、CDN／WAF 警卫、原始回应的内容。robots.txt 没问题，不代表 AI 拿得到内容。\n4. **AI 读的是服务器的原始回应。** 只存在于 JavaScript 组装后的价格、FAQ、结构化数据，对多数 AI 爬虫来说不存在。\n5. **AI 背后有好几本目录，彼此很少重叠。** 传统搜索引擎的收录，本身也是 AI 可达性的一部分。\n6. **AI 智能体 情境要求“用得上”，不只是“找得到”。** 可读的网站更常用自家内容作答、更常被推荐，但现有证据都是整包、没有拆开看。\n7. **llms.txt 和 Markdown 镜像，目前没有被证明能提高引用。** 回答问题时的当场读取，读的是 HTML。\n8. **可达性是必要条件，不是充分条件。** 抓取量和引用没有关系；读得到之后，能不能被挑中，取决于后面几章讲的因素。\n\n---\n\n## 一句话记住\n\n**AI 读不到你，就会安静地改用别人；所以要一层一层确认：放行对的爬虫、拆掉看不见的警卫、把重要事实写进原始 HTML。**\n\n---\n\n## 你明天就能做的事\n\n1. **打开 robots.txt，把三类爬虫分开看。** 搜索 GPTBot，再搜索 OAI-SearchBot、ChatGPT-User、Claude-User、Perplexity-User、Google-Extended、meta-externalagent。想出现在 AI 答案里，至少放行建立索引和当场读取的身份；在意 Gemini 和 AI 摘要，就不要封锁 Google-Extended。\n2. **用 `curl` 抓“在线实际的”robots.txt。** 看看最上面有没有 CDN 或外挂偷偷插入的区块，有没有 `Disallow: /` 这种全部封锁的规则。\n3. **检查你的 CDN、网站防火墙、主机的“封锁 AI 爬虫”或“机器人防护”设置。** 用 AI 身份和普通浏览器身份分别请求同一页，比较结果。记住这只是回应路径测试。\n4. **把你的网址贴给 AI 助手**，问“这个网站提供什么服务”。十秒就知道它读不读得到。\n5. **比对原始回应和组装后的页面。** 特别看价格、规格、FAQ 答案、标题、结构化数据、语言版本标签。只在组装后才出现的，改成由服务器直接输出或静态 HTML。\n6. **标签管理器只拿来做分析追踪**，不要用它输出结构化数据或 AI 需要看到的内容。\n7. **轮播、折叠区、动画里的文字，确认在原始 HTML 中完整存在。**\n8. **如果用了“预先组装”的做法，把“新页面一定要加进清单”写进固定流程。**\n9. **想影响答案的事实**（价格、规格、资格证明），一定放在人类看到的那一份 HTML 里。\n10. **开始长期保存服务器日志**，特别是主机只保留一小时的情况。\n11. **核对爬虫的 IP**，对照各 AI 公司公布的位址范围。GPTBot 不要用反向 DNS 验证。\n12. **重点看名字带“User”的当场读取次数**，不要看总抓取量；把日志当成除错工具，用来找没被抓到的页面、AI 幻想出来的网址、太慢的页面。可见度用追踪 AI 答案来衡量。\n13. **为 AI 智能体 准备机器可读的事实：** 内容不依赖 JavaScript、提供结构化数据、防护设置放行 AI 智能体；需要 AI 智能体 操作的网站，加上动作提示和资料时间栏位；资料集类内容发布标准描述；可以考虑提供一个简单的机器可读事实网址。\n14. **如果你在做电商**，检查商品资料清单是否完整：商品识别码、款式属性、政策资料。\n15. **爬虫来得太猛时，先限速**（例如每 60 秒 60 次，超过回传 429），不要直接全面封锁。\n16. **发现“AI 里看不到我”时，一层一层查**：告示牌、警卫、内容、传统搜索的收录，不要从症状直接跳到结论。\n17. **不想出现在 ChatGPT 的页面，用 noindex**，并确认爬虫读得到那一页；想被找到的重要页面，让其他网页连过来。\n18. **为按钮、菜单、表单加上无障碍标签**（ARIA 的角色、标签和状态），让 AI 智能体知道每个元素是做什么的。\n\n---\n\n## 别再做了\n\n- **别再**用 `Disallow: /` 这种全部封锁的规则，或直接套用外挂、CDN 的默认封锁清单而不检查内容。\n- **别再**以为封锁 GPTBot 就等于退出 AI 答案；也**别再**以为 robots.txt 写了放行，AI 就读得到。\n- **别再**只靠浏览器端的 JavaScript 塞入内容或结构化数据。\n- **别再**按照爬虫报上的名字直接统计 AI 流量、或拿这个数字向客户报告。没核对 IP 的数字，会被冒名的扫描程序灌水。\n- **别再**依照爬虫的名字，给 AI 和人类看不同内容，却不处理快取标头；做了 Markdown 版本，也要确认正文没有弄丢。\n- **别再**把爬虫抓取量当成可见度的指标。\n- **别再**从“AI 里看不到我”直接推断“是 AI 被挡了”。一层一层验证。\n\n### 已经过时的想法\n\n- **“一条 robots.txt 规则，就能管住一家 AI 公司。”** ChatGPT 背后的公司已经运行四个职责不同的身份，其他公司也分成训练、索引、当场读取。\n- **“llms.txt 是 AI 排名因素，或是提高可见度的解方。”** 没有证据支持，多份日志显示主要 AI 爬虫几乎不去请求它。\n- **“只看 robots.txt 就能判断可达性。”** 警卫层的封锁不会出现在 robots.txt 里。\n- **“在浏览器开发者工具里看得到，爬虫就看得到。”** 开发者工具显示的是 JavaScript 执行之后的结果。\n\n---\n\n## 还不确定的事\n\n- **llms.txt 到底有没有用？** 一项研究发现它和答案准确率无关；多份独立日志显示主要 AI 爬虫几乎不请求它；支持的证据样本很小、或和其他改造混在一起、或没经过独立验证。目前没有证据证明它单独有效。成本低，可以放，但不是重点。\n- **Markdown 版本有没有用？** 多数观察显示当场读取只读 HTML，也没看到引用提升；只有没有对照组的报告说它有效。Markdown 版本可能省频宽、可能被索引类爬虫读到，但没有可靠证据显示它能提高引用。\n- **AI 读不读 JSON-LD？** “爬虫拿到了”和“模型用到了”是两件事，目前说法两边都有。唯一确定的是：只靠浏览器端塞入的结构化数据，对不执行 JavaScript 的爬虫不存在。\n- **“AI 爬虫不执行 JavaScript”现在还对吗？** 共识很强，但多半追溯到 2024 年 12 月的同一份分析，而发布者本身卖相关服务；日志也无法记录对方有没有执行 JavaScript。处理方式是直接比对原始回应和组装后页面。\n- **robots.txt 会被遵守吗？** 有的 AI 会遵守，有的不会，有的爬虫甚至不去读它；用户触发的抓取一般不受它约束。证据来自少量测试。\n- **可达性到底是不是常见瓶颈？** 不同样本的比例从“几乎从不是瓶颈”到约 27% 不等，测的层次也不同，不能直接比较。宣告层封锁少见；警卫层封锁在用 CDN 的网站、B2B 在线软件服务、媒体类网站上比较多。自己用“假扮 AI”的请求去测，结果也不一定等于真正爬虫的待遇。\n- **智能体可读性里，到底哪一项最有用？** 现有研究都是整包改动，没有拆开看每一项的效果；电商实验只有一个合成网站；大型观察由服务商完成。\n- **为 AI 另建平行网站（案例 5）有效吗？** 有一个案例看到引用和流量提升，但它是整包改动，而且和“当场读取只读 HTML”的观察不一致，需要更多重复验证。\n- **为什么 AI 读到的常常是旧版本？** 目前只有单一测试者的观察显示多数 AI 读的是快取版本，只能当作线索。\n"</script>
+<script>const NORES="\u6ca1\u6709\u627e\u5230\u7ed3\u679c";</script><script src="search.js"></script><script src="../assets/app.js"></script></body></html>

@@ -1,0 +1,36 @@
+# Whitelist: ignore everything at the root except the items below
+/*
+!/.gitignore
+!/README.md
+!/README.zh-Hant.md
+!/LICENSE
+!/LICENSE-CONTENT.txt
+!/CHANGELOG.md
+!/VERSION
+!/start-website.bat
+!/scripts/
+!/website/
+!/book/
+!/framework/
+!/papers/
+
+# Not public: raw-data excerpts, internal notes, old drafts
+/book/research-zh-hant/_證據包/
+/book/zh-hant/_舊版v1/
+/framework/交接_*
+/framework/_舊版/
+
+# Papers: only the index, the note template and the close-reading notes (no PDFs or full texts)
+/papers/*
+!/papers/index.csv
+!/papers/_notes/
+/papers/_notes/*
+!/papers/_notes/papers/
+!/papers/_notes/note-template.md
+
+# Misc
+__pycache__/
+*.pyc
+.secret*
+*.env
+keys.json
