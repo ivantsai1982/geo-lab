@@ -9,6 +9,15 @@ Versioning: **MAJOR.MINOR.PATCH**
 
 Versions before 1.0.0 are the pre-release phase.
 
+## [0.8.0] - 2026-10-20
+### Added
+- "Start Here: What GEO Research Has Actually Shown": a five-minute page in all three languages with the best-supported findings, common claims the evidence does not support, and what is still unsettled. Every number and evidence phrase is taken from the chapters. Linked from the READMEs, the contents pages and the website.
+- Research edition in English (`book/research-en/`): all 16 chapters, Appendix A and the source trail for every chapter, with fixed English renderings for each evidence-strength phrase.
+### Fixed
+- Ch. 16 and Appendix A: the latest research cited is from October 2026, not September 2026.
+- Research edition Ch. 5: Principle 5.3 lists four characteristics, not three; the measurement methods are in Section 5, not Section 4.
+- Research edition source trails: paths to unpublished internal files (evidence packs, experiment logs, working notes) replaced with a plain note that they are not published; the framework document now points to `framework/`.
+
 ## [0.7.0] - 2026-10-20
 ### Changed
 - Plain-language editions (all 17 chapters) rewritten prose-first so the book reads like a book rather than a list of bullet points: paragraphs instead of lists, far less bold, no label templates, fewer subheadings, tables kept only where they compare real data, no horizontal rules. No principle, number, case, caveat or evidence-strength wording was added or removed; every chapter was checked number by number against the previous version.

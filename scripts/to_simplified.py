@@ -47,7 +47,7 @@ def convert(t):
     return t
 
 
-files = sorted(glob.glob(SRC + "第*章_*.md")) + [SRC + "_術語表.md"]
+files = sorted(glob.glob(SRC + "第*章_*.md")) + [SRC + "_術語表.md", SRC + "00_先讀這一頁.md"]
 for f in files:
     name = t2s.convert(os.path.basename(f))
     open(DST + name, "w", encoding="utf-8", newline="\n").write(convert(open(f, encoding="utf-8").read()))

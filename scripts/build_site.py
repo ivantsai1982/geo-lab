@@ -27,15 +27,15 @@ ICON = {
 
 SHORT = {"zh-Hant": "繁", "zh-Hans": "简", "en": "EN"}
 LANGS = {
-    "zh-Hant": dict(src=R + "book/zh-hant/", pat=r"第(\d+)章_.*\.md$", gloss="_術語表.md", label="繁體中文",
+    "zh-Hant": dict(src=R + "book/zh-hant/", pat=r"第(\d+)章_.*\.md$", gloss="_術語表.md", start="00_先讀這一頁.md", label="繁體中文",
                     book="AI 為什麼不推薦你？", sub="寫給所有人的 GEO 入門", toc="本頁目錄", search="搜尋",
                     contents="目錄", prev="上一章", next="下一章", gl="術語表", noresult="沒有找到結果", copy="複製本頁 Markdown", copied="已複製",
                     parts={0: "開場：先學會不被騙", 1: "第一部：AI 回答你之前的七道關", 8: "第二部：做什麼有用、怎麼知道有沒有用", 13: "第三部：真實案例", 16: "結語"}),
-    "zh-Hans": dict(src=R + "book/zh-hans/", pat=r"第(\d+)章_.*\.md$", gloss="_术语表.md", label="简体中文",
+    "zh-Hans": dict(src=R + "book/zh-hans/", pat=r"第(\d+)章_.*\.md$", gloss="_术语表.md", start="00_先读这一页.md", label="简体中文",
                     book="AI 为什么不推荐你？", sub="写给所有人的 GEO 入门", toc="本页目录", search="搜索",
                     contents="目录", prev="上一章", next="下一章", gl="术语表", noresult="没有找到结果", copy="复制本页 Markdown", copied="已复制",
                     parts={0: "开场：先学会不被骗", 1: "第一部：AI 回答你之前的七道关", 8: "第二部：做什么有用、怎么知道有没有用", 13: "第三部：真实案例", 16: "结语"}),
-    "en": dict(src=R + "book/en/", pat=r"Chapter_(\d+)\.md$", gloss="../zh-hant/_術語表.md", label="English",
+    "en": dict(src=R + "book/en/", pat=r"Chapter_(\d+)\.md$", gloss="../zh-hant/_術語表.md", start="00_Start_Here.md", label="English",
                book="Why Doesn't AI Recommend You?", sub="A plain-language guide to GEO", toc="On this page", search="Search",
                contents="Contents", prev="Previous", next="Next", gl="Glossary", noresult="No results", copy="Copy page as Markdown", copied="Copied",
                parts={0: "Opening: Learn Not to Be Fooled", 1: "Part One: The Seven Gates", 8: "Part Two: What Works and How to Know",
@@ -183,13 +183,15 @@ def build():
         chs = sorted((int(re.search(L["pat"], os.path.basename(f)).group(1)), f)
                      for f in glob.glob(L["src"] + "*.md") if re.search(L["pat"], os.path.basename(f)))
         docs = []
+        if L.get("start") and os.path.exists(L["src"] + L["start"]):
+            chs = [(-1, L["src"] + L["start"])] + chs
         for n, f in chs:
             md = markdown.Markdown(extensions=["tables", "fenced_code", "sane_lists", "attr_list",
                                                markdown.extensions.toc.TocExtension(slugify=slugify_unicode, toc_depth="2-3")])
             text = open(f, encoding="utf-8").read()
             body = md.convert(text)
             title = next((l.lstrip("# ").strip() for l in text.splitlines() if l.startswith("# ")), f"{n}")
-            docs.append(dict(n=n, title=title, body=body, toks=md.toc_tokens, file=f"ch{n:02d}.html", md=text))
+            docs.append(dict(n=n, title=title, body=body, toks=md.toc_tokens, file="start.html" if n < 0 else f"ch{n:02d}.html", md=text))
         if L["gloss"]:
             md = markdown.Markdown(extensions=["tables", markdown.extensions.toc.TocExtension(slugify=slugify_unicode)])
             gt = open(L["src"] + L["gloss"], encoding="utf-8").read()

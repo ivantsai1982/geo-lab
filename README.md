@@ -5,7 +5,7 @@
   <p><strong>A living textbook on Generative Engine Optimization (GEO), updated with new research and original experiments.</strong></p>
   <p>How AI search finds, reads, cites and recommends websites · Evidence-graded · Always updated</p>
   <p>
-    <img src="https://img.shields.io/badge/version-0.7.0-0f172a?style=flat-square" alt="version 0.7.0" />
+    <img src="https://img.shields.io/badge/version-0.8.0-0f172a?style=flat-square" alt="version 0.8.0" />
     <a href="LICENSE-CONTENT.txt"><img src="https://img.shields.io/badge/content-CC%20BY--NC--ND%204.0-e8a181?style=flat-square" alt="content license CC BY-NC-ND 4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-e8a181?style=flat-square" alt="code license MIT" /></a>
     <img src="https://img.shields.io/badge/languages-EN%20%7C%20%E7%B9%81%E4%B8%AD%20%7C%20%E7%AE%80%E4%B8%AD-1e3a5f?style=flat-square" alt="languages: English, Traditional Chinese, Simplified Chinese" />
@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/updated-2026--10--20-1e3a5f?style=flat-square" alt="last updated 2026-10-20" />
   </p>
   <p>
+    <a href="book/en/00_Start_Here.md"><strong>Start here</strong></a> ·
     <a href="#why-this-book">Why this book</a> ·
     <a href="#whats-inside">What's inside</a> ·
     <a href="#read-it">Read it</a> ·
@@ -36,7 +37,7 @@ AI search engines such as ChatGPT, Gemini and Perplexity now answer questions di
   </tr>
   <tr>
     <td><strong>Seven gates</strong><br /><br />The book follows an answer through seven stages: whether AI searches at all, whether it can reach your page, recall, selection, citation, faithful use, and what happens to traffic.</td>
-    <td><strong>Two editions</strong><br /><br />A plain-language edition for everyone, and a research edition with evidence tables and source tracing.</td>
+    <td><strong>Two editions</strong><br /><br />A plain-language edition for everyone, and a research edition with evidence tables and a source trail for every claim.</td>
     <td><strong>Three languages</strong><br /><br />English, Traditional Chinese and Simplified Chinese, kept in sync with every release.</td>
   </tr>
 </table>
@@ -48,7 +49,8 @@ AI search engines such as ChatGPT, Gemini and Perplexity now answer questions di
 | [`book/en/`](book/en/) | Plain-language edition, English |
 | [`book/zh-hant/`](book/zh-hant/) | Plain-language edition, Traditional Chinese |
 | [`book/zh-hans/`](book/zh-hans/) | Plain-language edition, Simplified Chinese |
-| [`book/research-zh-hant/`](book/research-zh-hant/) | Research edition with evidence tables (Traditional Chinese) |
+| [`book/research-en/`](book/research-en/) | Research edition with evidence tables and source trail, English |
+| [`book/research-zh-hant/`](book/research-zh-hant/) | Research edition with evidence tables and source trail, Traditional Chinese |
 | [`website/`](website/) | Static website for all three languages |
 | [`papers/`](papers/) | Paper index and close-reading notes (no PDFs) |
 | [`framework/`](framework/) | Textbook framework and data-review method |
@@ -56,7 +58,8 @@ AI search engines such as ChatGPT, Gemini and Perplexity now answer questions di
 
 ## Read it
 
-- **On GitHub:** start with [`book/en/00_Contents.md`](book/en/00_Contents.md).
+- **Five minutes:** [Start Here: What GEO Research Has Actually Shown](book/en/00_Start_Here.md).
+- **On GitHub:** the full book starts at [`book/en/00_Contents.md`](book/en/00_Contents.md); the research edition at [`book/research-en/00_Contents.md`](book/research-en/00_Contents.md).
 - **As a website:** open `website/index.html` in a browser, or serve it locally:
 
 ```bash
@@ -104,6 +107,6 @@ Practitioner reports are labeled separately and never presented as proof.
 
 ## How to cite
 
-> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.7.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.8.0. https://github.com/ivantsai1982/geo-lab
 
 Please include the version number, because the content changes over time.

@@ -5,7 +5,7 @@
   <p><strong>一本持续更新的生成式引擎优化（GEO）教材：不断纳入新研究与原创实验。</strong></p>
   <p>AI 搜索怎么找到、读取、引用、推荐网站 · 证据分级 · 永远是新的</p>
   <p>
-    <img src="https://img.shields.io/badge/version-0.7.0-0f172a?style=flat-square" alt="版本 0.7.0" />
+    <img src="https://img.shields.io/badge/version-0.8.0-0f172a?style=flat-square" alt="版本 0.8.0" />
     <a href="LICENSE-CONTENT.txt"><img src="https://img.shields.io/badge/content-CC%20BY--NC--ND%204.0-e8a181?style=flat-square" alt="内容授权 CC BY-NC-ND 4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-e8a181?style=flat-square" alt="代码授权 MIT" /></a>
     <img src="https://img.shields.io/badge/languages-EN%20%7C%20%E7%B9%81%E4%B8%AD%20%7C%20%E7%AE%80%E4%B8%AD-1e3a5f?style=flat-square" alt="语言：英文、繁中、简中" />
@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/updated-2026--10--20-1e3a5f?style=flat-square" alt="最后更新 2026-10-20" />
   </p>
   <p>
+    <a href="book/zh-hans/00_先读这一页.md"><strong>先读这一页</strong></a> ·
     <a href="#为什么需要这本书">为什么需要这本书</a> ·
     <a href="#内容">内容</a> ·
     <a href="#阅读">阅读</a> ·
@@ -36,7 +37,7 @@ ChatGPT、Gemini、Perplexity 这类 AI 搜索，现在直接回答问题，并�
   </tr>
   <tr>
     <td><strong>七道关</strong><br /><br />全书跟着一个答案走过七个阶段：AI 会不会上网查、读不读得到你、召回、挑选、引用、有没有被正确使用，以及流量会怎样。</td>
-    <td><strong>两个版本</strong><br /><br />写给所有人的通俗版，以及附证据表和来源追溯的研究版。</td>
+    <td><strong>两个版本</strong><br /><br />写给所有人的通俗版，以及附证据表、每个结论都能追溯来源的研究版（英文、繁中）。</td>
     <td><strong>三种语言</strong><br /><br />英文、繁体中文、简体中文，每次更新同步。</td>
   </tr>
 </table>
@@ -48,7 +49,8 @@ ChatGPT、Gemini、Perplexity 这类 AI 搜索，现在直接回答问题，并�
 | [`book/en/`](book/en/) | 通俗版（英文） |
 | [`book/zh-hant/`](book/zh-hant/) | 通俗版（繁体中文） |
 | [`book/zh-hans/`](book/zh-hans/) | 通俗版（简体中文） |
-| [`book/research-zh-hant/`](book/research-zh-hant/) | 研究版，含证据表（繁体中文） |
+| [`book/research-en/`](book/research-en/) | 研究版，含证据表与来源追溯（英文） |
+| [`book/research-zh-hant/`](book/research-zh-hant/) | 研究版，含证据表与来源追溯（繁体中文） |
 | [`website/`](website/) | 三种语言的网站 |
 | [`papers/`](papers/) | 论文索引与精读笔记（不含 PDF） |
 | [`framework/`](framework/) | 教材框架与数据审查方法 |
@@ -56,7 +58,8 @@ ChatGPT、Gemini、Perplexity 这类 AI 搜索，现在直接回答问题，并�
 
 ## 阅读
 
-- **在 GitHub 上读：** 从 [`book/zh-hans/00_目录.md`](book/zh-hans/00_目录.md) 开始。
+- **五分钟版：** [先读这一页：GEO 研究到底证明了什么](book/zh-hans/00_先读这一页.md)。
+- **在 GitHub 上读：** 全书从 [`book/zh-hans/00_目录.md`](book/zh-hans/00_目录.md) 开始；研究版从 [`book/research-zh-hant/00_目录.md`](book/research-zh-hant/00_目录.md)（繁体）或 [`book/research-en/00_Contents.md`](book/research-en/00_Contents.md)（英文）开始。
 - **用网站读：** 用浏览器打开 `website/index.html`，或在本机启动：
 
 ```bash
@@ -104,6 +107,6 @@ python -m http.server 8765 --directory website
 
 ## 引用方式
 
-> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.7.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.8.0. https://github.com/ivantsai1982/geo-lab
 
 引用时请注明版本号，因为内容会持续更新。

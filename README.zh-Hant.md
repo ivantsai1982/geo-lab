@@ -5,7 +5,7 @@
   <p><strong>一本持續更新的生成式引擎優化（GEO）教材：不斷納入新研究與原創實驗。</strong></p>
   <p>AI 搜尋怎麼找到、讀取、引用、推薦網站 · 證據分級 · 永遠是新的</p>
   <p>
-    <img src="https://img.shields.io/badge/version-0.7.0-0f172a?style=flat-square" alt="版本 0.7.0" />
+    <img src="https://img.shields.io/badge/version-0.8.0-0f172a?style=flat-square" alt="版本 0.8.0" />
     <a href="LICENSE-CONTENT.txt"><img src="https://img.shields.io/badge/content-CC%20BY--NC--ND%204.0-e8a181?style=flat-square" alt="內容授權 CC BY-NC-ND 4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-e8a181?style=flat-square" alt="代碼授權 MIT" /></a>
     <img src="https://img.shields.io/badge/languages-EN%20%7C%20%E7%B9%81%E4%B8%AD%20%7C%20%E7%AE%80%E4%B8%AD-1e3a5f?style=flat-square" alt="語言：英文、繁中、简中" />
@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/updated-2026--10--20-1e3a5f?style=flat-square" alt="最後更新 2026-10-20" />
   </p>
   <p>
+    <a href="book/zh-hant/00_先讀這一頁.md"><strong>先讀這一頁</strong></a> ·
     <a href="#為什麼需要這本書">為什麼需要這本書</a> ·
     <a href="#內容">內容</a> ·
     <a href="#閱讀">閱讀</a> ·
@@ -36,7 +37,7 @@ ChatGPT、Gemini、Perplexity 這類 AI 搜尋，現在直接回答問題，並�
   </tr>
   <tr>
     <td><strong>七道關</strong><br /><br />全書跟著一個答案走過七個階段：AI 會不會上網查、讀不讀得到你、召回、挑選、引用、有沒有被正確使用，以及流量會怎樣。</td>
-    <td><strong>兩個版本</strong><br /><br />寫給所有人的通俗版，以及附證據表和來源追溯的研究版。</td>
+    <td><strong>兩個版本</strong><br /><br />寫給所有人的通俗版，以及附證據表、每個結論都能追溯來源的研究版（英文、繁中）。</td>
     <td><strong>三種語言</strong><br /><br />英文、繁體中文、簡體中文，每次更新同步。</td>
   </tr>
 </table>
@@ -48,7 +49,8 @@ ChatGPT、Gemini、Perplexity 這類 AI 搜尋，現在直接回答問題，並�
 | [`book/en/`](book/en/) | 通俗版（英文） |
 | [`book/zh-hant/`](book/zh-hant/) | 通俗版（繁體中文） |
 | [`book/zh-hans/`](book/zh-hans/) | 通俗版（簡體中文） |
-| [`book/research-zh-hant/`](book/research-zh-hant/) | 研究版，含證據表（繁體中文） |
+| [`book/research-en/`](book/research-en/) | 研究版，含證據表與來源追溯（英文） |
+| [`book/research-zh-hant/`](book/research-zh-hant/) | 研究版，含證據表與來源追溯（繁體中文） |
 | [`website/`](website/) | 三種語言的網站 |
 | [`papers/`](papers/) | 論文索引與精讀筆記（不含 PDF） |
 | [`framework/`](framework/) | 教材框架與數據審查方法 |
@@ -56,7 +58,8 @@ ChatGPT、Gemini、Perplexity 這類 AI 搜尋，現在直接回答問題，並�
 
 ## 閱讀
 
-- **在 GitHub 上讀：** 從 [`book/zh-hant/00_目錄.md`](book/zh-hant/00_目錄.md) 開始。
+- **五分鐘版：** [先讀這一頁：GEO 研究到底證明了什麼](book/zh-hant/00_先讀這一頁.md)。
+- **在 GitHub 上讀：** 全書從 [`book/zh-hant/00_目錄.md`](book/zh-hant/00_目錄.md) 開始；研究版從 [`book/research-zh-hant/00_目錄.md`](book/research-zh-hant/00_目錄.md) 開始。
 - **用網站讀：** 用瀏覽器打開 `website/index.html`，或在本機啟動：
 
 ```bash
@@ -104,6 +107,6 @@ python -m http.server 8765 --directory website
 
 ## 引用方式
 
-> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.7.0. https://github.com/ivantsai1982/geo-lab
+> Ivan Tsai. *GEO Lab: A Living Textbook on Generative Engine Optimization*, version 0.8.0. https://github.com/ivantsai1982/geo-lab
 
 引用時請註明版本號，因為內容會持續更新。

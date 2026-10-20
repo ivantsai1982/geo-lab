@@ -3,6 +3,8 @@
 
 > English translation of the Chinese popular edition. Translated only: no content added, removed or changed.
 
+New here? Start with [Start Here: What GEO Research Has Actually Shown](00_Start_Here.md), a five-minute read.
+
 ## Contents
 
 
