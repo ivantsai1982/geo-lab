@@ -19,6 +19,7 @@
     <a href="#怎麼做出來的">怎麼做出來的</a> ·
     <a href="#證據怎麼分級">證據分級</a> ·
     <a href="CHANGELOG.md">更新記錄</a> ·
+    <a href="#作者簡介">作者簡介</a> ·
     <a href="#授權">授權</a>
   </p>
 </div>
@@ -82,6 +83,19 @@ python -m http.server 8765 --directory website
 | E | 固定內容、模擬或理論 |
 
 從業者的報告另外標示，不會當作證明。
+
+## 作者簡介
+
+<table>
+  <tr>
+    <td width="180" valign="top"><img src="docs/author.jpg" width="160" alt="作者肖像" /></td>
+    <td valign="top">
+      <strong>ivantsai1982</strong><br /><br />
+      1999 年開始接觸網路，2003 年進入網路產業。2005 年開始研究搜尋引擎優化（SEO），出版過多部 SEO 專著，也發表過研究論文。自 2007 年起一直在 SEO 一線工作，把實務與研究結合在一起。<br /><br />
+      2022 年，AI 開始直接回答問題，我轉向研究生成式引擎優化（GEO），一直到今天。二十多年的 SEO 經驗，讓我最確定的一件事是：搜尋一直在變，而大部分的建議跟不上它的變化。GEO Lab 想做的，就是一本跟得上的教材：每個結論都有證據，每次修改都有版本，每次更新都公開。
+    </td>
+  </tr>
+</table>
 
 ## 授權
 

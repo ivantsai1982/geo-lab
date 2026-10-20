@@ -19,6 +19,7 @@
     <a href="#how-it-is-built">How it is built</a> ·
     <a href="#how-evidence-is-graded">Evidence grades</a> ·
     <a href="CHANGELOG.md">Changelog</a> ·
+    <a href="#about-the-author">Author</a> ·
     <a href="#license">License</a>
   </p>
 </div>
@@ -82,6 +83,19 @@ Then visit http://localhost:8765 . On Windows you can also double-click `start-w
 | E | Fixed contexts, simulations or theory |
 
 Practitioner reports are labeled separately and never presented as proof.
+
+## About the author
+
+<table>
+  <tr>
+    <td width="180" valign="top"><img src="docs/author.jpg" width="160" alt="Portrait of the author" /></td>
+    <td valign="top">
+      <strong>ivantsai1982</strong><br /><br />
+      I first went online in 1999 and have worked in the internet industry since 2003. I began studying search engine optimization in 2005 and have since written several books on SEO and published research papers. Since 2007 I have worked on the front line of SEO, combining hands-on practice with research.<br /><br />
+      In 2022, as AI began answering questions directly, I turned to generative engine optimization, and I have been studying it ever since. More than twenty years of SEO have taught me one thing above all: search keeps changing, and most advice cannot keep up. GEO Lab is my attempt to build a textbook that does: every claim tied to evidence, every change versioned, every update open.
+    </td>
+  </tr>
+</table>
 
 ## License
 
