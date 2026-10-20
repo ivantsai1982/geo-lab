@@ -1,0 +1,44 @@
+name: Correction
+description: A wrong number, broken link, typo or unclear translation in the book
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep the book accurate. Corrections are listed in the changelog with the next version.
+        感謝你幫忙讓這本書更準確。修正會記在下一版的更新記錄裡。
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edition / 版本
+      options:
+        - Plain-language, English
+        - Plain-language, 繁體中文
+        - Plain-language, 简体中文
+        - Research edition, English
+        - Research edition, 繁體中文
+        - Start Here page / 先讀這一頁
+        - Website
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Chapter and section / 章節
+      placeholder: "e.g. Chapter 9, \"How many times should you ask?\""
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the book says now / 書裡現在的寫法
+      description: Quote the sentence if you can. / 能的話請直接引用原句。
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say, and why / 應該怎麼寫，為什麼
+    validations:
+      required: true

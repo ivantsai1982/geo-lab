@@ -1,0 +1,49 @@
+name: New evidence or counterexample
+description: A study, a test result or a case that supports, contradicts or updates something in the book
+title: "[Evidence] "
+labels: ["evidence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The book grades every claim by how strong its evidence is. Please tell us how the evidence was produced, so we can grade it too.
+        Results you measured yourself are welcome; they will be labelled as practitioner reports, not as proof.
+        本書會為每個結論標明證據強弱。請告訴我們證據是怎麼來的，方便我們分級。你自己測出來的結果也歡迎，會標為從業者的實測報告。
+  - type: input
+    id: claim
+    attributes:
+      label: Which claim in the book? / 對應書裡哪個結論？
+      placeholder: "e.g. Chapter 3: llms.txt alone has no proven effect"
+    validations:
+      required: true
+  - type: dropdown
+    id: direction
+    attributes:
+      label: Your evidence... / 你的證據
+      options:
+        - supports the claim / 支持這個結論
+        - contradicts the claim / 和這個結論相反
+        - adds a condition or limit / 補充適用條件或限制
+        - is about something the book does not cover yet / 是書裡還沒寫到的
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / 來源
+      description: Paper link, published report, or a description of your own test. / 論文連結、公開報告，或你自己的測試說明。
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: How was it measured? / 怎麼測的？
+      description: Which AI engines, how many questions, how many repeats, over what period, and whether there was a comparison group. / 哪些 AI、多少問題、重複幾次、多長時間、有沒有對照組。
+    validations:
+      required: true
+  - type: checkboxes
+    id: interest
+    attributes:
+      label: Disclosure / 利益揭露
+      options:
+        - label: I have no commercial interest in this result (I do not sell a tool or service it promotes). / 我和這個結果沒有商業利益關係。

@@ -1,0 +1,20 @@
+name: Language request
+description: Ask for the book in another language
+title: "[Language] "
+labels: ["language"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Translations are made by the author only, so that every edition stays checked against the source (see the license). Requests help us decide which language comes next.
+        翻譯只由作者製作，以確保每個語言版本都和原文核對過（見授權說明）。你的請求會幫助我們決定下一個語言。
+  - type: input
+    id: language
+    attributes:
+      label: Language / 語言
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Who would read it? / 誰會讀？

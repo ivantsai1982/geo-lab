@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and discussion / 提問與討論
+    url: https://github.com/ivantsai1982/geo-lab/discussions
+    about: General questions about GEO or the book. Issues are for changes to the book. / 一般問題請到討論區；issue 只用於書需要修改的地方。
