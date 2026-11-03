@@ -116,3 +116,8 @@ p_1wfdk6f, c_omx0mnj, c_p5r4kg0, c_p7k54g3, c_p83uh8h, p_1p8n67i, c_ok50ytm, c_p
 ## Supplement (new papers, 2026-10-20)
 
 - API vs web version, reasoning mode: B·2610.15382 (Table 4, §5.2)
+
+## Supplement (new papers, 2026-11-03)
+
+- Principle 9.1 deep research mode (10 repetitions; entity median Jaccard about 0.12; cited URLs about 0.01; entity-citation pairs 0.0073; each report about 5,000 words, about 79 URLs), Principle 9.2 addition on brands being more stable than URLs, 9.2 long tail not saturated (Figure 3; "size of the candidate space" is the authors' hypothesis, the implication for brands is the book's inference), new row in the 9.3 observation-layer table, new row in the Debate 1 table, supporting side of Debate 4, new row in the evidence table, 5.1 #8: B (weak)·2610.26421 (Sections 3 and 4, Figures 2 and 3)
+- Principle 9.4 refetch checking (drift 21.9% vs 5.8%, about 3.8 times; dead 11.8% vs 16.0%), Principle 9.5 a 200 in logs is not the main content (about one fifth of static 200s lack main content), Case 3 note, new row in the evidence table, 5.1 #15, 5.3 Do not do, Key point 6: D·2611.00884 (Tables 1 and 6, Sections 5 and 7)

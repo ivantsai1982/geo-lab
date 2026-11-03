@@ -83,3 +83,16 @@ Evidence packs: internal evidence pack (not published)
 
 - Structural fields considered item by item: B·2610.15033 (Table 2, §4.2)
 - Rewrites that do not specify a target: E·2610.21330 (§6.2, A.4)
+
+## Additions (new papers, 2026-11-03)
+
+- Chapter precondition note (under real retrieval, indexing and domain visibility matter more than writing): B·2610.30365 (§IV, Table IV, Table V)
+- Principle 1 "the evaluation method itself can also change the conclusion" (scores from text given directly to models vs AI search rankings after reading pages, within-brand ρ 0.50 to −0.31; three AI search engines agree on first place 48.8%–66.3%): C·2611.01126 (Table 1, Table 3, Fig. 4)
+- Principle 2 limitation of the defensive-clause conclusion (best-performing method optimizes an appended suffix with ranking feedback and used ChatGPT's actual rankings as feedback; some authors are authors of that method): C·2611.01126 (§1, §4.1, Table 1)
+- Principle 4 item 4, AI search does not check numbers (statistics addition 80/80 with numbers unsupported by specs, e.g. "18% better heat retention", "30% energy saving"; average rank still better than originals): C·2611.01126 (§4.2 RQ4, Table 1, Table 6)
+- 8.2 statistics addition when pages are supplied (average rank 3.18/3.31/3.83 vs 5.28/5.84/4.88; Top-1 10.0%/11.3%/5.0%) and limitations (URLs supplied manually, template originals, author conflict of interest, rerun changes about 20% of first places, reversed order 73.8% vs 93.8%): C·2611.01126 (Tables 1–3)
+- 8.2 on-page GEO writing has no detectable effect under real retrieval (OR 0.91, p=0.711, equivalence test rules out twofold effects; visibility low 0, high 38.4%–78.3%, medium 14.3%–42.9%; 46/10; day-25 snapshot): B·2610.30365 (§III-B, §III-D, §IV, Table IV, Table V, Appendix H, §V)
+- 8.2 measurement problem (reruns, reversed order, identity labels in product names, ±0.2% price, brand page vs product pages): C·2611.01126 (Tables 1–3)
+- 8.3 Debate 1: correlations in real logs (statistics 2.11/1.17, inline citations 1.34/1.22, terminology 2.26/1.71, fluent prose 0.67/0.58) and no effect in the intervention: B·2610.30365 (§III-A Table II, §IV); third case (unsupported numbers): C·2611.01126; side-by-side table of three kinds of evidence: C·2609.07559, C·2611.01126, B·2610.30365
+- 8.5 Recommended "confirm indexing first": B·2610.30365; Do not do "unsupported numbers": C·2611.01126; Already outdated addition: B·2610.30365
+- Key points 1, 7, 8 additions: B·2610.30365, C·2611.01126

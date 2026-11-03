@@ -58,6 +58,8 @@ What this means in practice: "relevant" does not mean belonging to the same broa
 
 Why does this happen? In observational data, sources ranked near the top are often more relevant and more authoritative to begin with. Position is entangled with these attributes, so it looks as if "position matters a lot". Once the other conditions are held fixed, the pure position effect is much smaller. Agents look at more options, and the more thoroughly they reason, the less they depend on "who appears first".
 
+There is, however, a counterexample that must stand alongside this. When the pages are supplied to the engine, researchers gave the 6 product page URLs of the same brand to commercial AI search engines to read and rank, in two opposite orders, with the page content completely unchanged (the brands and products were fictional, and only one query pattern, "best [category]", was used). On ChatGPT, the share of first places won by the same rewriting method went from 73.8% to 93.8%, and the first place changed for about a quarter of brands; on Grok it was 37.5% versus 50.0%; on Gemini, the method winning the most first places switched outright. On all three engines that method won first place more often when it was at the top of the list, but the size of the effect differed a great deal. This is still "choosing from a supplied list", but the subjects are real commercial AI search engines, not simulated agents. Some of the researchers are authors of the best-performing rewriting method, and this conflict of interest should be considered when interpreting the result.
+
 This conclusion has limits, however. All the evidence above concerns "choosing from a list that has already been presented". In deep research agents that search autonomously over multiple rounds, ranking also works through another path: documents ranked near the top are read first, and what is read first decides what is searched in the next round. In an experiment with a fixed set of candidate documents (weaker evidence, possible in principle), simply swapping the ranking of supporting and opposing documents shifted the overall direction of the evidence the agent read substantially, and in about half of cases it disagreed with the overall direction of all available documents. This experiment did not use a real search engine, used small open-source models, and measured the average stance of documents the agent read, not the text of the final report. So the more accurate statement is: position has a small effect on "a single choice", but in multi-round search it may be amplified through path dependence.
 
 ### Principle 6.3: Models have their own "signal weighting function", and the reasons they give do not match what they actually rely on
@@ -105,14 +107,14 @@ Most academic research measures "whether something is cited" or "citation rank".
 | Principle | Main type of evidence | Strength assessment | Scope and limitations |
 |---|---|---|---|
 | 6.1 Relevance as gatekeeper | In controlled experimental systems (large-scale trials) + when the pages are supplied to the engine + reproducible RAG pipeline | Fairly strong: three different designs point the same way | The two-source experiment's corpus was LLM-generated with a fixed context; the authors of the relevance prediction study themselves provide a content scoring service |
-| 6.2 Position effect | Mainly simulation / fixed context; agent environments and controlled replay as counter-evidence | Strong in fixed contexts, weak and unstable in real systems | The conclusion "position matters a lot" depends heavily on the experimental setup |
+| 6.2 Position effect | Mainly simulation / fixed context; agent environments and controlled replay as counter-evidence; a test on real AI search engines when the pages are supplied to the engine as a counterexample | Strong in fixed contexts, weak and unstable in real systems; but when real AI search engines read a fixed list, order can still change the first place | The conclusion "position matters a lot" depends heavily on the experimental setup; the counterexample is a single study, the URLs were supplied by the researchers, and some of the researchers are authors of the best-performing method |
 | 6.3 Signal weights and the say-do gap | Simulations or theoretical analysis (preregistered randomized audit, fixed-context recommendation) | Moderate: rigorous design, but grade E | Synthetic hotels, fixed candidate papers; does not represent the real weights of commercial engines |
 | 6.4 Preference for AI style | Controlled experimental systems + observation of a single commercial engine | Moderate to weak | Verified only on a few engines |
 | Appearing ≠ being selected | Practitioners report from their own tests | Weak to moderate: several sources point the same way, but not independently verified | Mostly recommendation and purchase queries |
 
 Two methodological cautions:
 
-1. **A single generation is unreliable.** In controlled experimental systems, about 15% of binary decisions on "whether to cite a given source" flip under the same conditions, and about 45% of the variance in effects comes from decoding randomness. Draw conclusions from a single run and you can easily see false effects.
+1. **A single generation is unreliable.** In controlled experimental systems, about 15% of binary decisions on "whether to cite a given source" flip under the same conditions, and about 45% of the variance in effects comes from decoding randomness. Draw conclusions from a single run and you can easily see false effects. When the pages are supplied to the engine, re-running ChatGPT once on the same pages in the same order also changed the first place for about one in five brands.
 2. **Observational data overestimates.** The position gap shrinking from 42.3 percentage points in observational data to 7.9 under control is an example. Practitioners' correlation statistics may be confounded in the same way.
 
 ## Debates and counterexamples
@@ -133,6 +135,7 @@ Two methodological cautions:
 - Hotel audit: only 2–4 percentage points on average, but up to about 26 percentage points for individual models.
 - Shopping agent: very weak and non-monotonic; the stronger the reasoning, the smaller it is.
 - Controlled replay: close to zero on the held-out sample.
+- Real AI search engines reading a supplied list: when the pages are supplied to the engine, merely reversing the order of 6 URLs changed the share of first places won by the same method on ChatGPT by 20 percentage points (73.8% versus 93.8%); on Gemini the gap was much smaller (23.8% versus 28.8%).
 
 **How to read this**: the position effect is real, but its size depends on the model, the reasoning configuration and the number of candidates. "Rank first and win" is not a stable rule. For practitioners, relevance and attributes are more controllable than position.
 
@@ -218,7 +221,7 @@ One practitioner observed that social platform content cited by AI used wording 
 | Practice | Explanation | Evidence strength |
 |---|---|---|
 | Write around specific questions, not category words | List the questions users ask with conditions attached (budget, region, use case), and make the page match those questions directly | Fairly strong (controlled experiments, pages supplied to the engine, and reproducible pipelines: three types of evidence agree) |
-| Write specific facts the model can restate directly | Prices, specifications, model numbers, service area, certification names, dated figures | Moderate (controlled experiments show explicit prices and specifications are strong factors; several practitioners report from their own tests in the same direction) |
+| Write specific facts the model can restate directly | Prices, specifications, model numbers, service area, certification names, dated figures. When the pages are supplied to the engine, even a ±0.2% price difference changes the mean rank of some rewriting methods, although it does not change who comes first | Moderate (controlled experiments show explicit prices and specifications are strong factors; several practitioners report from their own tests in the same direction) |
 | Publish clear prices | Price is one of the gatekeeping factors; options without a price have difficulty entering the comparison | Moderate (controlled experiment + a single practitioner observation) |
 | Keep content genuinely updated, and show dates | A more recent timestamp had a large effect in controlled experiments | Moderate (controlled experiments only; "update every 30 days" is only a single rule of thumb) |
 | In recommendation-driven businesses, build ratings and review counts | Ratings and review counts were the main positive attributes in the hotel audit | Moderate to weak (simulation / synthetic data) |
@@ -226,7 +229,7 @@ One practitioner observed that social platform content cited by AI used wording 
 | Track "mentioned / cited / recommended" separately | Use real purchase prompts, add one condition (budget, region, size), and record at which step you drop out | Practitioners report from their own tests (a method recommendation, not proof of effect) |
 | Repeat each test several times | About 15% of citation decisions from a single generation flip | Controlled experimental system |
 | Check comparison and list passages on your own site | Such passages may be extracted directly to recommend others | One practitioner observed (a lead) |
-| If you control the order of a list (such as your own comparison page), reasonably place yourself near the top | Position has an effect in fixed contexts; but in agents and real systems the effect is weak and unstable | Weak (mainly simulation) |
+| If you control the order of a list (such as your own comparison page), reasonably place yourself near the top | Position has an effect in fixed contexts; but in agents and real systems the effect is weak and unstable | Weak (mainly simulation; there is also a test on real AI search engines when the pages are supplied to the engine, showing that the order of a URL list can change the first place, but it tested the order of URLs given to the engine, not the arrangement within a page) |
 
 ### Do not do
 
@@ -247,7 +250,7 @@ One practitioner observed that social platform content cited by AI used wording 
 
 1. **Relevance is the first gate.** It means matching the specific query, not belonging to the same broad topic. A content quality score that ignores the query predicts citation poorly.
 2. **Gatekeeping factors come before differentiating factors.** Topical relevance, a clear price and a recent timestamp must be in place first; changing only the formatting has almost no effect.
-3. The position effect depends on the setup. It is strong in fixed contexts and shrinks sharply in agents and controlled replay. Observational data overestimates it.
+3. The position effect depends on the setup. It is strong in fixed contexts and shrinks sharply in agents and controlled replay. Observational data overestimates it. But when the pages are supplied to the engine, order can still noticeably change the first place when real AI search engines read a fixed list (a single study, and some of the researchers are authors of the best-performing method).
 4. Models have their own attribute weights. Rating and price dominate hotel choice; environmental certification is overweighted, and management replies are almost ineffective; authority labels can flip nearly 40% of paper recommendations. These come from simulations and controlled experiments, and show only what may happen in principle.
 5. Do not trust the model's own account. The reasons it gives only partly match the weights it actually relies on.
 6. Text that is "predictable" to the model is more likely to be cited. This is a newer finding, so far verified only to a limited extent.

@@ -84,6 +84,7 @@ Even when a source really exists, is listed and its content is used, the answer 
 | Problem | Data | Type of evidence |
 |---|---|---|
 | Statements in Google AI Overviews not supported by sources | About 11% (98,020 statements; mainly omissions: omitted 7.0%, incorrect 2.7%, ambiguous 1.4%) | Repeated measurement on real engines |
+| Share of cited statements in Google AI Overviews that are grounded, for long health questions | About 47% (classifier judgement); about 57% after correction using human validation (range about 45%–69%). A further about 21% of statements are factual statements with no citation at all | Single large-scale audit on a real engine, classifier judgement with human spot checks |
 | Citations that distort the source's meaning | 30.6% | Repeated measurement on real engines |
 | Unsuitable sources (the source itself is not suitable to support the statement) | 27.1% | Repeated measurement on real engines |
 | Answers containing at least one problematic citation | 71.3%–96.1% (depending on model) | Repeated measurement on real engines |
@@ -94,7 +95,7 @@ Key points:
 
 1. **Distortion and unsuitability are two independent axes, and they trade off against each other.** In a measurement covering 761,495 citation pairs and 10 models, the model with the lowest distortion rate had a relatively high rate of unsuitable sources; the model with the highest distortion rate had the lowest unsuitability rate. No model was low on both.
 2. **Both are decided mainly by the "provider (search backend)", not by model size.** The provider explained about 96% of the variance in source suitability and about 88% of the variance in faithfulness. Within the same provider, scaling up the model barely improved the distortion rate (difference under 0.8 percentage points). Reasoning models can lower the distortion rate (one model from 34.1% to 18.0%), but have almost no effect on source suitability (change under 2 percentage points).
-3. High source quality does not mean faithful use. In longitudinal measurement of Google AI Overviews, the credibility scores of cited sources were higher than those of the first-page search results for the same query, but the correlation between source quality and statement faithfulness was only about 0.045, essentially unrelated.
+3. High source quality does not mean faithful use. In longitudinal measurement of Google AI Overviews, the credibility scores of cited sources were higher than those of the first-page search results for the same query, but the correlation between source quality and statement faithfulness was only about 0.045, essentially unrelated. Another large-scale audit of health questions on a real AI search engine (3,611 questions, collected once) found the first point in the opposite direction: pages cited by AIO scored slightly lower than the traditional top 5 for the same question on 4 of 6 credibility indicators, and leaned towards commercial health information websites, though all gaps were small. The second point agreed: neither source quality nor whether statements were grounded could meaningfully predict whether the answer was accurate by physicians' rubrics (the correlation between grounding and accuracy was about 0.01). The two results stand side by side; the difference may come from the domain (general queries versus health questions) and the level of measurement (domain level versus page level).
 4. A valid, relevant link does not mean the fact is supported. In controlled experimental systems, 12 of 14 models had link validity rates above 94%, and frontier models had citation relevance above 80%, yet fact-check pass rates were only 24%–77%.
 5. Check first that the citation exists. In controlled experimental systems, 3–13% of cited URLs had no archived record at all and may never have existed. Deep research agents had a higher hallucination rate (10.7%) than ordinary search-augmented models (4.8%). Some models cited about 4.3 times as many sources, but their share of unresolvable URLs was about 2 times higher.
 
@@ -108,6 +109,14 @@ Citations are not only source markers for machines; they also directly affect us
 - On real AI search engines, an analysis of large-scale crowdsourced preference data found (24,069 conversations, 12,652 preference votes) that user preference correlated positively with the number of citations. More important: **citations that support the argument (coefficient 0.29) and citations unrelated to the argument (coefficient 0.27) had almost the same effect on preference**; only citations that contradict the argument were not significant. This is correlation, not causation.
 
 Implication: on the user side, citations work more like "looks well-founded" than "has been verified". This makes the distortion problem in Section 2.4 worse: an incorrect description with a citation attached is more likely to be believed.
+
+Evidence from the answer side points the same way. In one large-scale audit of health questions on a real AI search engine (3,611 questions, US English, collected once; scored by a model grader against physician-written rubrics, with the grader validated against physician labels):
+
+- AIO answers with no citations at all and AIO answers with citations scored almost the same (about 40.4% versus 39.2%, not a significant difference). How well statements were grounded was also unrelated to answer accuracy (correlation about 0.01). **For health questions, whether an answer carries citations is unrelated to whether it is correct.**
+- Overall, the answers scored only about 38.2% on the physician rubrics, losing points mainly through omissions. On questions where physicians had specified a harmful or wrong claim in advance, 22.2% of AIO answers stated at least one of them.
+- High-risk questions more often got no citations at all (about 17.6%), yet were still answered (see Chapter 2, Principle 2.3).
+
+This is a correlational observation. The authors cannot tell whether the answers come mainly from the model's own knowledge, or whether the citations were attached after the answer was generated.
 
 ### 2.6 Principle 5: AI rewrites testimony into generalized advice
 
@@ -137,6 +146,7 @@ Practitioners' reports from their own tests and first-hand observations by sever
 | Breadth of citation and depth of absorption diverge (cross-platform comparison) | Descriptive analysis of a static snapshot | Weak. Shows only what is possible in principle; confounders not controlled |
 | Invisible use (14–53% of claims uncredited) | Field logs on real engines + controlled replay | Moderate. The range is very wide, and platforms differ greatly |
 | About 11% of AIO statements unsupported by sources | 40-day longitudinal measurement on a real engine | Moderate to strong. Covers only Google AI Overviews and popular queries |
+| About 43%–53% of cited statements ungrounded for long health questions; neither citations nor grounding predict accuracy | Single large-scale audit on a real engine (3,611 questions, 3 days); classifier and model grader, both spot-checked against human or physician labels | Moderate. Covers only US English and long questions adapted from a conversational evaluation dataset; no repeated measurement |
 | Distortion 30.6%, unsuitability 27.1%, decided by the provider | Real engine APIs + checks against the actually crawled sources | Moderate to strong. Large sample (760,000 citation pairs), but via APIs rather than the user interface |
 | Hallucinated URLs 3–13% | Controlled experimental system | Moderate. The authors call it a lower-bound estimate |
 | More search calls, lower factual accuracy | Controlled experimental system | Weak. Ablation on only two models, with a model as judge |
@@ -174,8 +184,9 @@ Scope reminders:
 
 ### 4.4 Are high-quality sources used more faithfully?
 
-- The sources cited by Google AI Overviews are indeed more credible than first-page results.
-- But source quality and faithfulness are almost uncorrelated (about 0.045).
+- Longitudinal measurement of general queries found that the sources cited by Google AI Overviews are indeed more credible than first-page results.
+- But a large-scale audit of health questions found the opposite direction: pages cited by AIO scored slightly lower than the traditional top 5 for the same question on 4 of 6 credibility indicators, leaned towards commercial health information websites, and gave lower shares to academic medical institutions and government sources. The difference may come from the domain (general queries versus health questions) and the level of measurement (domain level versus page level). For now the two stand side by side without forced reconciliation.
+- But source quality and faithfulness are almost uncorrelated (about 0.045). The health-question audit agrees on this point: neither source quality nor whether statements were grounded could meaningfully predict whether the answer was accurate.
 - Faithfulness and suitability also trade off against each other. Optimizing to "make yourself an authoritative source" is not the same as "making sure you are described correctly".
 
 ### 4.5 Are deep research agents more reliable than ordinary search?
@@ -312,8 +323,8 @@ Scope reminders:
 1. "Being seen by AI" has at least four layers: mention, citation, absorption, correct description. Each layer loses some; when measuring, record them separately and state the denominator clearly.
 2. Being listed does not mean being used: on Chinese-language platforms about 39% of listed sources are silent citations; forum sources are cited in Google AI Overviews but actually used relatively little.
 3. Being used does not necessarily mean being credited: 14–53% of answer claims are supported by search results but carry no citation. Citation counts are not a reliable proxy for influence.
-4. Being used does not mean being used correctly: about 11% of AIO statements are unsupported by sources; about 30% of citations distort the original meaning and about 27% of sources are unsuitable; the two trade off against each other and are decided mainly by the search backend.
-5. Citations are a persuasion signal: users trust answers more because they see citations, but do not distinguish whether the citations are valid or support the argument.
+4. Being used does not mean being used correctly: about 11% of AIO statements are unsupported by sources (in a single audit of long health questions the share was much higher, about 43%–53%); about 30% of citations distort the original meaning and about 27% of sources are unsuitable; the two trade off against each other and are decided mainly by the search backend.
+5. Citations are a persuasion signal: users trust answers more because they see citations, but do not distinguish whether the citations are valid or support the argument. For health questions, whether an answer carries citations is also unrelated to whether it is correct.
 6. AI generalizes personal testimony: first-person experience is almost entirely erased during synthesis, and selection favours high-scoring, top-level, formal-toned content.
 7. Being cited and being named are two mechanisms: practitioners have repeatedly observed "the page is used as a source, but someone else is recommended". Making claims attributable to you is a separate task.
 8. The practical priority is to keep monitoring whether descriptions are correct and to trace incorrect third-party sources, not merely to chase citation counts.

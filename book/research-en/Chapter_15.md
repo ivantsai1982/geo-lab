@@ -46,7 +46,7 @@ Repeated tests on real AI search engines found that the same set of questions dr
 | Google AI Overviews (AIO) | 8.5% |
 | Google organic search results | 13.4% |
 
-In the same study, Search GPT's top 100 domains overlapped with those of AIO and the organic results by only 24% and 25%; AIO and the organic results overlapped by 68%. That is, **Google's AI Overviews largely reuse Google Search's source pool, while other engines' source pools are a world of their own**.
+In the same study, Search GPT's top 100 domains overlapped with those of AIO and the organic results by only 24% and 25%; AIO and the organic results overlapped by 68%. That is, **Google's AI Overviews largely reuse Google Search's source pool, while other engines' source pools are a world of their own**. But high domain overlap does not mean high page overlap: in one large-scale audit of health questions on a real AI search engine (US English, collected once), only about 44% of the traditional top 5 pages were cited by AI Overviews, and shares shifted systematically between domains. "Reusing the source pool" is not the same as "reusing the ranking".
 
 Another study, based on real conversation logs donated by users (613 users, 171,264 conversations) plus controlled replays, found that reddit.com and youtube.com appear in ChatGPT's and Grok's search results but are completely absent from Claude's search results. In another audit of general-purpose large language models (GPT-4o-mini, GPT-5), only 18 of 4,932 citations (0.4%) pointed to Reddit.
 

@@ -53,6 +53,7 @@ Repeated tests on real AI search engines found:
 | Domains shared between AI engines and Google's top 10 | GPT-4o 4.0%, Gemini 11.1%, Claude 12.6%, Perplexity 15.2% |
 | Domains cited by LLM engines | 37% never appear in traditional search results; 38% appear in both |
 | Domains cited by AIO | 29.8% are not in the Google first-page results for the same query; only 25.0% are in the top 5 of the first page |
+| Share of Google's traditional top 5 pages cited by AIO, for health questions | About 44% (page level, 3,611 health questions, collected once); about 47% for short, single-turn questions only |
 
 A few details that are easy to overlook:
 
@@ -60,6 +61,7 @@ A few details that are easy to overlook:
 - Where there is overlap, ranking first still helps: when pages cited by AI also appear in traditional search results, the most cited are the results ranked first in traditional search (Bing 23.27%, Google 14.53%). So "SEO is useless" is also wrong; SEO is only insufficient.
 - A single engine is far more stable than engines compared with each other: the URL set of the same engine turns over by 67.0% from one day to the next, yet the similarity of the same engine on two consecutive days is still about 42 times the similarity of different engines on the same day. Put simply: each engine changes every day, and the gap between engines is larger still.
 - Vertical categories differ a great deal: domain overlap with Google's top 5 is 15% for smartphones, 32% for laptops, 33% for electric vehicles, and only 0.1%–20.6% for local services. Domain Jaccard between different engines for car-related queries ranges from 0.096 to 0.251.
+- Source composition also differs in health: in one large-scale audit on a real AI search engine (US English health questions, collected once), pages cited by AIO leaned towards commercial health information websites compared with the traditional top 5 for the same question; large academic medical institutions and government health agencies had lower shares. All effects were small. The audit excluded video and forum sources, so the comparison holds only among readable web pages.
 
 Practitioners report from their own tests figures that point the same way; these are not independently verified:
 
@@ -324,7 +326,7 @@ That is, "community platforms are a source AI always fetches" may not hold at al
 | Outdated idea | Why it is outdated |
 |---|---|
 | "Ranking first in AI" | The source sets of different engines barely overlap, and the same engine changes every day |
-| "Rank first on Google and AI will cite you" | Only about 10% of pages cited by AIO are in the top 10 for the main query; nearly 30% of cited domains are not on the first page. Ranking first still helps, but it is only one condition |
+| "Rank first on Google and AI will cite you" | Only about 10% of pages cited by AIO are in the top 10 for the main query; nearly 30% of cited domains are not on the first page. For health questions, too, only about 44% of the traditional top 5 pages are cited by AIO. Ranking first still helps, but it is only one condition |
 | "Optimize for the keyword the user will type" | AI searches with rewritten queries, and the rewriting adds words, years and brands |
 | "More queries bring more diverse sources" | Both research and practitioner data show that more retrieval mainly means reading deeper into existing websites |
 | "Get the English version right, then just translate" | Changing language means changing the whole candidate pool; people also phrase questions differently in each language |

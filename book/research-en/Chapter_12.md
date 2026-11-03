@@ -48,7 +48,7 @@ The last row can be condensed to: **ChatGPT cites fewer sources, but each cited 
 
 Platforms give priority to their own material. This is a structural bias, not a question of content quality.
 
-- In health queries, the source Google AIO cites most often is YouTube, ahead of the US Centers for Disease Control and Prevention, the World Health Organization and well-known medical institutions' websites.
+- In health queries, the source Google AIO cites most often is YouTube, ahead of the US Centers for Disease Control and Prevention, the World Health Organization and well-known medical institutions' websites. (Another large-scale audit of US English health questions excluded video and forum sources; among the remaining web pages, a government medical research agency's domain had the largest share, and compared with the traditional top 5 for the same question, AIO leaned towards commercial health information websites, with lower shares for academic medical institutions and government health agencies; all effects were small. The two studies differ in scope and do not contradict each other.)
 - The source overlap between the three Google interfaces (Google Search, AIO and Gemini) is extremely low, with Jaccard coefficients of only 0.11–0.18 (0.18 between AIO and traditional search results), and the generative interfaces favor Google's own assets.
 - The most frequent sources in Baidu AI Overview are mainly Baidu's own subdomains (see 12.5).
 

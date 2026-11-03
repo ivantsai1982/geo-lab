@@ -38,7 +38,7 @@ Evidence pack: internal evidence pack (not published) (this one only)
 - Anomalies on review platforms: c_oa6iq3b
 - Coordinated posting pattern: p_1v1dfps
 - Non-rendered channels: 2604.27202
-- Reducing information vacuums: p_1pn5y6c, p_1rfhbge
+- Reducing data voids: p_1pn5y6c, p_1rfhbge
 - Verifiable information: 2606.17443, 2607.14035
 - Limited effect of clarifications in comments: p_1v1dfps
 - Defences for self-built systems: 2609.02316, 2609.02964; objective criteria in the system prompt: 2606.09204
@@ -59,3 +59,15 @@ Evidence pack: internal evidence pack (not published) (this one only)
 - Third difference in Debate 1 (posting platform): B·2610.11932 (§V-B Table III, Table VI, §V-C, §V-D)
 - Qualification of "verifiable facts": E·2602.16136
 - White-hat criterion 4: A (with reservations)·2604.04263 (61.2% / 22.4%, 55.5%, 9.5%)
+
+## Supplement (new papers, 2026-11-03)
+
+- Principle 11.4 defence table, "user-side defences" row: B·2610.30365 (Table III, Table V, Table VI, Appendix H)
+- New item in "Effects of manipulation" (56 data voids, 504 answers, 31.0% / 42.3%, low visibility 0, pre-launch baseline 0, GEO factors odds ratio 0.91, breaking news odds ratio 3.58, conspiracy premise 0.29): B·2610.30365 (abstract, §III, §IV, Table IV, Table V, Appendix E)
+- New defence item one (26.8%–37.5%, equivalence tests, 26.8% / 73.2% without warnings, 53.8% / 5.6%, failure of existing RAG defences is the authors' inference): B·2610.30365 (§IV Takeaway 5, Table III, Table VI, §VI)
+- New defence item two (25% → 10%, normal documents 6 → 1, authors' suggestion): E·2610.41012 (Table 1, Table 2, Sections 5–6)
+- Three new rows in the evidence summary: B·2610.30365; E·2610.41012
+- Debate 1 table "Easy" row, addition after the competitiveness sentence, addition to the third difference (38.4%–78.3%, 14.3%–42.9%, 0; AI crawlers on day 10, stable on day 25): B·2610.30365 (Table IV, §III-D, §V)
+- Recognition table: similar ranking lists row adds E·2610.41012; breaking news and newly coined terms row B·2610.30365 (Table V)
+- Defence and repair table: evidence strength of the "reduce data voids" row, user-side and "little supporting evidence" flag row B·2610.30365 (§IV-A, §VII); near-paraphrase deduplication row E·2610.41012 (Section 5)
+- Key point 7: B·2610.30365; p_1pn5y6c, p_1rfhbge

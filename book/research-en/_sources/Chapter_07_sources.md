@@ -21,10 +21,12 @@
 - Hallucinated URLs 3.0–13.3%, deep research agents 10.7% vs 4.8%, 4.3 times more citations with 2 times higher unresolvable rate: 2604.03173 (D)
 - 12/14 models link validity >94%, relevance >80%, Fact Check 24–77%, 78.6%→16.7%: 2605.06635 (D, author type: industry)
 - Hedging reduced 40%/60% after search: 2603.16138 (B)
+- Long health questions: AIO cited statements grounded 47.1% (HallOumi), 56.7% after correction (95% CI 45.3–68.6), uncited factual statements 20.8%; AIO-cited pages lower than traditional top 5 on 4 of 6 quality indicators (|dz| ≤ 0.19), lean towards commercial health publishers; grounding vs clinical score ρ = .01, source quality ρ = −.05 / .10: 2610.39339 (B, weak end: single 3-day snapshot, US English, questions adapted from HealthBench)
 
 ### 2.5 Citations as a persuasion signal
 - 4,927 people, 9 queries, trust +0.091, sharing +0.121, valid/invalid difference -0.021 not significant, uncertainty highlighting -0.157: 2504.06435 (E)
 - 24,069 conversations, 12,652 votes, supporting β=0.29, unrelated β=0.27, contradicting not significant, about 800 conversations: 2506.05334 (B, ICLR 2026)
+- Answer side: uncited vs cited AIO clinical scores 40.4% vs 39.2% (p = .649), grounding vs accuracy ρ = .01, physician rubrics 38.2%, pre-specified harmful claims 22.2%, high-risk questions uncited 17.6%; authors cannot separate parametric knowledge from citations attached after the fact: 2610.39339 (B, weak end)
 
 ### 2.6 Generalization of testimony
 - 30,000 answers, score OR 2.88, top-level OR 1.97, formal OR 1.488, experiential OR 0.789, moderator-pinned almost never selected, first person 3.3%→0.06%: 2609.14575 (B; the object of study is Reddit Answers, described in the main text as "the built-in generative Q&A feature of a community platform")
@@ -41,7 +43,7 @@
 - 4.1 A citation signals trust: consensus cluster 31 (support 8 / oppose 0); compare 2607.15771, 2609.19244, 2506.05334
 - 4.2 FAQ format: 2604.25707 (Q&A 0.0947 vs 0.1005; with code/numbers/definitions/comparisons 41–77% higher)
 - 4.3 More searching: 2605.06635 (78.6%→16.7%; 80.0%→57.9%); 2609.19244 (Claude mixed effects)
-- 4.4 Source quality and faithfulness: 2605.14021; 2605.28565
+- 4.4 Source quality and faithfulness: 2605.14021; 2605.28565; opposite direction in health (AIO-cited pages slightly lower quality, lean towards commercial health publishers) and agreement (quality and grounding do not predict accuracy): 2610.39339 (B, weak end)
 - 4.5 Deep research agents: 2604.03173 (10.7% vs 4.8%; openai-deepresearch 3.5%)
 
 ## 5. Cases

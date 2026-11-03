@@ -13,32 +13,32 @@
 
 **Part Two: The Pipeline, Stage by Stage**
 
-- [Chapter 2: Triggering: When Does AI Search?](Chapter_02.md) (about 3,243 words)
-- [Chapter 3: Accessibility: Can AI Read Your Website?](Chapter_03.md) (about 6,742 words)
-- [Chapter 4: Retrieval: Query Rewriting, Semantic Matching, and the Language and Market Gate](Chapter_04.md) (about 7,262 words)
-- [Chapter 5: The Source Ecosystem: Third Parties, Consensus and Brand Priors](Chapter_05.md) (about 6,882 words)
-- [Chapter 6: Selection and Ranking (Relevance, Position, Attribute Weights)](Chapter_06.md) (about 4,794 words)
-- [Chapter 7: Citation and Absorption (Listed ≠ Used ≠ Used Correctly)](Chapter_07.md) (about 5,221 words)
+- [Chapter 2: Triggering: When Does AI Search?](Chapter_02.md) (about 3,484 words)
+- [Chapter 3: Accessibility: Can AI Read Your Website?](Chapter_03.md) (about 8,087 words)
+- [Chapter 4: Retrieval: Query Rewriting, Semantic Matching, and the Language and Market Gate](Chapter_04.md) (about 7,381 words)
+- [Chapter 5: The Source Ecosystem: Third Parties, Consensus and Brand Priors](Chapter_05.md) (about 7,433 words)
+- [Chapter 6: Selection and Ranking (Relevance, Position, Attribute Weights)](Chapter_06.md) (about 5,236 words)
+- [Chapter 7: Citation and Absorption (Listed ≠ Used ≠ Used Correctly)](Chapter_07.md) (about 5,783 words)
 
 **Part Three: Cross-Stage Topics**
 
-- [Chapter 8: The Evidence on Content-Level Practices: What Works, What Fails, What Goes Out of Date](Chapter_08.md) (about 5,598 words)
-- [Chapter 9: Measurement: Visibility Is a Distribution, Not a Ranking](Chapter_09.md) (about 7,237 words)
+- [Chapter 8: The Evidence on Content-Level Practices: What Works, What Fails, What Goes Out of Date](Chapter_08.md) (about 7,064 words)
+- [Chapter 9: Measurement: Visibility Is a Distribution, Not a Ranking](Chapter_09.md) (about 8,191 words)
 - [Chapter 10: Traffic and Commercial Value](Chapter_10.md) (about 5,303 words)
-- [Chapter 11: Competition, Manipulation and Defence](Chapter_11.md) (about 4,749 words)
-- [Chapter 12: Platform Differences and the Chinese-Language Ecosystem](Chapter_12.md) (about 5,542 words)
+- [Chapter 11: Competition, Manipulation and Defence](Chapter_11.md) (about 5,776 words)
+- [Chapter 12: Platform Differences and the Chinese-Language Ecosystem](Chapter_12.md) (about 5,615 words)
 
 **Part Four: Case Types**
 
 - [Chapter 13: Brand and Product Recommendations (Case Chapter)](Chapter_13.md) (about 9,957 words)
 - [Chapter 14: Content Websites: After the Traffic Is Intercepted, What Content Still Gets Cited and Clicked](Chapter_14.md) (about 8,726 words)
-- [Chapter 15: The Role of Reddit and Social Platforms in AI Search](Chapter_15.md) (about 5,390 words)
+- [Chapter 15: The Role of Reddit and Social Platforms in AI Search](Chapter_15.md) (about 5,449 words)
 
 **Appendix**
 
-- [Appendix A: Major Disagreements Between Studies, and Between Research and Practice](Appendix_A.md) (about 4,573 words)
+- [Appendix A: Major Disagreements Between Studies, and Between Research and Practice](Appendix_A.md) (about 5,171 words)
 
-About 100,492 words in total.
+About 107,929 words in total.
 
 # Chapter 0: How to Read GEO Evidence
 
@@ -735,6 +735,9 @@ One pattern holds across all studies: **questions and long queries are more like
 - In the sample of real logs, interrogative sentences had a trigger rate of 89.9%.
 - In real browsing records, long queries, queries starting with a question word, and queries containing both a noun and a verb were more likely to trigger.
 - By intent: AI answers appeared for about 60% of questions, about 37% of statements and about 12% of navigational queries.
+- In one large-scale audit on a real AI search engine, researchers sent 3,611 long, conversational health questions (about 44 words on average) to Google, and AIO appeared for 96.4%. These questions were adapted from a conversational evaluation dataset and are much longer than typical search queries; the audit covered US English only and collected data once, in September 2026, with no repeated measurement.
+
+The same audit also observed something no other study in this chapter describes: **the longer, more complex and higher-risk the question, the more often AIO gives an answer with no citations at all.** AIO with no citations made up 9.4%; from low to high complexity the share was 4.2%, 6.0% and 10.6%; from low to high risk it was 6.4%, 8.1% and 17.6%. Looking only at short, single-turn questions, the share without citations fell to 5.8% and the gradient weakened. So "an AI answer was triggered" and "the answer came with sources" are two different things; and in this set of health questions, whether an answer carried citations was unrelated to whether it was correct by physicians' standards (see Chapter 7, Principle 4).
 
 Navigational queries (for example, searching directly for a brand's official website) almost never trigger. The reason is intuitive: the user wants a URL, not an explanation.
 
@@ -782,6 +785,7 @@ So "triggering", the concern of this chapter, is a necessary condition for being
 | Trigger rates differ enormously between models (14% vs 83%) | Repeated tests on real AI search engines found; plus real conversation logs from 613 users and 171,264 conversations | Strong. But only specific model versions were compared; the figures will change after version updates |
 | ChatGPT does not trigger search a large share of the time | Two independent studies with repeated measurement on real commercial engines | Strong. The two studies use different definitions ("zero citations" vs "search not triggered"), so the figures cannot be directly added or compared |
 | Questions and long queries trigger AIO more easily | Three independent studies, with samples ranging from popular searches to real logs to real browsing records | Strong. The direction is consistent; this is the most reliable conclusion in this chapter |
+| Long, complex, high-risk health questions almost always trigger AIO, but more often get no citations | One large-scale audit on a real AI search engine (3,611 health questions) | Moderate to weak. Collected once, US English only; questions adapted from a conversational evaluation dataset are longer than real search queries, which pushes up the share without citations |
 | Platforms adjust triggering strategy by topic | Repeated tests on real AI search engines found, with crawls repeated across years | Medium. The COVID case has a sample of only 74 queries |
 | Prompt wording changes API triggering | Repeated tests on real AI search engines, with API and product compared | Medium to strong. Tested only on mental health topics; other topics not verified |
 
@@ -961,8 +965,8 @@ Request → [CDN / WAF / host's bot protection] → [robots.txt declaration] →
 ```
 
 - **Declaration layer (robots.txt)**: tells crawlers "please don't come". Whether this is respected depends on the crawler itself.
-- **Enforcement layer (CDN, WAF, host security settings)**: blocks the request based on user-agent or IP reputation before it reaches the website, returning 403 or a challenge page. This layer does not appear in robots.txt, and site owners cannot see it from a browser.
-- Content layer: the request succeeds, but the HTML returned does not contain the content you think it does (see Principle 3.4).
+- **Enforcement layer (CDN, WAF, host security settings)**: blocks the request based on user-agent or IP reputation before it reaches the website, returning 403 or a challenge page. This layer does not appear in robots.txt, and site owners cannot see it from a browser. Enforcement-layer blocking does not always show up as a 403, either. In controlled experimental systems (researchers used their own fetching program on about 10,000 real URLs; the fetcher was not an AI company's crawler, and the test ran from a single network location over three days), they found that about 21.5% of pages explicitly returned 401, 403 or 429 to a simple fetching program, but bot challenge pages and block pages were also often returned with a "successful" 200 status code. In a set of source URLs that had been cited in AI question answering, about 8% of 200 responses were actually challenge pages or block pages, mostly concentrated on a few document and academic publishing websites.
+- Content layer: the request succeeds (status code 200), but the HTML returned does not contain the content you think it does (see Principle 3.4). In the same study, about one fifth of the pages that a static fetch received with a 200 had no main content (about 20% after manual review of a sample). The common cases were: front-end app shells with only navigation and a footer, whose main content is loaded by scripts; bot challenge pages; block pages; substitute pages that redirect deep URLs to the home page or show other content; parked domains; and consent walls. In addition, about 13% of websites returned 200 even for URLs that do not exist at all (soft 404s). These failures carry no error code, and neither the fetching side nor the website side can see them. The study did not test how AI answers handle these failures.
 
 Practitioners widely believe that AI crawlers are often blocked at the CDN or WAF layer by default or unintended settings, which takes effect even if robots.txt allows them (this is the majority view in the community, with supporters clearly outnumbering opponents, but it is not proof). One CDN's "AI crawler" switch inserts a managed rule block in front of the website's own robots.txt, blocking GPTBot, ClaudeBot, Google-Extended and others and overriding the website's own settings. Another practitioner pointed out that this CDN's new default from 15 September 2026 blocks "mixed-purpose" crawlers on pages that carry ads; websites without ad slots are not affected by this change.
 
@@ -977,6 +981,8 @@ Practitioners widely believe that most AI crawlers do not execute JavaScript, so
 - Practitioners report from their own tests: of 50 websites, 34 (68%) injected JSON-LD through client-side JavaScript such as tag managers. For websites that output JSON-LD on the server side, 92% of the structured data was fetched by at least two AI crawlers; for those relying only on client-side injection, 0%.
 
 So **what you see in your browser's developer tools does not necessarily exist in the raw server response.** One practitioner found that their own hreflang tags numbered 0 in the raw response and 3 in the rendered DOM, because the inspection tool showed the result after JavaScript had run. This problem went unnoticed for several months.
+
+How much is lost without executing JavaScript depends on how the page is built. In controlled experimental systems (the same study with its own fetching program mentioned in Principle 3.3, comparing fetches that do and do not execute JavaScript, not AI crawlers themselves): of the 3,307 pages where both fetches got main content, the fetch without JavaScript retained a median of about 98.5% of the sentences and numerical facts; about 17% lost more than a tenth, and only about 2% lost more than half. For pages that depend on scripts, the main form of failure is a whole page that is only a shell, with the main content loaded entirely by scripts. So the first thing to check is whether key pages contain only navigation, a footer and "Loading…" in the raw response. Parts of content that appear only after rendering (such as the prices in the table below) still need fixing, but there is no need to assume that every website built with a front-end framework loses heavily. Rendering also has a cost: in the same study, the median time to render a page with a headless browser was about 19.7 seconds, against about 1.6 seconds for a static fetch, a difference of about 12 times. This may be one reason why fetchers at answer time tend not to render, but this is the book's inference; the study did not measure the behaviour of AI crawlers.
 
 Content that commonly "exists only after rendering":
 
@@ -1000,6 +1006,8 @@ AI answers draw their sources from roughly two paths: **pre-built indexes** (the
 
 Cold-start entities illustrate the difference between indexes especially well. Practitioners' repeated, controlled tests found: a new entity with zero web footprint was polled daily by five web-connected AI systems over 23 days. Although the CDN's default AI blocking returned 403 to training crawlers on 22 of the 23 days, the entity was still cited on day 6, through a knowledge graph plus third-party mentions. Logs showed that on the same day, the two types of crawlers used only at the answering stage (the index crawler OAI-SearchBot and the real-time fetcher ChatGPT-User) were let through normally. The gap between vendors was also large: one used the entity's own domain as a basis about 119 times, another 0 times, drawing only from third-party community platforms.
 
+Being indexed by a search engine is itself a threshold with a time lag. Repeated tests on real AI search engines found (three AI search engines, 56 artificially created topics with almost no other sources, one page published per topic, measured on day 25 after going live): the search engine indexed pages on established domains and on new domains submitted for indexing within 48 hours; AI-related crawlers were first observed visiting on day 10 after going live (only pages on established domains could be tracked); and results stabilised only around day 25. New domains that were not submitted for indexing and relied only on natural discovery had an appearance rate of 0 on all three engines; new domains submitted for indexing had 14%–43%, and established domains 38%–78%. The limits: these topics were deliberately chosen as "data voids" with no competing sources, so topics with competition may be harder; the domain conditions are bundled together (domain age, backlinks, whether submitted for indexing), so it is impossible to tell which one matters; and each condition had only one answer per engine. What it shows: a new website's accessibility starts with being indexed, and seeing no results in the first week after launch does not mean there is no effect.
+
 ### Principle 3.6: Agent experience: after being found, you still have to be "usable"
 
 When AI goes deep into your website as an agent (checking prices, comparing specifications, completing tasks), the standard for accessibility rises from "can read the text" to "can understand and operate". This is called agent experience (AX).
@@ -1021,6 +1029,9 @@ When AI goes deep into your website as an agent (checking prices, comparing spec
 | Most AI crawlers do not execute JavaScript | Practitioners' tests + strong community consensus | Medium; but most citations ultimately point to a single analysis from late 2024 (see Debates) |
 | Blocking often happens at the CDN/WAF layer | Community consensus + samples from several practitioners | Medium; proportions vary greatly between samples |
 | Training and real-time fetching need to be treated separately | Several sets of practitioner logs + one R-A test | Medium |
+| Status code 200 does not mean the main content was received (challenge pages, shells, substitute pages and soft 404s are often returned with 200) | Controlled experimental system (own fetching program tested on about 10,000 real URLs) | Weak to medium; large sample with manual review of a sample, but the fetcher is not an AI company's crawler, and the proportions vary with IP and time; did not test how AI answers handle these failures |
+| Not executing JavaScript usually loses only a little text; the main problem is whole-page shells | Controlled experimental system (same as above) | Weak to medium; exploratory analysis comparing two in-house fetching programs, not AI crawlers |
+| New domains not submitted for indexing were not cited by AI search; AI crawlers visited only around day 10, and results stabilised only around day 25 | Repeated tests on real engines | Medium; limited to topics with no competing sources, single-day snapshot, only one answer per condition |
 | llms.txt is effective on its own | None | **No evidence so far** |
 
 Limits of applicability that need particular attention:
@@ -1067,7 +1078,7 @@ This book's position: one study found it unrelated to accuracy, and another plac
 
 This is community consensus, but one practitioner pointed out that almost every citation ultimately points to the same analysis from December 2024, about 20 months old now, and its publisher sells server-side rendering services. Access logs can only record "what was requested", not "whether JavaScript was executed". Another practitioner saw in logs that OpenAI's training crawler made a small number of JavaScript requests, while user-triggered fetching did not.
 
-**How to handle it**: do not wait for this question to be settled. Compare your raw server response with the rendered DOM directly; whenever important content appears only in the latter, treat it as unreadable by AI.
+**How to handle it**: do not wait for this question to be settled. Compare your raw server response with the rendered DOM directly; whenever important content appears only in the latter, treat it as unreadable by AI. When comparing, take the rendered page as seen in an ordinary browser as the reference. In controlled experimental systems, headless browsers fail too: among pages where the static fetch had already received the main content, about 6.5% of headless renders failed or received a block page, a shell or a consent layer.
 
 ### Debate 5: Is robots.txt respected?
 
@@ -1088,7 +1099,7 @@ Different samples give very different proportions:
 | Blocking at least one major LLM crawler, mostly at the CDN/host layer | About 3,000 websites, mainly B2B SaaS | 27% |
 | Fetching small business websites with AI identities | About 17,000 French small business websites | Accessibility was almost never the bottleneck |
 
-These are figures that individual practitioners observed. The layers measured and the samples differ, so they cannot be ranked against each other. What can be concluded is: **blocking at the declaration layer is generally rare; blocking at the enforcement layer is clearly more common on websites behind a CDN, B2B SaaS and media websites.** Practitioners also caution that testing with requests that claim an AI identity from data-centre IPs and getting a 200 does not mean the real crawler will get through too (CDNs verify by IP range), and vice versa.
+These are figures that individual practitioners observed. The layers measured and the samples differ, so they cannot be ranked against each other. What can be concluded is: **blocking at the declaration layer is generally rare; blocking at the enforcement layer is clearly more common on websites behind a CDN, B2B SaaS and media websites.** Practitioners also caution that testing with requests that claim an AI identity from data-centre IPs and getting a 200 does not mean the real crawler will get through too (CDNs verify by IP range), and vice versa. And even getting a 200 does not mean the main content was received (see Principle 3.3).
 
 Another counterexample comes from "readable but not cited": one practitioner observed that a website of about 100,000 pages was crawled by AI crawlers about 430,000 times in 30 days, but crawl volume was unrelated to whether pages were cited; the pages cited were those with "one fact per page, a stable URL, and the easiest to verify". A practitioner who audited about 17,000 websites also believes that most websites are not cited because their pages contain no answer that can be taken directly, not because of technical problems.
 
@@ -1161,13 +1172,16 @@ One practitioner, several weeks after blocking AI crawlers, noticed that Google 
 | After searching robots.txt for GPTBot, search for OAI-SearchBot too; writing only the former means making only half the decision | Practitioners report from their own tests: of 72 companies, 18 named GPTBot, only 11 named OAI-SearchBot, and 0 named OAI-AdsBot |
 | If you do not want a page to appear in ChatGPT, mark it noindex rather than relying only on a robots.txt block; and the crawler must be able to read the page to see this mark | OpenAI's official documentation |
 | Have other pages link to your important pages: OpenAI also discovers URLs while crawling other pages | OpenAI's official documentation |
+| After a new website or new domain goes live, actively submit it to search engines for indexing (for example through webmaster tools); wait at least three to four weeks before judging whether AI cites it | Repeated tests on real AI search engines found (limited to topics with no competing sources, single-day snapshot) |
 
 ### 2. Check layer by layer, not just robots.txt
 
 1. **Declaration layer**: fetch the **live** robots.txt with `curl`, and confirm there are no blocks inserted by a CDN or plugin and no catch-all `Disallow: /`.
-2. Enforcement layer: request the same page at the same time with each AI identity and with an ordinary browser identity, and compare status codes and response sizes; if the control request is also refused, it is a general protection problem, not an AI policy. Remember that this only tests the response path and does not equal the treatment real crawlers receive.
+2. Enforcement layer: request the same page at the same time with each AI identity and with an ordinary browser identity, and compare status codes and response sizes, **and above all the length of the visible main text in the response**; if the control request is also refused, it is a general protection problem, not an AI policy. Remember that this only tests the response path and does not equal the treatment real crawlers receive. In controlled experimental systems, looking only at status codes detected none of the 200 responses that lacked main content; the length of the visible main text was the most effective single signal, catching about three quarters; adding the random-URL comparison in step 6 and the "redirected to the home page" check caught about 85%, with about 6% false alarms.
 3. Live test: paste the URL directly into ChatGPT or another assistant and ask "what services does this website offer". A blocked website fails outright, which you can confirm in ten seconds (practitioners report from their own tests).
-4. Content layer: get the raw server response with `curl` or by viewing the source, and compare it with the rendered DOM. Prices, specifications, FAQ answers, headings and structured data that appear only in the latter all need to be changed. One practitioner observed that on 11 websites, AI identity requests all returned 200, but in 2 of the 10 valid comparisons the rendered word count was more than double: the gap came from rendering, not blocking.
+4. Content layer: get the raw server response with `curl` or by viewing the source, and compare it with the rendered DOM. Prices, specifications, FAQ answers, headings and structured data that appear only in the latter all need to be changed. Take the rendered page as seen in an ordinary browser as the reference; headless browsers fail too. One practitioner observed that on 11 websites, AI identity requests all returned 200, but in 2 of the 10 valid comparisons the rendered word count was more than double: the gap came from rendering, not blocking. In controlled experimental systems, a larger sample points the same way but is milder: pages that lost more than a tenth of their text without JavaScript were about 17%, and those that lost more than half were about 2%.
+5. Main-text self-check: fetch your own important pages the simplest way (for example with `curl`, without executing JavaScript). After getting a 200, open the response and confirm: are the main paragraphs, prices and specifications really there, or only navigation, a footer, "Loading…", a challenge page or a consent pop-up? Was the final URL redirected to the home page? Basis as above (in controlled experimental systems, about one fifth of 200 responses had no main content).
+6. Soft 404 self-check: request a random, non-existent URL (for example `/a3f9c2e17b4d8e06`) and confirm that the website returns 404 or 410, not 200 or a redirect to the home page; also spot-check a few deep URLs to confirm they are not redirected to the home page. In controlled experimental systems, about 13% of websites returned 200 for non-existent URLs.
 
 ### 3. Make sure key content exists in the raw HTML
 
@@ -1184,7 +1198,7 @@ One practitioner, several weeks after blocking AI crawlers, noticed that Google 
 - Analytics tools usually filter out bots, and client-side analytics scripts cannot see crawlers that do not execute JavaScript, so use **server logs**. Some hosting platforms keep request logs for only about an hour, so you need to store them long-term yourself.
 - **Verify IPs**: the user-agent is just a text field that anyone can fill in. Practitioners report from their own tests: over two months, none of the 394 source IPs claiming to be ChatGPT were in the ranges published by OpenAI, and 79 of them were probing sensitive paths such as `/.env` and `/.aws/credentials`. One practitioner observed that of 14,771 verifiable visits, 5,577 were impersonators, and 38.3% of the impersonators were looking for passwords or configuration files. Verification should check against the IP range files each vendor publishes; reverse DNS works for Googlebot, but one practitioner's check found it does not work for GPTBot.
 - Look at real-time fetchers, not total crawl volume: an identity with "User" in its name means a real user read this page a few seconds before asking. One practitioner observed that the ratio of fetches to subsequent actual visits was mostly above ten to one.
-- Treat crawler logs as a debugging layer: confirm whether pages are fetched, whether there are non-existent URLs hallucinated by AI, and whether any pages are too slow. Measure visibility outcomes by tracking AI answers.
+- Treat crawler logs as a debugging layer: confirm whether pages are fetched, whether there are non-existent URLs hallucinated by AI, and whether any pages are too slow. Measure visibility outcomes by tracking AI answers. A 200 in the logs does not mean the other side received the main content; also look at response size, or the CDN's record of how it handled the request as a bot (see Chapter 9).
 
 ### 5. Prepare machine-readable facts for agents
 
@@ -1209,6 +1223,7 @@ AI crawlers fetch in sudden bursts (one practitioner reports GPTBot once reachin
 - Do not count AI traffic or report it to clients by user-agent alone; figures without IP verification will be inflated by impersonating scanners.
 - Do not serve different content to AI and humans by user-agent without handling cache headers; also confirm that Markdown versions have not lost body text.
 - Do not treat crawl volume as a visibility KPI.
+- Do not judge whether AI can get your page from the status code alone; a 200 may also be a challenge page, a shell or the home page.
 - Do not infer AI blocking directly from "I don't show up in AI"; verify layer by layer.
 
 ### Already outdated
@@ -1222,9 +1237,9 @@ AI crawlers fetch in sudden bursts (one practitioner reports GPTBot once reachin
 
 1. **If it can't be read, it doesn't exist, and the failure is silent**: when AI cannot read you, it does not report an error; it replaces you with someone else's content.
 2. **AI crawlers fall into three types (training, index and real-time fetching), and you need to decide on each separately.** Blocking training crawlers will not make you disappear from real-time answers; blocking index and real-time fetching is the real loss.
-3. Blocking has three layers: robots.txt declaration, CDN/WAF enforcement, and raw response content. robots.txt being fine does not mean AI can get the content.
-4. AI reads the raw server response. Prices, FAQs and structured data that exist only after JavaScript rendering do not exist for most AI crawlers.
-5. AI engines rely on several indexes that overlap very little; inclusion in traditional search indexes is itself part of AI accessibility.
+3. Blocking has three layers: robots.txt declaration, CDN/WAF enforcement, and raw response content. robots.txt being fine does not mean AI can get the content; a 200 status code does not mean the main content was received either.
+4. AI reads the raw server response. Prices, FAQs and structured data that exist only after JavaScript rendering do not exist for most AI crawlers. But in controlled experimental systems, most pages with main content lose only a little text without JavaScript; the most serious case is a whole page that is only a shell.
+5. AI engines rely on several indexes that overlap very little; inclusion in traditional search indexes is itself part of AI accessibility. New domains must be indexed first, and AI citations may appear only after several weeks.
 6. Agent scenarios require being "usable", not just "findable": readable websites answer more from their own content and are recommended more often, but all current evidence is bundled and not separated.
 7. llms.txt and Markdown mirrors have not been shown to increase citation; real-time fetching at answer time reads HTML.
 8. Accessibility is a necessary condition, not a sufficient one: crawl volume is unrelated to citation; once you can be read, whether you are chosen depends on the factors in the following chapters.
@@ -1284,6 +1299,7 @@ Repeated tests on real AI search engines found:
 | Domains shared between AI engines and Google's top 10 | GPT-4o 4.0%, Gemini 11.1%, Claude 12.6%, Perplexity 15.2% |
 | Domains cited by LLM engines | 37% never appear in traditional search results; 38% appear in both |
 | Domains cited by AIO | 29.8% are not in the Google first-page results for the same query; only 25.0% are in the top 5 of the first page |
+| Share of Google's traditional top 5 pages cited by AIO, for health questions | About 44% (page level, 3,611 health questions, collected once); about 47% for short, single-turn questions only |
 
 A few details that are easy to overlook:
 
@@ -1291,6 +1307,7 @@ A few details that are easy to overlook:
 - Where there is overlap, ranking first still helps: when pages cited by AI also appear in traditional search results, the most cited are the results ranked first in traditional search (Bing 23.27%, Google 14.53%). So "SEO is useless" is also wrong; SEO is only insufficient.
 - A single engine is far more stable than engines compared with each other: the URL set of the same engine turns over by 67.0% from one day to the next, yet the similarity of the same engine on two consecutive days is still about 42 times the similarity of different engines on the same day. Put simply: each engine changes every day, and the gap between engines is larger still.
 - Vertical categories differ a great deal: domain overlap with Google's top 5 is 15% for smartphones, 32% for laptops, 33% for electric vehicles, and only 0.1%–20.6% for local services. Domain Jaccard between different engines for car-related queries ranges from 0.096 to 0.251.
+- Source composition also differs in health: in one large-scale audit on a real AI search engine (US English health questions, collected once), pages cited by AIO leaned towards commercial health information websites compared with the traditional top 5 for the same question; large academic medical institutions and government health agencies had lower shares. All effects were small. The audit excluded video and forum sources, so the comparison holds only among readable web pages.
 
 Practitioners report from their own tests figures that point the same way; these are not independently verified:
 
@@ -1555,7 +1572,7 @@ That is, "community platforms are a source AI always fetches" may not hold at al
 | Outdated idea | Why it is outdated |
 |---|---|
 | "Ranking first in AI" | The source sets of different engines barely overlap, and the same engine changes every day |
-| "Rank first on Google and AI will cite you" | Only about 10% of pages cited by AIO are in the top 10 for the main query; nearly 30% of cited domains are not on the first page. Ranking first still helps, but it is only one condition |
+| "Rank first on Google and AI will cite you" | Only about 10% of pages cited by AIO are in the top 10 for the main query; nearly 30% of cited domains are not on the first page. For health questions, too, only about 44% of the traditional top 5 pages are cited by AIO. Ranking first still helps, but it is only one condition |
 | "Optimize for the keyword the user will type" | AI searches with rewritten queries, and the rewriting adds words, years and brands |
 | "More queries bring more diverse sources" | Both research and practitioner data show that more retrieval mainly means reading deeper into existing websites |
 | "Get the English version right, then just translate" | Changing language means changing the whole candidate pool; people also phrase questions differently in each language |
@@ -1619,8 +1636,12 @@ This mechanism has two sides:
 ```
 A single source says "A is best"                 → limited effect
 The same source says it three times              → adds almost no effect
+One claim rewritten as several pages, origin unclear → may be counted as several sources (simulation or theory, one small model)
 Three seemingly independent sources say "A is best" → effect rises markedly
+Almost no other reliable source (data void)      → a single source may enter the answer
 ```
+
+The consensus effect presupposes that other sources are competing. Repeated tests on real AI search engines found that on topics with few reliable sources (a data void), a single page can be written into the answer without any corroboration (see Chapter 11). This is the same mechanism that lets a legitimate small website be cited, and the threshold is being indexed by a search engine first. So fake consensus is the attack surface when there are competing sources, and the data void is the attack surface when there are none.
 
 ### Principle 5.3: Brand priors are decisive only when "the information cannot tell candidates apart"
 
@@ -1628,7 +1649,7 @@ During training, a model has already "come to know" many brands; this existing i
 
 1. **Knowing is not recommending**. When a brand is named directly, the model almost always recognises it, but when asked to "recommend a product in this category" it often does not think of it.
 2. **The prior is conditional**. When there is no distinguishing information among candidate products, the well-known brand wins almost every time; once real distinguishing information appears (ratings, number of reviews, price), the prior is broken.
-3. The weaker the prior, the more easily the model is swayed by context. For small brands this is both an opportunity (if someone writes about you, you may be used) and a risk (if someone writes about you wrongly, the model may also accept it wholesale).
+3. The weaker the prior, the more easily the model is swayed by context. For small brands this is both an opportunity (if someone writes about you, you may be used) and a risk (if someone writes about you wrongly, the model may also accept it wholesale). When the prior is zero (a newly coined term, a new event), repeated tests on real AI search engines found that a single page appears about 30% of the time; but new domains that were never submitted for indexing and relied only on natural discovery never appeared. So on the "opportunity" side, the threshold is being indexed first.
 4. The prior does not act only as a tie-breaker. Repeated tests on real AI search engines found (158,000 answers, correlational): 67% of brands in the model's prior were written into its own search queries, against only 11% of brands not in the prior; at the same position, websites in the prior had 1.60 times the odds of being cited; 46% of ChatGPT's brand mentions were not supported by any cited page, which amounts to naming brands straight from memory. So "acts only when the information cannot tell candidates apart" needs correcting: the prior also acts on three links, the search queries, the choice of sources and the answer.
 
 ### Supplement: where priors come from: "being written about a lot" and "what you are written about together with" are two different things
@@ -1643,10 +1664,10 @@ This subsection links the four points above to the book author's experiments. It
 - What the model remembers is often "where to look for which kind of information": in the book author's tests, when the model used `site:` to name the national swimming association's official website, it searched for the time-standard documents of a specific age group; websites the model named on its own initiative had a clearly higher chance of being cited in the same answer (see Chapter 4 and Chapter 6). So what needs to be built is not just recognition, but repeated co-occurrence, in credible sources, of "your name" with "a certain kind of question and a certain kind of data".
 
 Two timelines.
-- Now, through retrieval: a website the model does not know can still be cited heavily, as long as its pages match the rewritten queries (Chapter 3, Case 8: a new website the model did not know was cited in 9 of 10 sessions).
+- Now, through retrieval: a website the model does not know can still be cited heavily, as long as its pages match the rewritten queries (Chapter 3, Case 8: a new website the model did not know was cited in 9 of 10 sessions). The precondition is being indexed by a search engine first: repeated tests on real AI search engines found that on data-void topics, new domains the model did not know but that had been actively submitted for indexing appeared 14.3%–42.9% of the time; new domains that were not submitted appeared 0% of the time.
 - Later, through memory: getting into the memory of the next model generation takes at least one training cycle; being crawled is not being remembered (Case 9: GPTBot crawled about 92.5% of the pages, and the model still did not know the website).
 
-Risk. Trust built on frequency of appearance favours established websites that are already written about a lot, and it can also be inflated: the thinner the prior, the more easily a single page misleads the model (r = −0.65, see Section 2.3). So what matters more than "a lot" is whether the sources are credible and independent of each other.
+Risk. Trust built on frequency of appearance favours established websites that are already written about a lot, and it can also be inflated: the thinner the prior, the more easily a single page misleads the model (r = −0.65, see Section 2.3); repeated tests on real AI search engines also found results in the same direction (see Principle 5.3, point 3). So what matters more than "a lot" is whether the sources are credible and independent of each other.
 
 Evidence strength: each fact is marked where it appears; linking them into the mechanism "impressions come from text, frequency decides recognition, co-occurrence decides coming to mind" is this book's inference and has not been tested directly.
 
@@ -1693,8 +1714,9 @@ This means that "being cited on one engine" cannot be generalised directly to ot
 - In the same study, the average success rates of different techniques were: instructions hidden in the page code 0.3%, summary inconsistent with the page 1.2%, impersonating authority 14.2%, synthetic consensus 24.8%, authority plus citation chain 37.2%. The more it looks like "evidence-backed statements from several parties", the more effective; the more it looks like "hidden instructions", the less effective.
 - In controlled experimental systems, for search agents that browse page by page and follow links, a multi-page "evidence ecosystem" of interlinked pages with consistent style and attributes pushed the recommendation rate of a fictitious product to 67.2%–73.9%; the single-page baseline was 35.9%–59.0%. None of several page-level rewriting techniques was consistently better than the unoptimised single page. In essence, this study tests a manipulation technique that fakes multi-source consensus.
 - Simulations or theoretical analysis suggest that, in principle, corroboration that appears to come from multiple sources may be harder to identify as false than a direct assertion. After defensive prompts were added, the agents' verification behaviour increased markedly, but the final rate of wrong endorsements did not fall (it rose from 28.6% to 38.6%): "went to check" does not mean "corrected after checking".
+- Simulations or theoretical analysis suggest that, in principle, rewritten copies of a claim may be counted as independent sources (7 fixed documents, a single 12-billion-parameter open-weight model, 200 scientific-claim questions): when a false claim appeared in only 1 document and the model was asked to check for misinformation, it flagged the problem 25% of the time; when the claim was rewritten into 5 more documents, so that it made up 6 of 7, this fell to 10%. Of the 38 questions whose result changed, 34 went from "caught" to "missed". But the design also reduced the number of normal documents at the same time (from 6 to 1), so it cannot tell whether "conformity", "repetition" or "fewer counter-documents" caused the drop; the outcome measured was also "whether the model detects it", not whether the final answer adopts it.
 
-Strength assessment: measurement (grade B) and experiments (grades C and D) point in the same direction, and the consensus effect is one of the most reliable mechanisms in this chapter. But note two points: first, the experimental settings mostly use fictitious products and controlled corpora; second, the experiments show that "consensus can be faked", which is an attack surface, not a recommended practice.
+Strength assessment: measurement (grade B) and experiments (grades C and D) point in the same direction, and the consensus effect is one of the most reliable mechanisms in this chapter. But note two points: first, the experimental settings mostly use fictitious products and controlled corpora; second, the experiments show that "consensus can be faked", which is an attack surface, not a recommended practice. Another set of simulations or theoretical analysis suggests that, in principle, faked consensus may not need several websites: in a fixed context, rewriting the same claim into several documents markedly lowered the chance that the model caught it (one small model, confounded factors). In addition, the consensus effect presupposes competing sources; on data-void topics, a single page can enter the answer (see Principle 5.2 and Chapter 11).
 
 ### 2.3 Brand priors: a conditional monopoly
 
@@ -1841,7 +1863,7 @@ Simulations or theoretical analysis suggest that, in principle, a single challen
 | 1 | **First map your sources**: list 30–50 questions that real buyers ask ("best X", "X vs Y", "alternatives to so-and-so"), run them repeatedly on several engines, record every cited URL, and group them by domain. Practitioners report from their own tests that in one audit of 200 questions, 60% of citations were concentrated on 7 domains, most of which were not on the original PR target list | Third-party dominance and source concentration: repeated tests on real AI search engines found; the specific procedure: practitioners report from their own tests |
 | 2 | **Compare the gaps**: find the pages where competitors are cited and you are absent; that is your outreach list. Give priority to getting included in listicles, comparison articles and review pages **that AI already cites**, rather than writing new articles and waiting to be discovered | Practitioners report from their own tests (several independent cases point the same way, none independently verified) |
 | 3 | **Unify your description across the web**: the company descriptions on your website's "About us" page, company databases, review sites, professional social networks and directories should all state "what you are and whom you serve" in the same sentence. Make the positioning specific to a vertical use case | Consensus mechanism: when the pages are supplied to the engine, and repeated tests on real AI search engines; the effect of consistent descriptions: practitioners' repeated, controlled tests found |
-| 4 | **Win several truly independent sources**: different publishers, different authors, different types of platform. The same source saying it repeatedly adds almost nothing | When the pages are supplied to the engine (repetition from the same source has no effect) |
+| 4 | **Win several truly independent sources**: different publishers, different authors, different types of platform. The same source saying it repeatedly adds almost nothing. This refers to verbatim repetition; rewriting the same claim into several pages may, in principle, weaken the model's ability to catch a false claim, which is an attack surface, not a practice | When the pages are supplied to the engine (repetition from the same source has no effect); simulations or theoretical analysis suggest that, in principle, this may happen (rewritten repetition, one model) |
 | 5 | **Provide real distinguishing information**: ratings, number of reviews, price, concrete specifications and performance data. When the information cannot tell candidates apart, the big brand's prior wins | Simulations or theoretical analysis suggest that, in principle, this may work |
 | 6 | **Find the "local authorities" for your industry**: in industries dominated by aggregator platforms (hotels, retail, apps), the completeness of your platform listing is the main battlefield; in niche industries it may be trade publications or association directories; leading sources also differ between language markets | Repeated tests on real AI search engines (market differences); industry differences: practitioners report from their own tests |
 | 7 | **Build associations with need-based and use-case wording**: get third-party content to write about you together with "a specific problem + a specific use", not just mention the brand name in passing | Simulations or theoretical analysis suggest that, in principle, this may work (need-based prompts can activate brands that were missed) |
@@ -1877,7 +1899,7 @@ Time to effect varies greatly across cases, and there is no reliable general fig
 
 1. For brand and product questions, most of what AI cites is third-party sources; brands' own websites account for only about 3%–17% across studies. This is the consistent conclusion of several large-scale measurements, but it is descriptive evidence.
 2. "Several seemingly independent sources consistently saying the same thing" is one of the strongest signals affecting AI selection; repetition from the same source is almost useless.
-3. This consensus mechanism can be faked, and it is currently the largest attack surface. GEO practitioners should seek genuinely independent sources rather than manufacture fake consensus.
+3. This consensus mechanism can be faked, and it is the largest attack surface when there are competing sources; rewriting the same claim into several pages may, in principle, be enough for it to be counted as several sources. On topics with few reliable sources (data voids), not even consensus is needed: a single page may enter the answer. GEO practitioners should seek genuinely independent sources rather than manufacture fake consensus.
 4. The brand prior sets the starting line: category visibility for large, mid-sized and small brands is about 73%, 44% and 11%. But "knowing" is not "recommending", and the prior is decisive mainly when the information cannot tell candidates apart.
 5. The weaker the prior, the more readily the model adopts third-party descriptions (including competitors' and erroneous ones). Small brands therefore have to actively manage how they are described in third-party sources.
 6. Off-site mentions and on-site readability act at different stages: the former decides whether you surface, the latter decides whose content an agent uses when it looks deeper. The relationship between the two is still debated.
@@ -1944,6 +1966,8 @@ What this means in practice: "relevant" does not mean belonging to the same broa
 
 Why does this happen? In observational data, sources ranked near the top are often more relevant and more authoritative to begin with. Position is entangled with these attributes, so it looks as if "position matters a lot". Once the other conditions are held fixed, the pure position effect is much smaller. Agents look at more options, and the more thoroughly they reason, the less they depend on "who appears first".
 
+There is, however, a counterexample that must stand alongside this. When the pages are supplied to the engine, researchers gave the 6 product page URLs of the same brand to commercial AI search engines to read and rank, in two opposite orders, with the page content completely unchanged (the brands and products were fictional, and only one query pattern, "best [category]", was used). On ChatGPT, the share of first places won by the same rewriting method went from 73.8% to 93.8%, and the first place changed for about a quarter of brands; on Grok it was 37.5% versus 50.0%; on Gemini, the method winning the most first places switched outright. On all three engines that method won first place more often when it was at the top of the list, but the size of the effect differed a great deal. This is still "choosing from a supplied list", but the subjects are real commercial AI search engines, not simulated agents. Some of the researchers are authors of the best-performing rewriting method, and this conflict of interest should be considered when interpreting the result.
+
 This conclusion has limits, however. All the evidence above concerns "choosing from a list that has already been presented". In deep research agents that search autonomously over multiple rounds, ranking also works through another path: documents ranked near the top are read first, and what is read first decides what is searched in the next round. In an experiment with a fixed set of candidate documents (weaker evidence, possible in principle), simply swapping the ranking of supporting and opposing documents shifted the overall direction of the evidence the agent read substantially, and in about half of cases it disagreed with the overall direction of all available documents. This experiment did not use a real search engine, used small open-source models, and measured the average stance of documents the agent read, not the text of the final report. So the more accurate statement is: position has a small effect on "a single choice", but in multi-round search it may be amplified through path dependence.
 
 ### Principle 6.3: Models have their own "signal weighting function", and the reasons they give do not match what they actually rely on
@@ -1991,14 +2015,14 @@ Most academic research measures "whether something is cited" or "citation rank".
 | Principle | Main type of evidence | Strength assessment | Scope and limitations |
 |---|---|---|---|
 | 6.1 Relevance as gatekeeper | In controlled experimental systems (large-scale trials) + when the pages are supplied to the engine + reproducible RAG pipeline | Fairly strong: three different designs point the same way | The two-source experiment's corpus was LLM-generated with a fixed context; the authors of the relevance prediction study themselves provide a content scoring service |
-| 6.2 Position effect | Mainly simulation / fixed context; agent environments and controlled replay as counter-evidence | Strong in fixed contexts, weak and unstable in real systems | The conclusion "position matters a lot" depends heavily on the experimental setup |
+| 6.2 Position effect | Mainly simulation / fixed context; agent environments and controlled replay as counter-evidence; a test on real AI search engines when the pages are supplied to the engine as a counterexample | Strong in fixed contexts, weak and unstable in real systems; but when real AI search engines read a fixed list, order can still change the first place | The conclusion "position matters a lot" depends heavily on the experimental setup; the counterexample is a single study, the URLs were supplied by the researchers, and some of the researchers are authors of the best-performing method |
 | 6.3 Signal weights and the say-do gap | Simulations or theoretical analysis (preregistered randomized audit, fixed-context recommendation) | Moderate: rigorous design, but grade E | Synthetic hotels, fixed candidate papers; does not represent the real weights of commercial engines |
 | 6.4 Preference for AI style | Controlled experimental systems + observation of a single commercial engine | Moderate to weak | Verified only on a few engines |
 | Appearing ≠ being selected | Practitioners report from their own tests | Weak to moderate: several sources point the same way, but not independently verified | Mostly recommendation and purchase queries |
 
 Two methodological cautions:
 
-1. **A single generation is unreliable.** In controlled experimental systems, about 15% of binary decisions on "whether to cite a given source" flip under the same conditions, and about 45% of the variance in effects comes from decoding randomness. Draw conclusions from a single run and you can easily see false effects.
+1. **A single generation is unreliable.** In controlled experimental systems, about 15% of binary decisions on "whether to cite a given source" flip under the same conditions, and about 45% of the variance in effects comes from decoding randomness. Draw conclusions from a single run and you can easily see false effects. When the pages are supplied to the engine, re-running ChatGPT once on the same pages in the same order also changed the first place for about one in five brands.
 2. **Observational data overestimates.** The position gap shrinking from 42.3 percentage points in observational data to 7.9 under control is an example. Practitioners' correlation statistics may be confounded in the same way.
 
 ## Debates and counterexamples
@@ -2019,6 +2043,7 @@ Two methodological cautions:
 - Hotel audit: only 2–4 percentage points on average, but up to about 26 percentage points for individual models.
 - Shopping agent: very weak and non-monotonic; the stronger the reasoning, the smaller it is.
 - Controlled replay: close to zero on the held-out sample.
+- Real AI search engines reading a supplied list: when the pages are supplied to the engine, merely reversing the order of 6 URLs changed the share of first places won by the same method on ChatGPT by 20 percentage points (73.8% versus 93.8%); on Gemini the gap was much smaller (23.8% versus 28.8%).
 
 **How to read this**: the position effect is real, but its size depends on the model, the reasoning configuration and the number of candidates. "Rank first and win" is not a stable rule. For practitioners, relevance and attributes are more controllable than position.
 
@@ -2104,7 +2129,7 @@ One practitioner observed that social platform content cited by AI used wording 
 | Practice | Explanation | Evidence strength |
 |---|---|---|
 | Write around specific questions, not category words | List the questions users ask with conditions attached (budget, region, use case), and make the page match those questions directly | Fairly strong (controlled experiments, pages supplied to the engine, and reproducible pipelines: three types of evidence agree) |
-| Write specific facts the model can restate directly | Prices, specifications, model numbers, service area, certification names, dated figures | Moderate (controlled experiments show explicit prices and specifications are strong factors; several practitioners report from their own tests in the same direction) |
+| Write specific facts the model can restate directly | Prices, specifications, model numbers, service area, certification names, dated figures. When the pages are supplied to the engine, even a ±0.2% price difference changes the mean rank of some rewriting methods, although it does not change who comes first | Moderate (controlled experiments show explicit prices and specifications are strong factors; several practitioners report from their own tests in the same direction) |
 | Publish clear prices | Price is one of the gatekeeping factors; options without a price have difficulty entering the comparison | Moderate (controlled experiment + a single practitioner observation) |
 | Keep content genuinely updated, and show dates | A more recent timestamp had a large effect in controlled experiments | Moderate (controlled experiments only; "update every 30 days" is only a single rule of thumb) |
 | In recommendation-driven businesses, build ratings and review counts | Ratings and review counts were the main positive attributes in the hotel audit | Moderate to weak (simulation / synthetic data) |
@@ -2112,7 +2137,7 @@ One practitioner observed that social platform content cited by AI used wording 
 | Track "mentioned / cited / recommended" separately | Use real purchase prompts, add one condition (budget, region, size), and record at which step you drop out | Practitioners report from their own tests (a method recommendation, not proof of effect) |
 | Repeat each test several times | About 15% of citation decisions from a single generation flip | Controlled experimental system |
 | Check comparison and list passages on your own site | Such passages may be extracted directly to recommend others | One practitioner observed (a lead) |
-| If you control the order of a list (such as your own comparison page), reasonably place yourself near the top | Position has an effect in fixed contexts; but in agents and real systems the effect is weak and unstable | Weak (mainly simulation) |
+| If you control the order of a list (such as your own comparison page), reasonably place yourself near the top | Position has an effect in fixed contexts; but in agents and real systems the effect is weak and unstable | Weak (mainly simulation; there is also a test on real AI search engines when the pages are supplied to the engine, showing that the order of a URL list can change the first place, but it tested the order of URLs given to the engine, not the arrangement within a page) |
 
 ### Do not do
 
@@ -2133,7 +2158,7 @@ One practitioner observed that social platform content cited by AI used wording 
 
 1. **Relevance is the first gate.** It means matching the specific query, not belonging to the same broad topic. A content quality score that ignores the query predicts citation poorly.
 2. **Gatekeeping factors come before differentiating factors.** Topical relevance, a clear price and a recent timestamp must be in place first; changing only the formatting has almost no effect.
-3. The position effect depends on the setup. It is strong in fixed contexts and shrinks sharply in agents and controlled replay. Observational data overestimates it.
+3. The position effect depends on the setup. It is strong in fixed contexts and shrinks sharply in agents and controlled replay. Observational data overestimates it. But when the pages are supplied to the engine, order can still noticeably change the first place when real AI search engines read a fixed list (a single study, and some of the researchers are authors of the best-performing method).
 4. Models have their own attribute weights. Rating and price dominate hotel choice; environmental certification is overweighted, and management replies are almost ineffective; authority labels can flip nearly 40% of paper recommendations. These come from simulations and controlled experiments, and show only what may happen in principle.
 5. Do not trust the model's own account. The reasons it gives only partly match the weights it actually relies on.
 6. Text that is "predictable" to the model is more likely to be cited. This is a newer finding, so far verified only to a limited extent.
@@ -2226,6 +2251,7 @@ Even when a source really exists, is listed and its content is used, the answer 
 | Problem | Data | Type of evidence |
 |---|---|---|
 | Statements in Google AI Overviews not supported by sources | About 11% (98,020 statements; mainly omissions: omitted 7.0%, incorrect 2.7%, ambiguous 1.4%) | Repeated measurement on real engines |
+| Share of cited statements in Google AI Overviews that are grounded, for long health questions | About 47% (classifier judgement); about 57% after correction using human validation (range about 45%–69%). A further about 21% of statements are factual statements with no citation at all | Single large-scale audit on a real engine, classifier judgement with human spot checks |
 | Citations that distort the source's meaning | 30.6% | Repeated measurement on real engines |
 | Unsuitable sources (the source itself is not suitable to support the statement) | 27.1% | Repeated measurement on real engines |
 | Answers containing at least one problematic citation | 71.3%–96.1% (depending on model) | Repeated measurement on real engines |
@@ -2236,7 +2262,7 @@ Key points:
 
 1. **Distortion and unsuitability are two independent axes, and they trade off against each other.** In a measurement covering 761,495 citation pairs and 10 models, the model with the lowest distortion rate had a relatively high rate of unsuitable sources; the model with the highest distortion rate had the lowest unsuitability rate. No model was low on both.
 2. **Both are decided mainly by the "provider (search backend)", not by model size.** The provider explained about 96% of the variance in source suitability and about 88% of the variance in faithfulness. Within the same provider, scaling up the model barely improved the distortion rate (difference under 0.8 percentage points). Reasoning models can lower the distortion rate (one model from 34.1% to 18.0%), but have almost no effect on source suitability (change under 2 percentage points).
-3. High source quality does not mean faithful use. In longitudinal measurement of Google AI Overviews, the credibility scores of cited sources were higher than those of the first-page search results for the same query, but the correlation between source quality and statement faithfulness was only about 0.045, essentially unrelated.
+3. High source quality does not mean faithful use. In longitudinal measurement of Google AI Overviews, the credibility scores of cited sources were higher than those of the first-page search results for the same query, but the correlation between source quality and statement faithfulness was only about 0.045, essentially unrelated. Another large-scale audit of health questions on a real AI search engine (3,611 questions, collected once) found the first point in the opposite direction: pages cited by AIO scored slightly lower than the traditional top 5 for the same question on 4 of 6 credibility indicators, and leaned towards commercial health information websites, though all gaps were small. The second point agreed: neither source quality nor whether statements were grounded could meaningfully predict whether the answer was accurate by physicians' rubrics (the correlation between grounding and accuracy was about 0.01). The two results stand side by side; the difference may come from the domain (general queries versus health questions) and the level of measurement (domain level versus page level).
 4. A valid, relevant link does not mean the fact is supported. In controlled experimental systems, 12 of 14 models had link validity rates above 94%, and frontier models had citation relevance above 80%, yet fact-check pass rates were only 24%–77%.
 5. Check first that the citation exists. In controlled experimental systems, 3–13% of cited URLs had no archived record at all and may never have existed. Deep research agents had a higher hallucination rate (10.7%) than ordinary search-augmented models (4.8%). Some models cited about 4.3 times as many sources, but their share of unresolvable URLs was about 2 times higher.
 
@@ -2250,6 +2276,14 @@ Citations are not only source markers for machines; they also directly affect us
 - On real AI search engines, an analysis of large-scale crowdsourced preference data found (24,069 conversations, 12,652 preference votes) that user preference correlated positively with the number of citations. More important: **citations that support the argument (coefficient 0.29) and citations unrelated to the argument (coefficient 0.27) had almost the same effect on preference**; only citations that contradict the argument were not significant. This is correlation, not causation.
 
 Implication: on the user side, citations work more like "looks well-founded" than "has been verified". This makes the distortion problem in Section 2.4 worse: an incorrect description with a citation attached is more likely to be believed.
+
+Evidence from the answer side points the same way. In one large-scale audit of health questions on a real AI search engine (3,611 questions, US English, collected once; scored by a model grader against physician-written rubrics, with the grader validated against physician labels):
+
+- AIO answers with no citations at all and AIO answers with citations scored almost the same (about 40.4% versus 39.2%, not a significant difference). How well statements were grounded was also unrelated to answer accuracy (correlation about 0.01). **For health questions, whether an answer carries citations is unrelated to whether it is correct.**
+- Overall, the answers scored only about 38.2% on the physician rubrics, losing points mainly through omissions. On questions where physicians had specified a harmful or wrong claim in advance, 22.2% of AIO answers stated at least one of them.
+- High-risk questions more often got no citations at all (about 17.6%), yet were still answered (see Chapter 2, Principle 2.3).
+
+This is a correlational observation. The authors cannot tell whether the answers come mainly from the model's own knowledge, or whether the citations were attached after the answer was generated.
 
 ### 2.6 Principle 5: AI rewrites testimony into generalized advice
 
@@ -2279,6 +2313,7 @@ Practitioners' reports from their own tests and first-hand observations by sever
 | Breadth of citation and depth of absorption diverge (cross-platform comparison) | Descriptive analysis of a static snapshot | Weak. Shows only what is possible in principle; confounders not controlled |
 | Invisible use (14–53% of claims uncredited) | Field logs on real engines + controlled replay | Moderate. The range is very wide, and platforms differ greatly |
 | About 11% of AIO statements unsupported by sources | 40-day longitudinal measurement on a real engine | Moderate to strong. Covers only Google AI Overviews and popular queries |
+| About 43%–53% of cited statements ungrounded for long health questions; neither citations nor grounding predict accuracy | Single large-scale audit on a real engine (3,611 questions, 3 days); classifier and model grader, both spot-checked against human or physician labels | Moderate. Covers only US English and long questions adapted from a conversational evaluation dataset; no repeated measurement |
 | Distortion 30.6%, unsuitability 27.1%, decided by the provider | Real engine APIs + checks against the actually crawled sources | Moderate to strong. Large sample (760,000 citation pairs), but via APIs rather than the user interface |
 | Hallucinated URLs 3–13% | Controlled experimental system | Moderate. The authors call it a lower-bound estimate |
 | More search calls, lower factual accuracy | Controlled experimental system | Weak. Ablation on only two models, with a model as judge |
@@ -2316,8 +2351,9 @@ Scope reminders:
 
 ### 4.4 Are high-quality sources used more faithfully?
 
-- The sources cited by Google AI Overviews are indeed more credible than first-page results.
-- But source quality and faithfulness are almost uncorrelated (about 0.045).
+- Longitudinal measurement of general queries found that the sources cited by Google AI Overviews are indeed more credible than first-page results.
+- But a large-scale audit of health questions found the opposite direction: pages cited by AIO scored slightly lower than the traditional top 5 for the same question on 4 of 6 credibility indicators, leaned towards commercial health information websites, and gave lower shares to academic medical institutions and government sources. The difference may come from the domain (general queries versus health questions) and the level of measurement (domain level versus page level). For now the two stand side by side without forced reconciliation.
+- But source quality and faithfulness are almost uncorrelated (about 0.045). The health-question audit agrees on this point: neither source quality nor whether statements were grounded could meaningfully predict whether the answer was accurate.
 - Faithfulness and suitability also trade off against each other. Optimizing to "make yourself an authoritative source" is not the same as "making sure you are described correctly".
 
 ### 4.5 Are deep research agents more reliable than ordinary search?
@@ -2454,8 +2490,8 @@ Scope reminders:
 1. "Being seen by AI" has at least four layers: mention, citation, absorption, correct description. Each layer loses some; when measuring, record them separately and state the denominator clearly.
 2. Being listed does not mean being used: on Chinese-language platforms about 39% of listed sources are silent citations; forum sources are cited in Google AI Overviews but actually used relatively little.
 3. Being used does not necessarily mean being credited: 14–53% of answer claims are supported by search results but carry no citation. Citation counts are not a reliable proxy for influence.
-4. Being used does not mean being used correctly: about 11% of AIO statements are unsupported by sources; about 30% of citations distort the original meaning and about 27% of sources are unsuitable; the two trade off against each other and are decided mainly by the search backend.
-5. Citations are a persuasion signal: users trust answers more because they see citations, but do not distinguish whether the citations are valid or support the argument.
+4. Being used does not mean being used correctly: about 11% of AIO statements are unsupported by sources (in a single audit of long health questions the share was much higher, about 43%–53%); about 30% of citations distort the original meaning and about 27% of sources are unsuitable; the two trade off against each other and are decided mainly by the search backend.
+5. Citations are a persuasion signal: users trust answers more because they see citations, but do not distinguish whether the citations are valid or support the argument. For health questions, whether an answer carries citations is also unrelated to whether it is correct.
 6. AI generalizes personal testimony: first-person experience is almost entirely erased during synthesis, and selection favours high-scoring, top-level, formal-toned content.
 7. Being cited and being named are two mechanisms: practitioners have repeatedly observed "the page is used as a source, but someone else is recommended". Making claims attributable to you is a separate task.
 8. The practical priority is to keep monitoring whether descriptions are correct and to trace incorrect third-party sources, not merely to chase citation counts.
@@ -2464,6 +2500,7 @@ Scope reminders:
 
 > Where this chapter sits: the three pipeline stages "selection and ranking → citation → absorption", with a look back at how content changes affect "retrieval".
 > Precondition: the page is already accessible and indexed (the accessibility problems discussed in earlier chapters have been handled). This chapter asks only one thing: **for the same page, does how the content is written or changed alter whether AI cites it, and how much?**
+> This precondition is not a minor one: under real retrieval conditions, whether the page is indexed and whether its domain is visible matter more than how the content is written (see Debate 1 in Section 8.3).
 
 ## Questions this chapter answers
 
@@ -2502,6 +2539,8 @@ Real pipeline:            query → retrieval → reranking → generation → c
                       the rewrite may be eliminated at either of these two gates
 ```
 
+The evaluation method itself can also change the conclusion. When the pages are supplied to the engine, one study published the same set of rewritten product pages on a real website, then gave the URLs to three commercial AI search engines to read and rank, while also giving the same text directly to five models to score. The within-brand correlation between the scores from text given directly to models and the rankings by AI search engines that read the pages ranged from 0.50 to −0.31; one model's rankings ran in the opposite direction to all three AI search engines. Overall, "which rewrite is strongest" was broadly preserved, but at the level of individual brands, the three AI search engines picked the same first place only about half to two-thirds of the time. So GEO effects obtained by having a model read the text directly cannot be taken as effects on real AI search.
+
 Conclusion: every content technique should be treated as a hypothesis "with an expiry date", not a law. It has to be measured repeatedly on the current engines before you keep using it.
 
 ### Principle 2: Automated optimization converges on "faithful to the facts, aligned with the query, clearly structured"
@@ -2515,6 +2554,8 @@ Several studies point the same way. The style that automated optimization eventu
 - Clearly structured: bullet points, separate paragraphs, information that is easy to extract.
 
 In an e-commerce setting, after a simple defensive clause was added, prompts that had been optimized to "manipulate" the ranking converged on their own towards a factual style, and the share flagged as manipulation fell by 60 percentage points on average. So when an engine has basic defences, manipulation does not pay, and honest, clear writing turns out to be the best solution.
+
+This conclusion comes from a simulation with a defensive clause added. When the pages are supplied to the engine, three commercial AI search engines showed no such defence: the best-performing method was one that adjusts appended text using ranking feedback, and it had used the actual rankings of one of these AI search engines as feedback (some of the researchers are authors of that method); rewrites containing unsupported numbers were not ranked lower for it either (see Principle 4).
 
 This is consistent with Principle 6.1 in Chapter 6: what engines prefer is not some writing trick but content that matches the query, can be extracted and can be trusted.
 
@@ -2564,7 +2605,7 @@ Q&A format is not the answer in itself. The absorption of Q&A pages, compared wi
 
 ### Principle 4: Optimization has side effects
 
-Content optimization does not bring only benefits. Three kinds of side effect are known:
+Content optimization does not bring only benefits. Four kinds of side effect are known:
 
 1. **Gaining one thing, losing another.** A page usually has to answer several related queries. When it is tuned for a single query, 30.6% of the non-target queries show a negative gain.
 2. **Lower faithfulness.** Automated rewrites aimed at visibility lower the content's faithfulness score from 8.29 to 4.90 and attribution accuracy from 6.15 to 4.18. The page is "seen" more, but it is reported correctly less often.
@@ -2576,6 +2617,8 @@ Change only the body text → generation stage may gain + a little
                           → net effect: citation rate -6%
 ```
 
+4. **AI search does not check numbers automatically.** When the pages are supplied to the engine, a statistics-addition rewrite that allowed "hypothetical data" put numbers not supported by the product specifications into all 80 product descriptions (for example "18% better heat retention"), and other automated rewriting methods occasionally made unsupported comparisons such as "30% energy saving". Three commercial AI search engines did not rank them lower for it: the statistics-addition rewrites still had a clearly better average rank than the unrewritten originals. Being seen and being reported correctly are two different things. Invented numbers written into a page get passed on by AI: for readers this is a real risk of being misled, and for the writer it is a reputational risk.
+
 ## 8.2 How strong is the evidence
 
 ### On "the classic techniques no longer work"
@@ -2585,8 +2628,12 @@ Change only the body text → generation stage may gain + a little
 - **Simulations or theoretical analysis suggest that, in principle**: of 54 "method × domain" combinations, only 3 showed a statistically significant improvement in citation rank, and none worked on question-answering tasks. Adding statistics significantly lowered rank in 19 of 24 scenarios. By comparison, the gain from putting the document first in the context is far larger than that of any content rewriting method.
 - Simulations or theoretical analysis suggest that, in principle: in an e-commerce reranking setting, only 4 of 15 hand-written techniques slightly beat or matched a simple prompt, and the other 11 did worse; a storytelling rewrite scored -4.36.
 - Simulations or theoretical analysis suggest that, in principle: 9 word-level (token-level) rewriting techniques all fell below the unrewritten baseline on three engines.
+- **When the pages are supplied to the engine**, researchers published product pages for 80 fictional brands, 6 products each with identical specifications, on a real website, then gave the URLs to three commercial AI search engines to read and rank. Pages that added statistics through a whole-page rewrite had a better average rank on all three AI search engines (3.18, 3.31, 3.83) than the plain originals (5.28, 5.84, 4.88); but they came first only 10.0%, 11.3% and 5.0% of the time, far behind the best-performing rewriting method. All 80 statistics-addition descriptions contained numbers not supported by the specifications.
+  - Limitations: the URLs were supplied directly by the researchers, so whether AI search would find these pages on its own was not tested; the originals were plain template-generated text, a weak baseline; some of the researchers are authors of the best-performing method. The results were also unstable: rerunning the same condition changed the first place for about 20% of brands, and merely reversing the order of the URLs made the best method's first-place rate swing between 73.8% and 93.8%.
+- **Repeated tests on real AI search engines found** (three AI search engines, 56 artificially created "data void" topics, meaning topics with almost no other reliable content; only one page published per topic, indexed naturally by search engines, measured on day 25 after going live): on-page GEO writing (statistics, inline source citations, an opening summary, technical terminology and safety notes, added together) had no detectable effect on whether the page entered the answer (odds ratio 0.91), ruling out effects of twofold or more. The strongest factor was domain visibility: new domains that were not indexed scored 0 on all three engines, pages on old domains 38.4%–78.3%, and new domains submitted for indexing 14.3%–42.9%.
+  - Limitations: pages with and without GEO writing numbered 46 versus 10, so only large effects can be ruled out, not smaller ones; the topics were data voids with no competing sources, and all content was fictional; domain visibility bundles domain age, existing links and indexing together, and they cannot be separated.
 
-Scope: most of the above used fixed contexts or controlled frameworks. What they show together is that "appended, word-level techniques are unreliable"; this is not the same as "evidence and data are useless" (see Debate 1 in Section 8.3).
+Scope: the first four items mostly used fixed contexts or controlled frameworks. What they show together is that "appended, word-level techniques are unreliable"; this is not the same as "evidence and data are useless" (see Debate 1 in Section 8.3). The last two items use conditions closer to the real world; the evidence from the three kinds of conditions is set side by side in Debate 1 in Section 8.3.
 
 ### On "the direction automated optimization converges on"
 
@@ -2611,6 +2658,7 @@ Scope: most of the above used fixed contexts or controlled frameworks. What they
 
 - **In controlled experimental systems**, 15% of single-generation "cite or not" decisions flip when rerun; about 45% of the effect variance comes from decoding randomness.
 - **Practitioners' repeated, controlled tests found**: when the noise floor was measured before intervening, 98% of 387 queries gave the same result 3 days later; changes smaller than about 3–4 percentage points should therefore be treated as measurement noise, not as an effect.
+- **When the pages are supplied to the engine**, rerunning the same pages in the same order on ChatGPT changed the first place for about 20% of brands; merely reversing the order of the candidate URLs, with the content completely unchanged, made the best-performing rewriting method's first-place rate swing between 73.8% and 93.8%. Product names, a tiny price difference (±0.2%), and whether a brand overview page or individual product pages were given also changed the results. Record these conditions when measuring, and rotate them.
 
 This means that measuring once, seeing a change of a few percentage points and declaring a content practice effective is unreliable.
 
@@ -2624,9 +2672,21 @@ This means that measuring once, seeing a change of a few percentage points and d
 
 **What each side is based on**: the former measures "appending a block" or "word-level rewriting"; the latter measures "raising evidence density when the whole page is rewritten".
 
+Another study based on repeated tests on real AI search engines saw both sides. In real logs, pages with statistics (retrieval odds ratio 2.11, citation 1.17), inline source citations (1.34, 1.22) and accurate terminology (2.26, 1.71) were retrieved and cited more often, while fluent prose was associated with lower rates (0.67, 0.58); this is correlational evidence. But in a controlled experiment that added these elements directly, there was no detectable effect, and the domain a page was published on mattered far more than how it was written.
+
 **The practitioner side**: Practitioners report from their own tests that one piece of original research (an audit of the AI visibility of more than two thousand training companies) became the only page on that website listed by Perplexity as the top source, and they consider original figures the strongest citable signal at present. One practitioner observed that, across about 150 websites, the median share of paragraphs containing numbers, quotations or external links was only 23/100.
 
-A reading that holds both together: "pasting numbers in" and "the content itself contains evidence not available elsewhere" are two different things. The former has been shown to be unreliable; the latter is currently supported only by simulations and practitioner reports, with no causal evidence yet from real engines.
+A reading that holds both together: "pasting numbers in" and "the content itself contains evidence not available elsewhere" are two different things. The former has been shown to be unreliable; the latter is currently supported only by simulations, practitioner reports and correlational evidence from real engines, with no causal evidence yet from real engines. There is also a third case: writing numbers not supported by the specifications into the body text. When the pages are supplied to the engine, this kind of rewrite can beat a plain original but falls behind other whole-page rewriting methods, and it amounts to handing false information to AI to pass on. It is not "evidence" and should not appear in any recommended practice.
+
+Setting the three kinds of evidence on "adding statistics" side by side:
+
+| Test condition | Strength of evidence | Result |
+|---|---|---|
+| Candidate text given directly to models, retested on ten modern models | When the pages are supplied to the engine (the authors provide a content scoring service) | The +32.8 of 2023 became -0.28; none of the three tactics increased citations |
+| Real AI search engines read real live pages, but the URLs were supplied by the researchers | When the pages are supplied to the engine (some of the researchers are authors of the best-performing method) | Whole-page statistics-addition rewrites still had a better average rank than plain originals, but fell behind other whole-page rewrites; all 80 contained numbers not supported by the specifications, and the engines did not check them; reversing the URL order or rerunning changed the results |
+| Real AI search engines with real retrieval, pages indexed naturally by search engines | Repeated tests on real AI search engines found | On-page GEO writing had no detectable effect (odds ratio 0.91); whether the page was indexed and whether the domain was visible were the strongest factors |
+
+The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help. Under the conditions closest to the real world so far, no effect of writing techniques is visible; what is visible is whether the page has been indexed and whether the domain can be found. The given-page result that "adding statistics still wins" was measured against plain template originals, and it changes with order and with reruns. In addition, AI search does not check numbers: invented numbers are a real risk of misleading readers, and a reputational risk for the writer.
 
 ### Debate 2: Is Schema useful?
 
@@ -2740,6 +2800,7 @@ The following cases all come from practitioners' first-hand reports and are not 
 
 | Practice | Strength of evidence | Notes |
 |---|---|---|
+| First confirm that the page has been indexed by search engines and that its domain can be found; then worry about the writing | Repeated tests on real AI search engines found (data void topics) | New domains that were not indexed scored 0 on all three engines; on-page writing had no detectable effect |
 | First confirm that the content corresponds to real queries, and write titles and questions in users' actual wording | In controlled experiments and simulations, query relevance is the strongest predictor; supported by practitioners' own test reports | Answer the question first; then worry about the writing |
 | Keep existing pages continuously updated, with more frequent updates for time-sensitive topics | Repeated tests on real engines + simulation experiments, pointing the same way | The half-life for time-sensitive queries is about 39 days, which can serve as a reference for review intervals |
 | Write core entities and key numbers into structural fields such as title, meta, headings and Schema | Controlled experimental systems | Acts at the retrieval stage; not a citation lever |
@@ -2760,24 +2821,25 @@ The following cases all come from practitioners' first-hand reports and are not 
 - Do not let Schema disagree with the visible content. Models may take the visible content as authoritative, and the conflict only creates confusion.
 - Do not make a large change in one go to a page that is already cited consistently. One practitioner observed citations falling for several weeks as a result and never fully recovering; make changes in small, reversible steps.
 - Do not pursue visibility at the expense of accuracy. Visibility-oriented rewrites lower faithfulness: the page is cited more, but also misreported more.
+- **Do not write unsupported numbers on the page.** When the pages are supplied to the engine, AI search did not check numbers, and rewrites containing invented numbers were not ranked lower for it. These numbers get passed on to readers: for readers this is misleading, and for the writer it is a reputational risk.
 
 ### Already outdated
 
-- **The "add statistics, add quotations, cite sources" trio as standalone techniques.** The +27% to +43% of 2023 retests as zero or slightly negative on modern models.
+- **The "add statistics, add quotations, cite sources" trio as standalone techniques.** The +27% to +43% of 2023 retests as zero or slightly negative on modern models; under real retrieval conditions, on-page GEO writing also had no detectable effect.
 - **Any single-technique list of the "boost by 40%" kind.** Word-level rewrites fall below the unrewritten baseline in several studies, and the more people adopt them, the closer the effect gets to zero.
 - Treating FAQ format or Schema as the main means of "getting AI to cite you". They help reading and retrieval, but do not in themselves decide whether you are chosen.
 - The idea of "optimize once, effective forever". Engine updates make known levers expire, so they have to be retested regularly.
 
 ## Key points
 
-1. **Content techniques have a shelf life.** The 2023 "add statistics, add quotations, cite sources" no longer increase citations when retested on modern models.
+1. **Content techniques have a shelf life.** The 2023 "add statistics, add quotations, cite sources" no longer increase citations when retested on modern models. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help; whether the page is indexed and whether the domain is visible matter more.
 2. **Automated optimization converges on faithful to the facts, aligned with the query, clearly structured.** This is currently the closest thing to a "general optimum", and preferences vary by domain.
 3. Answer the question first; then worry about the writing. Relevance between query and content predicts citations better than query-independent "content quality"; good or bad prose is almost unrelated to being cited.
 4. Freshness is the content factor with the most consistent evidence, but the pages cited most often are those that "have existed for some time and keep being updated", not newly published ones.
 5. Structure and Schema act at the retrieval and extraction stages. Structured presentation only redistributes citations among equivalent sources and is not a citation lever in itself.
 6. Q&A format, an authoritative tone and keyword stuffing are all ineffective or harmful on their own. The FAQ success stories mostly come from "aligning with the query in real people's wording", not from the format itself.
-7. Optimization has side effects: tuning for one query harms other queries; pursuing visibility lowers faithfulness; changing only the body text may make the page fall behind at the retrieval stage.
-8. A single measurement cannot be trusted. About 15% of citation decisions flip when rerun; before evaluating any practice, measure the noise floor first and record results per engine.
+7. Optimization has side effects: tuning for one query harms other queries; pursuing visibility lowers faithfulness; changing only the body text may make the page fall behind at the retrieval stage; AI search also does not check numbers, so invented numbers are not stopped.
+8. A single measurement cannot be trusted. About 15% of citation decisions flip when rerun; on real AI search, reversing the candidate order or rerunning also changes who comes first; before evaluating any practice, measure the noise floor first and record results per engine.
 
 # Chapter 9: Measurement: Visibility Is a Distribution, Not a Ranking
 
@@ -2819,6 +2881,7 @@ Repeated tests on real AI search engines found:
 - On one of the engines, 57.8% of runs cited no sources at all.
 - Another study ran the same query repeatedly on three engines. The median overlap of the sets of cited domains was about 0.29–0.31 for one engine and 0.33–0.40 for another, and even the most stable was only 0.50.
 - Even for frequently cited domains, the share obtained from a single measurement has a 95% confidence interval 3–7 percentage points wide. Many of the "gaps" between domains actually fall within the noise.
+- Deep research mode repeats even less. For a commercial deep research system, the same open-ended prompt was rerun 10 times through the API (each report about 5,000 words with about 80 cited URLs): any two reports shared only about one eighth of the entities they mentioned (median Jaccard about 0.12); the median Jaccard of cited URLs was only about 0.01; and the median overlap of pairs where "the same entity is supported by the same URL" was about 0.007. Note that these are **URL-level** figures, while most of the studies above are at the domain or source level; deep research reports are also longer and cite more, and the larger and more long-tailed the sets, the lower Jaccard naturally is. So the two cannot be compared directly, and this cannot be read as "deep research is dozens of times less stable than ordinary AI search". It is also the result of a single system, a single prompt and a single domain (cybersecurity), with entities extracted by an LLM and not fully audited by hand.
 
 Practitioners' repeated, controlled tests found results in the same direction:
 - Across 197 websites in one vertical and three engines, with each prompt run three times, 32% of citations appeared in only one of the three runs.
@@ -2835,12 +2898,13 @@ Repeated tests on real AI search engines found:
 - When the variance of more than 10,000 brand answers is broken down, **the query language** is the largest systematic source of variation, accounting for about 26.5% of the variance of a single answer; the brand itself accounts for only 1.5%.
 - After the 5th repetition of the same prompt, adding 5 more repetitions barely reduces the error; adding 3 more languages instead reduces the error by about 15 times as much.
 - The reliability of a single answer for distinguishing between brands is only about 0.01.
-- Mentions at the brand level are more stable than at the URL level: the adjacent-day overlap for brands is about 0.45–0.59, higher than the 0.34–0.42 for sources.
+- Mentions at the brand level are more stable than at the URL level: the adjacent-day overlap for brands is about 0.45–0.59, higher than the 0.34–0.42 for sources. On a deep research system the gap in the same direction is larger: entity overlap about 0.12, cited URLs about 0.01 (single system, single prompt, 10 repetitions).
 
 There is no fixed answer to how large a sample you need:
 - One study used 10 topics × 125 queries × 3 platforms and a sequential convergence method, based on "the ranking reaching a plateau", to decide when collection could stop. Most combinations stabilized at 33–75 responses, but 3 combinations (all on the same engine) never converged within 125.
 - If you stop using only a fixed threshold (for example a rank correlation coefficient ≥ 0.95), all 30 combinations reach it, but only 19 hold it. Looking only at ranking stability, the agreement between the ordering and the final result can be as low as 0.364; adding a signal-to-noise condition raises the worst case to 0.717.
 - The number of citations per answer varies widely across engines: two engines give about 15–50 per answer, another only about 4–6. The sparser the citations, the more queries you need to collect. Another study estimated that narrowing the interval of a share to 5 percentage points requires about 30–50, 90–100, and 150 or more queries for the respective engines.
+- The more long-tail the thing being measured, the harder it is to converge. Repeated tests on real AI search engines found (one commercial deep research system, the same prompt 10 times): categories with few, well-known candidates (such as countries and well-known attack groups) stopped producing new names earlier; long-tail categories such as products, software and techniques kept producing new names with every extra run and did not saturate within 10 runs. The researchers suggest that the size of the candidate space is the reason, but this has not been tested directly. The book's inference: for brands, this may mean that the appearance rate of leading brands stabilises faster and long-tail brands need more samples; whether you are asking "does the leader appear" or "the complete list" makes a large difference to the number of runs needed.
 
 **Re-running and rephrasing are two different things.** Re-running the same prompt smooths out randomness; asking in a different way tests "are you still there if the question is phrased differently". Practitioners widely believe both are needed, and that leaving out either one will still mislead you.
 
@@ -2855,8 +2919,9 @@ Before saying "I see myself in AI", first ask: at which layer?
 | API (search enabled) | Programmatic calls | Some APIs do not return certain social platform sources shown in the interface (for example X) |
 | API (search not enabled) | Programmatic calls | Measures the model's memory, not retrieval results |
 | Logged-in account | Personal use | Affected by conversation history and memory |
+| Deep research mode | Programmatic calls (existing research used the API) or manual | Long reports with many citations; rerunning the same prompt, almost nothing repeats at the URL level |
 
-The first three rows above are results of repeated tests on real AI search engines. The differences between engines are also large: two mainstream engines share on average only 5.4% of domains for the same query, and 76.7% of comparisons have no domain in common at all.
+The first three rows and the last row above are results of repeated tests on real AI search engines. The differences between engines are also large: two mainstream engines share on average only 5.4% of domains for the same query, and 76.7% of comparisons have no domain in common at all.
 
 Another study that captured the internal execution of the ChatGPT web version (versions 5.2–5.5) adds that the URLs cited by the API match those of the web version (F1) only 13%–15% of the time, while precision at the domain level is 28%–41%, so comparisons should be made at two levels, URL and domain. **Reasoning mode also changes search behavior**: Instant mode mostly searches only one round, while Thinking mode averages 3.2 rounds and about 12 queries; the web version may also switch to another model partway through a session. When measuring, record the mode and the reasoning effort.
 
@@ -2889,6 +2954,8 @@ One practitioner observed (single observations, offered only as leads):
 - Of 60 buyer questions collected from real communities and from "related questions", in one round 13 and in another round 23 got AI answers that named no brand at all. Tracking such questions can never prove anything.
 - Testing only with the most competitive core terms produced the conclusion "0 out of 10 questions"; after adding more specific questions, the same website was cited.
 
+The checking method also defines the result. Some measurements refetch the web pages cited in AI answers to check whether the sources still support what the answer says. In controlled experimental systems (researchers tested their own fetching program on real URLs and used an LLM to judge whether a source still supported the original claim): if every 200 status code is treated as having received the main content, the share of "cited sources no longer support the original claim" appears to be about 21.9%, but only about 5.8% after excluding responses without main content, a difference of about 3.8 times; at the same time, "dead sources" are underestimated: about 11.8% by status code alone, against about 16.0% that actually no longer serve the original content. When building this kind of checking tool yourself, first confirm that what you fetched is the main content (for how to check, see "What to do" in Chapter 3).
+
 ### Principle 9.5: Mention, citation and recommendation are three different quantities
 
 "Appearing in an AI answer" has at least three meanings:
@@ -2917,6 +2984,8 @@ Crawled (crawler logs) → Cited / mentioned / recommended (prompt sampling) →
 
 Practitioners report from their own tests that tracking tools almost all measure only the middle segment, yet are often sold as covering all three. Server logs can provide leads on the other two segments, and changes show up there earlier. In addition, practitioners' repeated, controlled tests found that most AI assistants open links without passing on source information (the referrer), so visits are recorded as "direct traffic", and tools that look only at referral traffic structurally underestimate it.
 
+When reading crawler logs, do not just count status code 200s. Logs record the status code the server returned, not what the other side read. In controlled experimental systems (researchers tested their own fetching program on about 10,000 real URLs, not an AI company's crawler), about one fifth of the pages a static fetch received with a 200 had no main content: they could be challenge pages returned by a CDN, front-end shells, or substitute pages that redirect deep URLs to the home page. So "with zero crawling there can be no retrieval-based citation" still holds, but the reverse does not: being crawled and returning 200 does not guarantee the content is usable. When using crawler logs as a leading indicator, also look at response size, or the CDN's record of how it handled the request as a bot.
+
 ## 2. How strong is the evidence
 
 | Conclusion | Type of evidence | Strength | Scope and limitations |
@@ -2931,6 +3000,8 @@ Practitioners report from their own tests that tracking tools almost all measure
 | In multi-turn conversations, sources cited early may keep being cited (conversation capture) | Theoretical model | Weak (E) | Only shows what is possible in principle; direction and size not tested |
 | User conditions are spread across several turns, and the last message often leaves out earlier conditions | Real conversation logs (8,133 conversations) | Medium (descriptive) | Model answers not tested; conditions detected by keyword rules |
 | Mention, citation and recommendation are separate | Practitioner tests from many sources + broad consensus | Medium | Definitions vary between teams; not independently verified |
+| In deep research mode, entity overlap is about 0.12 and cited URLs about 0.01, not saturated after 10 runs | Real commercial deep research system, API, same prompt repeated 10 times | Medium to weak (B) | Single system, single prompt, single domain (cybersecurity); URL level, not directly comparable with domain-level figures; entities extracted by an LLM, not fully audited by hand |
+| A 200 in logs or refetches does not mean the main content was received (about one fifth had none) | Controlled experimental system (own fetching program, about 10,000 real URLs) | Weak to medium (D) | The fetcher is not an AI company's crawler; proportions vary with IP and time; the citation drift part was judged by an LLM |
 | Relationship between visibility and traffic or revenue | None | **No evidence** | No research currently shows that GEO visibility reliably brings traffic or conversions |
 
 Two reminders:
@@ -2950,6 +3021,7 @@ Two reminders:
 | 3 times, counted by a "2 out of 3" majority vote | Practitioners' repeated, controlled tests |
 | Diminishing returns after 5–10 times for top positions; the long tail needs more | Practitioners report from their own tests |
 | 10 or more, or even 20 or more | Practitioners report from their own tests; community consensus |
+| In long deep research reports, 10 runs are still not enough to saturate the long-tail list | Real commercial deep research system, single prompt repeated 10 times |
 
 These positions do not fully conflict: the research emphasizes **the total sample size and how it is allocated**, while the practitioners' "3 times" is usually used under budget constraints, together with many questions accumulated over several weeks. The only thing truly wrong is "once".
 
@@ -2967,7 +3039,7 @@ Only two points are broadly agreed: the engines really do differ in stability, a
 
 ### Debate 4: Are brands more stable, or sources?
 
-- Research: mentions at the brand level are more stable than at the URL level.
+- Research: mentions at the brand level are more stable than at the URL level. Another set of repeated tests on real AI search engines (deep research mode, single prompt, 10 times) points the same way: entity overlap about 0.12, cited URLs about 0.01; but it did not test descriptions or ordering.
 - Practitioners report from their own tests (supporting): running the same prompt on the same engine for 30 consecutive days, the sources changed often, but two brands were recommended in 28/30 and 26/30 runs respectively.
 - Practitioners report from their own tests (opposing): a brand's **description** is less stable than its citations. The same brand was the top recommendation in one round and only mentioned in passing in the next; citations, by contrast, overlapped 40–80% across five runs. The instability is concentrated in positions 4–10, which is where most brands fall.
 
@@ -3012,6 +3084,7 @@ One practitioner believes that whether a local service business appears in AI is
 - **What was done**: a practitioner compared the AI crawler records in the server logs with the results of prompt sampling.
 - **What was observed**: one engine's search crawler fell from 548 fetches a day in mid-August to 189 a day recently; the user-agent that represents real people opening links during conversations fell from 230 a day to 48. The search crawlers of two other engines were at zero every day for a whole month.
 - Conclusion: any tool that said he was "visible on those two engines" was sampling something that could not possibly be true. With zero crawling there can be no retrieval-based citation, so crawling is the earliest leading indicator.
+- Note: the reverse does not hold. Being crawled and returning 200 does not mean the crawler received the main content (see Principle 9.5).
 - Principle: 9.5.
 
 ### Case 4: The dashboard says 45%, but the client cannot find it themselves
@@ -3052,14 +3125,14 @@ One practitioner believes that whether a local service business appears in AI is
 | 5 | **Repeat each question many times, and report the mention rate and the sample size**. Research recommends at least 7–8 times per question per day; on a limited budget, at least 3 times with majority-vote counting. | Repeated tests on real AI search engines found; practitioners' repeated, controlled tests |
 | 6 | **Allocate the budget to breadth**: multiple engines, languages, regions and phrasings are more effective than running the same prompt dozens of times. | Repeated tests on real AI search engines found (sentiment outcomes only; authors are a vendor) |
 | 7 | **Report each engine, language and region separately**; do not blend them into one average score. | Repeated tests on real AI search engines found; practitioners' tests |
-| 8 | **Fix one observation surface and record the settings**: API or interface, whether search is enabled, model version, region, whether logged in. When using the API, regularly spot-check with the product interface in a clean session. | Repeated tests on real AI search engines found; practitioners' tests |
+| 8 | **Fix one observation surface and record the settings**: API or interface, whether search is enabled, model version, region, whether logged in. When using the API, regularly spot-check with the product interface in a clean session. Deep research mode is a separate observation surface; do not mix its results with ordinary search mode. | Repeated tests on real AI search engines found; practitioners' tests |
 | 9 | **Record for every run**: whether there was an answer, whether sources were used, failure category, mention, cited URLs, whether recommended, position. Failures and missing data do not count as "not mentioned". | Practitioners' repeated, controlled tests |
 | 10 | **Fix the definition of a "hit"**: whether brand aliases and product names count; whether echoes from questions that already contain the brand name are removed. Once the definition is set, do not change it; if you do, rebuild the baseline. | One practitioner observed |
 | 11 | **Set up a control group**: leave about a quarter of the prompts without any optimization; also track a set of peer brands you are not working for. | Practitioners' repeated, controlled tests; one practitioner observed |
 | 12 | **Look at trends, not single weeks**: research recommends a 2–4 week rolling window; practitioners mostly use 4 weeks or more. One practitioner's rule of thumb is to treat single-week changes within 15% as noise at first, and to take them seriously only if they recur for two consecutive weeks; this is only personal experience, not a law. | Repeated tests on real AI search engines found; practitioners report from their own tests |
 | 13 | **To judge whether a change is real, ask three questions**: did several platforms move at the same time? Did the number of cited URLs move with it? Does the timing match something you did? | Practitioners report from their own tests |
 | 14 | **Record cited URLs, not just "whether you appeared"**. The list of cited sources tells you which pages to pursue exposure on, but it is only correlation, not attribution. | Practitioners report from their own tests |
-| 15 | **Fill in both ends**: use server logs to see whether AI crawlers are fetching; use the official webmaster tools to see AI impressions; split traffic into two buckets, "confirmed as from AI" and "inferred as possibly from AI". | Practitioners report from their own tests |
+| 15 | **Fill in both ends**: use server logs to see whether AI crawlers are fetching; use the official webmaster tools to see AI impressions; split traffic into two buckets, "confirmed as from AI" and "inferred as possibly from AI". In logs, do not just count 200s; also look at response size or the CDN's bot handling record. | Practitioners report from their own tests; for the 200s in logs: in controlled experimental systems |
 
 **Cost reference** (practitioners report from their own tests; prices change): building your own with a search API that returns citations costs about half a US cent per query, about 0.5 US dollars for a round of 100; running about 300 queries × 4 engines every day costs about 30 US dollars a month in API fees; 600 runs a day on a single engine cost about 1.6 US dollars. One practitioner's self-built script also crashed at about 50 queries, after spending about 200 US dollars. Building your own is not necessarily cheaper, but it gives you full control over the method.
 
@@ -3105,6 +3178,7 @@ Practitioners report from their own tests that, after testing several tools in a
 - Do not record API failures, rate limiting or missing answers as "not mentioned".
 - Do not add up or compare raw citation counts directly across engines: the number of citations per answer differs several times over between engines.
 - Do not treat the list of cited sources as causal attribution.
+- Do not treat a 200 in crawler logs as the crawler having read the content; when refetching sources to check them, also first confirm that what you fetched is the main content.
 
 ### 5.4 Already outdated
 
@@ -3122,7 +3196,7 @@ Practitioners report from their own tests that, after testing several tools in a
 3. Spend the budget on breadth. Multiple languages, engines and phrasings reduce error more than running the same prompt over and over; there is no fixed answer to how large a sample you need, and sparse engines need more.
 4. Observation layers cannot substitute for each other. API and interface, app and web, logged in and logged out, different regions and languages: each shows something different. Choose one observation surface, fix it and record it.
 5. Scores are defined. The prompt set, weights, question types and hit rules can all change the numbers dramatically; freeze them, and if you change them, rebuild the baseline.
-6. Count mentions, citations and recommendations separately, then fill in the two ends of crawling and traffic. Being cited is not the same as being recommended; crawling is a leading indicator, and traffic is structurally underestimated.
+6. Count mentions, citations and recommendations separately, then fill in the two ends of crawling and traffic. Being cited is not the same as being recommended; crawling is a leading indicator, but a 200 in the logs does not guarantee the other side received the main content; traffic is structurally underestimated.
 7. Without a control group, you cannot tell your changes apart from model updates. Keep unoptimized prompts and peer brands as a benchmark.
 8. When evaluating tools and vendors, trust only numbers that can be checked. You need to be able to see the raw answers, cited URLs, denominators, handling of failures and number of runs. No research currently shows that visibility reliably converts into traffic or revenue, and anyone who promises this needs to show their own data.
 
@@ -3520,6 +3594,7 @@ The current state of defences:
 | Off-the-shelf general safety guardrails (safety classifiers, self fact-checking) | Basically ineffective against GEO content carrying false claims, and may also harm normal content |
 | Perplexity filtering | Fails to block it, and mislabels many normal documents |
 | Static safety prompts | Also reduce the model's use of normal evidence |
+| User-side defences (asking in a skeptical tone, switching to another AI) | Do not noticeably lower the chance that false content is adopted; they only make answers carry caveats more often. Of the false content that was adopted, only about a quarter carried any warning |
 
 The core logic: GEO manipulation content is often **fluent, with facts that appear to hold**, so general defences that rely on "whether the language is abnormal" or "whether it contains harmful content" cannot catch it. Effective defences must target "the intervention itself", for example whether content has been deliberately rewritten to favour one party.
 
@@ -3549,6 +3624,7 @@ On criterion 4: disclosure is necessary but not sufficient to protect users. Lar
 
 - When the pages are supplied to the engine, manipulation aimed at real commercial engines (hidden injection, exaggerated claims, wording that closely overlaps the user's request) does raise the recommendation rate: the recommendation rate of a fictitious camera rose from 34.0% to 59.4%. But attacks carried out through external pages succeeded at most 25% of the time; and in 80% of successful cases, the model did not mention the page containing the injection, which means manipulation may work without leaving a trace.
 - When the pages are supplied to the engine, repeatedly editing a single page could push the target to first place in 50.0% of trials; in 160 generations of the clean control group, first place occurred 0 times. Visible claim-style content had a far higher success rate (relative rank gain 0.958) than instruction-style injection (0.208) and covert attribute instructions (0.146). But successful content lost much of its effect when transferred between models, and on stronger models the first-attempt success rate was 0. **All these results come from fixed-source replay; whether they can be reproduced in real retrieval pipelines has not been verified.**
+- Repeated tests on real AI search engines found (three AI search engines, 56 artificially created data-void topics, one page with fictitious, deliberately harmless content published per topic, measured on day 25 after going live, 504 answers in total): on topics with almost no other reliable sources, a single page had a 31.0% chance of being cited, written into the answer or listed among the sources; counting only pages already indexed by a search engine (established domains, or new domains actively submitted for indexing), the rate was 42.3%; new domains that were not submitted for indexing and relied only on natural discovery scored 0 on all three AI search engines. Before the pages went live, the same questions never produced these claims. The pages contained no instructions addressed to the model; they looked like ordinary articles. Domain visibility was the strongest factor; adding statistics, inline citations, an opening summary, technical terms and safety notes to the page had no detectable effect. Data voids tied to a real breaking-news event were the easiest to fill, and questions that presupposed a conspiracy were the hardest. These are results from real retrieval pipelines, but each topic had only one page and all topics were artificially created.
 
 ### Prompt injection in the wild
 
@@ -3573,6 +3649,8 @@ On criterion 4: disclosure is necessary but not sufficient to protect users. Lar
 - Simulations or theoretical analysis suggest: among 10,095 real search result pages, an estimated 8.90% or so bear traces of GEO; among pages modified in 2026 the share rises to 16.36%. Of the citations in pages bearing GEO traces, 69.34% are low-verifiability sources. Such content can be detected, but applying "AI text detectors" directly works poorly, because GEO detection must catch "deliberate intervention", not "who wrote it".
 - In controlled experimental systems, a dedicated two-stage defence (preference-based re-ranking plus an experience bank) reduced the average success rate of seven GEO attacks across five models from 50.32% to 6.20%, with a normal-evidence retention rate of 94.12%. Perplexity filtering flagged only 15 of 616 attack documents, while mislabelling 252 normal documents.
 - Simulations or theoretical analysis suggest: without defence, the average attack success rate was 55.7%; off-the-shelf general safety guardrails lowered it by only 1.7 to 3.2 percentage points; one form of self fact-checking refused to answer for 98.4% of normal content on one model. A dedicated lightweight detector could lower the success rate from 55.7% to 29.2%, with answer quality almost unchanged.
+- Repeated tests on real AI search engines found (the data-void study above): what users can do helps little. Asking in a skeptical tone or switching to another AI search engine did not noticeably lower the chance that false content was adopted (appearance rates across conditions ranged from 26.8% to 37.5%; statistically, effects as large as "halving or doubling" were ruled out). Of the answers that cited or used the false content, only 26.8% carried any caveat or warning, and 73.2% carried none. A skeptical tone only made answers carry caveats more often (53.8% for the highest combination, 5.6% for the lowest). The researchers infer that two existing kinds of defence, "filtering suspicious documents" and "aggregating independent evidence", would struggle in a data void, because the attack page looks normal and there is no independent source to compare it with; this has not been tested.
+- Simulations or theoretical analysis suggest that, in principle (7 fixed documents, a single 12-billion-parameter open-weight model, 200 scientific-claim questions), relying only on a prompt that asks the model to "check for misinformation" itself may not be reliable. When the false claim made up only 1 document, the model caught it 25% of the time; when the same claim was rewritten into 5 more documents, making up 6 of 7, only 10%. But the design also cut the normal documents from 6 to 1, so the cause of the drop cannot be determined. The researchers suggest that detection should consider whether sources are independent of each other and whether repeated passages add new evidence; this suggestion has not been verified.
 
 ### Summary of the evidence
 
@@ -3586,6 +3664,9 @@ On criterion 4: disclosure is necessary but not sufficient to protect users. Lar
 | Injection may harm the target brand | Simulation / theory, workshop-level | Single domain, single language |
 | Dedicated defences greatly reduce attack success rates | Controlled experimental systems | Purpose-built pipeline, model-based judging |
 | General safety guardrails are basically ineffective | Simulation / theory | Purpose-built pipeline |
+| In a data void, a single page may enter the answer | Repeated tests on real engines | Artificially created data-void topics, fictitious content; the page must first be indexed |
+| A skeptical tone or switching models does not noticeably lower adoption; when adopted, most answers carry no warning | Repeated tests on real engines | Same as above |
+| When one claim is rewritten as several documents, the model catches it less often | Simulation / theory | One small model, fixed context, confounded factors |
 
 ## 3. Debates and counterexamples
 
@@ -3593,12 +3674,12 @@ On criterion 4: disclosure is necessary but not sufficient to protect users. Lar
 
 | View | Basis |
 |---|---|
-| Easy | When the pages are supplied to the engine, repeatedly editing a single page can push it to first place in half of trials; Practitioners report from their own tests that after third-party content was planted in a niche field, models accepted false information |
+| Easy | When the pages are supplied to the engine, repeatedly editing a single page can push it to first place in half of trials; Practitioners report from their own tests that after third-party content was planted in a niche field, models accepted false information; in real AI search, a single page on an data-void topic appeared 31.0% of the time (42.3% for indexed pages) |
 | Not easy | Real AI search intercepts 99.78% of traditional black-hat techniques; in a full pipeline, most injections are eliminated at the retrieval stage; compliance with injections in the wild is 0.2% to 8% |
 
-The difference between the two comes mainly from **experimental conditions**. Fixed-context experiments assume the manipulated content has already entered the candidate set; in real pipelines, most content does not even get into the candidate set. Another difference is **the competitiveness of the field**: niche topics with an information vacuum (fictitious brands, fictitious people) are easily filled with false information; topics with a large body of existing information are much harder.
+The difference between the two comes mainly from **experimental conditions**. Fixed-context experiments assume the manipulated content has already entered the candidate set; in real pipelines, most content does not even get into the candidate set. Another difference is **the competitiveness of the field**: niche topics with a data void (fictitious brands, fictitious people) are easily filled with false information; topics with a large body of existing information are much harder. The first half of this sentence now has evidence from real engines: repeated tests on real AI search engines found (three AI search engines, 56 artificially created data-void topics, one page published per topic, measured on day 25 after going live) that on topics with no other sources to compare, a single page had a 31.0% chance of being written into the answer or listed among the sources; counting only pages indexed by a search engine, 42.3%. Whether topics with a large body of existing information are much harder was not directly compared in this study.
 
-The third difference is where the content is posted. Repeated tests on real AI search engines found (10 commercial AI search platforms, controlled posting, multi-day tracking): when ordinary posts were made on platforms that AI already cites often and where ordinary users can post, a fictitious concept was cited by 8 of the platforms within 7 days, 9 of 10 fictitious topics were cited, and most were first cited on day 1–2. But the effect was very unstable: the citation rate over the whole observation period was only 17.5%, and only 7.5% actually made it into the answer text; for topics already widely discussed, the share making it into the answer text was only 3.5%; one platform never cited at all; when the same study posted 40 articles on a self-hosted website, citations within a week were zero; after the posts were deleted, some platforms kept citing them for about 4 days. So "most content cannot get in" applies mainly to old techniques on self-built websites; on platforms AI already favours, content on niche topics can get in quickly.
+The third difference is where the content is posted. Repeated tests on real AI search engines found (10 commercial AI search platforms, controlled posting, multi-day tracking): when ordinary posts were made on platforms that AI already cites often and where ordinary users can post, a fictitious concept was cited by 8 of the platforms within 7 days, 9 of 10 fictitious topics were cited, and most were first cited on day 1–2. But the effect was very unstable: the citation rate over the whole observation period was only 17.5%, and only 7.5% actually made it into the answer text; for topics already widely discussed, the share making it into the answer text was only 3.5%; one platform never cited at all; when the same study posted 40 articles on a self-hosted website, citations within a week were zero; after the posts were deleted, some platforms kept citing them for about 4 days. So "most content cannot get in" applies mainly to old techniques on self-built websites; on platforms AI already favours, content on niche topics can get in quickly. Another set of repeated tests on real AI search engines showed that a single self-hosted page can also get in, provided it is indexed, the topic has no competing sources, and one waits long enough: pages on established domains appeared 38.4%–78.3% of the time, new domains actively submitted for indexing 14.3%–42.9%, and new domains not submitted for indexing 0 on all three engines; AI crawlers visited only after about 10 days, and results stabilised only after about 25 days.
 
 ### Debate 2: Does injection help or harm the target brand?
 
@@ -3641,7 +3722,7 @@ Recognizable features: the text addresses "AI", "language models" or "assistants
 - **Where**: questions were put to eight AI models.
 - What was observed (Practitioners report from their own tests): most models accepted the false information and ignored the official FAQ; when the official account said "we do not disclose figures" while the fake sources gave specific output volumes, the models chose the fake figures about 80% of the time; only a few models stuck to the official source. The most effective was the "investigative report": it first debunked some obvious lies to build credibility, then slipped in its own false information.
 - Follow-up: one practitioner observed that after the experiment was published, models were often able to see through the false information, but sometimes still quoted the experiment report out of context to support the fake sources.
-- The principles illustrated: claim-style content works better than instruction-style content (Principle 11.2); topics with an information vacuum are the easiest to fill with false information. The implication for brand owners: wherever the official account is missing, others can fill in the narrative.
+- The principles illustrated: claim-style content works better than instruction-style content (Principle 11.2); topics with a data void are the easiest to fill with false information. The implication for brand owners: wherever the official account is missing, others can fill in the narrative.
 
 ### Case 3: Publishing ranking lists on expired domains
 
@@ -3654,7 +3735,7 @@ Recognizable features: the text addresses "AI", "language models" or "assistants
 
 - **What was done**: a practitioner created a fictitious person with no web footprint at all, first confirming that no model or search engine could find them; then published false negative information about this person on several existing third-party websites; then kept asking 11 models the same question and recorded the answers.
 - **What was observed** (Practitioners report from their own tests): after several weeks, some models began citing these pages and repeating the negative narrative. Perplexity repeatedly cited and adopted it, often with cautious wording such as "reportedly"; ChatGPT was more sceptical; most models did not mention it. The experimenter considered this approach hard to scale. One practitioner observed that such content starts to take effect after about a week.
-- The principles illustrated: suppressing a competitor is possible when the target has an information vacuum; engines differ widely. This is the same category of risk as "using injection to suppress competitors" in Principle 11.3: GEO's attack surface includes not only raising yourself but also pushing others down.
+- The principles illustrated: suppressing a competitor is possible when the target has a data void; engines differ widely. This is the same category of risk as "using injection to suppress competitors" in Principle 11.3: GEO's attack surface includes not only raising yourself but also pushing others down.
 
 ### Case 5: Coordinated community promotion (astroturfing)
 
@@ -3678,7 +3759,8 @@ Recognizable features: the text addresses "AI", "language models" or "assistants
 |---|---|
 | Regularly monitor how AI describes your brand while logged out, with repeated queries, and do not draw conclusions from a single result | Practitioners report from their own tests; randomness is supported by several studies |
 | Watch for text in a commanding tone addressed to "AI" in third-party content mentioning your brand | Simulation / theory (backfire effect of injection) plus first-hand observation |
-| Watch for "several seemingly independent, similarly worded ranking lists or reviews" appearing at the same time | Practitioners report from their own tests |
+| Watch for "several seemingly independent, similarly worded ranking lists or reviews" appearing at the same time | Practitioners report from their own tests; simulation or theoretical analysis (rewriting one claim into several documents lowers the model's detection rate; one small model) |
+| Watch for claims tied to a breaking-news event, a newly coined term or an old term given a new meaning, that have only a single source | Repeated tests on real AI search engines (data voids anchored to a breaking-news event were the easiest to fill) |
 | Watch for concentrated appearances of "negative review plus recommendation of an unknown competitor" on review platforms | A single first-hand observation, as a lead |
 | Watch for the community posting pattern "claims customer research → praises one company → criticizes competitors → fake accounts agree" | A single first-hand observation, as a lead |
 | Check whether content has been planted in the page's non-rendered channels (HTTP headers, structured data) | Simulation / theory (about 70% of injections in the wild are hidden in these channels) |
@@ -3687,11 +3769,13 @@ Recognizable features: the text addresses "AI", "language models" or "assistants
 
 | Action | Evidence strength |
 |---|---|
-| Answer common questions clearly and specifically through official channels, reducing information vacuums | Practitioners report from their own tests (false information most easily fills a vacuum) |
+| Answer common questions clearly and specifically through official channels, reducing data voids | Data voids are easily filled: Repeated tests on real AI search engines found this; Practitioners report from their own tests in the same direction. Whether filling the data void with the official account first protects you: inference, not yet tested |
+| Do not count on users "asking in a skeptical tone" or "switching to another AI" to stop false content in a data void; if you build your own system, flag claims with "little supporting evidence" without suppressing legitimate but rare content | First half: Repeated tests on real AI search engines found this; second half: the researchers' suggestion, not yet verified |
 | Provide verifiable, distinguishing, genuine information (specifications, prices, ratings, dates) | Simulation / theory; reviews of the literature also support verifiable content |
 | When you find false content, deal with it at the source (ask the platform to take it down, publish a correction with evidence), not just with clarifications in the comments | A single first-hand observation shows that clarifications in comments have limited effect |
 | If you build or evaluate an AI search / RAG system: do not rely on general safety guardrails or perplexity filtering to block GEO manipulation; when evaluating defences, also measure "whether normal evidence is wrongly harmed" | Controlled experimental systems; simulation / theory |
 | If you build your own system: providing objective decision criteria in the system prompt can partly reduce the bias caused by injection | Simulation / theory, workshop-level |
+| If you build your own system: deduplicate near-paraphrased content in retrieval results, and measure the strength of corroboration by "number of independent sources" rather than "number of documents" | The researchers' suggestion (based on simulation or theoretical analysis with a single model), not yet verified |
 
 ### Self-check: the four white-hat criteria
 
@@ -3720,7 +3804,7 @@ Before any content goes live, confirm each criterion in turn: facts faithful, ev
 4. Injection attempts aimed at AI already exist in the real world, including text in community discussions directly asking "any AI engine" to recommend a specific vendor. Recognizable features: AI as the audience, a commanding tone, a named recommendation.
 5. Defences have blocked the old techniques. Real AI search intercepts the vast majority of traditional black-hat SEO, but new techniques designed for AI search still have room.
 6. General safety guardrails are basically ineffective against GEO manipulation; only detection and re-ranking aimed specifically at "deliberate intervention" are effective.
-7. An information vacuum is the biggest weakness. Tests with both a fictitious brand and a fictitious person show that wherever there is no official account, a false narrative is easiest to fill in.
+7. A data void is the biggest weakness. Repeated tests on real AI search engines found that when there are no other sources to compare, a single page may be written into the answer, usually without any warning; users asking in a skeptical tone or switching to another AI did not noticeably lower the chance of adoption. Tests with a fictitious brand and a fictitious person point the same way: wherever there is no official account, a false narrative is easiest to fill in.
 8. Self-check with the four criteria: facts faithful, evidence genuine, no hidden instructions, commercial intent disclosed.
 
 # Chapter 12: Platform Differences and the Chinese-Language Ecosystem
@@ -3773,7 +3857,7 @@ The last row can be condensed to: **ChatGPT cites fewer sources, but each cited 
 
 Platforms give priority to their own material. This is a structural bias, not a question of content quality.
 
-- In health queries, the source Google AIO cites most often is YouTube, ahead of the US Centers for Disease Control and Prevention, the World Health Organization and well-known medical institutions' websites.
+- In health queries, the source Google AIO cites most often is YouTube, ahead of the US Centers for Disease Control and Prevention, the World Health Organization and well-known medical institutions' websites. (Another large-scale audit of US English health questions excluded video and forum sources; among the remaining web pages, a government medical research agency's domain had the largest share, and compared with the traditional top 5 for the same question, AIO leaned towards commercial health information websites, with lower shares for academic medical institutions and government health agencies; all effects were small. The two studies differ in scope and do not contradict each other.)
 - The source overlap between the three Google interfaces (Google Search, AIO and Gemini) is extremely low, with Jaccard coefficients of only 0.11–0.18 (0.18 between AIO and traditional search results), and the generative interfaces favor Google's own assets.
 - The most frequent sources in Baidu AI Overview are mainly Baidu's own subdomains (see 12.5).
 
@@ -5023,7 +5107,7 @@ Repeated tests on real AI search engines found that the same set of questions dr
 | Google AI Overviews (AIO) | 8.5% |
 | Google organic search results | 13.4% |
 
-In the same study, Search GPT's top 100 domains overlapped with those of AIO and the organic results by only 24% and 25%; AIO and the organic results overlapped by 68%. That is, **Google's AI Overviews largely reuse Google Search's source pool, while other engines' source pools are a world of their own**.
+In the same study, Search GPT's top 100 domains overlapped with those of AIO and the organic results by only 24% and 25%; AIO and the organic results overlapped by 68%. That is, **Google's AI Overviews largely reuse Google Search's source pool, while other engines' source pools are a world of their own**. But high domain overlap does not mean high page overlap: in one large-scale audit of health questions on a real AI search engine (US English, collected once), only about 44% of the traditional top 5 pages were cited by AI Overviews, and shares shifted systematically between domains. "Reusing the source pool" is not the same as "reusing the ranking".
 
 Another study, based on real conversation logs donated by users (613 users, 171,264 conversations) plus controlled replays, found that reddit.com and youtube.com appear in ChatGPT's and Grok's search results but are completely absent from Claude's search results. In another audit of general-purpose large language models (GPT-4o-mini, GPT-5), only 18 of 4,932 citations (0.4%) pointed to Reddit.
 
@@ -5328,6 +5412,8 @@ Position two: they do not work, and may even be harmful.
 - When the pages are supplied to the engine (5 sources supplied manually, real retrieval skipped), a re-test covering 6 engine families plus commercial models (n=605) found that none of quotations, statistics or source citations moved citation share; replicated on three gpt-5.x engines (n=450), the results were likewise zero or nominally negative.
 - The same re-test, measured with the original 2023 metric: quotations -0.33, statistics -0.28, source citations -0.79 percentage points, against the +42.6, +32.8 and +27.7 reported in 2023.
 - It should be pointed out that the authors of this re-test themselves sell a content-scoring service.
+- Repeated tests on real AI search engines found (three AI search engines, 56 artificially created data void topics, only one page published per topic, indexed naturally by search engines): on-page GEO writing (statistics, inline source citations, an opening summary, technical terminology and safety notes, added together) had no detectable effect on whether the page entered the answer (odds ratio 0.91), ruling out effects of twofold or more; the strongest factor was domain visibility, and new domains that were not indexed scored 0 on all three engines.
+- Limitations: pages with and without GEO writing numbered 46 versus 10, so only large effects can be ruled out; the topics had no competing sources, and all content was fictional.
 
 Why they may be inconsistent:
 
@@ -5338,10 +5424,13 @@ Why they may be inconsistent:
 | Implementation | Whole-page rewriting, whole-page feature density | A statistics/quotation block appended to the page |
 | System | Simplified RAG pipeline | Fixed context or manually supplied sources |
 
-The most reasonable reconciliation at present has two parts:
+One further study falls between the two positions. When the pages are supplied to the engine (the researchers published product pages on a real website, then gave the URLs to three commercial AI search engines to read and rank), product pages that added statistics through a whole-page rewrite beat plain originals in average rank on all three AI search engines, but fell behind other whole-page rewriting methods; and none of the numbers in these 80 pages had any basis in the specifications, yet the engines did not rank them lower for it. This shows that "engines prefer numbers" and "the numbers are true" are two different things. Limitations: some of the researchers are authors of the best-performing method; reversing the URL order or rerunning changed the results.
+
+The most reasonable reconciliation at present has three parts:
 
 1. What works is genuine evidence density across the whole page, not an appended block. The same whole-page optimization study also found that 9 token-level GEO rewrites (including keyword stuffing) fell below the unrewritten baseline on all three engines.
 2. Effects expire as engines are updated. The levers measured in 2023 can no longer be measured when re-tested on new-generation engines.
+3. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help. Under real retrieval conditions, on-page writing had no detectable effect, and whether the page is indexed and whether the domain is visible matter more; when the pages are supplied to the engine, adding statistics beat only plain originals, and AI search does not check numbers.
 
 Practitioner view: Practitioners widely believe that "only content with views worth citing or useful information gets cited". This is consistent with the "genuine evidence density" reconciliation, but it is an opinion, not a measurement.
 
@@ -5350,6 +5439,8 @@ What to do in practice:
 - Put real, verifiable data and sources where the argument genuinely needs them, rather than adding a "data summary" block at the end.
 - Do not treat the 2023 improvement figures as today's expectations.
 - Any claim of the form "adding element X raises results by X%" should be re-tested on the engines you care about with a fixed query set.
+- First confirm that the page is indexed and that its domain can be found; then worry about the writing.
+- Do not write unsupported numbers. AI search does not check them; invented numbers mislead readers and are a reputational risk for the writer.
 
 ### A2: Does structure (headings, Schema, lists) help?
 
@@ -5428,13 +5519,17 @@ Position two: in agents and controlled replays, position has a weak effect.
 - In the same study, at the highest reasoning effort, position had no significant effect on the final choice; one hotel that was not fully dominated by other options on its attributes took 78.2% of all bookings.
 - In controlled experimental systems, the gap in citation rate between position 1 and position 5 in observational data was 42.3 percentage points; after controlled replay it was only +7.9 percentage points; in the held-out sample it was 0.
 
+Additional evidence for position one (real AI search, fixed candidate list):
+
+- When the pages are supplied to the engine (three commercial AI search engines read 6 product-page URLs supplied by the researchers, with the content completely unchanged), merely reversing the URL order changed the first-place rate of the same rewrite on one AI search engine from 73.8% to 93.8%, and the first place changed for about a quarter of brands; on another AI search engine, the method that came first most often switched outright. This is still "choosing from a given list", but the subjects are real commercial AI search engines, not simulated agents.
+
 Why they may be inconsistent:
 
 - Method. In observational data, documents ranked near the top tend to be more relevant and better in their own right; once that is controlled for, the effect of position itself shrinks considerably.
 - System type. A single generation from a fixed context behaves differently from an agent that examines and compares multiple times.
 - Model and settings. The size of position bias changes with the model and the reasoning effort.
 
-The most reasonable reconciliation at present: observational data overestimate the position effect.
+The most reasonable reconciliation at present: observational data overestimate the position effect; but in a fixed candidate list, even for real commercial AI search engines, order can still clearly change who comes first (when the pages are supplied to the engine, the gap can reach 20 percentage points).
 
 What to do in practice:
 
@@ -5543,10 +5638,10 @@ On the following issues, practitioners include many supporters and many opponent
 
 | Issue | Research position one | Research position two | Practitioner view | Safest current understanding |
 |---|---|---|---|---|
-| Statistics, quotations, sources | Effective (experimental systems, simulation) | Ineffective or harmful (simulation, pages supplied) | Only content worth citing gets cited | Genuine whole-page evidence density may help; appended blocks do not; effects expire |
+| Statistics, quotations, sources | Effective (experimental systems, simulation) | Ineffective or harmful (simulation, pages supplied); no detectable effect under real retrieval (real engines) | Only content worth citing gets cited | Genuine whole-page evidence density may help; appended blocks do not; effects expire; being indexed and domain visibility matter more than writing; engines do not check numbers |
 | Structure/Schema | Helps at the retrieval stage (experimental system) | Formatting has no effect (simulation) | Schema on its own has limited effect | Governs retrieval and extraction; not a citation lever |
 | Off-site mentions | Co-occurrence is a strong signal (real engines, association) | No independent effect once readability is controlled (real agents, matched observation) | Very important | May act at different stages |
-| Position | Very strong in a fixed context (simulation) | Very weak in agents and controlled replay (simulation, experimental system) | (none) | Observational data overestimate the position effect |
+| Position | Very strong in a fixed context (simulation); can still change who comes first in a fixed candidate list (pages supplied) | Very weak in agents and controlled replay (simulation, experimental system) | (none) | Observational data overestimate the position effect; in a fixed candidate list, order can still change who comes first |
 | llms.txt | Unrelated (real engines, association) | Part of a package (real agents) | No use | No evidence that it works on its own |
 | Answer first | Helps reranking (experimental system) | Formatting itself is ineffective (simulation) | Very important | Content-level answer-first has a mechanism; formatting is secondary |
 | SEO and GEO | Retrieval position has a large effect (simulation) | Traditional quality score has low predictive power (real engines, association) | SEO is the foundation, but rankings do not guarantee visibility | SEO governs entry into the pool; other factors decide afterwards |
@@ -5561,10 +5656,10 @@ On the following issues, practitioners include many supporters and many opponent
 
 ## Key points
 
-1. The early positive results for "adding statistics, quotations and sources" can no longer be measured when re-tested on new-generation engines with an appended-block implementation; what is more likely to work is genuine whole-page evidence density.
+1. The early positive results for "adding statistics, quotations and sources" can no longer be measured when re-tested on new-generation engines with an appended-block implementation; what is more likely to work is genuine whole-page evidence density. Under real retrieval conditions, on-page writing had no detectable effect, and whether the page is indexed and whether the domain is visible matter more; AI search also does not check numbers.
 2. Structure mainly helps retrieval and extraction; changing formatting alone did not reliably raise citation rates in multiple tests.
 3. The evidence on off-site co-occurrence and site readability looks contradictory, but more likely reflects two different stages: "coming to mind" and "whose content is used once you come to mind".
-4. Observational data clearly overestimate the position effect; after controlled replay, the effect of position shrinks considerably.
+4. Observational data clearly overestimate the position effect; after controlled replay, the effect of position shrinks considerably. But when the pages are supplied to the engine, real AI search facing a fixed candidate list can still have its first place clearly changed by order.
 5. There is currently no evidence that llms.txt works on its own, and practitioner views broadly match the research.
 6. The strongest practitioner consensus views (answer first, cited is not the same as recommended, single measurements are unreliable) mostly have partial research support, but the specific threshold numbers are rules of thumb, not research conclusions.
 7. Traffic from AI and the accuracy of tracking tools are issues on which practitioners remain clearly split and that research has not directly measured; judge them with your own data.

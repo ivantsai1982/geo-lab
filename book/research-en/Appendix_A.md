@@ -50,6 +50,8 @@ Position two: they do not work, and may even be harmful.
 - When the pages are supplied to the engine (5 sources supplied manually, real retrieval skipped), a re-test covering 6 engine families plus commercial models (n=605) found that none of quotations, statistics or source citations moved citation share; replicated on three gpt-5.x engines (n=450), the results were likewise zero or nominally negative.
 - The same re-test, measured with the original 2023 metric: quotations -0.33, statistics -0.28, source citations -0.79 percentage points, against the +42.6, +32.8 and +27.7 reported in 2023.
 - It should be pointed out that the authors of this re-test themselves sell a content-scoring service.
+- Repeated tests on real AI search engines found (three AI search engines, 56 artificially created data void topics, only one page published per topic, indexed naturally by search engines): on-page GEO writing (statistics, inline source citations, an opening summary, technical terminology and safety notes, added together) had no detectable effect on whether the page entered the answer (odds ratio 0.91), ruling out effects of twofold or more; the strongest factor was domain visibility, and new domains that were not indexed scored 0 on all three engines.
+- Limitations: pages with and without GEO writing numbered 46 versus 10, so only large effects can be ruled out; the topics had no competing sources, and all content was fictional.
 
 Why they may be inconsistent:
 
@@ -60,10 +62,13 @@ Why they may be inconsistent:
 | Implementation | Whole-page rewriting, whole-page feature density | A statistics/quotation block appended to the page |
 | System | Simplified RAG pipeline | Fixed context or manually supplied sources |
 
-The most reasonable reconciliation at present has two parts:
+One further study falls between the two positions. When the pages are supplied to the engine (the researchers published product pages on a real website, then gave the URLs to three commercial AI search engines to read and rank), product pages that added statistics through a whole-page rewrite beat plain originals in average rank on all three AI search engines, but fell behind other whole-page rewriting methods; and none of the numbers in these 80 pages had any basis in the specifications, yet the engines did not rank them lower for it. This shows that "engines prefer numbers" and "the numbers are true" are two different things. Limitations: some of the researchers are authors of the best-performing method; reversing the URL order or rerunning changed the results.
+
+The most reasonable reconciliation at present has three parts:
 
 1. What works is genuine evidence density across the whole page, not an appended block. The same whole-page optimization study also found that 9 token-level GEO rewrites (including keyword stuffing) fell below the unrewritten baseline on all three engines.
 2. Effects expire as engines are updated. The levers measured in 2023 can no longer be measured when re-tested on new-generation engines.
+3. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help. Under real retrieval conditions, on-page writing had no detectable effect, and whether the page is indexed and whether the domain is visible matter more; when the pages are supplied to the engine, adding statistics beat only plain originals, and AI search does not check numbers.
 
 Practitioner view: Practitioners widely believe that "only content with views worth citing or useful information gets cited". This is consistent with the "genuine evidence density" reconciliation, but it is an opinion, not a measurement.
 
@@ -72,6 +77,8 @@ What to do in practice:
 - Put real, verifiable data and sources where the argument genuinely needs them, rather than adding a "data summary" block at the end.
 - Do not treat the 2023 improvement figures as today's expectations.
 - Any claim of the form "adding element X raises results by X%" should be re-tested on the engines you care about with a fixed query set.
+- First confirm that the page is indexed and that its domain can be found; then worry about the writing.
+- Do not write unsupported numbers. AI search does not check them; invented numbers mislead readers and are a reputational risk for the writer.
 
 ### A2: Does structure (headings, Schema, lists) help?
 
@@ -150,13 +157,17 @@ Position two: in agents and controlled replays, position has a weak effect.
 - In the same study, at the highest reasoning effort, position had no significant effect on the final choice; one hotel that was not fully dominated by other options on its attributes took 78.2% of all bookings.
 - In controlled experimental systems, the gap in citation rate between position 1 and position 5 in observational data was 42.3 percentage points; after controlled replay it was only +7.9 percentage points; in the held-out sample it was 0.
 
+Additional evidence for position one (real AI search, fixed candidate list):
+
+- When the pages are supplied to the engine (three commercial AI search engines read 6 product-page URLs supplied by the researchers, with the content completely unchanged), merely reversing the URL order changed the first-place rate of the same rewrite on one AI search engine from 73.8% to 93.8%, and the first place changed for about a quarter of brands; on another AI search engine, the method that came first most often switched outright. This is still "choosing from a given list", but the subjects are real commercial AI search engines, not simulated agents.
+
 Why they may be inconsistent:
 
 - Method. In observational data, documents ranked near the top tend to be more relevant and better in their own right; once that is controlled for, the effect of position itself shrinks considerably.
 - System type. A single generation from a fixed context behaves differently from an agent that examines and compares multiple times.
 - Model and settings. The size of position bias changes with the model and the reasoning effort.
 
-The most reasonable reconciliation at present: observational data overestimate the position effect.
+The most reasonable reconciliation at present: observational data overestimate the position effect; but in a fixed candidate list, even for real commercial AI search engines, order can still clearly change who comes first (when the pages are supplied to the engine, the gap can reach 20 percentage points).
 
 What to do in practice:
 
@@ -265,10 +276,10 @@ On the following issues, practitioners include many supporters and many opponent
 
 | Issue | Research position one | Research position two | Practitioner view | Safest current understanding |
 |---|---|---|---|---|
-| Statistics, quotations, sources | Effective (experimental systems, simulation) | Ineffective or harmful (simulation, pages supplied) | Only content worth citing gets cited | Genuine whole-page evidence density may help; appended blocks do not; effects expire |
+| Statistics, quotations, sources | Effective (experimental systems, simulation) | Ineffective or harmful (simulation, pages supplied); no detectable effect under real retrieval (real engines) | Only content worth citing gets cited | Genuine whole-page evidence density may help; appended blocks do not; effects expire; being indexed and domain visibility matter more than writing; engines do not check numbers |
 | Structure/Schema | Helps at the retrieval stage (experimental system) | Formatting has no effect (simulation) | Schema on its own has limited effect | Governs retrieval and extraction; not a citation lever |
 | Off-site mentions | Co-occurrence is a strong signal (real engines, association) | No independent effect once readability is controlled (real agents, matched observation) | Very important | May act at different stages |
-| Position | Very strong in a fixed context (simulation) | Very weak in agents and controlled replay (simulation, experimental system) | (none) | Observational data overestimate the position effect |
+| Position | Very strong in a fixed context (simulation); can still change who comes first in a fixed candidate list (pages supplied) | Very weak in agents and controlled replay (simulation, experimental system) | (none) | Observational data overestimate the position effect; in a fixed candidate list, order can still change who comes first |
 | llms.txt | Unrelated (real engines, association) | Part of a package (real agents) | No use | No evidence that it works on its own |
 | Answer first | Helps reranking (experimental system) | Formatting itself is ineffective (simulation) | Very important | Content-level answer-first has a mechanism; formatting is secondary |
 | SEO and GEO | Retrieval position has a large effect (simulation) | Traditional quality score has low predictive power (real engines, association) | SEO is the foundation, but rankings do not guarantee visibility | SEO governs entry into the pool; other factors decide afterwards |
@@ -283,10 +294,10 @@ On the following issues, practitioners include many supporters and many opponent
 
 ## Key points
 
-1. The early positive results for "adding statistics, quotations and sources" can no longer be measured when re-tested on new-generation engines with an appended-block implementation; what is more likely to work is genuine whole-page evidence density.
+1. The early positive results for "adding statistics, quotations and sources" can no longer be measured when re-tested on new-generation engines with an appended-block implementation; what is more likely to work is genuine whole-page evidence density. Under real retrieval conditions, on-page writing had no detectable effect, and whether the page is indexed and whether the domain is visible matter more; AI search also does not check numbers.
 2. Structure mainly helps retrieval and extraction; changing formatting alone did not reliably raise citation rates in multiple tests.
 3. The evidence on off-site co-occurrence and site readability looks contradictory, but more likely reflects two different stages: "coming to mind" and "whose content is used once you come to mind".
-4. Observational data clearly overestimate the position effect; after controlled replay, the effect of position shrinks considerably.
+4. Observational data clearly overestimate the position effect; after controlled replay, the effect of position shrinks considerably. But when the pages are supplied to the engine, real AI search facing a fixed candidate list can still have its first place clearly changed by order.
 5. There is currently no evidence that llms.txt works on its own, and practitioner views broadly match the research.
 6. The strongest practitioner consensus views (answer first, cited is not the same as recommended, single measurements are unreliable) mostly have partial research support, but the specific threshold numbers are rules of thumb, not research conclusions.
 7. Traffic from AI and the accuracy of tracking tools are issues on which practitioners remain clearly split and that research has not directly measured; judge them with your own data.

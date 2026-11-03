@@ -98,3 +98,8 @@ Experimental data: the authors' own experiment runs (raw data not published); ha
 
 - Principle 5.3, point 4, prior acting on three links: B·2610.15033 (§6.5: 67%/11%, 1.60, 46%)
 - Principle 5.1, domain qualification: B·2610.21330 (§4.1: 24.8%–44.3%)
+
+## Supplement (2026-11-03: new papers)
+
+- Principle 5.2 diagram "data void" line and the note below it, Principle 5.3 point 3 (about 30% when the prior is zero, 0 when not submitted for indexing), indexing threshold in "Two timelines" (14.3%–42.9%, 0), same-direction result in the "Risk" paragraph, third point of the Section 2.2 strength assessment, Key point 3: B·2610.30365 (abstract, Table IV, Table V, Appendix E)
+- Principle 5.2 diagram "rewritten as several pages" line, new item in Section 2.2 experimental evidence (25% → 10%, 34/38, confounded factors), Section 2.2 strength assessment, Practice 4, Key point 3: E·2610.41012 (Table 1, Table 2, Sections 3–6)

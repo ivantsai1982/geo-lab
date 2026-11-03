@@ -8,6 +8,7 @@
 |---|---|---|
 | 15.1 | Social platforms belong to the third-party source ecosystem; accessibility is affected by crawling/licensing policy | Framework main thread; 2609.19244; c_p6xqznm (report of Reddit tightening AI crawler blocking in mid-August, see context) |
 | 15.2 | Social citation shares: Search GPT 0.1%, AIO 8.5%, organic results 13.4%; domain overlap 24%/25%/68%; 11,000 NQ questions | 2603.16138 (B) |
+| 15.2 | High domain overlap does not mean high page overlap: 44.4% of traditional top 5 pages cited by AIO for health questions; systematic shifts in domain shares (Table A5) | 2610.39339 (B, weak end: single 3-day snapshot, US English) |
 | 15.2 | reddit.com/youtube.com appear in ChatGPT and Grok, completely absent from Claude search; 613 users, 171,264 conversations | 2609.19244 (B) |
 | 15.2 | General-purpose LLMs: 18 of 4,932 citations (0.4%) point to Reddit | 2609.14575 (B) |
 | 15.3 | AIO community/forum sources under-used −22.1pp; Wikipedia and long documents over-used; limitation of max-over-chunks measure | 2603.16138 (B) |

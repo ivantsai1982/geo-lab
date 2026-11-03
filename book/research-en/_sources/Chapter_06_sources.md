@@ -14,6 +14,7 @@ Evidence packs: internal evidence pack (not published)
 - Position 1 gain larger than all rewrites, only 3 of 54 scenarios significant: E·2506.11097 (NeurIPS'25)
 - Shopping agent: views 1.63–5.83 vs 1.12; coefficient about 1/4–1/10 of humans; lowest at ranks 68–74 then rising again; not significant at highest reasoning setting: E·2608.22697
 - Controlled replay 42.3 → 7.9 → 0: D·2609.15164
+- Counterexample (real AI search reading a supplied list): reversing the order of 6 URLs, ChatGPT CORE Top-1 73.8%→93.8%, same first place 75.0%, ρ=0.74; Grok 37.5% vs 50.0%; Gemini first place switches between E-GEO 30.0% and CORE 28.8% (other fixed order 23.8% vs 28.8%): C·2611.01126 (LIVE-GEO; fictional brands, URLs supplied by the researchers, single query template best {category}; conflict of interest: three of the original CORE authors are authors of this paper, and CORE's last round used ChatGPT's actual rankings as feedback)
 
 ### Principle 6.3 Signal weights and the say-do gap
 - Hotel audit table (+31.65 / −30.03 / +11.61 / +8.31 / −1.79 / +0.11; position 2–4pp, $11.7, about 26pp; Spearman 0.59–0.85; position ≤0.7%; 61,459 calls, 12 models, 3,024 choice sets): E·2606.16344 (preregistered)
@@ -28,11 +29,12 @@ Evidence packs: internal evidence pack (not published)
 ## How strong is the evidence
 - Single generation 15% flips, 45% of variance from decoding: D·2609.15164
 - Observational vs controlled position gap: D·2609.15164
+- ChatGPT re-run under identical conditions: same first place 80.0% (about one in five changed), ρ=0.85: C·2611.01126
 - Conflict of interest of the scoring vendor: 2609.07559
 
 ## Debates and counterexamples
 - Debate 1 (formatting): E·2605.25517; D·2609.15164 (+0.50 citation count, +4.5pp CI [−1.4,+10.4]); p_1tu2kr4 (R-B, structure and schema as baseline); p_1skbtgs (R-B, comparison tables 2.4 times, author credentials 12%→31%)
-- Debate 2 (position): E·2307.03172, E·2506.11097, E·2606.16344, E·2608.22697, D·2609.15164
+- Debate 2 (position): E·2307.03172, E·2506.11097, E·2606.16344, E·2608.22697, D·2609.15164; C·2611.01126 (reversed order ChatGPT 73.8% vs 93.8%, Gemini 23.8% vs 28.8%)
 - Debate 3 (authority): E·2609.00248; D·2603.09296 (fixed disadvantage on domain authority); p_1s67wgj (R-B, backlinks/DA almost unrelated); c_om4e6sa (R-D, DR 7 page wins); cluster 48 (disputed)
 - Debate 4 (freshness): E·2605.25517 (main text and Table 2 inconsistent); p_1s67wgj (R-B, platforms prefer freshness, 30-day updates)
 - Counterexample (broad questions occupied by big brands): c_p4fwgc3 (R-B); cluster 39 (disputed, support 6 / oppose 0), cluster 125 (consensus support)
@@ -48,7 +50,7 @@ Evidence packs: internal evidence pack (not published)
 
 ## What to do
 - Around specific questions: E·2605.25517, C·2609.07559, D·2603.09296; c_om9yzae (R-B), c_op3g2pe (R-B)
-- Specific facts: E·2605.25517; c_p4fwgc3 (R-B); c_p3j8hy3 (R-D)
+- Specific facts: E·2605.25517; c_p4fwgc3 (R-B); c_p3j8hy3 (R-D); ±0.2% price difference changes mean rank (ChatGPT Original −0.59, Gemini CORE +0.63) but not the Top-1 leader: C·2611.01126
 - Publish prices: E·2605.25517; c_ors4sak (R-D)
 - Updates and dates: E·2605.25517; p_1s67wgj (R-B)
 - Ratings and review counts: E·2606.16344
@@ -56,7 +58,7 @@ Evidence packs: internal evidence pack (not published)
 - Stage-by-stage tracking: p_1w51clk (R-B)
 - Repeated testing: D·2609.15164
 - Check list passages: c_oem9kv6 (R-D)
-- List order: E·2506.11097, E·2608.22697
+- List order: E·2506.11097, E·2608.22697; C·2611.01126 (URL order, not order within a page)
 - Do not change only formatting: E·2605.25517, D·2609.15164
 - No generic rules / heavy compression: D·2603.09296
 - Keyword stuffing: C·2609.07559 (score −13.0); p_1skbtgs (R-B)

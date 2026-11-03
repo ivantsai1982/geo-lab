@@ -76,6 +76,9 @@ One pattern holds across all studies: **questions and long queries are more like
 - In the sample of real logs, interrogative sentences had a trigger rate of 89.9%.
 - In real browsing records, long queries, queries starting with a question word, and queries containing both a noun and a verb were more likely to trigger.
 - By intent: AI answers appeared for about 60% of questions, about 37% of statements and about 12% of navigational queries.
+- In one large-scale audit on a real AI search engine, researchers sent 3,611 long, conversational health questions (about 44 words on average) to Google, and AIO appeared for 96.4%. These questions were adapted from a conversational evaluation dataset and are much longer than typical search queries; the audit covered US English only and collected data once, in September 2026, with no repeated measurement.
+
+The same audit also observed something no other study in this chapter describes: **the longer, more complex and higher-risk the question, the more often AIO gives an answer with no citations at all.** AIO with no citations made up 9.4%; from low to high complexity the share was 4.2%, 6.0% and 10.6%; from low to high risk it was 6.4%, 8.1% and 17.6%. Looking only at short, single-turn questions, the share without citations fell to 5.8% and the gradient weakened. So "an AI answer was triggered" and "the answer came with sources" are two different things; and in this set of health questions, whether an answer carried citations was unrelated to whether it was correct by physicians' standards (see Chapter 7, Principle 4).
 
 Navigational queries (for example, searching directly for a brand's official website) almost never trigger. The reason is intuitive: the user wants a URL, not an explanation.
 
@@ -123,6 +126,7 @@ So "triggering", the concern of this chapter, is a necessary condition for being
 | Trigger rates differ enormously between models (14% vs 83%) | Repeated tests on real AI search engines found; plus real conversation logs from 613 users and 171,264 conversations | Strong. But only specific model versions were compared; the figures will change after version updates |
 | ChatGPT does not trigger search a large share of the time | Two independent studies with repeated measurement on real commercial engines | Strong. The two studies use different definitions ("zero citations" vs "search not triggered"), so the figures cannot be directly added or compared |
 | Questions and long queries trigger AIO more easily | Three independent studies, with samples ranging from popular searches to real logs to real browsing records | Strong. The direction is consistent; this is the most reliable conclusion in this chapter |
+| Long, complex, high-risk health questions almost always trigger AIO, but more often get no citations | One large-scale audit on a real AI search engine (3,611 health questions) | Moderate to weak. Collected once, US English only; questions adapted from a conversational evaluation dataset are longer than real search queries, which pushes up the share without citations |
 | Platforms adjust triggering strategy by topic | Repeated tests on real AI search engines found, with crawls repeated across years | Medium. The COVID case has a sample of only 74 queries |
 | Prompt wording changes API triggering | Repeated tests on real AI search engines, with API and product compared | Medium to strong. Tested only on mental health topics; other topics not verified |
 

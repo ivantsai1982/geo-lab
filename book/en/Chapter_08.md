@@ -12,7 +12,7 @@ This chapter makes just one big point: **writing tricks expire; what doesn't exp
 
 ## Which gates this chapter deals with
 
-Recall the book's seven gates. This chapter assumes two things first: your web page can already "get in the door", so accessibility is not a problem, and it has already been indexed by search engines. On that basis, the chapter asks only one question: for the same web page, does the way the content is written or revised change AI's chances of citing it, and how much it cites it?
+Recall the book's seven gates. This chapter assumes two things first: your web page can already "get in the door", so accessibility is not a problem, and it has already been indexed by search engines. On that basis, the chapter asks only one question: for the same web page, does the way the content is written or revised change AI's chances of citing it, and how much it cites it? But let us be clear from the start: this precondition is not minor at all. In the tests closest to the real world, whether the page has been indexed and whether its website can be found matter more than how the content is written, as Debate 1 in Section 6 will discuss.
 
 This question falls mainly on three gates. Gate four, "will it pick you", decides whom AI chooses from the shortlist and where it ranks them. Gate five, "will it mention you", decides whether your name or link appears in the answer. Gate six, "does it actually use you, and use you correctly", concerns how much of your content is written into the answer and whether it is paraphrased correctly. We will also look back at gate three, "can it find you", because revising content sometimes gets you eliminated at the retrieval gate, something many people never consider.
 
@@ -40,6 +40,8 @@ The second reason is that when everyone uses it, it stops working. This is calle
 
 The third reason is that the experimental conditions back then were too lenient. In an experiment where the candidate list is fixed, your rewritten article only has to beat the other four on the list. The experimental process back then was short: you were already among 5 candidates, you rewrote, AI wrote the answer, and your share went up. Real AI search is a whole pipeline instead. It starts with the question, then fetches material (retrieval), then reranks, then AI writes the answer, and only at the end comes citation. The same rewritten article may fall behind at the fetching or reranking step, and never get as far as the step where AI writes the answer.
 
+Another problem lies in what is used to do the scoring. Under test conditions with given web pages, researchers published the same set of rewritten product pages on a real website, then gave the URLs to three commercial AI search engines and asked them to open the pages, read them and rank them. At the same time, they gave the same text directly to five AI models to score. The rankings from the two approaches did not match well: within the same brand, the correlation coefficient ranged from 0.50 to −0.31, where a negative number means the opposite direction. One model's rankings ran in the opposite direction to all three AI search engines. Overall, "which rewrite is strongest" more or less held up, but at the level of individual brands, even the three AI search engines picked the same first place only about half to two-thirds of the time. So the effects measured by giving text directly to AI models cannot be taken as effects on real AI search.
+
 The conclusion is that **any writing trick should be treated as "a hypothesis with an expiry date", not as a law.** If you want to keep using it, you have to measure it again on today's AI.
 
 > **A closer look: how reliable is this retest?**
@@ -58,6 +60,20 @@ Shopping recommendations look much the same. In an e-commerce reranking scenario
 
 Most of these studies were done in environments where the candidate material was fixed or controlled. Together they show that **tricks that attach something or only swap wording are unreliable.** But this does not mean "evidence and data are useless", a point the debates later in the chapter will discuss in detail.
 
+### The closer to reality, the less the tricks show any effect
+
+The retest above gave the candidate text directly to AI models. Two later studies moved the test conditions a step closer to the real world, and the three sets of results line up neatly.
+
+The first was done under test conditions with given web pages. Researchers invented 80 brands, each with 6 product pages whose specifications were exactly the same and whose descriptions differed only in how they were written. They published these pages on a real website, then gave the URLs to three commercial AI search engines and asked them to open the pages, read them and rank them. Pages that added statistics through a whole-page rewrite had an average rank of 3.18, 3.31 and 3.83 on the three AI search engines, all better than the plain unrewritten originals (5.28, 5.84, 4.88); but the share that actually came first was only 10.0%, 11.3% and 5.0%, far behind the best-performing rewriting method. Even more striking, all 80 descriptions with added statistics contained numbers that the product specifications did not support at all, such as "18% better heat retention", and the AI search engines did not check them.
+
+This study has several limitations that need to be stated honestly. The URLs were handed to AI directly by the researchers, so it was not tested whether AI could find these pages on its own. The originals used for comparison were plain text generated from a template, which is easy to beat in the first place. Some of the researchers are themselves authors of the best-performing method, so there is a conflict of interest. The results were not very stable either: rerunning the same conditions changed the first place for about 20% of brands, and merely reversing the order of the URLs, without changing a single word of content, made the best method's first-place share swing between 73.8% and 93.8%.
+
+The second study is closer to reality. Researchers tested repeatedly on real AI search, choosing 56 topics with almost no other reliable content, which the industry calls "data voids". For each topic they published just one web page, let search engines index it on their own, and on day 25 after it went live asked three AI search engines. Whether the page used GEO writing, meaning statistics, sources cited in the text, an opening summary, technical terms and safety notes all added together, showed no effect at all on whether the page entered the answer: the odds ratio was 0.91, very close to 1, and the study ruled out an effect of "twofold or more". What really mattered was whether the website itself could be seen. New websites that had not been indexed appeared 0% of the time on all three AI search engines; pages on old websites appeared 38.4% to 78.3% of the time; and new websites that actively submitted themselves for indexing appeared 14.3% to 42.9% of the time.
+
+This study has limitations too. Pages with and without GEO writing numbered 46 to 10, an uneven split, so only large effects can be ruled out, not smaller ones. The topics were all data voids with no competing sources, and the content was entirely fictional. And "whether the website can be seen" bundles together the website's age, its existing links and indexing, so it is impossible to tell which of them is doing the work.
+
+Put the three kinds of evidence side by side and the picture is clear. When text is given directly to AI models, the effect of adding statistics has already become zero or slightly negative. When real AI search reads web pages supplied by researchers, adding statistics still beats a plain original, but the numbers are made up, and the results shift with order and with reruns. When real AI search has to find pages on its own, writing tricks show no effect. **The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing tricks help; whether your page has been indexed and whether your website can be found matter more than how you write.** In addition, AI search does not check numbers: made-up numbers are a real way of misleading readers, and a reputational risk for the writer.
+
 ## 2. What machines found when left to search for the best way to write
 
 Since most tricks thought up by people had stopped working, researchers tried another approach: let AI try all kinds of rewrites itself and see which gets cited most. Several research groups arrived at the same direction. The writing that automatic optimisation finally converged on had only three features.
@@ -65,6 +81,8 @@ Since most tricks thought up by people had stopped working, researchers tried an
 The first feature is staying true to the facts: no exaggeration, no invention, and no piling on emotion. The second is aiming at the question: responding directly to what the user is asking, in the user's own words, which the industry calls "query alignment". The third is clear structure: using bullet points and sections so that information is easy to extract.
 
 One experiment shows this especially well. In an e-commerce scenario, researchers first had AI optimise a prompt whose goal was to manipulate product rankings. Then they added just one simple defensive rule to the system. As a result, the prompt that had been meant to manipulate the ranking shifted by itself towards a fact-stating style, and the share flagged as "manipulation" fell by 60 percentage points on average. **As long as AI has basic defences, the cost of manipulation outweighs the benefit, and honest, clear writing becomes the best solution.**
+
+However, this conclusion comes from a simulation with a defensive rule added. Under test conditions with given web pages, three commercial AI search engines showed no such defence. The best performer was a method that adjusts appended text based on ranking feedback, and it had used the actual rankings of one of these AI search engines as feedback; some of the researchers are also authors of this method. Rewrites containing unsupported numbers were not ranked lower for it either, as Section 4 will discuss.
 
 This matches the point made in Chapter 6 of this book. What AI prefers is not some writing gimmick, but content that matches the question, can be extracted and can be trusted.
 
@@ -118,7 +136,7 @@ Put side by side, these pieces of evidence vary greatly in strength. Freshness h
 
 ## 4. Optimisation has side effects too
 
-Content optimisation does not bring only benefits. The known side effects fall into three types.
+Content optimisation does not bring only benefits. The known side effects fall into four types.
 
 The first type is that looking after one question hurts others. A web page usually has to respond to several related questions. If you adjust it for just one of them, 30.6% of the questions that were not the target get worse.
 
@@ -128,11 +146,15 @@ The third type is falling behind at an earlier gate. In the full pipeline, chang
 
 Add it all up and the picture is clear. Changing only the body text may gain you a little at the step where AI writes the answer, but with 9% less retrieval and 16% less in reranking, the net effect is **a citation rate of -6%**. It is like a job seeker who, to shine more in the interview, makes their CV long and flashy, and then fails even the paper screening.
 
+The fourth type is that made-up numbers are not stopped. Under test conditions with given web pages, one "add statistics" rewrite was allowed to use "hypothetical data", and as a result all 80 product descriptions contained numbers not supported by the specifications, such as "18% better heat retention"; other automatic rewriting methods also occasionally produced unsupported comparisons such as "30% energy saving". The three commercial AI search engines did not push them down the ranking for it, and the rewrites with added statistics still had a clearly better average rank than the unrewritten originals. Being seen and being reported correctly are two different things. Fake numbers written into a web page get passed on by AI: for readers they are a real way of being misled, and for the writer they are a reputational risk.
+
 ## 5. Don't celebrate yet: the measurement itself wobbles
 
 Remember the book's "rolling dice" metaphor? Ask the same question ten times and the answers may differ. In a controllable experimental system, researchers found that about 15% of AI's single decisions on "whether to cite this page" flip when run again, and about 45% of the measured differences in effect actually came from the randomness of AI generating text.
 
 Someone in the industry ran repeated, controlled tests and, before making any change, first measured how much the results wobble on their own. He tested with 387 questions, and after 3 days, 98% gave the same results. So he believes that changes smaller than about 3 to 4 percentage points should be treated as measurement noise, not as an effect.
+
+The same wobble exists on real AI search. Under test conditions with given web pages, rerunning the same pages in the same order on ChatGPT changed the first place for about 20% of brands; merely reversing the order of the URLs, with the content completely unchanged, made the best-performing rewriting method's first-place share swing between 73.8% and 93.8%. Product names, a tiny price difference (±0.2%), and whether AI was given a brand overview page or individual product pages also changed the results. So when you measure, record these conditions and rotate them.
 
 This means that **testing only once, seeing a change of a few percentage points, and declaring that some way of writing works, is unreliable.**
 
@@ -146,9 +168,13 @@ The side that says they don't has two grounds. On new AI models, attaching a blo
 
 The side that says they do also has research support. In simulation experiments, rewriting the whole page to raise the density of statistics and reference sources increased visibility by 37% to 96%. When researchers removed each change one at a time for comparison, they found that statistics and reference sources contributed the most. In another simulation, adding statistics had an effect of +3.49, and among all the writing tricks, the "add evidence" kind of change was the strongest. The two sides actually rest on different grounds: the side that says they don't help tested attaching a block or only swapping wording, while the side that says they help tested raising evidence density when rewriting the whole page.
 
+Another study, in which researchers tested repeatedly on real AI search, saw both sides. In real usage logs, pages with statistics, sources cited in the text and accurate wording were retrieved and cited more often: pages with statistics had an odds ratio of 2.11 for being retrieved and 1.17 for being cited; for sources cited in the text the figures were 1.34 and 1.22; for accurate wording, 2.26 and 1.71. Fluently written pages were actually retrieved and cited less often (0.67 and 0.58). But all of these are only correlations. When the researchers added these elements to pages directly in a controlled experiment, no effect could be seen, and which website a page was published on mattered far more than how it was written.
+
 Industry tests offer two observations as well. Someone in the industry tested this themselves: he produced an original study auditing the AI visibility of more than two thousand training companies, and this study became the only page on his website that Perplexity listed as its first source. He therefore believes that original figures are currently the strongest "worth citing" signal, but no one has independently verified this. Another person in the industry looked at about 150 websites and found that the median share of paragraphs containing numbers, quotes or external links was only 23/100, so most websites' paragraphs actually contain very little evidence.
 
-**"Pasting numbers in" and "the content already containing evidence not found anywhere else" are two different things.** The former has been shown to be unreliable. The latter is currently supported only by simulation experiments and industry reports; on real AI search there is not yet any causal evidence.
+**"Pasting numbers in" and "the content already containing evidence not found anywhere else" are two different things.** The former has been shown to be unreliable. The latter is currently supported only by simulation experiments, industry reports and correlational evidence on real AI search; on real AI search there is not yet any causal evidence.
+
+There is also a third case: writing numbers the specifications do not support into the body text. Under test conditions with given web pages, this kind of rewrite can beat a plain original, but it falls short of other whole-page rewriting methods, and it amounts to handing false information to AI to pass on. It is not evidence, and it should not appear in any recommended practice. For the three kinds of evidence side by side, see "The closer to reality, the less the tricks show any effect" in Section 1.
 
 ### Debate 2: Does structured data help?
 
@@ -236,6 +262,8 @@ The sixth case is a deliberately created conflict. On a test page, someone in th
 
 ### Recommended, in order of strength of evidence
 
+Before the nine items below, there is one precondition: first confirm that your web page has been indexed by search engines and that its website can be found, and only then think about the writing. Researchers tested repeatedly on real AI search (on data void topics): new websites that had not been indexed scored 0 on all three AI search engines, and how the pages were written showed no effect.
+
 The top priority is to first confirm that your content corresponds to real questions, and to write titles and questions in the words users actually use. In controllable experiments and simulations, whether the question and the content match is the strongest predictor, and industry tests support this too. Match the question first, then think about the writing.
 
 The second is to keep updating pages that already exist, and to update time-sensitive topics more often. This rests on repeated testing on real AI search and simulation experiments, pointing the same way; the half-life for time-sensitive questions is about 39 days, which can serve as a reference for your review cycle.
@@ -262,9 +290,11 @@ A sales, advertising, storytelling or emotionally exaggerated style points to ne
 
 Letting structured data disagree with the visible content is another myth. AI may go by the visible content, and the conflict only creates confusion. A major one-off overhaul of a page that was being cited steadily is risky as well: someone in the industry observed that citations dropped for several weeks as a result and never fully recovered, so changes should be made in small steps and be reversible. Finally, chasing visibility at the expense of accuracy doesn't pay either. Rewriting aimed at visibility lowers faithfulness: you get cited more, and also misreported more.
 
+In the same way, don't write unsupported numbers on your web pages. Under test conditions with given web pages, AI search did not check numbers, and rewrites containing fake numbers were not ranked lower for it. These numbers get passed on to readers: for readers they are misleading, and for the writer they are a reputational risk.
+
 ### Already outdated
 
-Treating the trio of "add statistics, add quotes, add reference sources" as standalone tricks is already outdated. The +27% to +43% reported in 2023 became zero or slightly negative when retested on new models. The same goes for any "one trick for a 40% boost" list: rewrites that only swap wording did worse than no rewriting at all in several studies, and the more people adopt them, the closer the effect gets to zero.
+Treating the trio of "add statistics, add quotes, add reference sources" as standalone tricks is already outdated. The +27% to +43% reported in 2023 became zero or slightly negative when retested on new models; under real retrieval conditions, GEO writing on the page also showed no effect. The same goes for any "one trick for a 40% boost" list: rewrites that only swap wording did worse than no rewriting at all in several studies, and the more people adopt them, the closer the effect gets to zero.
 
 Treating the FAQ format or structured data as the main way to get AI to cite you is outdated too. They help AI understand you and find you, but they do not in themselves decide whether AI chooses you. The idea of "optimise once, effective forever" should also be dropped. Once an AI engine updates, known methods may expire, so you have to measure again regularly.
 
@@ -278,13 +308,13 @@ Tricks expire. Aiming at the question, staying true to the facts and being easy 
 
 ## Key points of this chapter
 
-Writing tricks have an expiry date. The 2023 tricks of adding statistics, adding quotes and adding reference sources no longer increase citations when retested on new models. When machines are left to search for the best way to write, they converge on staying true to the facts, aiming at the question and clear structure. This is currently the direction closest to a "universal best solution", though preferences differ by domain.
+Writing tricks have an expiry date. The 2023 tricks of adding statistics, adding quotes and adding reference sources no longer increase citations when retested on new models. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing tricks help, and whether your page has been indexed and whether your website can be found matter more. When machines are left to search for the best way to write, they converge on staying true to the facts, aiming at the question and clear structure. This is currently the direction closest to a "universal best solution", though preferences differ by domain.
 
 Match the question first, then think about the writing. Whether the question and the content match predicts citation better than content quality that ignores the question, and how well something is written has almost nothing to do with being cited. Freshness is the content factor with the most consistent evidence, but the pages cited most often are those that have existed for some time and keep being updated; newly published pages are actually not cited often.
 
 Structure and structured data act on "being found" and "being extracted". Structured presentation only redistributes citations among comparable sources and is not in itself a lever for getting AI to cite you. The Q&A format, an authoritative tone and keyword stuffing, used on their own, are all ineffective or harmful; FAQ success stories mostly come from aiming at the question in the words real people use, and have little to do with the format itself.
 
-Optimisation has side effects. Tuning for one question hurts others, chasing visibility lowers faithfulness, and changing only the body text can make a page fall behind at the retrieval step. Finally, a single test can't be trusted: about 15% of citation decisions flip when run again. Before evaluating any method, measure the noise first, and record each AI engine separately.
+Optimisation has side effects. Tuning for one question hurts others, chasing visibility lowers faithfulness, and changing only the body text can make a page fall behind at the retrieval step, and AI search does not check numbers either, so made-up numbers are not stopped. Finally, a single test can't be trusted: about 15% of citation decisions flip when run again; on real AI search, reversing the candidate order or running again also changes who comes first. Before evaluating any method, measure the noise first, and record each AI engine separately.
 
 ## Remember in one sentence
 
@@ -292,16 +322,17 @@ Optimisation has side effects. Tuning for one question hurts others, chasing vis
 
 ## What you can do tomorrow
 
-1. Match the question first. List the questions customers really ask, in their own words, and compare them with your titles and subheadings; rewrite questions written to match keywords into sentences real people would type.
-2. Make every section able to answer a question on its own. Pick a few of your most important articles and rewrite the first sentence of each section so that it answers the question directly, rather than just adding a summary at the top of the page.
-3. Break up long paragraphs so that each paragraph covers only one thing.
-4. Write your structural fields well. Put your core entities (brand, products) and key figures into the titles, page descriptions, subheadings and structured data, and check that the structured data matches the content visible on the page, especially prices, specifications and dates.
-5. Include evidence not found anywhere else. If you have original data, clear definitions, comparisons or steps, work them into the body text and note the source and date.
-6. Say things clearly, with grounds. Delete unnecessary "however", "although" and "even though", but where you have no grounds, don't force it into an assertion.
-7. Have one page serve several related questions. Before rewriting, list all the related questions the page should answer, and after rewriting, check them one by one to see whether any got worse.
-8. Set an update cycle. Keep maintaining pages that already exist; for time-sensitive topics, you can use the half-life of about 39 days as a reference when scheduling reviews. Update in small steps, and keep the old version so you can roll back.
-9. Measure the noise first, then evaluate. Before making changes, ask the same set of questions several times, note how much the results wobble on their own, and record each AI engine separately; afterwards, don't treat changes smaller than 3 to 4 percentage points as an effect.
-10. Treat every method as a hypothesis. After AI engines update, measure again regularly on the current engines.
+1. Confirm you are indexed first. Check whether your web page has already been indexed by search engines and whether its website can be found, and only after confirming this start changing how you write.
+2. Match the question first. List the questions customers really ask, in their own words, and compare them with your titles and subheadings; rewrite questions written to match keywords into sentences real people would type.
+3. Make every section able to answer a question on its own. Pick a few of your most important articles and rewrite the first sentence of each section so that it answers the question directly, rather than just adding a summary at the top of the page.
+4. Break up long paragraphs so that each paragraph covers only one thing.
+5. Write your structural fields well. Put your core entities (brand, products) and key figures into the titles, page descriptions, subheadings and structured data, and check that the structured data matches the content visible on the page, especially prices, specifications and dates.
+6. Include evidence not found anywhere else. If you have original data, clear definitions, comparisons or steps, work them into the body text and note the source and date. Every number must have grounds; don't make any up.
+7. Say things clearly, with grounds. Delete unnecessary "however", "although" and "even though", but where you have no grounds, don't force it into an assertion.
+8. Have one page serve several related questions. Before rewriting, list all the related questions the page should answer, and after rewriting, check them one by one to see whether any got worse.
+9. Set an update cycle. Keep maintaining pages that already exist; for time-sensitive topics, you can use the half-life of about 39 days as a reference when scheduling reviews. Update in small steps, and keep the old version so you can roll back.
+10. Measure the noise first, then evaluate. Before making changes, ask the same set of questions several times, note how much the results wobble on their own, and record each AI engine separately; afterwards, don't treat changes smaller than 3 to 4 percentage points as an effect.
+11. Treat every method as a hypothesis. After AI engines update, measure again regularly on the current engines.
 
 ## Stop doing this
 
@@ -311,11 +342,13 @@ Stop stuffing keywords, and stop replacing your original wording with obscure or
 
 Stop using a sales, advertising, storytelling or emotionally exaggerated style, and stop adding an authoritative voice without adding evidence. Both may look persuasive, but in AI's eyes they may make you seem less credible.
 
-Stop letting structured data contradict the content visible on the page, and stop overhauling a page that was being cited steadily all in one go. Finally, stop sacrificing accuracy to be seen: being cited more while also being misreported more is not worth it.
+Stop letting structured data contradict the content visible on the page, and stop overhauling a page that was being cited steadily all in one go. Finally, stop sacrificing accuracy to be seen: being cited more while also being misreported more is not worth it. And stop writing unsupported numbers on your web pages: AI will not check them for you, but readers will be misled and your reputation will suffer.
 
 ## What is still uncertain
 
-**Does original evidence have a causal effect on real AI search?** "Raising evidence density across the whole page" works in simulations, and industry reports also support original figures, but on real AI search there is not yet any causal evidence.
+**Does original evidence have a causal effect on real AI search?** "Raising evidence density across the whole page" works in simulations, and industry reports also support original figures, but on real AI search there is not yet any causal evidence, only correlational evidence.
+
+**Does the way a page is written have no effect at all under real retrieval conditions?** The tests closest to the real world so far show no effect, but they ruled out only large effects of twofold or more, and they tested data void topics with no competing sources. In tests with given web pages, adding statistics still beat a plain original, but the results shifted with order and with reruns.
 
 **How much does structured data really do?** It can help with being retrieved, and it is correlated with being cited; but a randomised controlled test saw no effect from formatting, and there are websites with no structured data at all that are still cited heavily. What can be said for now is that being understood is not the same as being chosen. A related question is whether structured presentation can raise "whether it gets cited at all". It can take some citations from comparable sources, but the improvement in the main measure cannot be determined.
 

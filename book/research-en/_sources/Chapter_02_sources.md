@@ -15,6 +15,7 @@
 | Principle 2.2 | AIO browsing records of 900 people about 18% | Paper 2608.04831 (B, IC2S2 2026 extended abstract) |
 | Principle 2.3 | Long queries, queries starting with a question word, and queries containing nouns and verbs trigger more easily | Paper 2608.04831 (B) |
 | Principle 2.3 | Questions 60%, statements 37%, navigational 12% | Paper 2602.13415 (B) |
+| Principle 2.3 | Long health questions: AIO appears for 96.4%; AIO with no citations 9.4%, by complexity 4.2/6.0/10.6%, by risk 6.4/8.1/17.6%; short single-turn subsample 5.8%; uncited and cited AIO have similar clinical scores | Paper 2610.39339 (B, weak end: single 3-day snapshot, US English, questions adapted from HealthBench) |
 | Principle 2.4 | AIO 7 countries→229 countries; US 42%→67%; Covid 1%→66% (sample 74) | Paper 2602.13415 (B) |
 | Principle 2.5 | API with List your sources: search invocation 12.1%→88.4%; citations per response 0.60→7.05; product-side citations 16.6→19.9, composition change ≤2.1 percentage points | Paper 2609.00319 (B) |
 | Principle 2.6 | 14–53% of claims supported by search results but not cited; 15–20% or more of claims not grounded; more search only mixed effects | Paper 2609.19244 (B) |

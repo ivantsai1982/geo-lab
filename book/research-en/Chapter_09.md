@@ -38,6 +38,7 @@ Repeated tests on real AI search engines found:
 - On one of the engines, 57.8% of runs cited no sources at all.
 - Another study ran the same query repeatedly on three engines. The median overlap of the sets of cited domains was about 0.29–0.31 for one engine and 0.33–0.40 for another, and even the most stable was only 0.50.
 - Even for frequently cited domains, the share obtained from a single measurement has a 95% confidence interval 3–7 percentage points wide. Many of the "gaps" between domains actually fall within the noise.
+- Deep research mode repeats even less. For a commercial deep research system, the same open-ended prompt was rerun 10 times through the API (each report about 5,000 words with about 80 cited URLs): any two reports shared only about one eighth of the entities they mentioned (median Jaccard about 0.12); the median Jaccard of cited URLs was only about 0.01; and the median overlap of pairs where "the same entity is supported by the same URL" was about 0.007. Note that these are **URL-level** figures, while most of the studies above are at the domain or source level; deep research reports are also longer and cite more, and the larger and more long-tailed the sets, the lower Jaccard naturally is. So the two cannot be compared directly, and this cannot be read as "deep research is dozens of times less stable than ordinary AI search". It is also the result of a single system, a single prompt and a single domain (cybersecurity), with entities extracted by an LLM and not fully audited by hand.
 
 Practitioners' repeated, controlled tests found results in the same direction:
 - Across 197 websites in one vertical and three engines, with each prompt run three times, 32% of citations appeared in only one of the three runs.
@@ -54,12 +55,13 @@ Repeated tests on real AI search engines found:
 - When the variance of more than 10,000 brand answers is broken down, **the query language** is the largest systematic source of variation, accounting for about 26.5% of the variance of a single answer; the brand itself accounts for only 1.5%.
 - After the 5th repetition of the same prompt, adding 5 more repetitions barely reduces the error; adding 3 more languages instead reduces the error by about 15 times as much.
 - The reliability of a single answer for distinguishing between brands is only about 0.01.
-- Mentions at the brand level are more stable than at the URL level: the adjacent-day overlap for brands is about 0.45–0.59, higher than the 0.34–0.42 for sources.
+- Mentions at the brand level are more stable than at the URL level: the adjacent-day overlap for brands is about 0.45–0.59, higher than the 0.34–0.42 for sources. On a deep research system the gap in the same direction is larger: entity overlap about 0.12, cited URLs about 0.01 (single system, single prompt, 10 repetitions).
 
 There is no fixed answer to how large a sample you need:
 - One study used 10 topics × 125 queries × 3 platforms and a sequential convergence method, based on "the ranking reaching a plateau", to decide when collection could stop. Most combinations stabilized at 33–75 responses, but 3 combinations (all on the same engine) never converged within 125.
 - If you stop using only a fixed threshold (for example a rank correlation coefficient ≥ 0.95), all 30 combinations reach it, but only 19 hold it. Looking only at ranking stability, the agreement between the ordering and the final result can be as low as 0.364; adding a signal-to-noise condition raises the worst case to 0.717.
 - The number of citations per answer varies widely across engines: two engines give about 15–50 per answer, another only about 4–6. The sparser the citations, the more queries you need to collect. Another study estimated that narrowing the interval of a share to 5 percentage points requires about 30–50, 90–100, and 150 or more queries for the respective engines.
+- The more long-tail the thing being measured, the harder it is to converge. Repeated tests on real AI search engines found (one commercial deep research system, the same prompt 10 times): categories with few, well-known candidates (such as countries and well-known attack groups) stopped producing new names earlier; long-tail categories such as products, software and techniques kept producing new names with every extra run and did not saturate within 10 runs. The researchers suggest that the size of the candidate space is the reason, but this has not been tested directly. The book's inference: for brands, this may mean that the appearance rate of leading brands stabilises faster and long-tail brands need more samples; whether you are asking "does the leader appear" or "the complete list" makes a large difference to the number of runs needed.
 
 **Re-running and rephrasing are two different things.** Re-running the same prompt smooths out randomness; asking in a different way tests "are you still there if the question is phrased differently". Practitioners widely believe both are needed, and that leaving out either one will still mislead you.
 
@@ -74,8 +76,9 @@ Before saying "I see myself in AI", first ask: at which layer?
 | API (search enabled) | Programmatic calls | Some APIs do not return certain social platform sources shown in the interface (for example X) |
 | API (search not enabled) | Programmatic calls | Measures the model's memory, not retrieval results |
 | Logged-in account | Personal use | Affected by conversation history and memory |
+| Deep research mode | Programmatic calls (existing research used the API) or manual | Long reports with many citations; rerunning the same prompt, almost nothing repeats at the URL level |
 
-The first three rows above are results of repeated tests on real AI search engines. The differences between engines are also large: two mainstream engines share on average only 5.4% of domains for the same query, and 76.7% of comparisons have no domain in common at all.
+The first three rows and the last row above are results of repeated tests on real AI search engines. The differences between engines are also large: two mainstream engines share on average only 5.4% of domains for the same query, and 76.7% of comparisons have no domain in common at all.
 
 Another study that captured the internal execution of the ChatGPT web version (versions 5.2–5.5) adds that the URLs cited by the API match those of the web version (F1) only 13%–15% of the time, while precision at the domain level is 28%–41%, so comparisons should be made at two levels, URL and domain. **Reasoning mode also changes search behavior**: Instant mode mostly searches only one round, while Thinking mode averages 3.2 rounds and about 12 queries; the web version may also switch to another model partway through a session. When measuring, record the mode and the reasoning effort.
 
@@ -108,6 +111,8 @@ One practitioner observed (single observations, offered only as leads):
 - Of 60 buyer questions collected from real communities and from "related questions", in one round 13 and in another round 23 got AI answers that named no brand at all. Tracking such questions can never prove anything.
 - Testing only with the most competitive core terms produced the conclusion "0 out of 10 questions"; after adding more specific questions, the same website was cited.
 
+The checking method also defines the result. Some measurements refetch the web pages cited in AI answers to check whether the sources still support what the answer says. In controlled experimental systems (researchers tested their own fetching program on real URLs and used an LLM to judge whether a source still supported the original claim): if every 200 status code is treated as having received the main content, the share of "cited sources no longer support the original claim" appears to be about 21.9%, but only about 5.8% after excluding responses without main content, a difference of about 3.8 times; at the same time, "dead sources" are underestimated: about 11.8% by status code alone, against about 16.0% that actually no longer serve the original content. When building this kind of checking tool yourself, first confirm that what you fetched is the main content (for how to check, see "What to do" in Chapter 3).
+
 ### Principle 9.5: Mention, citation and recommendation are three different quantities
 
 "Appearing in an AI answer" has at least three meanings:
@@ -136,6 +141,8 @@ Crawled (crawler logs) → Cited / mentioned / recommended (prompt sampling) →
 
 Practitioners report from their own tests that tracking tools almost all measure only the middle segment, yet are often sold as covering all three. Server logs can provide leads on the other two segments, and changes show up there earlier. In addition, practitioners' repeated, controlled tests found that most AI assistants open links without passing on source information (the referrer), so visits are recorded as "direct traffic", and tools that look only at referral traffic structurally underestimate it.
 
+When reading crawler logs, do not just count status code 200s. Logs record the status code the server returned, not what the other side read. In controlled experimental systems (researchers tested their own fetching program on about 10,000 real URLs, not an AI company's crawler), about one fifth of the pages a static fetch received with a 200 had no main content: they could be challenge pages returned by a CDN, front-end shells, or substitute pages that redirect deep URLs to the home page. So "with zero crawling there can be no retrieval-based citation" still holds, but the reverse does not: being crawled and returning 200 does not guarantee the content is usable. When using crawler logs as a leading indicator, also look at response size, or the CDN's record of how it handled the request as a bot.
+
 ## 2. How strong is the evidence
 
 | Conclusion | Type of evidence | Strength | Scope and limitations |
@@ -150,6 +157,8 @@ Practitioners report from their own tests that tracking tools almost all measure
 | In multi-turn conversations, sources cited early may keep being cited (conversation capture) | Theoretical model | Weak (E) | Only shows what is possible in principle; direction and size not tested |
 | User conditions are spread across several turns, and the last message often leaves out earlier conditions | Real conversation logs (8,133 conversations) | Medium (descriptive) | Model answers not tested; conditions detected by keyword rules |
 | Mention, citation and recommendation are separate | Practitioner tests from many sources + broad consensus | Medium | Definitions vary between teams; not independently verified |
+| In deep research mode, entity overlap is about 0.12 and cited URLs about 0.01, not saturated after 10 runs | Real commercial deep research system, API, same prompt repeated 10 times | Medium to weak (B) | Single system, single prompt, single domain (cybersecurity); URL level, not directly comparable with domain-level figures; entities extracted by an LLM, not fully audited by hand |
+| A 200 in logs or refetches does not mean the main content was received (about one fifth had none) | Controlled experimental system (own fetching program, about 10,000 real URLs) | Weak to medium (D) | The fetcher is not an AI company's crawler; proportions vary with IP and time; the citation drift part was judged by an LLM |
 | Relationship between visibility and traffic or revenue | None | **No evidence** | No research currently shows that GEO visibility reliably brings traffic or conversions |
 
 Two reminders:
@@ -169,6 +178,7 @@ Two reminders:
 | 3 times, counted by a "2 out of 3" majority vote | Practitioners' repeated, controlled tests |
 | Diminishing returns after 5–10 times for top positions; the long tail needs more | Practitioners report from their own tests |
 | 10 or more, or even 20 or more | Practitioners report from their own tests; community consensus |
+| In long deep research reports, 10 runs are still not enough to saturate the long-tail list | Real commercial deep research system, single prompt repeated 10 times |
 
 These positions do not fully conflict: the research emphasizes **the total sample size and how it is allocated**, while the practitioners' "3 times" is usually used under budget constraints, together with many questions accumulated over several weeks. The only thing truly wrong is "once".
 
@@ -186,7 +196,7 @@ Only two points are broadly agreed: the engines really do differ in stability, a
 
 ### Debate 4: Are brands more stable, or sources?
 
-- Research: mentions at the brand level are more stable than at the URL level.
+- Research: mentions at the brand level are more stable than at the URL level. Another set of repeated tests on real AI search engines (deep research mode, single prompt, 10 times) points the same way: entity overlap about 0.12, cited URLs about 0.01; but it did not test descriptions or ordering.
 - Practitioners report from their own tests (supporting): running the same prompt on the same engine for 30 consecutive days, the sources changed often, but two brands were recommended in 28/30 and 26/30 runs respectively.
 - Practitioners report from their own tests (opposing): a brand's **description** is less stable than its citations. The same brand was the top recommendation in one round and only mentioned in passing in the next; citations, by contrast, overlapped 40–80% across five runs. The instability is concentrated in positions 4–10, which is where most brands fall.
 
@@ -231,6 +241,7 @@ One practitioner believes that whether a local service business appears in AI is
 - **What was done**: a practitioner compared the AI crawler records in the server logs with the results of prompt sampling.
 - **What was observed**: one engine's search crawler fell from 548 fetches a day in mid-August to 189 a day recently; the user-agent that represents real people opening links during conversations fell from 230 a day to 48. The search crawlers of two other engines were at zero every day for a whole month.
 - Conclusion: any tool that said he was "visible on those two engines" was sampling something that could not possibly be true. With zero crawling there can be no retrieval-based citation, so crawling is the earliest leading indicator.
+- Note: the reverse does not hold. Being crawled and returning 200 does not mean the crawler received the main content (see Principle 9.5).
 - Principle: 9.5.
 
 ### Case 4: The dashboard says 45%, but the client cannot find it themselves
@@ -271,14 +282,14 @@ One practitioner believes that whether a local service business appears in AI is
 | 5 | **Repeat each question many times, and report the mention rate and the sample size**. Research recommends at least 7–8 times per question per day; on a limited budget, at least 3 times with majority-vote counting. | Repeated tests on real AI search engines found; practitioners' repeated, controlled tests |
 | 6 | **Allocate the budget to breadth**: multiple engines, languages, regions and phrasings are more effective than running the same prompt dozens of times. | Repeated tests on real AI search engines found (sentiment outcomes only; authors are a vendor) |
 | 7 | **Report each engine, language and region separately**; do not blend them into one average score. | Repeated tests on real AI search engines found; practitioners' tests |
-| 8 | **Fix one observation surface and record the settings**: API or interface, whether search is enabled, model version, region, whether logged in. When using the API, regularly spot-check with the product interface in a clean session. | Repeated tests on real AI search engines found; practitioners' tests |
+| 8 | **Fix one observation surface and record the settings**: API or interface, whether search is enabled, model version, region, whether logged in. When using the API, regularly spot-check with the product interface in a clean session. Deep research mode is a separate observation surface; do not mix its results with ordinary search mode. | Repeated tests on real AI search engines found; practitioners' tests |
 | 9 | **Record for every run**: whether there was an answer, whether sources were used, failure category, mention, cited URLs, whether recommended, position. Failures and missing data do not count as "not mentioned". | Practitioners' repeated, controlled tests |
 | 10 | **Fix the definition of a "hit"**: whether brand aliases and product names count; whether echoes from questions that already contain the brand name are removed. Once the definition is set, do not change it; if you do, rebuild the baseline. | One practitioner observed |
 | 11 | **Set up a control group**: leave about a quarter of the prompts without any optimization; also track a set of peer brands you are not working for. | Practitioners' repeated, controlled tests; one practitioner observed |
 | 12 | **Look at trends, not single weeks**: research recommends a 2–4 week rolling window; practitioners mostly use 4 weeks or more. One practitioner's rule of thumb is to treat single-week changes within 15% as noise at first, and to take them seriously only if they recur for two consecutive weeks; this is only personal experience, not a law. | Repeated tests on real AI search engines found; practitioners report from their own tests |
 | 13 | **To judge whether a change is real, ask three questions**: did several platforms move at the same time? Did the number of cited URLs move with it? Does the timing match something you did? | Practitioners report from their own tests |
 | 14 | **Record cited URLs, not just "whether you appeared"**. The list of cited sources tells you which pages to pursue exposure on, but it is only correlation, not attribution. | Practitioners report from their own tests |
-| 15 | **Fill in both ends**: use server logs to see whether AI crawlers are fetching; use the official webmaster tools to see AI impressions; split traffic into two buckets, "confirmed as from AI" and "inferred as possibly from AI". | Practitioners report from their own tests |
+| 15 | **Fill in both ends**: use server logs to see whether AI crawlers are fetching; use the official webmaster tools to see AI impressions; split traffic into two buckets, "confirmed as from AI" and "inferred as possibly from AI". In logs, do not just count 200s; also look at response size or the CDN's bot handling record. | Practitioners report from their own tests; for the 200s in logs: in controlled experimental systems |
 
 **Cost reference** (practitioners report from their own tests; prices change): building your own with a search API that returns citations costs about half a US cent per query, about 0.5 US dollars for a round of 100; running about 300 queries × 4 engines every day costs about 30 US dollars a month in API fees; 600 runs a day on a single engine cost about 1.6 US dollars. One practitioner's self-built script also crashed at about 50 queries, after spending about 200 US dollars. Building your own is not necessarily cheaper, but it gives you full control over the method.
 
@@ -324,6 +335,7 @@ Practitioners report from their own tests that, after testing several tools in a
 - Do not record API failures, rate limiting or missing answers as "not mentioned".
 - Do not add up or compare raw citation counts directly across engines: the number of citations per answer differs several times over between engines.
 - Do not treat the list of cited sources as causal attribution.
+- Do not treat a 200 in crawler logs as the crawler having read the content; when refetching sources to check them, also first confirm that what you fetched is the main content.
 
 ### 5.4 Already outdated
 
@@ -341,6 +353,6 @@ Practitioners report from their own tests that, after testing several tools in a
 3. Spend the budget on breadth. Multiple languages, engines and phrasings reduce error more than running the same prompt over and over; there is no fixed answer to how large a sample you need, and sparse engines need more.
 4. Observation layers cannot substitute for each other. API and interface, app and web, logged in and logged out, different regions and languages: each shows something different. Choose one observation surface, fix it and record it.
 5. Scores are defined. The prompt set, weights, question types and hit rules can all change the numbers dramatically; freeze them, and if you change them, rebuild the baseline.
-6. Count mentions, citations and recommendations separately, then fill in the two ends of crawling and traffic. Being cited is not the same as being recommended; crawling is a leading indicator, and traffic is structurally underestimated.
+6. Count mentions, citations and recommendations separately, then fill in the two ends of crawling and traffic. Being cited is not the same as being recommended; crawling is a leading indicator, but a 200 in the logs does not guarantee the other side received the main content; traffic is structurally underestimated.
 7. Without a control group, you cannot tell your changes apart from model updates. Keep unoptimized prompts and peer brands as a benchmark.
 8. When evaluating tools and vendors, trust only numbers that can be checked. You need to be able to see the raw answers, cited URLs, denominators, handling of failures and number of runs. No research currently shows that visibility reliably converts into traffic or revenue, and anyone who promises this needs to show their own data.

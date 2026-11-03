@@ -2,6 +2,7 @@
 
 > Where this chapter sits: the three pipeline stages "selection and ranking → citation → absorption", with a look back at how content changes affect "retrieval".
 > Precondition: the page is already accessible and indexed (the accessibility problems discussed in earlier chapters have been handled). This chapter asks only one thing: **for the same page, does how the content is written or changed alter whether AI cites it, and how much?**
+> This precondition is not a minor one: under real retrieval conditions, whether the page is indexed and whether its domain is visible matter more than how the content is written (see Debate 1 in Section 8.3).
 
 ## Questions this chapter answers
 
@@ -40,6 +41,8 @@ Real pipeline:            query → retrieval → reranking → generation → c
                       the rewrite may be eliminated at either of these two gates
 ```
 
+The evaluation method itself can also change the conclusion. When the pages are supplied to the engine, one study published the same set of rewritten product pages on a real website, then gave the URLs to three commercial AI search engines to read and rank, while also giving the same text directly to five models to score. The within-brand correlation between the scores from text given directly to models and the rankings by AI search engines that read the pages ranged from 0.50 to −0.31; one model's rankings ran in the opposite direction to all three AI search engines. Overall, "which rewrite is strongest" was broadly preserved, but at the level of individual brands, the three AI search engines picked the same first place only about half to two-thirds of the time. So GEO effects obtained by having a model read the text directly cannot be taken as effects on real AI search.
+
 Conclusion: every content technique should be treated as a hypothesis "with an expiry date", not a law. It has to be measured repeatedly on the current engines before you keep using it.
 
 ### Principle 2: Automated optimization converges on "faithful to the facts, aligned with the query, clearly structured"
@@ -53,6 +56,8 @@ Several studies point the same way. The style that automated optimization eventu
 - Clearly structured: bullet points, separate paragraphs, information that is easy to extract.
 
 In an e-commerce setting, after a simple defensive clause was added, prompts that had been optimized to "manipulate" the ranking converged on their own towards a factual style, and the share flagged as manipulation fell by 60 percentage points on average. So when an engine has basic defences, manipulation does not pay, and honest, clear writing turns out to be the best solution.
+
+This conclusion comes from a simulation with a defensive clause added. When the pages are supplied to the engine, three commercial AI search engines showed no such defence: the best-performing method was one that adjusts appended text using ranking feedback, and it had used the actual rankings of one of these AI search engines as feedback (some of the researchers are authors of that method); rewrites containing unsupported numbers were not ranked lower for it either (see Principle 4).
 
 This is consistent with Principle 6.1 in Chapter 6: what engines prefer is not some writing trick but content that matches the query, can be extracted and can be trusted.
 
@@ -102,7 +107,7 @@ Q&A format is not the answer in itself. The absorption of Q&A pages, compared wi
 
 ### Principle 4: Optimization has side effects
 
-Content optimization does not bring only benefits. Three kinds of side effect are known:
+Content optimization does not bring only benefits. Four kinds of side effect are known:
 
 1. **Gaining one thing, losing another.** A page usually has to answer several related queries. When it is tuned for a single query, 30.6% of the non-target queries show a negative gain.
 2. **Lower faithfulness.** Automated rewrites aimed at visibility lower the content's faithfulness score from 8.29 to 4.90 and attribution accuracy from 6.15 to 4.18. The page is "seen" more, but it is reported correctly less often.
@@ -114,6 +119,8 @@ Change only the body text → generation stage may gain + a little
                           → net effect: citation rate -6%
 ```
 
+4. **AI search does not check numbers automatically.** When the pages are supplied to the engine, a statistics-addition rewrite that allowed "hypothetical data" put numbers not supported by the product specifications into all 80 product descriptions (for example "18% better heat retention"), and other automated rewriting methods occasionally made unsupported comparisons such as "30% energy saving". Three commercial AI search engines did not rank them lower for it: the statistics-addition rewrites still had a clearly better average rank than the unrewritten originals. Being seen and being reported correctly are two different things. Invented numbers written into a page get passed on by AI: for readers this is a real risk of being misled, and for the writer it is a reputational risk.
+
 ## 8.2 How strong is the evidence
 
 ### On "the classic techniques no longer work"
@@ -123,8 +130,12 @@ Change only the body text → generation stage may gain + a little
 - **Simulations or theoretical analysis suggest that, in principle**: of 54 "method × domain" combinations, only 3 showed a statistically significant improvement in citation rank, and none worked on question-answering tasks. Adding statistics significantly lowered rank in 19 of 24 scenarios. By comparison, the gain from putting the document first in the context is far larger than that of any content rewriting method.
 - Simulations or theoretical analysis suggest that, in principle: in an e-commerce reranking setting, only 4 of 15 hand-written techniques slightly beat or matched a simple prompt, and the other 11 did worse; a storytelling rewrite scored -4.36.
 - Simulations or theoretical analysis suggest that, in principle: 9 word-level (token-level) rewriting techniques all fell below the unrewritten baseline on three engines.
+- **When the pages are supplied to the engine**, researchers published product pages for 80 fictional brands, 6 products each with identical specifications, on a real website, then gave the URLs to three commercial AI search engines to read and rank. Pages that added statistics through a whole-page rewrite had a better average rank on all three AI search engines (3.18, 3.31, 3.83) than the plain originals (5.28, 5.84, 4.88); but they came first only 10.0%, 11.3% and 5.0% of the time, far behind the best-performing rewriting method. All 80 statistics-addition descriptions contained numbers not supported by the specifications.
+  - Limitations: the URLs were supplied directly by the researchers, so whether AI search would find these pages on its own was not tested; the originals were plain template-generated text, a weak baseline; some of the researchers are authors of the best-performing method. The results were also unstable: rerunning the same condition changed the first place for about 20% of brands, and merely reversing the order of the URLs made the best method's first-place rate swing between 73.8% and 93.8%.
+- **Repeated tests on real AI search engines found** (three AI search engines, 56 artificially created "data void" topics, meaning topics with almost no other reliable content; only one page published per topic, indexed naturally by search engines, measured on day 25 after going live): on-page GEO writing (statistics, inline source citations, an opening summary, technical terminology and safety notes, added together) had no detectable effect on whether the page entered the answer (odds ratio 0.91), ruling out effects of twofold or more. The strongest factor was domain visibility: new domains that were not indexed scored 0 on all three engines, pages on old domains 38.4%–78.3%, and new domains submitted for indexing 14.3%–42.9%.
+  - Limitations: pages with and without GEO writing numbered 46 versus 10, so only large effects can be ruled out, not smaller ones; the topics were data voids with no competing sources, and all content was fictional; domain visibility bundles domain age, existing links and indexing together, and they cannot be separated.
 
-Scope: most of the above used fixed contexts or controlled frameworks. What they show together is that "appended, word-level techniques are unreliable"; this is not the same as "evidence and data are useless" (see Debate 1 in Section 8.3).
+Scope: the first four items mostly used fixed contexts or controlled frameworks. What they show together is that "appended, word-level techniques are unreliable"; this is not the same as "evidence and data are useless" (see Debate 1 in Section 8.3). The last two items use conditions closer to the real world; the evidence from the three kinds of conditions is set side by side in Debate 1 in Section 8.3.
 
 ### On "the direction automated optimization converges on"
 
@@ -149,6 +160,7 @@ Scope: most of the above used fixed contexts or controlled frameworks. What they
 
 - **In controlled experimental systems**, 15% of single-generation "cite or not" decisions flip when rerun; about 45% of the effect variance comes from decoding randomness.
 - **Practitioners' repeated, controlled tests found**: when the noise floor was measured before intervening, 98% of 387 queries gave the same result 3 days later; changes smaller than about 3–4 percentage points should therefore be treated as measurement noise, not as an effect.
+- **When the pages are supplied to the engine**, rerunning the same pages in the same order on ChatGPT changed the first place for about 20% of brands; merely reversing the order of the candidate URLs, with the content completely unchanged, made the best-performing rewriting method's first-place rate swing between 73.8% and 93.8%. Product names, a tiny price difference (±0.2%), and whether a brand overview page or individual product pages were given also changed the results. Record these conditions when measuring, and rotate them.
 
 This means that measuring once, seeing a change of a few percentage points and declaring a content practice effective is unreliable.
 
@@ -162,9 +174,21 @@ This means that measuring once, seeing a change of a few percentage points and d
 
 **What each side is based on**: the former measures "appending a block" or "word-level rewriting"; the latter measures "raising evidence density when the whole page is rewritten".
 
+Another study based on repeated tests on real AI search engines saw both sides. In real logs, pages with statistics (retrieval odds ratio 2.11, citation 1.17), inline source citations (1.34, 1.22) and accurate terminology (2.26, 1.71) were retrieved and cited more often, while fluent prose was associated with lower rates (0.67, 0.58); this is correlational evidence. But in a controlled experiment that added these elements directly, there was no detectable effect, and the domain a page was published on mattered far more than how it was written.
+
 **The practitioner side**: Practitioners report from their own tests that one piece of original research (an audit of the AI visibility of more than two thousand training companies) became the only page on that website listed by Perplexity as the top source, and they consider original figures the strongest citable signal at present. One practitioner observed that, across about 150 websites, the median share of paragraphs containing numbers, quotations or external links was only 23/100.
 
-A reading that holds both together: "pasting numbers in" and "the content itself contains evidence not available elsewhere" are two different things. The former has been shown to be unreliable; the latter is currently supported only by simulations and practitioner reports, with no causal evidence yet from real engines.
+A reading that holds both together: "pasting numbers in" and "the content itself contains evidence not available elsewhere" are two different things. The former has been shown to be unreliable; the latter is currently supported only by simulations, practitioner reports and correlational evidence from real engines, with no causal evidence yet from real engines. There is also a third case: writing numbers not supported by the specifications into the body text. When the pages are supplied to the engine, this kind of rewrite can beat a plain original but falls behind other whole-page rewriting methods, and it amounts to handing false information to AI to pass on. It is not "evidence" and should not appear in any recommended practice.
+
+Setting the three kinds of evidence on "adding statistics" side by side:
+
+| Test condition | Strength of evidence | Result |
+|---|---|---|
+| Candidate text given directly to models, retested on ten modern models | When the pages are supplied to the engine (the authors provide a content scoring service) | The +32.8 of 2023 became -0.28; none of the three tactics increased citations |
+| Real AI search engines read real live pages, but the URLs were supplied by the researchers | When the pages are supplied to the engine (some of the researchers are authors of the best-performing method) | Whole-page statistics-addition rewrites still had a better average rank than plain originals, but fell behind other whole-page rewrites; all 80 contained numbers not supported by the specifications, and the engines did not check them; reversing the URL order or rerunning changed the results |
+| Real AI search engines with real retrieval, pages indexed naturally by search engines | Repeated tests on real AI search engines found | On-page GEO writing had no detectable effect (odds ratio 0.91); whether the page was indexed and whether the domain was visible were the strongest factors |
+
+The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help. Under the conditions closest to the real world so far, no effect of writing techniques is visible; what is visible is whether the page has been indexed and whether the domain can be found. The given-page result that "adding statistics still wins" was measured against plain template originals, and it changes with order and with reruns. In addition, AI search does not check numbers: invented numbers are a real risk of misleading readers, and a reputational risk for the writer.
 
 ### Debate 2: Is Schema useful?
 
@@ -278,6 +302,7 @@ The following cases all come from practitioners' first-hand reports and are not 
 
 | Practice | Strength of evidence | Notes |
 |---|---|---|
+| First confirm that the page has been indexed by search engines and that its domain can be found; then worry about the writing | Repeated tests on real AI search engines found (data void topics) | New domains that were not indexed scored 0 on all three engines; on-page writing had no detectable effect |
 | First confirm that the content corresponds to real queries, and write titles and questions in users' actual wording | In controlled experiments and simulations, query relevance is the strongest predictor; supported by practitioners' own test reports | Answer the question first; then worry about the writing |
 | Keep existing pages continuously updated, with more frequent updates for time-sensitive topics | Repeated tests on real engines + simulation experiments, pointing the same way | The half-life for time-sensitive queries is about 39 days, which can serve as a reference for review intervals |
 | Write core entities and key numbers into structural fields such as title, meta, headings and Schema | Controlled experimental systems | Acts at the retrieval stage; not a citation lever |
@@ -298,21 +323,22 @@ The following cases all come from practitioners' first-hand reports and are not 
 - Do not let Schema disagree with the visible content. Models may take the visible content as authoritative, and the conflict only creates confusion.
 - Do not make a large change in one go to a page that is already cited consistently. One practitioner observed citations falling for several weeks as a result and never fully recovering; make changes in small, reversible steps.
 - Do not pursue visibility at the expense of accuracy. Visibility-oriented rewrites lower faithfulness: the page is cited more, but also misreported more.
+- **Do not write unsupported numbers on the page.** When the pages are supplied to the engine, AI search did not check numbers, and rewrites containing invented numbers were not ranked lower for it. These numbers get passed on to readers: for readers this is misleading, and for the writer it is a reputational risk.
 
 ### Already outdated
 
-- **The "add statistics, add quotations, cite sources" trio as standalone techniques.** The +27% to +43% of 2023 retests as zero or slightly negative on modern models.
+- **The "add statistics, add quotations, cite sources" trio as standalone techniques.** The +27% to +43% of 2023 retests as zero or slightly negative on modern models; under real retrieval conditions, on-page GEO writing also had no detectable effect.
 - **Any single-technique list of the "boost by 40%" kind.** Word-level rewrites fall below the unrewritten baseline in several studies, and the more people adopt them, the closer the effect gets to zero.
 - Treating FAQ format or Schema as the main means of "getting AI to cite you". They help reading and retrieval, but do not in themselves decide whether you are chosen.
 - The idea of "optimize once, effective forever". Engine updates make known levers expire, so they have to be retested regularly.
 
 ## Key points
 
-1. **Content techniques have a shelf life.** The 2023 "add statistics, add quotations, cite sources" no longer increase citations when retested on modern models.
+1. **Content techniques have a shelf life.** The 2023 "add statistics, add quotations, cite sources" no longer increase citations when retested on modern models. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help; whether the page is indexed and whether the domain is visible matter more.
 2. **Automated optimization converges on faithful to the facts, aligned with the query, clearly structured.** This is currently the closest thing to a "general optimum", and preferences vary by domain.
 3. Answer the question first; then worry about the writing. Relevance between query and content predicts citations better than query-independent "content quality"; good or bad prose is almost unrelated to being cited.
 4. Freshness is the content factor with the most consistent evidence, but the pages cited most often are those that "have existed for some time and keep being updated", not newly published ones.
 5. Structure and Schema act at the retrieval and extraction stages. Structured presentation only redistributes citations among equivalent sources and is not a citation lever in itself.
 6. Q&A format, an authoritative tone and keyword stuffing are all ineffective or harmful on their own. The FAQ success stories mostly come from "aligning with the query in real people's wording", not from the format itself.
-7. Optimization has side effects: tuning for one query harms other queries; pursuing visibility lowers faithfulness; changing only the body text may make the page fall behind at the retrieval stage.
-8. A single measurement cannot be trusted. About 15% of citation decisions flip when rerun; before evaluating any practice, measure the noise floor first and record results per engine.
+7. Optimization has side effects: tuning for one query harms other queries; pursuing visibility lowers faithfulness; changing only the body text may make the page fall behind at the retrieval stage; AI search also does not check numbers, so invented numbers are not stopped.
+8. A single measurement cannot be trusted. About 15% of citation decisions flip when rerun; on real AI search, reversing the candidate order or rerunning also changes who comes first; before evaluating any practice, measure the noise floor first and record results per engine.

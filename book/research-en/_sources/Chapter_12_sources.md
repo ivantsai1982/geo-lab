@@ -20,6 +20,7 @@
 
 ### 12.3 Platforms favor their own assets
 - Google AIO cites YouTube most often for health queries (above CDC/WHO/Mayo): 2609.06798 (B)
+- Note: with video and Reddit/Quora excluded, nih.gov has the largest share (12.5% vs 12.1% traditional); AIO leans towards commercial health publishers (webmd, healthline, etc.) relative to the traditional top 5, with lower shares for clevelandclinic, nhs.uk, mayoclinic (|dz| ≤ 0.27); different scope, not a contradiction: 2610.39339 (B, weak end: single 3-day snapshot, US English)
 - Jaccard 0.11–0.18 across three interfaces, AIO-SERP 0.18, own-asset bias: 2604.27790 (B)
 - Baidu: 2609.24407 (B)
 

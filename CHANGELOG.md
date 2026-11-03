@@ -9,6 +9,22 @@ Versioning: **MAJOR.MINOR.PATCH**
 
 Versions before 1.0.0 are the pre-release phase.
 
+## [0.9.0] - 2026-11-03
+### Added
+- Ch. 8, Appendix A and the Start Here page: the evidence on on-page writing tricks (such as adding statistics) is now presented as three kinds of studies side by side. Text given directly to newer models: the gains turned negative. Real AI search reading pages supplied by researchers: statistics still helped, although every added number was made up and the engines did not check them. Real AI search finding pages on its own: no detectable effect, while being indexed and domain visibility mattered most. The closer to real-world conditions, the weaker the evidence for writing tricks.
+- Ch. 3: a server answer of "200 OK" does not prove the main content was there (about one fifth of such pages were empty shells, challenge or block pages); JavaScript usually loses little content, whole-page app shells are the real risk; soft 404s; the indexing threshold and timeline for new pages (first AI crawler visit around day 10, stable results around day 25). New self-checks.
+- Ch. 5 and 11: data voids. On topics with few reliable sources a single page can enter AI answers (31%, 42.3% once indexed); domain visibility is the strongest factor; skeptical user prompts did not prevent it, and warnings were rare. Agreeing copies may be counted as independent sources (laboratory evidence only).
+- Ch. 9: a deep research mode asked the same question ten times shared almost no cited URLs; named entities were more stable than URLs; crawler logs showing 200 do not prove content was read.
+- Ch. 2, 4, 7, 12, 15: Google AI Overviews on health questions (appear for 96.4%; cite only 44.4% of the organic top five; favour commercial health publishers; whether an answer carries citations is unrelated to whether it is correct).
+- Ch. 6: reversing the order of candidate pages or re-running the same test changed which page came first.
+- Glossary: data void.
+### Changed
+- English editions: "data void" used consistently (previously also "information vacuum" and "information gap").
+- `scripts/build_books.py` rebuilds contents pages and full-book files for all editions.
+### Sources
+- 6 new papers: 2611.01126, 2610.39339, 2611.00884, 2610.30365, 2610.26421, 2610.41012
+- Paper index updated with 76 new candidate papers from the 2026-11-03 scan
+
 ## [0.8.0] - 2026-10-20
 ### Added
 - "Start Here: What GEO Research Has Actually Shown": a five-minute page in all three languages with the best-supported findings, common claims the evidence does not support, and what is still unsettled. Every number and evidence phrase is taken from the chapters. Linked from the READMEs, the contents pages and the website.

@@ -63,3 +63,10 @@ Consensus report: the consensus report (not published) (issue number = issue clu
 
 ## Summary table and common practices
 - Synthesizes the sections above; "zero-sum" based on 2506.11097 §6.4; "expired" based on 2609.07559.
+
+## Additions (new papers, 2026-11-03)
+
+- A1 position two, new item: B·2610.30365 (real retrieval, 56 data voids, on-page GEO factors OR 0.91, twofold effects ruled out; non-indexed new domains 0; 46/10) (§IV, Table IV, Table V, Appendix H, §V)
+- A1 "one further study falls between the two positions": C·2611.01126 (authors include authors of the best-performing method; statistics addition better average rank than originals, behind other whole-page rewrites; 80/80 contain numbers unsupported by specs; reversed order and reruns change results) (Tables 1–3, §4.2 RQ4)
+- A1 reconciliation point 3, two practice items, summary table and key point 1 additions: 2610.30365, 2611.01126
+- A4 additional evidence for position one and revised reconciliation (ChatGPT reversed order, CORE Top-1 73.8% vs 93.8%; same first place across the two orders 75.0%; on Gemini the top method switched): C·2611.01126 (Tables 1–3, §4.2 RQ2); summary table and key point 4 additions likewise

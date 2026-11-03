@@ -13,6 +13,7 @@ Evidence packs: internal evidence pack (not published)
 - Domain overlap with Google top 10 4.0/11.1/12.6/15.2%: B·2601.16858
 - 37% LLM only, 38% shared, 4.3 vs 10.3 URLs, Bing 23.27% / Google 14.53%: B·2512.09483
 - AIO 29.8% not on first page, 25.0% in top 5: B·2605.14021
+- Health questions: 44.4% of traditional top 5 pages cited by AIO (short single-turn 46.7%); AIO leans towards commercial health publishers, lower shares for academic medical systems and government sources (|dz| ≤ 0.27); video and Reddit/Quora excluded: B·2610.39339 (weak end: single 3-day snapshot, US English, page level)
 - Category overlap 15%/32%/33%, local 0.1–20.6%, cars Jaccard 0.096–0.251: B·2509.08919 (mixed authors, with vendor ties)
 - 19% overlap (1,000 prompts): c_ocl52a2 (R-B)
 - ChatGPT and Perplexity 11%: p_1vh1n52 (R-B, removed from the main text)

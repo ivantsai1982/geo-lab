@@ -136,3 +136,15 @@ Experimental data: the authors' own experiment runs (raw data not published); ha
 ## Supplement (2026-10-20 new paper)
 
 - Principle 3.5 web page not opened: B·2610.21731 (Table 1: 53.6%)
+
+## Supplement (2026-11-03 new papers)
+
+- Principle 3.3 enforcement layer (401/403/429 at 21.5%; challenge / block pages returned with 200; 8.2% of 200s among cited sources are challenge or block pages), content layer (about one fifth of static 200s lack main content, review estimate 20.0%; shells, error or substitute pages, parked domains, consent walls; soft 404s 13.1%): D·2611.00884 (Table 1, Table 3, Section 5)
+- Principle 3.4 extent of JavaScript loss (3,307 pages, median retention 0.985, 17.3% lose more than a tenth, 2.3% below half; shells as the main form; rendering median 19.7 s vs static 1.6 s): D·2611.00884 (Section 5, Figure 2; exploratory). "Tend not to render" is the book's inference.
+- Principle 3.5 indexing threshold and timeline (Google indexed within 48 hours; AI crawler visit on day 10; stable on day 25; new domains not submitted 0%, submitted 14.3%–42.9%, established domains 38.4%–78.3%): B·2610.30365 (§III-D, Table IV)
+- Three new rows in the evidence table: D·2611.00884; B·2610.30365
+- Debate 4 how to handle it (headless rendering fails or gets a block page, shell or consent layer on 6.5%): D·2611.00884 (Section 5)
+- Debate 6 "a 200 does not mean the main content was received": D·2611.00884
+- What to do 1, submit for indexing and wait three to four weeks: B·2610.30365
+- What to do 2, step 2 main-text length (status code recall 0.00; text length recall 0.76; combined rule recall 0.86, false alarms 0.056), step 4 larger-sample comparison, step 5 main-text self-check, step 6 soft 404 self-check: D·2611.00884 (Table 4, Sections 5–6)
+- What to do 4 a 200 in the logs, Do not do "status code alone", Key points 3–5: D·2611.00884; B·2610.30365
