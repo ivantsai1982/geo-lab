@@ -71,3 +71,19 @@ Evidence pack: internal evidence pack (not published) (this one only)
 - Recognition table: similar ranking lists row adds E·2610.41012; breaking news and newly coined terms row B·2610.30365 (Table V)
 - Defence and repair table: evidence strength of the "reduce data voids" row, user-side and "little supporting evidence" flag row B·2610.30365 (§IV-A, §VII); near-paraphrase deduplication row E·2610.41012 (Section 5)
 - Key point 7: B·2610.30365; p_1pn5y6c, p_1rfhbge
+
+## Supplement (new papers, 2026-11-13)
+
+- Principle 11.2 table, new "contextual mention" row and the paragraph after it: D·2611.04005 (Table 3, Table 4, Appendix E.3; CP 40.1%–75.9%, BRR / BMR 0.30–0.72)
+- Principle 11.4 defence table, addition to the "general safety guardrails" row (97.9% / 45.7%), new "passage filtering" and "partitioned retrieval" rows: D·2611.15102 (Table 3 top, Table 9, Table 10, Table 11, §5.4)
+- New item one in "Effects of manipulation" (74%–82%, 88.3%–90.0% vs 16.7%, copies 21.3% → 28.0%, same framing 25.0% vs different framings 59.1%; one researcher co-authored the technical report of a tested system, not disclosed): D·2611.15102 (Table 2, Table 5, Table 6, §3.3, Appendix B)
+- New item two in "Effects of manipulation" (Hit@10 82.2%, category-level 45.3%–48.0%, BMR 62.7%, BRR below BMR): D·2611.04005 (Table 3, Table 4, §3.1, §8)
+- New defence item one (97.9% / 45.7%, combination stops 4 articles, defeated by 16 distorted copies, 28.8%, 39.0%, partitioning requires control of the index): D·2611.15102 (Table 3 top, Table 11, Appendix C, §5.4, §6)
+- New defence item two, "noticing is not acting" (29%, 10/300, 0/614): D·2611.15102 (§4.2, §4.5); same direction as the defensive-prompt study in Chapter 5
+- Three new rows in the evidence summary: D·2611.15102; D·2611.04005
+- Fourth difference in Debate 1 (a recent event is itself a data void): D·2611.15102 (Table 2, Table 3 top, Appendix B corpus size)
+- Recognition table: breaking news row adds D·2611.15102 (Table 3 top); new "unfamiliar brand mentioned in passing" row D·2611.04005 (§5.5, §6; monitoring signal is inference)
+- Defence and repair table: near-paraphrase deduplication row merges the authors' suggestions D·2611.04005 (§6), D·2611.15102 (§6); same event in different framings is not stopped by deduplication D·2611.15102 (Table 5, Table 10)
+- "Do not fabricate evidence" item rewritten: no evidence for engine-side demotion after exposure; models can hardly detect recent fabrications D·2611.15102 (§4.2)
+- Key point 6 addition: D·2611.15102 (Table 3 top, Table 9); key point 7 addition: D·2611.15102 (§4.2, §4.5)
+- Section 2 "Zero-sum competition", brand-halo paragraph: caveat that the name still matters, D·2611.07614 (Study 2, fictional name drops 0.44 places on average)

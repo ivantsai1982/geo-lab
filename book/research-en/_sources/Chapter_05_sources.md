@@ -103,3 +103,11 @@ Experimental data: the authors' own experiment runs (raw data not published); ha
 
 - Principle 5.2 diagram "data void" line and the note below it, Principle 5.3 point 3 (about 30% when the prior is zero, 0 when not submitted for indexing), indexing threshold in "Two timelines" (14.3%–42.9%, 0), same-direction result in the "Risk" paragraph, third point of the Section 2.2 strength assessment, Key point 3: B·2610.30365 (abstract, Table IV, Table V, Appendix E)
 - Principle 5.2 diagram "rewritten as several pages" line, new item in Section 2.2 experimental evidence (25% → 10%, 34/38, confounded factors), Section 2.2 strength assessment, Practice 4, Key point 3: E·2610.41012 (Table 1, Table 2, Sections 3–6)
+
+## Supplement (2026-11-13: new papers)
+
+- Principle 5.2 diagram "single source" line qualified "when other sources compete", new controlled-experiment paragraph below the diagram (mentioned in 40.1%–75.9% of answers once retrieved, mentioned more often than recommended): D·2611.04005 (Table 4, Appendix B.7–B.9)
+- Principle 5.3 point 2, the name effect (fictitious name drops 0.44 places, consistent across 4 models and 4 industries, better-known vs less-known +0.05 not significant), new grade-D row in the Section 2.3 table, Section 2.3 strength assessment: D·2611.07614 Study 2 (Section 4.2, Table 2, Appendix Table E.1)
+- Principle 5.3 point 4, side-by-side figure (95.5% of GPT brand mentions found by name in the returned sources; literal matching, pages read afterwards): B·2611.07614 Study 1 (Section 4.1, Appendix C.2)
+- New grade-B row in the Section 2.3 table (23 of 24 configurations positive, 1.4–2.8 times, 0.87 vs 0.89; Italy, 4 industries, one day, brand set sampled on outcome), Section 2.3 strength assessment "more easily named": B·2611.07614 Study 1 (Section 4.1, Appendix Table C.1, Appendix B)
+- Section 2.2 experimental evidence, second item for "noticing is not acting" (supervising agent wrote "single source" in 29% of runs, changed the result in 10 of 300; one author helped build a tested system): D·2611.15102 (Section 4.2)

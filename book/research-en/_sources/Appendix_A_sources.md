@@ -70,3 +70,10 @@ Consensus report: the consensus report (not published) (issue number = issue clu
 - A1 "one further study falls between the two positions": C·2611.01126 (authors include authors of the best-performing method; statistics addition better average rank than originals, behind other whole-page rewrites; 80/80 contain numbers unsupported by specs; reversed order and reruns change results) (Tables 1–3, §4.2 RQ4)
 - A1 reconciliation point 3, two practice items, summary table and key point 1 additions: 2610.30365, 2611.01126
 - A4 additional evidence for position one and revised reconciliation (ChatGPT reversed order, CORE Top-1 73.8% vs 93.8%; same first place across the two orders 75.0%; on Gemini the top method switched): C·2611.01126 (Tables 1–3, §4.2 RQ2); summary table and key point 4 additions likewise
+
+## Additions (new papers, 2026-11-13)
+
+- A1 "comparison baseline / new facts allowed" table, row 1 (template originals, hypothetical data allowed): C·2611.01126 (Table 1, §4.2 RQ4)
+- A1 table row 2 and reconciliation point 1 addition (real official-site copy, numbers unchanged, no facts added or removed; Structure/Fluency/Authoritative average +0.022 [−0.001, 0.049], gains >0.05 places ruled out; fictional brand −0.44): D·2611.07614 (Study 2, §3.2, §4.2, Table 2, Appendices D.2 and D.4)
+- A1 table row 3 (product descriptions from public datasets; Statistics ten-request average +0.24, P5 −0.18, Consist 2.98 from an LLM judge on a 1–5 scale): E·2611.04225 (Tables 3 and 6, Appendix C)
+- "Gains may come from a weak baseline or added numbers" is the book's inference from combining studies, following the 2611.07614 note ("Relation to other studies" and suggested edit 6)

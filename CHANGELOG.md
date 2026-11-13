@@ -9,6 +9,23 @@ Versioning: **MAJOR.MINOR.PATCH**
 
 Versions before 1.0.0 are the pre-release phase.
 
+## [0.10.0] - 2026-11-13
+### Added
+- Ch. 5: name recognition, not popularity. When information is distinguishable, replacing a real brand name with one the model does not recognize lowered the ranking by 0.44 places on average, while better-known and less-known real brands showed no difference (controlled experiment). On real AI search, the most popular brands were named and cited 1.4 to 2.8 times as often as the average brand, and turning web search on did not level this. The claim is now "more likely to be named" rather than "more likely to be recommended". Two measurements of whether brand mentions are backed by sources (95.5% vs 46%) are shown side by side with the likely difference in definitions. A second piece of evidence that noticing a weak source does not mean acting on it.
+- Ch. 8: rewrites that add no new facts moved rankings by about zero; the same rewrite helps or hurts depending on what the user asks (on the most specific requests 15 of 16 methods made things worse); automatic prompt optimization can drift toward keywords and calls to action and did worse than its handwritten starting point; two samples of the same wording differed noticeably. Testing advice now covers broad, specific, "several options" and "just one" phrasings.
+- Ch. 9: averages can hide the direction of manipulation (overall accuracy barely changed while forecasts followed the attacker).
+- Ch. 11: a third manipulation type, a single brand mention woven into an informational article (controlled evidence only); one fabricated article reversing most opposing forecasts in a controlled forecasting system; what self-checks and two retrieval-time defences can and cannot stop, and their cost to genuine content; a just-happened event is itself a data void; a new warning sign in the recognition table. "Fame matters little" now notes that an unrecognized name still lowers the ranking.
+- Ch. 7: passage-level evidence that a brand can only appear once the passage naming it is retrieved, and that being mentioned is not being recommended.
+- Ch. 13: buyer personas reduce the popularity advantage only partly; "the prior steps back" is now stated more cautiously.
+- Appendix A, A1: a comparison of studies by baseline and by whether the rewrite was allowed to add facts.
+- Start Here: rewrites that add no new facts left rankings almost unchanged.
+### Changed
+- Ch. 11: "a brand caught manipulating will be demoted by the engine" removed as unsupported; reputational and platform-policy risks remain.
+- Ch. 16, Appendix A and Start Here: the latest research cited is from November 2026.
+### Sources
+- 4 new papers: 2611.07614, 2611.04005, 2611.15102, 2611.04225
+- Paper index updated with 19 new candidate papers from the 2026-11-13 scan
+
 ## [0.9.0] - 2026-11-03
 ### Added
 - Ch. 8, Appendix A and the Start Here page: the evidence on on-page writing tricks (such as adding statistics) is now presented as three kinds of studies side by side. Text given directly to newer models: the gains turned negative. Real AI search reading pages supplied by researchers: statistics still helped, although every added number was made up and the engines did not check them. Real AI search finding pages on its own: no detectable effect, while being indexed and domain visibility mattered most. The closer to real-world conditions, the weaker the evidence for writing tricks.

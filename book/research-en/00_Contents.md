@@ -16,26 +16,26 @@
 - [Chapter 2: Triggering: When Does AI Search?](Chapter_02.md) (about 3,484 words)
 - [Chapter 3: Accessibility: Can AI Read Your Website?](Chapter_03.md) (about 8,087 words)
 - [Chapter 4: Retrieval: Query Rewriting, Semantic Matching, and the Language and Market Gate](Chapter_04.md) (about 7,381 words)
-- [Chapter 5: The Source Ecosystem: Third Parties, Consensus and Brand Priors](Chapter_05.md) (about 7,433 words)
+- [Chapter 5: The Source Ecosystem: Third Parties, Consensus and Brand Priors](Chapter_05.md) (about 8,068 words)
 - [Chapter 6: Selection and Ranking (Relevance, Position, Attribute Weights)](Chapter_06.md) (about 5,236 words)
-- [Chapter 7: Citation and Absorption (Listed ≠ Used ≠ Used Correctly)](Chapter_07.md) (about 5,783 words)
+- [Chapter 7: Citation and Absorption (Listed ≠ Used ≠ Used Correctly)](Chapter_07.md) (about 5,848 words)
 
 **Part Three: Cross-Stage Topics**
 
-- [Chapter 8: The Evidence on Content-Level Practices: What Works, What Fails, What Goes Out of Date](Chapter_08.md) (about 7,064 words)
-- [Chapter 9: Measurement: Visibility Is a Distribution, Not a Ranking](Chapter_09.md) (about 8,191 words)
+- [Chapter 8: The Evidence on Content-Level Practices: What Works, What Fails, What Goes Out of Date](Chapter_08.md) (about 7,904 words)
+- [Chapter 9: Measurement: Visibility Is a Distribution, Not a Ranking](Chapter_09.md) (about 8,396 words)
 - [Chapter 10: Traffic and Commercial Value](Chapter_10.md) (about 5,303 words)
-- [Chapter 11: Competition, Manipulation and Defence](Chapter_11.md) (about 5,776 words)
+- [Chapter 11: Competition, Manipulation and Defence](Chapter_11.md) (about 7,103 words)
 - [Chapter 12: Platform Differences and the Chinese-Language Ecosystem](Chapter_12.md) (about 5,615 words)
 
 **Part Four: Case Types**
 
-- [Chapter 13: Brand and Product Recommendations (Case Chapter)](Chapter_13.md) (about 9,957 words)
+- [Chapter 13: Brand and Product Recommendations (Case Chapter)](Chapter_13.md) (about 10,233 words)
 - [Chapter 14: Content Websites: After the Traffic Is Intercepted, What Content Still Gets Cited and Clicked](Chapter_14.md) (about 8,726 words)
 - [Chapter 15: The Role of Reddit and Social Platforms in AI Search](Chapter_15.md) (about 5,449 words)
 
 **Appendix**
 
-- [Appendix A: Major Disagreements Between Studies, and Between Research and Practice](Appendix_A.md) (about 5,171 words)
+- [Appendix A: Major Disagreements Between Studies, and Between Research and Practice](Appendix_A.md) (about 5,529 words)
 
-About 107,929 words in total.
+About 111,635 words in total.

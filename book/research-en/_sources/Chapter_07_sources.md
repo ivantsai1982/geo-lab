@@ -85,3 +85,7 @@ Experimental data: the authors' own experiment runs (raw data not published); ha
 ## Supplement (2026-10-20 new papers)
 
 - Supporting research for Case 9: B/D·2610.21731 (Table 1, Table 2)
+
+## Supplement (2026-11-13 new papers)
+
+- 6.3 "brand name, facts and numbers in the same sentence or adjacent positions" row, evidence strength addition (only a retrieved passage containing the brand counts as a hit; mention after retrieval 40.1%–75.9%; BRR below BMR): D·2611.04005 (§5.3, Appendix B.5–B.9, Table 4)

@@ -30,7 +30,7 @@ Evidence-strength phrases match those used in the chapters:
 Two points to keep in mind from the start:
 
 - "Consensus" does not mean "correct". That most practitioners agree on something only shows it is the mainstream view in the trade.
-- Research conclusions have a shelf life. The studies collected in this appendix range from late 2023 to October 2026. Engines went through several generations during that period.
+- Research conclusions have a shelf life. The studies collected in this appendix range from late 2023 to November 2026. Engines went through several generations during that period.
 
 ## Part 1: Disagreements between studies
 
@@ -64,9 +64,19 @@ Why they may be inconsistent:
 
 One further study falls between the two positions. When the pages are supplied to the engine (the researchers published product pages on a real website, then gave the URLs to three commercial AI search engines to read and rank), product pages that added statistics through a whole-page rewrite beat plain originals in average rank on all three AI search engines, but fell behind other whole-page rewriting methods; and none of the numbers in these 80 pages had any basis in the specifications, yet the engines did not rank them lower for it. This shows that "engines prefer numbers" and "the numbers are true" are two different things. Limitations: some of the researchers are authors of the best-performing method; reversing the URL order or rerunning changed the results.
 
+Placing this study next to two others brings out two angles the table above does not list: what the comparison baseline is, and whether the rewrite is allowed to add new facts.
+
+| Study conditions | Comparison baseline | New facts allowed? | Result |
+|---|---|---|---|
+| When the pages are supplied to the engine (real AI search engines read product pages published by the researchers; the study in the previous paragraph) | Plain, template-generated originals | Yes, and numbers could be hypothetical; all 80 pages contained numbers unsupported by the specifications | Statistics rewrites beat the originals in average rank but fell behind other whole-page rewrites |
+| In controlled experimental systems (product pages from real brands' official sites, a fixed context of 5 pages, no web access, 4 models) | Real copy from the brands' official sites, already professionally written | No: numbers unchanged, no facts added or removed | Three rewrites (more structured, more fluent, more authoritative) moved the page up by only about 0.02 places on average (+0.022), ruling out gains of 0.05 places or more; replacing the brand name with a fictional one cost 0.44 places |
+| Simulations or theoretical analysis suggest that, in principle, this may hold (fixed candidate pool, a single small model, ten requests with different intents) | Product descriptions from public datasets | Rewrites were required to stay faithful to the original, but this was checked only by model scoring | Statistics rewrites moved the product up by only 0.24 places on average across the ten requests and −0.18 under the most specific request; their source-grounding score was the lowest of all methods (2.98 out of 5) |
+
+When the original is real official-site copy and new facts are forbidden, rewrites have close to zero effect. Read together with the result that statistics rewrites beat plain originals when the pages are supplied to the engine, the gains from rewriting may come mainly from a weak baseline, or from adding new (even fabricated) numbers, rather than from the writing itself. This is an inference from combining studies with different conditions; it has not been compared directly within a single experiment.
+
 The most reasonable reconciliation at present has three parts:
 
-1. What works is genuine evidence density across the whole page, not an appended block. The same whole-page optimization study also found that 9 token-level GEO rewrites (including keyword stuffing) fell below the unrewritten baseline on all three engines.
+1. What works is genuine evidence density across the whole page, not an appended block. The same whole-page optimization study also found that 9 token-level GEO rewrites (including keyword stuffing) fell below the unrewritten baseline on all three engines; in controlled experimental systems, rewrites that add no new facts and only change the wording are also close to zero.
 2. Effects expire as engines are updated. The levers measured in 2023 can no longer be measured when re-tested on new-generation engines.
 3. The closer the conditions are to the real world and the stronger the evidence, the weaker the evidence that writing techniques help. Under real retrieval conditions, on-page writing had no detectable effect, and whether the page is indexed and whether the domain is visible matter more; when the pages are supplied to the engine, adding statistics beat only plain originals, and AI search does not check numbers.
 

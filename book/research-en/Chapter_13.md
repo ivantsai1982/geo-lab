@@ -262,6 +262,7 @@ Other data pointing the same way:
 - Practitioners report from their own tests: across about 1,140 prompts for 76 companies, brands were mentioned in 44% of answers on average, but recommended in only 10%.
 - Practitioners report from their own tests: in about 26,400 answers about brands, the brand appeared in only about 16%; of these, about 13% were cited and about 3% were only named without a link. ChatGPT had the lowest citation rate (under 10%), but the highest share of "named without a link".
 - One practitioner observed that among 85 B2B software companies, 29.4% were cited more often than they were named; of these, 9 had their official site in the citation list yet were not named in any answer.
+- The same holds in controlled experimental systems (a local article index, fictitious brands, open-weight or small models): for brands mentioned in passing in a single sentence, the share of answers judged to "recommend" them was only 0.30–0.72 times the share that mentioned them, and lower still for cross-domain mentions and broad questions.
 
 E2. Your sentence, someone else's name
 
@@ -283,7 +284,7 @@ Practitioners' repeated, controlled tests found that for five healthy-snack purc
 
 Repeated tests on real AI search engines found that in product recommendations, 79% of ChatGPT's answers used first-person recommendations ("If I could only buy one..."), versus 7% for Gemini and 2% for Google AI Overviews.
 
-- Principle illustrated: Chapter 6, Principle 6.3. Given specific evaluation criteria, the model filters by attributes, brands can be told apart, and priors take a back seat. This is what "real attributes that can be told apart drive recommendations" looks like in practice.
+- Principle illustrated: Chapter 6, Principle 6.3. Given specific evaluation criteria, the model filters by attributes, brands can be told apart, and the effect of priors shrinks but does not disappear (see Debate 4). This is what "real attributes that can be told apart drive recommendations" looks like in practice.
 - Practical implication: besides tracking "recommended", also track "advised against".
 
 E5. The challenger won in the corpus first
@@ -424,9 +425,10 @@ A reasonable reading: for engines that rely on Google's index, ranking is more l
 Debate 4: Does awareness matter or not?
 
 - Repeated tests on real AI search engines found (vendor production data) that on the first run, visibility for questions without brand names followed a three-tier gradient: large brands 72.9%, mid-sized brands 43.6%, small brands 11.4%.
+- Repeated tests on real AI search engines found (via the API; one market, 4 industries, collected on a single day; only brands already named) that the more popular a brand, the more often it was named: brands in the most popular fifth were named 1.4–2.8 times as often as the average brand. Adding a buyer description before the question made this popularity advantage smaller, but did not remove it: the slope, measured as "how many percentage points the naming rate rises for every 10 times the search volume", fell from 0.98 with no description to 0.80 (emphasising saving money) and 0.85 (emphasising quality); a third buyer, described by life stage, gave 0.89, not significantly different from no description.
 - But the cases of the celebrity coaches, category leaders and funded startups all show that awareness does not translate directly into recommendation.
 
-The way to reconcile them: the gradient reflects not "fame" itself but the density of the brand's presence in the corpus and in retrievable sources (the corrected conclusion of case C5). Big brands usually have both, so they have the advantage in broad questions; but in niche questions and specific buyer situations, presence density has to be counted per "question", not per "brand". One practitioner observed that big spirits brands won only in generic questions; in more specific questions such as "which one to use for a certain cocktail", brands with a more distinctive brand story led.
+The way to reconcile them: the gradient reflects not "fame" itself but the density of the brand's presence in the corpus and in retrievable sources (the corrected conclusion of case C5). Big brands usually have both, so they have the advantage in broad questions; but in niche questions and specific buyer situations, presence density has to be counted per "question", not per "brand". One practitioner observed that big spirits brands won only in generic questions; in more specific questions such as "which one to use for a certain cocktail", brands with a more distinctive brand story led. In controlled experimental systems, with the content held the same, a better-known real brand did not make the same page rank higher than a less-known real brand, which supports "the gradient does not reflect fame itself". But a buyer description only partly reduced the popularity advantage, so starting from specific questions can weaken the advantage of big brands, but you cannot expect it to disappear.
 
 Debate 5: How fast do results show?
 
@@ -479,7 +481,7 @@ A reasonable reading: engines that rely on real-time retrieval (especially Perpl
 | Describe the tasks the product actually accomplishes in buyers' language, not just claim a category | Practitioners' repeated, controlled tests, single case |
 | Make sure the official site is readable for agents: content not dependent on JS, structured data provided, crawler settings allowing access | Repeated tests on real AI search engines found (bundled, not separated) |
 | Local businesses: keep name, address and phone consistent across directories, build city pages and service pages, cultivate review platforms | Practitioners report from their own tests; several independent samples agree in direction |
-| Use niche questions, specific situations and particular buyers where big brands have no advantage as entry points | Practitioners report from their own tests, and observations; direction consistent |
+| Use niche questions, specific situations and particular buyers where big brands have no advantage as entry points | Repeated tests on real AI search engines found that adding a buyer description makes the advantage of popular brands smaller, but only to a limited degree (two of three descriptions significant); also practitioners report from their own tests, and observations; direction consistent |
 | Evaluate commercial effects with a concurrent control (untreated pages on the same domain); for local businesses, use a dedicated phone number and ask about the source | Large-scale experiments with real users show the need for a control (single website) |
 
 ### Do not do

@@ -110,3 +110,8 @@
 ## Supplement (new papers, 2026-10-11)
 
 - Description asymmetry: A (with caveats) · 2604.04263
+
+## Supplement (2026-11-13: new papers)
+
+- E1 "Other data pointing the same way", new controlled experiment (recommendation-to-mention ratio 0.30–0.72): D·2611.04005 (Table 4)
+- E4 "Principle illustrated" changed to "the prior's effect shrinks", new measurement in Debate 4 (1.4–2.8 times; persona slopes 0.98 → 0.80/0.85, third persona 0.89 not significant), Debate 4 reconciliation (no difference between better-known and less-known real brands), evidence strength of the niche entry-point practice in Section 13.5: B·2611.07614 Study 1 (Section 4.1, Appendix C.3); D·2611.07614 Study 2 (Section 4.2, Table 2)

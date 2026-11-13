@@ -96,3 +96,13 @@ Evidence packs: internal evidence pack (not published)
 - 8.3 Debate 1: correlations in real logs (statistics 2.11/1.17, inline citations 1.34/1.22, terminology 2.26/1.71, fluent prose 0.67/0.58) and no effect in the intervention: B·2610.30365 (§III-A Table II, §IV); third case (unsupported numbers): C·2611.01126; side-by-side table of three kinds of evidence: C·2609.07559, C·2611.01126, B·2610.30365
 - 8.5 Recommended "confirm indexing first": B·2610.30365; Do not do "unsupported numbers": C·2611.01126; Already outdated addition: B·2610.30365
 - Key points 1, 7, 8 additions: B·2610.30365, C·2611.01126
+
+## Additions (new papers, 2026-11-13)
+
+- Principle 2 side-by-side counterexample (36 saved versions: "preserve all facts" 3/36, "recommender voice" 0/36, "keywords" and "call to action" 36/36; handwritten starting point 0.95 → 0.67; Full-prompt opt. 0.74 vs Core only 0.98; the best-performing method was proposed by the authors): E·2611.04225 (Tables 1, 2, 4, §4.1)
+- Principle 3 table "authoritative tone" addition and Principle 3 paragraph on rewrites that add no new facts (Structure/Fluency/Authoritative average +0.022 [−0.001, 0.049], gains >0.05 places ruled out; fictional brand −0.44; rewrites do not close the gap): D·2611.07614 (Study 2, §4.2, Table 2, Appendix E)
+- Principle 4 item 1, intent dimension (under P5, 15 of 16 non-AMO methods negative; Content Impr. +1.92 → −0.05; MetaOpt +2.08 → −0.42; P3–P5 generated from target attributes): E·2611.04225 (§3.2, §3.4, Tables 3 and 12)
+- 8.2 "direction of automated optimization" limitation (RecGEO 0.95 → MetaOpt-Rec 0.67; Content Impr. 0.79 → MetaOpt 0.80; commercial assistant via API, native search disabled, candidates supplied by hand: 0.849 → 0.791): E·2611.04225 (Tables 1 and 8; commercial assistant part C)
+- 8.2 measurement problem (identical wording P2 vs Q3, gain gap 0.26–0.62, compiled by the note-taker from Table 3): E·2611.04225 (Tables 3 and 20)
+- 8.5 Recommended "serve several queries" extension (phrasings with different intents) and Do not do "sales style" addition (existing attributes as recommendation reasons vs generic techniques; AMO core "emphasize superiority over alternatives"): E·2611.04225 (Tables 3 and 6, Appendix I)
+- Key points 2 and 7 additions: E·2611.04225

@@ -297,7 +297,7 @@ Scope reminders:
 | Practice | Evidence strength |
 |---|---|
 | Include high-density information on the page, such as clear definitions, numbers and comparisons | Descriptive snapshot analysis, correlation only (possible in principle) |
-| Put the brand name, facts and numbers in the same sentence or adjacent positions, so claims can be attributed | One practitioner observed (a lead, not verified) |
+| Put the brand name, facts and numbers in the same sentence or adjacent positions, so claims can be attributed | One practitioner observed (a lead, not verified); in controlled experimental systems (fictitious brands, a local article collection), the brand could appear in the answer only when the passage containing the brand name was retrieved, and retrieving other passages from the same article did not help; once that passage was retrieved, answers mentioned the brand 40.1%–75.9% of the time, and being mentioned is not the same as being recommended (possible in principle) |
 | Publish original data (numbers others do not have), and make the attribution clear | A hypothesis one practitioner observed; no results yet |
 | Use clear paragraphs to avoid entities being confused within one large block of text; deal with distinguishing entities that share a name | Practitioners report from their own tests; community consensus |
 | Keep brand information consistent across the web, and reduce outdated or contradictory third-party descriptions | Practitioners widely believe; the Chinese-platform study shows co-occurrence across multiple sources is associated with brand inclusion |
